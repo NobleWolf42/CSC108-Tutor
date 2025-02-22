@@ -12,7 +12,8 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "-lws2_32",
                 "-lssl",
-                "-lcrypto"
+                "-lcrypto",
+                "-lcrypt32"
             ],
             "options": {
                 "cwd": "${fileDirname}"
