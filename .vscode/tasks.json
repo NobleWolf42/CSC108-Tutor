@@ -10,7 +10,9 @@
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "-lws2_32"
+                "-lws2_32",
+                "-lssl",
+                "-lcrypto"
             ],
             "options": {
                 "cwd": "${fileDirname}"

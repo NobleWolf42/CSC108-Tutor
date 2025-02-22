@@ -1,15 +1,23 @@
+#define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "httplib.h"
 #include <iostream>
 
 int main()
 {
-    httplib::Server svr;
+    httplib::SSLServer svr("../cert.pem", "../key.pem");
+
+    svr.Options("/(.*)", [&](const httplib::Request &req, httplib::Response &res)
+                {   res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
+                    res.set_header("Access-Control-Allow-Methods", "*");
+                    res.set_header("Access-Control-Allow-Headers", "*");
+                    res.set_header("Connection", "close"); });
 
     svr.Get("/hello", [](const httplib::Request &req, httplib::Response &res)
             {
                 if (req.has_header("usermsg")) {
                     std::cout << req.get_header_value("usermsg") << std::endl;
-                  }
+                }
+                res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
                 res.set_content("Hello, World!", "text/plain"); });
 
     svr.Get("/", [](const httplib::Request &req, httplib::Response &res)

@@ -1,0 +1,4 @@
+make messages auto scroll
+fix text input not working on some resolutions (my laptop is one)
+make enter submit messages
+capture code when submitting info
