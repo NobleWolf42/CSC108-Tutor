@@ -81,7 +81,19 @@
         "optional": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "memory_resource": "cpp",
+        "string_view": "cpp",
+        "numbers": "cpp",
+        "semaphore": "cpp",
+        "text_encoding": "cpp",
+        "cinttypes": "cpp",
+        "variant": "cpp"
     },
     "cmake.sourceDirectory": "D:/Hardlinks/Documents/School/CSC-Homework/Intro to Software Engineering CSC 212-90/CSC108-Tutor/backend-connection"
 }
