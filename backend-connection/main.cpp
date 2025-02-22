@@ -4,6 +4,7 @@
 
 int main()
 {
+    int port = 3006;
     httplib::SSLServer svr("../cert.pem", "../key.pem");
 
     svr.Options("/(.*)", [&](const httplib::Request &req, httplib::Response &res)
@@ -20,6 +21,7 @@ int main()
                 res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
                 res.set_content("Hello, World!", "text/plain"); });
 
+    // Testing stuff here
     svr.Get("/", [](const httplib::Request &req, httplib::Response &res)
             { res.set_file_content("index.html"); });
 
@@ -31,9 +33,10 @@ int main()
 
     svr.Get("/style.css", [](const httplib::Request &req, httplib::Response &res)
             { res.set_file_content("style.css"); });
+    // to here
 
-    std::cout << "Server started on port 3006" << std::endl;
-    svr.listen("0.0.0.0", 3006);
+    std::cout << "Server started on port " << port << std::endl;
+    svr.listen("0.0.0.0", port);
 
     return 0;
 }
