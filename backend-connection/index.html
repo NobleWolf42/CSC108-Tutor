@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cambo|Lora">
+    <title id="title">CSC108Tutor</title>
+    <link rel="shortcut icon" href="/faveicon.ico" mce_href="/faveicon.ico"/>
+    <script language="javascript" src="animations.js"></script>
+    <script language="javascript" src="ai.js"></script>
+</head>
+<body>
+    <div id="topbar"><div id="topdark" class="leaving"></div></div>
+    <div id="darkenhtml" class="leaving"></div>
+    <div id="menubar" class="leaving done">
+        <pre id="typehere" class="leaving"><a href="/"><span id="name">Ben Carpenter</span></a></pre>
+        <div id="mainnav" class="leaving">
+            <div id="table" class="leaving">
+                <ul id="menu">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="flexbuffer"></div>
+    <div id="outerer">
+        <div id="outer" class="leaving">
+            <div id="inner" class="leaving">
+                <div id="content" class="">
+                    <div id="textcontent">
+                        <h1>Tutor</h1>
+                        <form action="javascript:sendMessage()">
+                            <table class="cpage">
+                                <tr>
+                                    <td class="left">
+                                        <h3>Code:</h3>
+                                            <table class="contact">
+                                                <tr>
+                                                    <td>
+                                                        <textarea id="codeMessage" name="codeMessage" type="text" style="font-family: 'Lora', serif;" required></textarea>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    </td>
+                                    <td class="right">
+                                        <h3>Chat:</h3>
+                                            <table class="contact">
+                                                <tr>
+                                                    <td>Message History: </td>
+                                                    <td>
+                                                        <div id="messageHistoryBorder">
+                                                            <div id="messageHistoryScrollFix">
+                                                                <div id="messageHistory">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align: top;">Message: </td>
+                                                    <td>
+                                                        <textarea id="usrMessage" name="usrMessage" type="text" style="font-family: 'Lora', serif;" required></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr style="height: 10px;"></tr>
+                                                <tr style="height: 50px;">
+                                                    <td colspan="2" style="text-align: center;">
+                                                        <input id="subbutton" type="submit" value="Send" class="submit" enabled>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p><a href="../index.html">Enable Animations</a></p><p class="copyright">Copyright © 2016-<script>document.write(new Date().getFullYear())</script> | Benjamin Carpenter</p>
+        </div>
+    </div>
+    <div class="flexbuffer"></div>
+</body>
