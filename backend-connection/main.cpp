@@ -1,5 +1,6 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "httplib.h"
+#include "query.h"
 #include <iostream>
 
 int main()
@@ -16,12 +17,12 @@ int main()
     svr.Get("/hello", [](const httplib::Request &req, httplib::Response &res)
             {
                 if (req.has_header("usermsg")) {
-                    std::cout << req.get_header_value("usermsg") << std::endl;
-                }
-                res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
-                res.set_content("Hello, World!", "text/plain"); });
+                    std::string usrMsg = req.get_header_value("usermsg");
+                    res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
+                    res.set_content(queryOllama(usrMsg), "text/plain");
+                } });
 
-    // Testing stuff here
+    /* Testing stuff here
     svr.Get("/", [](const httplib::Request &req, httplib::Response &res)
             { res.set_file_content("index.html"); });
 
@@ -33,7 +34,7 @@ int main()
 
     svr.Get("/style.css", [](const httplib::Request &req, httplib::Response &res)
             { res.set_file_content("style.css"); });
-    // to here
+    */
 
     std::cout << "Server started on port " << port << std::endl;
     svr.listen("0.0.0.0", port);
