@@ -1,8 +1,10 @@
-document.getElementById("usrMessage").addEventListener("keypress", (x) => {
-    if (x.key === "Enter" && !x.shiftKey) {
-        x.preventDefault();
-        sendMessage();
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("usrMessage").addEventListener("keypress", (x) => {
+        if (x.key === "Enter" && !x.shiftKey) {
+            x.preventDefault();
+            sendMessage();
+        }
+    });
 });
 
 function sendMessage() {
