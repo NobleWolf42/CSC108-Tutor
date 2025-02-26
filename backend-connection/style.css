@@ -377,43 +377,49 @@ input.submit:active {
 
 /*CSCTutor*/
 #codeMessage {
-    width: 500px;
-    height: 200px;
+    width: calc(100% - 6px);
+    font-family: monospace;
+    color: transparent;
+    background-color: transparent;
+    z-index: 0;
+    position: relative;
+    caret-color: #000000;
+    resize: none;
 }
 
 #usrMessage {
-    width: 500px;
+    width: calc(100% - 6px);
     height: 50px;
     resize: none;
 }
 
 #messageHistoryBorder {
     height: 30vh;
-    width: 500px;
+    width: 100%;
     border: #000000;
-    box-shadow: 0px 0px 3px 0px #000000;
+    box-shadow: 3px 3px 3px 0px #ababab;
     border-radius: 5px;
     background-color: #000000;
     overflow: hidden;
+    margin-bottom: 5px;
 }
 
 #messageHistoryScrollFix {
     height: calc(30vh - 6px);
-    width: 494px;
+    width: calc(100% - 6px);
     margin: 3px;
     border: #000000;
-    box-shadow: 0px 0px 3px 0px #ffffff;
     border-radius: 5px;
-    background-color: grey;
+    background-color: #9d9d9d;
     overflow: hidden;
 }
 
 #messageHistory {
     height: calc(30vh - 6px);
-    width: 494px;
+    width: calc(100% - 6px);
     border: #000000;
     border-radius: 5px;
-    background-color: grey;
+    background-color: #9d9d9d;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -428,30 +434,64 @@ input.submit:active {
     text-align: left;
     overflow-wrap: break-word;
     max-width: 275px;
-    background-color: #0000FF;
-    color: #ffffff;
-    border-radius: 20px;
+    background-color: #d3dbde;
+    border-radius: 10px;
     padding: 5px;
 }
 
 .humanMessage {
-    text-align: right;
+    text-align: left;
     overflow-wrap: break-word;
     max-width: 275px;
     float: right;
-    background-color: #008000;
-    border-radius: 20px;
+    background-color: #d3e7d1;
+    border-radius: 10px;
     padding: 5px;
 }
 
 .errorMessage {
-    text-align: right;
+    text-align: left;
     overflow-wrap: break-word;
     max-width: 275px;
-    float: right;
-    background-color: #FF0000;
-    border-radius: 20px;
+    float: left;
+    background-color: #edc4d2;
+    border-radius: 10px;
     padding: 5px;
+}
+
+table.codepage td {
+    vertical-align: top;
+}
+
+table.codepage {
+    width: 100%;
+}
+
+table.codepage td.left {
+    padding-right: 30px;
+    width: 50%;
+}
+
+table.codepage td.right {
+    padding-left: 30px;
+    width: 50%;
+}
+
+table.codebox {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border: 5px solid #53776D;
+    border-radius: 3px;
+    padding: 30px 50px;
+    background: rgba(0,0,0,0.05);
+    float: right;
+    width: 100%;
+}
+
+table.codebox td.title {
+    width: 100px;
 }
 
 /*Content*/

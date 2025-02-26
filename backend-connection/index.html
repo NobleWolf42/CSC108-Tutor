@@ -3,22 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="keywords" content="HTML,CSS,JavaScript,IT,Web Design, Web Programming,Programming,Resume">
+    <meta name="application-name" content="Ben Carpenter - IT Professional">
+    <meta name="description" content="A site showcasing my skills and capabilities.">
+    <meta name="author" content="Benjamin Carpenter">
+    <link href="../../style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cambo|Lora">
     <title id="title">CSC108Tutor</title>
-    <link rel="shortcut icon" href="/faveicon.ico" mce_href="/faveicon.ico"/>
-    <script language="javascript" src="animations.js"></script>
+    <link rel="shortcut icon" href="../../faveicon.ico" mce_href="../../faveicon.ico"/>
+    <script language="javascript" src="../../animations.js"></script>
     <script language="javascript" src="ai.js"></script>
+    <link rel="stylesheet" href="./highlight/styles/default.css">
+    <script src="./highlight/highlight.min.js"></script>
+    <script src="colorize.js"></script>
 </head>
 <body>
     <div id="topbar"><div id="topdark" class="leaving"></div></div>
     <div id="darkenhtml" class="leaving"></div>
     <div id="menubar" class="leaving done">
-        <pre id="typehere" class="leaving"><a href="/"><span id="name">Ben Carpenter</span></a></pre>
+        <pre id="typehere" class="leaving"><a href="../../index.html"><span id="name">Ben Carpenter</span></a></pre>
         <div id="mainnav" class="leaving">
             <div id="table" class="leaving">
                 <ul id="menu">
-                    <li></li>
+                    <li></li><!-- FIX THIS
+                    <li><a id="navinfo" class="navText current" href="../about.html">About Me</a></li>
+                    <li><a id="navprojects" class="navText" href="../projects.html">Projects</a></li>
+                    <li><a id="navhistory" class="navText" href="../history.html">Job History</a></li>
+                    <li><a id="navcontact" class="navText" href="../contact.html">Contact Me</a></li>
+                -->
                 </ul>
             </div>
         </div>
@@ -31,23 +43,29 @@
                     <div id="textcontent">
                         <h1>Tutor</h1>
                         <form action="javascript:sendMessage()">
-                            <table class="cpage">
+                            <table class="codepage">
                                 <tr>
                                     <td class="left">
                                         <h3>Code:</h3>
-                                            <table class="contact">
+                                            <table class="codebox">
                                                 <tr>
                                                     <td>
-                                                        <textarea id="codeMessage" name="codeMessage" type="text" style="font-family: 'Lora', serif;" required></textarea>
+                                                        <pre><code id="highlightMe" class="language-cpp" style="position: absolute; z-index: 0; padding: 2px 0px 0px 2px; margin: 1px 0px 0px 1px; background-color: white; white-space: break-spaces; word-break: break-word; font-family: monospace; pointer-events: none"></code></pre>
+                                                        <textarea id="codeMessage" name="codeMessage" type="text" required>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
+}
+</textarea>
                                                     </td>
                                                 </tr>
                                             </table>
                                     </td>
                                     <td class="right">
                                         <h3>Chat:</h3>
-                                            <table class="contact">
+                                            <table class="codebox">
                                                 <tr>
-                                                    <td>Message History: </td>
+                                                    <td class="title">Message History: </td>
                                                     <td>
                                                         <div id="messageHistoryBorder">
                                                             <div id="messageHistoryScrollFix">
@@ -58,7 +76,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="vertical-align: top;">Message: </td>
+                                                    <td class="title" style="vertical-align: top;">Message: </td>
                                                     <td>
                                                         <textarea id="usrMessage" name="usrMessage" type="text" style="font-family: 'Lora', serif;" required></textarea>
                                                     </td>
@@ -79,7 +97,7 @@
             </div>
         </div>
         <div class="footer">
-            <p><a href="../index.html">Enable Animations</a></p><p class="copyright">Copyright © 2016-<script>document.write(new Date().getFullYear())</script> | Benjamin Carpenter</p>
+            <p class="copyright">Copyright © 2016-<script>document.write(new Date().getFullYear())</script> | Benjamin Carpenter</p>
         </div>
     </div>
     <div class="flexbuffer"></div>

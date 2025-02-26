@@ -14,13 +14,17 @@ int main()
                     res.set_header("Access-Control-Allow-Headers", "*");
                     res.set_header("Connection", "close"); });
 
+    svr.Post("/questions", [](const httplib::Request &req, httplib::Response &res)
+             {
+                std::string usrMsg = req.get_header_value("usermsg");
+                std::string usrCode = req.body;
+                std::cout << "Question: " << usrMsg << std::endl << std::endl;
+                std::cout << "Code: " << usrCode << std::endl << std::endl;
+                res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
+                res.set_content(queryOllama(usrMsg, usrCode), "text/plain"); });
+
     svr.Get("/hello", [](const httplib::Request &req, httplib::Response &res)
-            {
-                if (req.has_header("usermsg")) {
-                    std::string usrMsg = req.get_header_value("usermsg");
-                    res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
-                    res.set_content(queryOllama(usrMsg), "text/plain");
-                } });
+            { res.set_content("Hello World!", "text/plain"); });
 
     /* Testing stuff here
     svr.Get("/", [](const httplib::Request &req, httplib::Response &res)

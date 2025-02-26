@@ -93,8 +93,8 @@
         "semaphore": "cpp",
         "text_encoding": "cpp",
         "cinttypes": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "queue": "cpp"
     },
-    "cmake.sourceDirectory": "D:/Hardlinks/Documents/School/CSC-Homework/Intro to Software Engineering CSC 212-90/CSC108-Tutor/backend-connection",
     "cSpell.words": ["Ollama"]
 }
