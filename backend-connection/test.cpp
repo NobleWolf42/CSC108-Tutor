@@ -6,6 +6,8 @@ int main()
 
     std::string input;
     bool done = false;
+    std::string test = "this is a test";
+
 
     while (!done)
     {
@@ -16,7 +18,7 @@ int main()
         }
         else
         {
-            std::cout << "Response from Ollama: " << queryOllama(input) << std::endl;
+            std::cout << "Response from Ollama: " << queryOllama(input,test) << std::endl;
         }
     }
     return 0;
