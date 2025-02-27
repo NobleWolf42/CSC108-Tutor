@@ -2,20 +2,33 @@
 #include "httplib.h"
 #include "query.h"
 #include <iostream>
+#include <sstream>
+#include <fstream>
 
 int main()
 {
-    int port = 3006;
+    std::ifstream inputFS;
+    std::string jdUsr, jdKey;
+    int port;
+
+    inputFS.open("setting.config");
+    inputFS >> port;
+    inputFS >> jdUsr;
+    inputFS >> jdKey;
+    inputFS.close();
+
     httplib::SSLServer svr("../cert.pem", "../key.pem");
+    httplib::Client cli("https://api.jdoodle.com");
 
     svr.Options("/(.*)", [&](const httplib::Request &req, httplib::Response &res)
-                {   res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
-                    res.set_header("Access-Control-Allow-Methods", "*");
-                    res.set_header("Access-Control-Allow-Headers", "*");
-                    res.set_header("Connection", "close"); });
+                {  
+        res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
+        res.set_header("Access-Control-Allow-Methods", "*");
+        res.set_header("Access-Control-Allow-Headers", "*");
+        res.set_header("Connection", "close"); });
 
     svr.Post("/questions", [](const httplib::Request &req, httplib::Response &res)
-             {
+             { 
                 std::string usrMsg = req.get_header_value("usermsg");
                 std::string usrCode = req.body;
                 std::cout << "Question: " << usrMsg << std::endl << std::endl;
@@ -26,19 +39,17 @@ int main()
     svr.Get("/hello", [](const httplib::Request &req, httplib::Response &res)
             { res.set_content("Hello World!", "text/plain"); });
 
-    /* Testing stuff here
-    svr.Get("/", [](const httplib::Request &req, httplib::Response &res)
-            { res.set_file_content("index.html"); });
-
-    svr.Get("/ai.js", [](const httplib::Request &req, httplib::Response &res)
-            { res.set_file_content("ai.js"); });
-
-    svr.Get("/animations.js", [](const httplib::Request &req, httplib::Response &res)
-            { res.set_file_content("animations.js"); });
-
-    svr.Get("/style.css", [](const httplib::Request &req, httplib::Response &res)
-            { res.set_file_content("style.css"); });
-    */
+    svr.Post("/code", [&](const httplib::Request &req, httplib::Response &res)
+             {
+                std::string usrInput = req.get_header_value("userinput");
+                std::string usrCode = req.body;
+                std::string jsonBody = "{\"clientId\": \"" + jdUsr + "\",\"clientSecret\": \"" + jdKey + "\",\"script\": \"" + usrCode + "\",\"stdin\":\"" + usrInput + "\",\"language\": \"cpp\",\"versionIndex\": \"0\"}";
+                std::cout << "Code: " << usrCode << std::endl << std::endl;
+                std::cout << "User Input: " << usrInput << std::endl << std::endl;
+                res.set_header("Access-Control-Allow-Origin", "https://bencarpenterit.com");
+                auto results = cli.Post("/v1/execute", jsonBody, "application/json");
+                std::cout << "Results: " << results->body << std::endl << std::endl;
+                res.set_content(results->body, "application/json"); });
 
     std::cout << "Server started on port " << port << std::endl;
     svr.listen("0.0.0.0", port);

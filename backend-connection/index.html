@@ -13,6 +13,9 @@
     <link rel="shortcut icon" href="../../faveicon.ico" mce_href="../../faveicon.ico"/>
     <script language="javascript" src="../../animations.js"></script>
     <script language="javascript" src="ai.js"></script>
+    <script type="module">
+        import {writeCode} from "./compiler.js";
+    </script>
     <link rel="stylesheet" href="./highlight/styles/default.css">
     <script src="./highlight/highlight.min.js"></script>
     <script src="colorize.js"></script>
@@ -46,23 +49,39 @@
                             <table class="codepage">
                                 <tr>
                                     <td class="left">
-                                        <h3>Code:</h3>
+                                        <h3>Your Code:</h3>
                                             <table class="codebox">
                                                 <tr>
+                                                    <td class="title">Code: </td>
                                                     <td>
                                                         <pre><code id="highlightMe" class="language-cpp" style="position: absolute; z-index: 0; padding: 2px 0px 0px 2px; margin: 1px 0px 0px 1px; background-color: white; white-space: break-spaces; word-break: break-word; font-family: monospace; pointer-events: none"></code></pre>
-                                                        <textarea id="codeMessage" name="codeMessage" type="text" required>#include &lt;iostream&gt;
-
-int main() {
-    std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
-}
-</textarea>
+                                                        <textarea id="codeMessage" name="codeMessage" type="text" required>#include &lt;iostream&gt;&#13;&#13;using namespace std;&#13;&#13;int main() {&#13;    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl;&#13;}&#13;</textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="title" style="vertical-align: top;">Test Input: </td>
+                                                    <td>
+                                                        <textarea id="usrInput" name="usrInput" type="text" style="font-family: 'Lora', serif;" required></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="text-align: center;">
+                                                        <input id="subbutton" type="button" value="Run" class="submit" onclick="runCode()" enabled>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="title" style="vertical-align: top;">Code Output: </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div id="codeOutput">
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
                                     </td>
                                     <td class="right">
-                                        <h3>Chat:</h3>
+                                        <h3>AI Chat:</h3>
                                             <table class="codebox">
                                                 <tr>
                                                     <td class="title">Message History: </td>
