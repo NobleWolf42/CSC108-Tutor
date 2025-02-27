@@ -13,9 +13,6 @@
     <link rel="shortcut icon" href="../../faveicon.ico" mce_href="../../faveicon.ico"/>
     <script language="javascript" src="../../animations.js"></script>
     <script language="javascript" src="ai.js"></script>
-    <script type="module">
-        import {writeCode} from "./compiler.js";
-    </script>
     <link rel="stylesheet" href="./highlight/styles/default.css">
     <script src="./highlight/highlight.min.js"></script>
     <script src="colorize.js"></script>
@@ -74,7 +71,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <div id="codeOutput">
+                                                        <div id="codeOutput"><span id="outputHere"></span>
                                                         </div>
                                                     </td>
                                                 </tr>
