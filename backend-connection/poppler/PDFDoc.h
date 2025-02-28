@@ -45,7 +45,7 @@
 
 #include "poppler-config.h"
 #include <stdio.h>
-#include "goo/GooMutex.h"
+#include "GooMutex.h"
 #include "XRef.h"
 #include "Catalog.h"
 #include "Page.h"

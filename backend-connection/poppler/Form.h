@@ -25,7 +25,7 @@
 #pragma interface
 #endif
 
-#include "goo/GooList.h"
+#include "GooList.h"
 #include "Object.h"
 #include "Annot.h"
 
