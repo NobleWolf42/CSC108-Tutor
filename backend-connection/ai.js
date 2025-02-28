@@ -5,9 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
             sendMessage();
         }
     });
+    document.getElementById("codeMessage").addEventListener("keydown", (x) => {
+        if (x.key === "Tab" && !x.shiftKey) {
+            const elem = document.getElementById("codeMessage");
+            x.preventDefault();
+            const beforeText = elem.selectionStart;
+            const afterText = elem.selectionEnd;
+            elem.value =
+                elem.value.substring(0, beforeText) +
+                "    " +
+                elem.value.substring(afterText);
+            elem.selectionEnd = beforeText + 4;
+        }
+    });
 });
 
 function sendMessage() {
+    document.getElementById("subbutton").enabled = false;
+    document.getElementById("subbutton").disabled = true;
+
     const userMsg = document.getElementById("usrMessage").value;
     const userCode = document.getElementById("codeMessage").value;
     const http = new XMLHttpRequest();
@@ -52,12 +68,18 @@ function sendMessage() {
             document.getElementById("messageHistory").scrollTop =
                 document.getElementById("messageHistory").scrollHeight;
         }
+
+        document.getElementById("subbutton").enabled = true;
+        document.getElementById("subbutton").disabled = false;
     };
 
     http.send(userCode);
 }
 
 async function runCode() {
+    document.getElementById("runbutton").enabled = false;
+    document.getElementById("runbutton").disabled = true;
+
     const userInput = document.getElementById("usrInput").value;
     const userCode = document.getElementById("codeMessage").value;
     const userCodeNewLine = userCode.replace(/\r\n|\r|\n/g, "\\n");
@@ -176,7 +198,11 @@ function TypeWriterAnimation(elem, text) {
         cursorPosition += 1;
         if (cursorPosition < text.length) {
             setTimeout(type, tempTypeSpeed);
+        } else if (text != "Running...") {
+            document.getElementById("runbutton").enabled = true;
+            document.getElementById("runbutton").disabled = false;
         }
+
         //#endregion
     };
     return {
