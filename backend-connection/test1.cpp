@@ -6,11 +6,11 @@
 #include <memory>
 
 // POPPLER (for PDF to text)
-#include <poppler/cpp/poppler-document.h>
-#include <poppler/cpp/poppler-page.h>
+#include "poppler-document.h"
+#include "poppler-page.h"
 
 // HNSWLIB
-#include hnswlib.h
+#include "hnswlib.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // 1. PDF extraction using Poppler
