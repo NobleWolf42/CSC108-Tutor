@@ -1,4 +1,2 @@
-make messages auto scroll
-fix text input not working on some resolutions (my laptop is one)
-make enter submit messages
-capture code when submitting info
+Add bot-typing animation while waiting on AI
+Make button disabled visually apparent
