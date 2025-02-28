@@ -8,3 +8,6 @@ std::string queryOllama(std::string input, std::string userCode)
               << std::endl;
     return response;
 }
+
+
+
