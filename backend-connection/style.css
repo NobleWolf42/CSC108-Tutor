@@ -393,6 +393,12 @@ input.submit:active {
     resize: none;
 }
 
+#usrInput {
+    width: calc(100% - 6px);
+    height: 50px;
+    resize: none;
+}
+
 #messageHistoryBorder {
     height: 30vh;
     width: 100%;
@@ -429,12 +435,26 @@ input.submit:active {
 #codeOutput {
     background: black;
     border: #53776d;
-    border-width: 4px;
+    border-width: 3px;
     color: white;
     padding: 10px 20px;
     border-style: solid;
     min-height: 10vh;
     border-radius: 3px;
+}
+
+#outputHere {
+    color: #008000;
+}
+
+#outputHere:after {
+    text-align: center;
+    border-left: .5em solid #008000;
+    content: "";
+    -webkit-animation: blink 400ms linear infinite alternate;
+    animation: blink 400ms linear infinite alternate;
+    -webkit-transition: 4s;
+    transition: 4s;
 }
 
 .codeError {
