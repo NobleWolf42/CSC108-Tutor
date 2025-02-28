@@ -65,3 +65,8 @@ std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkS
 
 
 
+std::vector<float> embedText(const std::string& text, int dimension) {
+    // returns a vector of zeros for demonstration
+    std::vector<float> embedding(dimension, 0.0f);
+    return embedding;
+}
