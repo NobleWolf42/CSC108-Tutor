@@ -6,14 +6,14 @@
 #include <memory>
 
 // POPPLER (for PDF to text)
-#include "poppler-document.h"
+#include "./poppler/poppler-document.h"
 #include "poppler-page.h"
 
 // HNSWLIB
 #include "hnswlib.h"
 #include "ollama.hpp"
 
-
+//extract embed store HNSWLib query
 
 
 // call to Ollama
@@ -50,23 +50,22 @@ bool extractTextFromPDF(const std::string& pdfPath, std::string& outText) {
 }
 
 
-// simple chunking function
+// chunking function
 
-std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkSize = 1000) {
-    std::vector<std::string> chunks;
-    size_t start = 0;
-    while (start < fullText.size()) {
-        size_t end = std::min(start + maxChunkSize, fullText.size());
-        chunks.push_back(fullText.substr(start, end - start));
-        start = end;
-    }
-    return chunks;
-}
+// std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkSize = 1000) {
+//     std::vector<std::string> chunks;
+//     size_t start = 0;
+//     while (start < fullText.size()) {
+//         size_t end = std::min(start + maxChunkSize, fullText.size());
+//         chunks.push_back(fullText.substr(start, end - start));
+//         start = end;
+//     }
+//     return chunks;
+// }
 
 
 
 std::vector<float> embedText(const std::string& text, int dimension) {
-    // returns a vector of zeros for demonstration
     std::vector<float> embedding(dimension, 0.0f);
     return embedding;
 }
