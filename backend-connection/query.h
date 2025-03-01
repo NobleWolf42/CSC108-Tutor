@@ -50,18 +50,6 @@ bool extractTextFromPDF(const std::string& pdfPath, std::string& outText) {
 }
 
 
-// chunking function
-
-// std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkSize = 1000) {
-//     std::vector<std::string> chunks;
-//     size_t start = 0;
-//     while (start < fullText.size()) {
-//         size_t end = std::min(start + maxChunkSize, fullText.size());
-//         chunks.push_back(fullText.substr(start, end - start));
-//         start = end;
-//     }
-//     return chunks;
-// }
 
 
 

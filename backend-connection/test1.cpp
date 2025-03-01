@@ -35,19 +35,7 @@ bool extractTextFromPDF(const std::string& pdfPath, std::string& outText) {
     return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// 2. Simple chunking function
-///////////////////////////////////////////////////////////////////////////////
-std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkSize = 1000) {
-    std::vector<std::string> chunks;
-    size_t start = 0;
-    while (start < fullText.size()) {
-        size_t end = std::min(start + maxChunkSize, fullText.size());
-        chunks.push_back(fullText.substr(start, end - start));
-        start = end;
-    }
-    return chunks;
-}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // 3. Placeholder embedding function
@@ -76,8 +64,8 @@ int main(int argc, char** argv) {
     std::cout << "PDF text length: " << pdfText.size() << " characters.\n";
 
     // 2) Chunk the text
-    auto chunks = chunkText(pdfText, 1000);
-    std::cout << "Created " << chunks.size() << " chunks.\n";
+    // auto chunks = chunkText(pdfText, 1000);
+    // std::cout << "Created " << chunks.size() << " chunks.\n";
 
     // 3) Embed each chunk
     int dimension = 384;  // example embedding dimension
