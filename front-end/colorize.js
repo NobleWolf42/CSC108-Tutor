@@ -4,7 +4,6 @@ const resizeTextarea = (textArea, highlightArea) => {
     }
 
     window.requestAnimationFrame(() => {
-        console.log(textArea.offsetWidth);
         highlightArea.style.width = `${textArea.offsetWidth - 3}px`;
         textArea.style.height = 0;
         highlightArea.style.fontSize = window
@@ -32,6 +31,10 @@ const init = (inputEl, highlightEl) => {
         highlight(inputEl, highlightEl);
     });
     window.addEventListener("resize", () => {
+        resizeTextarea(inputEl, highlightEl);
+        highlight(inputEl, highlightEl);
+    });
+    window.addEventListener("keydown", () => {
         resizeTextarea(inputEl, highlightEl);
         highlight(inputEl, highlightEl);
     });
