@@ -1,3 +1,64 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <memory>
+
+// POPPLER (for PDF to text)
+#include "poppler-document.h"
+#include "poppler-page.h"
+
+// HNSWLIB
+#include "hnswlib.h"
+
+///////////////////////////////////////////////////////////////////////////////
+// 1. PDF extraction using Poppler
+///////////////////////////////////////////////////////////////////////////////
+bool extractTextFromPDF(const std::string& pdfPath, std::string& outText) {
+    // Load the PDF document using Poppler
+    auto doc = poppler::document::load_from_file(pdfPath);
+    if (!doc) {
+        std::cerr << "Error: Could not open PDF: " << pdfPath << std::endl;
+        return false;
+    }
+
+    // Iterate over pages and extract text
+    int numPages = doc->pages();
+    for (int i = 0; i < numPages; i++) {
+        std::unique_ptr<poppler::page> page(doc->create_page(i));
+        if (page) {
+            outText += page->text().to_latin1() + "\n";
+        }
+    }
+
+    return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 2. Simple chunking function
+///////////////////////////////////////////////////////////////////////////////
+std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkSize = 1000) {
+    std::vector<std::string> chunks;
+    size_t start = 0;
+    while (start < fullText.size()) {
+        size_t end = std::min(start + maxChunkSize, fullText.size());
+        chunks.push_back(fullText.substr(start, end - start));
+        start = end;
+    }
+    return chunks;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 3. Placeholder embedding function
+//    In real usage, replace this with a call to your embedding model.
+///////////////////////////////////////////////////////////////////////////////
+std::vector<float> embedText(const std::string& text, int dimension) {
+    // Returns a vector of zeros for demonstration
+    std::vector<float> embedding(dimension, 0.0f);
+    return embedding;
+}
+
 int main(int argc, char** argv) {
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <path_to_pdf>" << std::endl;
