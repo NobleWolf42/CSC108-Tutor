@@ -68,12 +68,12 @@ int main(int argc, char** argv) {
     // std::cout << "Created " << chunks.size() << " chunks.\n";
 
     // 3) Embed each chunk
-    int dimension = 384;  // example embedding dimension
-    std::vector<std::vector<float>> embeddings;
-    embeddings.reserve(chunks.size());
-    for (const auto& c : chunks) {
-        embeddings.push_back(embedText(c, dimension));
-    }
+    // int dimension = 384;  // example embedding dimension
+    // std::vector<std::vector<float>> embeddings;
+    // embeddings.reserve(chunks.size());
+    // for (const auto& c : chunks) {
+    //     embeddings.push_back(embedText(c, dimension));
+    // }
 
     // 4) Build an HNSW index in memory
     int maxElements = static_cast<int>(chunks.size());
