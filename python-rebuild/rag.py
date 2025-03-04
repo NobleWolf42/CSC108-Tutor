@@ -4,14 +4,11 @@ from pypdf import PdfReader
 import chromadb
 import os
 
-# Define the LLM model to be used
+# Declare golbal vars
 llm_model = "llama3.2"
 
-# Configure ChromaDB
-# Initialize the ChromaDB client with persistent storage in the current directory
-chroma_client = chromadb.PersistentClient(path=os.path.join(os.getcwd(), "chroma_db"))
-
-# Define a custom embedding function for ChromaDB using Ollama
+# Initialize ChromaDB
+chroma_client = chromadb.PersistentClient(path=os.path.join(os.getcwd(), "chroma_db")) # This remembers data in-between runs
 class ChromaDBEmbeddingFunction:
     """
     Custom embedding function for ChromaDB using embeddings from Ollama.
@@ -23,13 +20,16 @@ class ChromaDBEmbeddingFunction:
         # Ensure the input is in a list format for processing
         if isinstance(input, str):
             input = [input]
-        return self.langchain_embeddings.embed_documents(input)
+
+        testdata = self.langchain_embeddings.embed_documents(input)
+        print(testdata)
+        return testdata
 
 # Initialize the embedding function with Ollama embeddings
 embedding = ChromaDBEmbeddingFunction(
     OllamaEmbeddings(
         model=llm_model,
-        base_url="http://localhost:11434"  # Adjust the base URL as per your Ollama server configuration
+        base_url="http://localhost:11434"
     )
 )
 
@@ -70,6 +70,7 @@ doc_ids = []
 
 folder_path = os.path.join(os.path.dirname(__file__), os.pardir, "data")
 
+
 for filename in os.listdir(folder_path):
     file_path = os.path.join(folder_path, filename)
     if os.path.isfile(file_path):
@@ -77,14 +78,17 @@ for filename in os.listdir(folder_path):
         print(f"Processing file: {filename}")
         doc_ids.append(filename)
         try:
-            documents.append(pdfToText(file_path))
-        except:
-            print()
+            f = open(filename.replace(".pdf", ".txt"), "w", encoding="utf-8")
+            f.write(pdfToText(file_path).replace("Isabel Thies", ""))
+            f.close()
+        except Exception as e:
+            print(e)
+
 
 
 # Documents only need to be added once or whenever an update is required. 
 # This line of code is included for demonstration purposes:
-add_documents_to_collection(documents, doc_ids)
+#add_documents_to_collection(documents, doc_ids)
 
 # Function to query the ChromaDB collection
 def query_chromadb(query_text, n_results=1):
@@ -143,6 +147,6 @@ def rag_pipeline(query_text):
 
 # Example usage
 # Define a query to test the RAG pipeline
-query = "How do you declare an unsigned int?"  # Change the query as needed
-response = rag_pipeline(query)
-print("######## Response from LLM ########\n", response)
+#query = "How do you declare an unsigned int?"  # Change the query as needed
+#response = rag_pipeline(query)
+#print("######## Response from LLM ########\n", response)

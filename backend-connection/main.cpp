@@ -1,7 +1,5 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
-#include "httplib.h"
 #include "query.h"
-#include <iostream>
 #include <sstream>
 #include <fstream>
 
