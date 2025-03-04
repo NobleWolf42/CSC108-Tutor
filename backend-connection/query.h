@@ -1,23 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <memory>
-
-// POPPLER (for PDF to text)
-#include "poppler-document.h"
-#include "poppler-page.h"
-
-// HNSWLIB
-#include "hnswlib.h"
 #include "ollama.hpp"
 
+// POPPLER (for PDF to text)
 
-
-
-// call to Ollama
-
+// Querys Ollama and returns plain text
 std::string queryOllama(std::string input, std::string userCode)
 {
     std::string response = ollama::generate("llama3.2", input);
@@ -26,47 +13,25 @@ std::string queryOllama(std::string input, std::string userCode)
     return response;
 }
 
-
-// load the PDF document using Poppler
-
-bool extractTextFromPDF(const std::string& pdfPath, std::string& outText) {
-    
-    auto doc = poppler::document::load_from_file(pdfPath);
-    if (!doc) {
-        std::cerr << "Error: Could not open PDF: " << pdfPath << std::endl;
-        return false;
-    }
-
-    // Iterate over pages and extract text
-    int numPages = doc->pages();
-    for (int i = 0; i < numPages; i++) {
-        std::unique_ptr<poppler::page> page(doc->create_page(i));
-        if (page) {
-            outText += page->text().to_latin1() + "\n";
-        }
-    }
-
-    return true;
+// Generate embeddings call to Ollama and returns only the embeddings
+std::string embedOllama(std::string docText)
+{
+    return ollama::generate_embeddings("llama3.2", docText).as_json()["embeddings"];
 }
 
-
-// simple chunking function
-
-std::vector<std::string> chunkText(const std::string& fullText, size_t maxChunkSize = 1000) {
-    std::vector<std::string> chunks;
-    size_t start = 0;
-    while (start < fullText.size()) {
-        size_t end = std::min(start + maxChunkSize, fullText.size());
-        chunks.push_back(fullText.substr(start, end - start));
-        start = end;
+// Extract text from the TXT document
+std::string extractTextFromTXT(const std::string txtPath)
+{
+    std::ifstream txtFile(txtPath);
+    if (!txtFile)
+    {
+        std::cerr << "Error: Could not open TXT at " << txtPath << std::endl;
+        return "";
     }
-    return chunks;
-}
 
+    std::stringstream outText;
 
+    outText << txtFile.rdbuf();
 
-std::vector<float> embedText(const std::string& text, int dimension) {
-    // returns a vector of zeros for demonstration
-    std::vector<float> embedding(dimension, 0.0f);
-    return embedding;
+    return outText.str();
 }

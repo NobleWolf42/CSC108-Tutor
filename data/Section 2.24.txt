@@ -1,0 +1,92 @@
+2.23 Auto (since C++11)
+2.25 C++ example: Married-couple names with variables
+2.24 C++ example: Salary calculation with variables
+Using variables in expressions, rather than numbers like 40, makes a program more general and makes expressions more meaningful when
+read too.
+zyDE 2.24.1: Calculate salary: Generalize a program with variables and input.
+The following program uses a variable workHoursPerWeek rather than directly using 40 in the salary calculation expression.
+1. Run the program, observe the output. Change 40 to 35 (France's work week), and run again.
+2. Generalize the program further by using a variable workWeeksPerYear. Run the program. Change 50 to 52, and run again.
+3. Introduce a variable monthlySalary, used similarly to annualSalary, to further improve program readability.
+When values are stored in variables as above, the program can read user inputs for those values. If a value will never change, the variable
+can be declared as const.
+zyDE 2.24.2: Calculate salary: Generalize a program with variables and input.
+The program below has been generalized to read a user's input value for hourlyWage.
+1. Run the program. Notice the user's input value of 10 is used. Modify that input value, and run again.
+2. Generalize the program to get user input values for workHoursPerWeek and workWeeksPerYear (change those variables'
+initializations to 0). Run the program.
+3. monthsPerYear will never change, so declare that variable as const. Use the standard for naming constant variables. Ex: const int
+MAX_LENGTH = 99. Run the program.
+4. Change the values in the input area below the program, and run the program again.
+10
+How was this section? | 
+Load default template...
+#include <iostream>
+using namespace std;
+int main() {
+   int hourlyWage;
+   int workHoursPerWeek;
+   int annualSalary;
+   // TODO: Declare and initialize variable workWeeksPerYear, then replace the 50's below
+   hourlyWage = 20;
+   workHoursPerWeek = 40;
+   annualSalary = hourlyWage * workHoursPerWeek * 50;
+   cout << "Annual salary is: ";
+   cout << annualSalary << endl;
+Run 
+Feedback?
+Load default template...
+#include <iostream>
+using namespace std;
+int main() {
+   int hourlyWage;
+   int workHoursPerWeek;
+   int workWeeksPerYear;
+   int monthsPerYear;     // FIXME: Declare as const and use standard naming
+   int annualSalary;
+   int monthlySalary;
+   cout << "Enter hourly wage: " << endl;
+   cin >> hourlyWage;
+   // FIXME: Get user input values for workHoursPerWeek and workWeeksPerYear
+   workHoursPerWeek = 40;
+   workWeeksPerYear = 50;
+Run 
+Feedback?
+  Provide section feedback
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+ 
+ 
+ My library > CSC 108: Computer Science I home > 2.24: C++ example: Salary calculation with variables  zyBooks catalog  Help/FAQ  

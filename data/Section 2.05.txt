@@ -1,0 +1,181 @@
+2.4 Arithmetic expressions (general)
+
+Students:
+Section 2.5 is a part of 2 assignments:
+ This assignment's due date has passed. Activity will still be recorded, but will not count
+towards this assignment (unless the due date is changed). See this article for more info.
+Includes: CA
+Activity summary for assignment: 41 / 41 points
+This assignment's due date has passed. Activity will still be recorded, but will not count towards this assignment (unless the
+due date is changed). See this article for more info.
+41 / 41 points submitted to
+BlackboardLearn
+2.6 Example: Health data
+Due: 02/04/2025, 11:59 PM EST
+2.5 Arithmetic expressions (int)
+Below is a simple program that includes an expression involving integers.
+Figure 2.5.1: Expressions examples: Leasing cost.
+#include <iostream>
+using namespace std;
+/* Computes the total cost of leasing a car given the down payment,
+   monthly rate, and number of months
+*/
+int main() {
+   int downPayment;
+   int paymentPerMonth;
+   int numMonths;
+   int totalCost;  // Computed total cost to be output
+   cout << "Enter down payment: ";
+   cin  >> downPayment;
+   cout << "Enter monthly payment: ";
+   cin  >> paymentPerMonth;
+   cout << "Enter number of months: ";
+   cin  >> numMonths;
+   totalCost = downPayment + (paymentPerMonth * numMonths);
+   cout << "Total cost: " << totalCost << endl;
+   return 0;
+}
+Enter down payment: 500
+Enter monthly payment: 300
+Enter number of months: 60
+Total cost: 18500
+PARTICIPATION
+ACTIVITY 2.5.1: Simple program with an arithmetic expression.
+Consider the example above.
+1) Would removing the parentheses as below have yielded the same
+result?
+downPayment + paymentPerMonth * numMonths;
+Yes
+No
+2) Would using two assignment statements as below have yielded the
+same result? Assume this declaration exists: int totalMonthly
+totalMonthly = paymentPerMonth * numMonths;
+totalCost = downPayment + totalMonthly;
+Yes
+No
+Style: Single space around operators
+A good practice is to include a single space around operators for readability, as in numItems + 2, rather than numItems+2. An exception is
+minus used as negative, as in: xCoord = -yCoord. Minus (-) used as negative is known as unary minus.
+PARTICIPATION
+ACTIVITY 2.5.2: Single space around operators.
+Retype each statement to follow the good practice of a single space around operators.
+Note: If an answer is marked wrong, something differs in the spacing, spelling, capitalization, etc. This activity emphasizes the
+importance of such details.
+1) housesCity = housesBlock *10; 
+2) tot = num1+num2+2;
+3) numBalls=numBalls+1;
+4) numEntries = (userVal+1)*2;
+Compound operators
+Special operators called compound operators provide a shorthand way to update a variable, such as userAge += 1 being shorthand for
+userAge = userAge + 1. Other compound operators include -=, *=, /=, and %=.
+PARTICIPATION
+ACTIVITY 2.5.3: Compound operators.
+1) numAtoms is initially 7. What is numAtoms after: numAtoms += 5?
+2) numAtoms is initially 7. What is numAtoms after: numAtoms *= 2?
+3) Rewrite the statement using a compound operator. If the statement
+can't be rewritten using a compound operator, type: Not possible
+carCount = carCount / 2;
+4) Rewrite the statement using a compound operator. If the statement
+can't be rewritten using a compound operator, type: Not possible
+numItems = boxCount + 1;
+No commas allowed
+Commas are not allowed in an integer literal. So 1,333,555 is written as 1333555.
+PARTICIPATION
+ACTIVITY 2.5.4: Expression in statements.
+1) Is the following an error? Suppose an int's maximum value is
+2,147,483,647.
+int numYears;
+numYears = 1,999,999,999;
+Yes
+No
+CHALLENGE
+ACTIVITY 2.5.1: Calculate the values of the integer expressions.
+620890.5010016.qx3z qy7 
+CHALLENGE
+ACTIVITY 2.5.2: Arithmetic expressions (int).
+620890.5010016.qx3z qy7 
+Integer variables height and length are read from input, representing the height and the length of a rectangle, respectively. Assign
+recPerimeter with the perimeter of the rectangle.
+Ex: If the input is 20 11, then the output is:
+Perimeter: 62
+Note: The perimeter of a rectangle is calculated by multiplying the sum of the height and the length by 2.
+1
+2
+How was this section? | 
+Feedback?
+Feedback?
+Check Show answer
+Check Show answer
+Check Show answer
+Check Show answer
+Feedback?
+Check Show answer
+Check Show answer
+Check Show answer
+Check Show answer
+Feedback?
+Feedback?
+Start
+Type the program's output
+#include <iostream>
+using namespace std;
+int main() {
+   int x;
+   int y;
+   
+   x = 4;
+   y = x * 1;  
+   cout << y << endl;
+   
+   return 0;
+}
+4
+2 3 4
+1
+2
+3
+4
+Check
+Next
+Feedback?
+Start
+#include  <iostream>
+using  namespace  std ;
+int  main ( )  {
+   int  height ;
+   int  length ;
+   int  recPerimeter ;
+   cin  >>  height ;
+   cin  >>  length ;
+   /* Your code goes here */
+   cout  <<  " Perimeter: "  <<  recPerimeter  <<  endl ;
+   return  0 ;
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+2
+Check Next level
+Feedback?
+  Provide section feedback
+Due: 02/04/2025, 11:59 PM EST
+Completion details 
+1
+1
+CSC108 CH02.1-2.10 C2A
+CSC108 CH02.1-2.10 C2A
+ My library > CSC 108: Computer Science I home > 2.5: Arithmetic expressions (int)  zyBooks catalog  Help/FAQ  
