@@ -1,2 +1,7 @@
 https://ollama.com/download
 ollama pull llama3.2
+
+build
+pip install chromadb
+pip install langchain_ollama
+pip install flask

@@ -1,14 +1,9 @@
 # Import required libraries
 from langchain_ollama import OllamaEmbeddings, OllamaLLM
-from pypdf import PdfReader
 import chromadb
 import os
 
-# Declare golbal vars
-llm_model = "llama3.2"
-
-# Initialize ChromaDB
-chroma_client = chromadb.PersistentClient(path=os.path.join(os.getcwd(), "chroma_db")) # This remembers data in-between runs
+#Borrowed this from a tutorial
 class ChromaDBEmbeddingFunction:
     """
     Custom embedding function for ChromaDB using embeddings from Ollama.
@@ -25,83 +20,61 @@ class ChromaDBEmbeddingFunction:
         print(testdata)
         return testdata
 
+# Declare global vars
+model = "llama3.2"
+
+# Initialize ChromaDB
+chromaClient = chromadb.PersistentClient(path=os.path.join(os.getcwd(), "chroma_db")) # This remembers data in-between runs
+
 # Initialize the embedding function with Ollama embeddings
 embedding = ChromaDBEmbeddingFunction(
     OllamaEmbeddings(
-        model=llm_model,
+        model=model,
         base_url="http://localhost:11434"
     )
 )
 
 # Define a collection for the RAG workflow
-collection_name = "zybooks_cpp_chapters_1_2"
-collection = chroma_client.get_or_create_collection(
-    name=collection_name,
+collection = chromaClient.get_or_create_collection(
+    name="zybooks_cpp_chapters_1_2",
     metadata={"description": "A collection for RAG with Ollama - Chapters 1 and 2 of Zybooks C++"},
     embedding_function=embedding  # Use the custom embedding function
 )
-
-# Read PDF files into ChromaDB
-def pdfToText(pdfPath):
-    text = ""
-    with open(pdfPath, 'rb') as file:
-        reader = PdfReader(file)
-        for page in reader.pages:
-            text += page.extract_text() or ""
-    return text
-
-# Function to add documents to the ChromaDB collection
-def add_documents_to_collection(documents, ids):
-    """
-    Add documents to the ChromaDB collection.
     
-    Args:
-        documents (list of str): The documents to add.
-        ids (list of str): Unique IDs for the documents.
-    """
+# Function to add documents to the ChromaDB collection
+def addDocumentsToCollection(documents, ids):
     collection.add(
         documents=documents,
         ids=ids
     )
 
-#Add documents to the collection
-documents = []
-doc_ids = []
-
-folder_path = os.path.join(os.path.dirname(__file__), os.pardir, "data")
-
-
-for filename in os.listdir(folder_path):
-    file_path = os.path.join(folder_path, filename)
-    if os.path.isfile(file_path):
-        #Process each file
-        print(f"Processing file: {filename}")
-        doc_ids.append(filename)
-        try:
-            f = open(filename.replace(".pdf", ".txt"), "w", encoding="utf-8")
-            f.write(pdfToText(file_path).replace("Isabel Thies", ""))
-            f.close()
-        except Exception as e:
-            print(e)
-
-
-
-# Documents only need to be added once or whenever an update is required. 
-# This line of code is included for demonstration purposes:
-#add_documents_to_collection(documents, doc_ids)
+# Initialise the RAG backend
+def initializeRAG():
+    
+    #Add documents to the collection
+    documents = []
+    docIds = []
+    folderPath = os.path.join(os.path.dirname(__file__), os.pardir, "data")
+    
+    for filename in os.listdir(folderPath):
+        filePath = os.path.join(folderPath, filename)
+        if os.path.isfile(filePath):
+            #Process each file
+            print(f"Processing file: {filename}")
+            docIds.append(filename.replace(".txt", ""))
+            try:
+                f = open(filePath, "r", encoding="utf-8")
+                documents.append(f.read())
+                f.close()
+            except Exception as e:
+                print(e)
+    
+    #since its persistent this could be called only when needed to update the info
+    addDocumentsToCollection(documents, docIds)
+    return
 
 # Function to query the ChromaDB collection
-def query_chromadb(query_text, n_results=1):
-    """
-    Query the ChromaDB collection for relevant documents.
-    
-    Args:
-        query_text (str): The input query.
-        n_results (int): The number of top results to return.
-    
-    Returns:
-        list of dict: The top matching documents and their metadata.
-    """
+def queryChromadb(query_text, n_results=1):
     results = collection.query(
         query_texts=[query_text],
         n_results=n_results
@@ -109,44 +82,20 @@ def query_chromadb(query_text, n_results=1):
     return results["documents"], results["metadatas"]
 
 # Function to interact with the Ollama LLM
-def query_ollama(prompt):
-    """
-    Send a query to Ollama and retrieve the response.
-    
-    Args:
-        prompt (str): The input prompt for Ollama.
-    
-    Returns:
-        str: The response from Ollama.
-    """
-    llm = OllamaLLM(model=llm_model)
+def queryOllama(prompt):
+    llm = OllamaLLM(model=model)
     return llm.invoke(prompt)
 
 # RAG pipeline: Combine ChromaDB and Ollama for Retrieval-Augmented Generation
-def rag_pipeline(query_text):
-    """
-    Perform Retrieval-Augmented Generation (RAG) by combining ChromaDB and Ollama.
-    
-    Args:
-        query_text (str): The input query.
-    
-    Returns:
-        str: The generated response from Ollama augmented with retrieved context.
-    """
+def ragConstruction(queryText, messageHistory=""):
     # Step 1: Retrieve relevant documents from ChromaDB
-    retrieved_docs, metadata = query_chromadb(query_text)
-    context = " ".join(retrieved_docs[0]) if retrieved_docs else "No relevant documents found."
+    retrievedDocs, metadata = queryChromadb(queryText)
+    context = " ".join(retrievedDocs[0]) if retrievedDocs else "No relevant documents found."
 
     # Step 2: Send the query along with the context to Ollama
-    augmented_prompt = f"Context: {context}\n\nQuestion: {query_text}\nAnswer:"
+    augmentedPrompt = f"Context: {context}\n\nHistory: {messageHistory}\n\nQuestion: {queryText}\nAnswer:"
     print("######## Augmented Prompt ########")
-    print(augmented_prompt)
+    print(augmentedPrompt)
 
-    response = query_ollama(augmented_prompt)
+    response = queryOllama(augmentedPrompt)
     return response
-
-# Example usage
-# Define a query to test the RAG pipeline
-#query = "How do you declare an unsigned int?"  # Change the query as needed
-#response = rag_pipeline(query)
-#print("######## Response from LLM ########\n", response)
