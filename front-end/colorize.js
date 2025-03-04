@@ -20,6 +20,7 @@ const highlight = (inputEl, highlightEl) => {
     window.requestAnimationFrame(() => {
         const highlighted = hljs.highlight(inputEl.value, {
             language: "cpp",
+            ignoreIllegals: true,
         }).value;
         highlightEl.innerHTML = highlighted;
     });
