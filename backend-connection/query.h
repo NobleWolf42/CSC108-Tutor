@@ -75,7 +75,7 @@ std::vector<float> embedTextWithOllama(const std::string& text, const std::strin
     ollama::response embResp = ollama::generate_embeddings("llama3.2", text);
 
     // 2) Parse the float vector from embResp
-    //    We'll assume there's a method called get_embeddings()
+    
     
     std::vector<float> embedding = embResp;              //***** not sure what to do with this  */
 
