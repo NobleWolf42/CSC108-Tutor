@@ -53,4 +53,6 @@ def delete_item(item_id):
     return jsonify({"message": "Item not found"}), 404
 
 if __name__ == '__main__':
+    from waitress import serve
+    #serve(app, host="0.0.0.0", port=3006)
     app.run(debug=True)
