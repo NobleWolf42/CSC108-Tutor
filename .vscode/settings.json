@@ -96,6 +96,5 @@
         "variant": "cpp",
         "queue": "cpp"
     },
-    "cSpell.words": ["jsonify", "Ollama", "poppler"],
-    "cmake.sourceDirectory": "D:/Hardlinks/Documents/School/CSC-Homework/Intro to Software Engineering CSC 212-90/CSC108-Tutor/backend-connection"
+    "cSpell.words": ["jsonify", "Ollama", "poppler"]
 }

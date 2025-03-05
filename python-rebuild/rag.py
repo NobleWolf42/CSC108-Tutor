@@ -17,7 +17,6 @@ class ChromaDBEmbeddingFunction:
             input = [input]
 
         testdata = self.langchain_embeddings.embed_documents(input)
-        print(testdata)
         return testdata
 
 # Declare global vars
@@ -60,7 +59,6 @@ def initializeRAG():
         filePath = os.path.join(folderPath, filename)
         if os.path.isfile(filePath):
             #Process each file
-            print(f"Processing file: {filename}")
             docIds.append(filename.replace(".txt", ""))
             try:
                 f = open(filePath, "r", encoding="utf-8")

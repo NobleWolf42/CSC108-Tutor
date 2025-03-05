@@ -27,7 +27,7 @@ function sendMessage() {
     const userMsg = document.getElementById("usrMessage").value;
     const userCode = document.getElementById("codeMessage").value;
     const http = new XMLHttpRequest();
-    const url = "https://bencarpenterit.com:3006/questions";
+    const url = "http://127.0.0.1:5000/questions";
 
     document.getElementById("usrMessage").value = "";
     document.getElementById("messageHistory").innerHTML =
@@ -85,7 +85,7 @@ async function runCode() {
     const userCodeNewLine = userCode.replace(/\r\n|\r|\n/g, "\\n");
     const userCodeNoQuote = userCodeNewLine.replace(/"/g, '\\"');
     const http = new XMLHttpRequest();
-    const url = "https://bencarpenterit.com:3006/code";
+    const url = "http://127.0.0.1:5000/code";
 
     document.getElementById("outputHere").innerHTML = "";
     TypeWriterAnimation(
