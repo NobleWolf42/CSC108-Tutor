@@ -1,10 +1,24 @@
 from flask import Flask, request, make_response
-
+import requests
 app = Flask(__name__)
 
+
+
 def queryOllama(usrMsg, usrCode):
-    # Replace this with the actual implementation.
-    return f"Processed question: {usrMsg}\nProcessed code: {usrCode}"
+
+    api_url = ""
+    
+    payload = {
+        "message" : usrMsg,
+        "code" : usrCode
+    }
+
+    response = requests.post(api_url,json=payload)
+    
+    return response.text
+
+
+
 
 @app.route('/questions', methods=['POST'])
 def questions():
