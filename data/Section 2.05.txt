@@ -1,17 +1,3 @@
-2.4 Arithmetic expressions (general)
-
-Students:
-Section 2.5 is a part of 2 assignments:
- This assignment's due date has passed. Activity will still be recorded, but will not count
-towards this assignment (unless the due date is changed). See this article for more info.
-Includes: CA
-Activity summary for assignment: 41 / 41 points
-This assignment's due date has passed. Activity will still be recorded, but will not count towards this assignment (unless the
-due date is changed). See this article for more info.
-41 / 41 points submitted to
-BlackboardLearn
-2.6 Example: Health data
-Due: 02/04/2025, 11:59 PM EST
 2.5 Arithmetic expressions (int)
 Below is a simple program that includes an expression involving integers.
 Figure 2.5.1: Expressions examples: Leasing cost.
@@ -102,19 +88,19 @@ Note: The perimeter of a rectangle is calculated by multiplying the sum of the h
 1
 2
 How was this section? | 
-Feedback?
-Feedback?
+
+
 Check Show answer
 Check Show answer
 Check Show answer
 Check Show answer
-Feedback?
+
 Check Show answer
 Check Show answer
 Check Show answer
 Check Show answer
-Feedback?
-Feedback?
+
+
 Start
 Type the program's output
 #include <iostream>
@@ -137,7 +123,7 @@ int main() {
 4
 Check
 Next
-Feedback?
+
 Start
 #include  <iostream>
 using  namespace  std ;
@@ -151,31 +137,3 @@ int  main ( )  {
    cout  <<  " Perimeter: "  <<  recPerimeter  <<  endl ;
    return  0 ;
 }
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-2
-Check Next level
-Feedback?
-  Provide section feedback
-Due: 02/04/2025, 11:59 PM EST
-Completion details 
-1
-1
-CSC108 CH02.1-2.10 C2A
-CSC108 CH02.1-2.10 C2A
- My library > CSC 108: Computer Science I home > 2.5: Arithmetic expressions (int)  zyBooks catalog  Help/FAQ  

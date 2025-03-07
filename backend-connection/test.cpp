@@ -4,24 +4,13 @@
 int main()
 {
 
-    std::string input;
-    bool done = false;
-    std::string test = "this is a test";
+    // vecdb globals
+    std::vector<std::pair<std::string, std::string>> docsVec;
+    unum::usearch::metric_punned_t metric(3, unum::usearch::metric_kind_t::l2sq_k, unum::usearch::scalar_kind_t::f32_k);
+    unum::usearch::index_dense_t index = unum::usearch::index_dense_t::make(metric);
 
-    while (!done)
-    {
-        /*std::getline(std::cin, input);
-        if (input == "stop")
-        {
-            done = true;
-        }
-        else
-        {*/
-        // std::cout << std::filesystem::current_path().append("../data/Section 1.01.pdf").generic_string() << std::endl;
-        std::cout << "Response from Ollama: " << extractTextFromTXT(std::filesystem::current_path().append("../data/Section 1.01.txt").generic_string()) << std::endl;
-        done = true;
-        //  std::cout << "Response from Ollama: " << queryOllama(input,test) << std::endl;
-        // }
-    }
+    loopDocs("../data", docsVec, index);
+
+    std::cout << "Response from Ollama: " << queryOllama("The programmer on the left intentionally inserted a newline, Why?", "test", docsVec, index) << std::endl;
     return 0;
 }

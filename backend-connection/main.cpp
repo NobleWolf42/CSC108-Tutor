@@ -15,7 +15,7 @@ int main()
     inputFS >> jdKey;
     inputFS.close();
 
-    httplib::SSLServer svr("../cert.pem", "../key.pem");
+    httplib::SSLServer svr("cert.pem", "key.pem");
     httplib::Client cli("https://api.jdoodle.com");
 
     svr.Options("/(.*)", [&](const httplib::Request &req, httplib::Response &res)

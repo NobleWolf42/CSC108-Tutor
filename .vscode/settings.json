@@ -94,7 +94,8 @@
         "text_encoding": "cpp",
         "cinttypes": "cpp",
         "variant": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "shared_mutex": "cpp"
     },
     "cSpell.words": ["jsonify", "Ollama", "poppler"]
 }
