@@ -1,58 +1,48 @@
-from rag import ragConstruction, initializeRAG
-from flask import Flask, jsonify, request
-
-initializeRAG()
-
+from flask import Flask, request, make_response
+import requests
 app = Flask(__name__)
 
-# Sample data (in a real application, this would likely come from a database)
-items = [
-    {"id": 1, "name": "Item 1"},
-    {"id": 2, "name": "Item 2"}
-]
 
-# Route to get all items
-@app.route('/items', methods=['GET'])
-def get_items():
-    return jsonify(items)
 
-# Route to get a specific item by ID
-@app.route('/items/<int:item_id>', methods=['GET'])
-def get_item(item_id):
-    item = next((item for item in items if item['id'] == item_id), None)
-    if item:
-        return jsonify(item)
-    return jsonify({"message": "Item not found"}), 404
+def queryOllama(usrMsg, usrCode):
 
-# Route to create a new item
-@app.route('/items', methods=['POST'])
-def create_item():
-    new_item = request.get_json()
-    new_item['id'] = len(items) + 1
-    items.append(new_item)
-    return jsonify(new_item), 201
+    api_url = ""
+    
+    payload = {
+        "message" : usrMsg,
+        "code" : usrCode
+    }
 
-# Route to update an existing item
-@app.route('/items/<int:item_id>', methods=['PUT'])
-def update_item(item_id):
-    updated_item = request.get_json()
-    for index, item in enumerate(items):
-        if item['id'] == item_id:
-            updated_item['id'] = item_id
-            items[index] = updated_item
-            return jsonify(updated_item)
-    return jsonify({"message": "Item not found"}), 404
+    response = requests.post(api_url,json=payload)
+    
+    return response.text
 
-# Route to delete an item
-@app.route('/items/<int:item_id>', methods=['DELETE'])
-def delete_item(item_id):
-    for index, item in enumerate(items):
-        if item['id'] == item_id:
-            del items[index]
-            return jsonify({"message": "Item deleted"})
-    return jsonify({"message": "Item not found"}), 404
+
+
+
+@app.route('/questions', methods=['POST'])
+def questions():
+    # Get the 'usermsg' header value from the request.
+    usrMsg = request.headers.get('usermsg', '')
+    
+    # Get the request body as a string.
+    usrCode = request.get_data(as_text=True)
+    
+    # Log the received values.
+    print("Question:", usrMsg, "\n")
+    print("Code:", usrCode, "\n")
+    
+    # Process the inputs.
+    result = queryOllama(usrMsg, usrCode)
+    
+    # Create the response with the correct content type.
+    response = make_response(result)
+    response.headers['Content-Type'] = 'text/plain'
+    
+    # Set CORS header to allow only the specified origin.
+    response.headers['Access-Control-Allow-Origin'] = 'https://bencarpenterit.com'
+    
+    return response
 
 if __name__ == '__main__':
-    from waitress import serve
-    #serve(app, host="0.0.0.0", port=3006)
     app.run(debug=True)
