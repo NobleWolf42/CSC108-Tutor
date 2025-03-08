@@ -66,43 +66,22 @@ can't be rewritten using a compound operator, type: Not possible
 numItems = boxCount + 1;
 No commas allowed
 Commas are not allowed in an integer literal. So 1,333,555 is written as 1333555.
-PARTICIPATION
-ACTIVITY 2.5.4: Expression in statements.
+
+Expression in statements.
 1) Is the following an error? Suppose an int's maximum value is
 2,147,483,647.
 int numYears;
 numYears = 1,999,999,999;
 Yes
 No
-CHALLENGE
-ACTIVITY 2.5.1: Calculate the values of the integer expressions.
-620890.5010016.qx3z qy7 
-CHALLENGE
-ACTIVITY 2.5.2: Arithmetic expressions (int).
-620890.5010016.qx3z qy7 
+
+Arithmetic expressions (int).
 Integer variables height and length are read from input, representing the height and the length of a rectangle, respectively. Assign
 recPerimeter with the perimeter of the rectangle.
 Ex: If the input is 20 11, then the output is:
 Perimeter: 62
 Note: The perimeter of a rectangle is calculated by multiplying the sum of the height and the length by 2.
-1
-2
-How was this section? | 
 
-
-Check Show answer
-Check Show answer
-Check Show answer
-Check Show answer
-
-Check Show answer
-Check Show answer
-Check Show answer
-Check Show answer
-
-
-Start
-Type the program's output
 #include <iostream>
 using namespace std;
 int main() {
@@ -115,16 +94,7 @@ int main() {
    
    return 0;
 }
-4
-2 3 4
-1
-2
-3
-4
-Check
-Next
 
-Start
 #include  <iostream>
 using  namespace  std ;
 int  main ( )  {
