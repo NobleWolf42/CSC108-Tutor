@@ -36,7 +36,7 @@ int main() {
    cin >> firstName1;
    cout << "What is the first person's last name?" << endl;
    cin >> lastName1;
-Run 
+
 
 Load default template...
 #include <iostream>
@@ -54,3 +54,4 @@ int main() {
    cin >> firstName1;
    cout << "What is the first person's last name?" << endl;
    cin >> lastName1;
+}
