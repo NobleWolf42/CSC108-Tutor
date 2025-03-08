@@ -130,7 +130,7 @@ async function runCode() {
         }
     };
 
-    http.send(userCodeNoQuote);
+    http.send(userCode);
 }
 
 //#region TypeWriter Animation Control
