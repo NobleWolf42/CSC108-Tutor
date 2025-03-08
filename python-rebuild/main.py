@@ -1,24 +1,22 @@
+from rag import ragConstruction, initializeRAG
 from flask import Flask, request, make_response
 import requests
 app = Flask(__name__)
 
+initializeRAG()
 
-
-def queryOllama(usrMsg, usrCode):
-
-    api_url = ""
+@app.before_request
+def before_request():
+    if request.method == 'OPTIONS':
+        response = make_response()
+        return response
     
-    payload = {
-        "message" : usrMsg,
-        "code" : usrCode
-    }
-
-    response = requests.post(api_url,json=payload)
-    
-    return response.text
-
-
-
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+    return response
 
 @app.route('/questions', methods=['POST'])
 def questions():
@@ -33,14 +31,14 @@ def questions():
     print("Code:", usrCode, "\n")
     
     # Process the inputs.
-    result = queryOllama(usrMsg, usrCode)
+    result = ragConstruction(usrMsg, "")
     
     # Create the response with the correct content type.
     response = make_response(result)
-    response.headers['Content-Type'] = 'text/plain'
+    response.headers.add('Content-Type', 'text/plain')
     
     # Set CORS header to allow only the specified origin.
-    response.headers['Access-Control-Allow-Origin'] = 'https://bencarpenterit.com'
+    #response.headers.add('Access-Control-Allow-Origin', '*')
     
     return response
 

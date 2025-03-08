@@ -17,9 +17,10 @@ std::vector<float> embedOllama(std::string docText)
 int findDoc(std::string query, unum::usearch::index_dense_t &index)
 {
     std::vector<float> temp = embedOllama(query);
-    if (index.search(&temp[0], 1).size() > 0)
+    auto results = index.search(&temp[0], 10);
+    if (results.size() > 0)
     {
-        return index.search(&temp[0], 1)[0].member.key;
+        return results[0].member.slot;
     }
     return -1;
 }
@@ -27,13 +28,20 @@ int findDoc(std::string query, unum::usearch::index_dense_t &index)
 // Querys Ollama and returns plain text
 std::string queryOllama(std::string input, std::string userCode, std::vector<std::pair<std::string, std::string>> &docsVec, unum::usearch::index_dense_t &index)
 {
-    std::string context = "";
-    if (findDoc(input, index) > -1)
+    std::string context = "No Document Found";
+    int i = findDoc(input, index);
+    if (i > -1)
     {
+        context = docsVec[i].second;
     }
     std::string augmentedQuery = "Context: " + context + "\n\nHistory: " + "" + "\n\nQuestion: " + input;
     std::string response = ollama::generate("llama3.2", augmentedQuery);
-    // std::cout << "Response from Ollama: " << response << std::endl << std::endl;
+    std::cout << "CONTEXT: " << context << std::endl
+              << std::endl;
+    if (i > -1)
+    {
+        response += "\nReference: " + docsVec[i].first;
+    }
     return response;
 }
 
