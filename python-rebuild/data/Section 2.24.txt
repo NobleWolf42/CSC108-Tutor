@@ -1,4 +1,4 @@
-2.24 C++ example: Salary calculation with variables
+
 Using variables in expressions, rather than numbers like 40, makes a program more general and makes expressions more meaningful when
 read too.
 zyDE 2.24.1: Calculate salary: Generalize a program with variables and input.
@@ -16,8 +16,7 @@ initializations to 0). Run the program.
 3. monthsPerYear will never change, so declare that variable as const. Use the standard for naming constant variables. Ex: const int
 MAX_LENGTH = 99. Run the program.
 4. Change the values in the input area below the program, and run the program again.
-10
-How was this section? | 
+
 Load default template...
 #include <iostream>
 using namespace std;
