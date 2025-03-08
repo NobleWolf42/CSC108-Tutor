@@ -5,4 +5,4 @@ build
 pip install chromadb
 pip install langchain_ollama
 pip install flask
-pip install waitress
+pip install gevent

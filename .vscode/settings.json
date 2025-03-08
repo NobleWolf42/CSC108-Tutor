@@ -97,5 +97,5 @@
         "queue": "cpp",
         "shared_mutex": "cpp"
     },
-    "cSpell.words": ["jsonify", "Ollama", "poppler"]
+    "cSpell.words": ["jsonify", "Ollama", "poppler", "pywsgi"]
 }
