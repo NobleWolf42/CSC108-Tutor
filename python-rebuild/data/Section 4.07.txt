@@ -1,0 +1,258 @@
+4.6 Loops and strings
+Students:
+Section 4.7 is a par t of 2 assignments :
+Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor eIncludes : CA
+Activity summar y for assignment: 0 / 12 points
+Please br owse t o this assignment thr ough
+Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor e
+4.8 Developing pr ograms incr ementallyDue: 03/13/2025, 11:59 PM ED T
+4.7 Nested loops
+A nested loop  is a loop that appears in the body of another loop. The nested loops ar e commonly r eferred to as the inner loop  and outer
+loop .
+Nested loops ha ve various uses. One use is t o gener ate all combinations of some items. F or example, the following pr ogram gener ates all
+two-letter .com Internet domain names.
+Figur e 4.7.1: Nested loops example: Two-letter domain name printing pr ogram.
+#include  <iostream>
+using  namespace  std;
+/* Output all two-letter .com Internet domain names */
+int  main()  {
+   char  letter1;
+   char  letter2;
+   
+   cout  <<  "Two-letter domain names:"  <<  endl;
+   
+   letter1  =  'a';
+   while  (letter1  <=  'z')  {
+      letter2  =  'a';
+      while  (letter2  <=  'z')  {
+         cout  <<  letter1  <<  letter2  <<  ".com"  <<  endl;
+         ++letter2;
+      }
+      ++letter1;
+   }
+   
+   return  0;
+}Two-letter domain names:
+aa.com
+ab.com
+ac.com
+ad.com
+ae.com
+af.com
+ag.com
+ah.com
+ai.com
+aj.com
+ak.com
+al.com
+am.com
+an.com
+ao.com
+ap.com
+aq.com
+ar.com
+as.com
+at.com
+au.com
+av.com
+aw.com
+ax.com
+ay.com
+az.com
+ba.com
+bb.com
+bc.com
+bd.com
+be.com
+...
+zw.com
+zx.com
+zy.com
+zz.com
+Note that the pr ogram mak es use of ascending char acters being encoded as ascending numbers, e.g., ' a' is 97, 'b ' is 98, etc., so assigning ' a'
+to letter1 and then incr ementing yields 'b '.
+(Forget about buying a two-letter domain name: They are all tak en, and each sells for se veral hundr ed thousand or millions of dollars.
+Sour ce: dnjournal.com, 2012).
+zyDE 4.7.1: Two char acter dotcom domain names.
+Modify the pr ogram t o include two-char acter .com names wher e the second char acter can be a letter or a number , as in a2.com. Hint:
+Add a second loop, following the while (letter2 <= 'z')  loop, t o handle numbers.
+Below is a nested loop example that gr aphically depicts an integer 's magnitude b y using asterisks, cr eating a "hist ogram." The inner loop is
+a for loop that handles the printing of the asterisks. The outer loop is a while loop that handles ex ecuting until a negativ e number is enter ed.
+Figur e 4.7.2: Nested loop example: Hist ogram.
+#include  <iostream>
+using  namespace  std;
+int  main()  {
+   int  numAsterisk ;   // Number of asterisks to print
+   int  i;             // Loop counter
+   
+   numAsterisk  =  0;
+   while  (numAsterisk  >=  0)  {
+      cout  <<  "Enter an integer (negative to quit): " ;
+      cin  >>  numAsterisk ;
+      
+      if  (numAsterisk  >=  0)  {
+         cout  <<  "Depicted graphically:"  <<  endl;
+         for  (i  =  1;  i  <=  numAsterisk ;  ++i)  {
+            cout  <<  "*";
+         }
+         cout  <<  endl  <<  endl;
+      }
+   }
+   
+   cout  <<  "Goodbye."  <<  endl;
+   return  0;
+}Enter an integer (negative to quit): 9
+Depicted graphically:
+*********
+Enter an integer (negative to quit): 23
+Depicted graphically:
+***********************
+Enter an integer (negative to quit): 35
+Depicted graphically:
+***********************************
+Enter an integer (negative to quit): -1
+Goodbye.
+P AR TICIP A TION
+A C TIVI T Y4.7.1:  Nested loops: Inner loop ex ecution.
+1)Given the following code, how many times will the inner loop body
+execute?
+int  row;
+int  col;
+for(row  =  0;  row  <  2;  row  =  row  +  1)  {
+   for(col  =  0;  col  <  3;  col  =  col  +  1)  {
+      // Inner loop body
+   }
+}
+2)Given the following code, how many times will the inner loop body
+execute?
+char  letter1;
+char  letter2;
+letter1  =  'a';
+while  (letter1  <=  'f')  {
+   letter2  =  'c';
+   while  (letter2  <=  'f')  {
+      // Inner loop body
+      ++letter2;
+   }
+   ++letter1;
+}
+P AR TICIP A TION
+A C TIVI T Y4.7.2:  Nested loops: What is the output.
+1)What is output b y the following code?
+int  row;
+int  col;
+for(row  =  2;  row  <=  3;  row  =  row  +  1)  {
+   for(col  =  0;  col  <=  1;  col  =  col  +  1)  {
+      cout  <<  row  <<  col  <<  " ";
+   }
+}
+2)What is output b y the following code?
+char  letter1;
+char  letter2;
+letter1  =  'y';
+while  (letter1  <=  'z')  {
+   letter2  =  'a';
+   while  (letter2  <=  'c')  {
+      cout  <<  letter1  <<  letter2  <<  " ";
+      ++letter2;
+   }
+   ++letter1;
+}
+CH ALLENGE
+A C TIVI T Y 4.7.1:  Nested loops.
+620890.5010016.qx3z qy7
+Integers star tRange and endRange ar e read fr om input. The inner while loop ex ecutes (endRange + 1)  times for each iter ation of
+the outer while loop. Complete the outer while loop t o execute (star tRange + 1)  times.
+Ex: If the input is 5 2, then the output is:
+Inner loop ran 18 times1
+2
+3
+4
+How was this section? |Feedback?
+Load default template...
+#include  <iostream>
+using namespace  std;
+/* Output all two-letter .com Internet domain names
+int main() {
+   char letter1;
+   char letter2;
+   
+   cout << "Two-letter domain names: " << endl;
+   
+   letter1 = 'a';
+   while (letter1 <= 'z') {
+      letter2 = 'a';
+      while (letter2 <= 'z') {
+         cout << letter1 << letter2 << ".com" << en
+         ++letter2;
+      }Run
+Feedback?
+Feedback?
+Check Show answer
+Check Show answer
+Feedback?
+Check Show answer
+Check Show answer
+Feedback?
+Star t
+#include  <iostream>
+using namespace  std;
+int main() {
+   int startRange ;
+   int endRange ;
+   int count;
+   int i;
+   int j;
+   cin >> startRange ;
+   cin >> endRange ;
+   count = 0;
+   i = 0;
+   while (/* Your code goes here */ ) {
+      j = 0;
+      while (j <= endRange ) {1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+2 3 4
+Check Next le vel
+Feedback?
+ Provide section f eedback
+Due: 03/13/2025, 11:59 PM ED T
+Completion details 11
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+CSC108 CH04.7-4.13 C4B
+CSC108 CH04.7-4.13 C4B  My libr ary>CSC 108: Computer Science I home >4.7: Nested loops zyBooks catalog Help/F AQ

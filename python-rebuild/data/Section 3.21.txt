@@ -1,0 +1,99 @@
+3.20 C++ example: Salar y calculation with br anches
+Students:
+Section 3.21 is a par t of 1 assignment :CSC108 CH03.11-3.20 P3B
+This assignment' s due date has passed. Activity will still be r ecor ded, but will not count
+towar ds this assignment (unless the due date is changed). See this ar ticle for mor e info.Includes : PA
+Activity summar y for assignment: CSC108 CH03.11-3.20 P3B 96 / 96 points
+This assignment' s due date has passed. Activity will still be r ecor ded, but will not count t owar ds this assignment (unless the
+due date is changed). See this ar ticle for mor e info.96 / 96 points  submitted t o
+Blackboar dLearn
+3.22 Ch 3 W arm up: Text message abbr eviation decoder (C++)Due: 02/25/2025, 11:59 PM EST
+3.21  C++ example: Sear ch for name using br anches
+zyDE 3.21.1: Sear ch for name using br anches.
+A core generic t op-le vel domain (cor e gTLD)  name is one of the following Internet domains: .com, .net, .or g, and .info ( ICANN: gTLDs ).
+The following pr ogram asks the user t o input a name and prints whether that name is a gTLD . The pr ogram uses the equality oper ators
+==, which e valuates t o true if the two compar ed strings ar e identical.
+1. Run the pr ogram, noting that the .info input name is not curr ently r ecogniz ed as a gTLD .
+2. Extend the if-else statement t o detect the .info domain name as a gTLD . Run the pr ogram again.
+3. Extend the pr ogram t o allow the user t o enter the name with or without the leading dot, so .com or just com.
+.info
+Below is a solution t o the abo ve problem.
+zyDE 3.21.2: Sear ch for name using br anches (solution).
+.info
+How was this section? |Load default template...
+#include  <iostream>
+#include  <string>
+#include  <cctype>
+using namespace  std;                       
+int main() {
+   string inputName ;
+   string searchName ;
+   string coreGtld1 ;
+   string coreGtld2 ;
+   string coreGtld3 ;
+   // FIXME: Add a fourth core gTLD: .info
+   bool isCoreGtld  = false;
+   coreGtld1  = ".com";
+   coreGtld2  = ".net";
+   coreGtld3  = ".org";
+Run
+Feedback?
+Load default template...
+#include  <iostream>
+#include  <string>
+#include  <cctype>
+using namespace  std;                     
+int main() {
+   string inputName ;
+   string searchName ;
+   string coreGtld1 ;
+   string coreGtld2 ;
+   string coreGtld3 ;
+   string coreGtld4 ;
+   bool isCoreGtld ;
+   coreGtld1  = ".com";
+   coreGtld2  = ".net";
+   coreGtld3  = ".org";
+   coreGtld4  = ".info";
+Run
+Feedback?
+  Provide section f eedback
+Due: 02/25/2025, 11:59 PM EST
+Completion details 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+  My libr ary>CSC 108: Computer Science I home >3.21: C++ example: Sear ch for name using br anches zyBooks catalog Help/F AQ
