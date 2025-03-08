@@ -81,5 +81,5 @@ def hello():
     return response
 
 if __name__ == '__main__':
-    pywsgi.WSGIServer(('0.0.0.0', int(port)), app, keyfile=key, certfile=cert).serve_forever()
-    #app.run(debug=True)
+    #pywsgi.WSGIServer(('0.0.0.0', int(port)), app, keyfile=key, certfile=cert).serve_forever()
+    app.run(debug=True)
