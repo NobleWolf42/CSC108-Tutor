@@ -34,6 +34,9 @@ def after_request(response):
 def questions():
     # Get the 'usermsg' header value from the request.
     usrMsg = request.headers.get('usermsg', '')
+
+    # Get the 'usermsg' header value from the request.
+    messageHistory = request.headers.get('msgHistory', '')
     
     # Get the request body as a string.
     usrCode = request.get_data(as_text=True)
@@ -43,7 +46,7 @@ def questions():
     print("Code:", usrCode, "\n")
     
     # Process the inputs.
-    result = ragConstruction(usrMsg, "")
+    result = ragConstruction(usrMsg, messageHistory, usrCode)
     
     # Create the response with the correct content type.
     response = make_response(result)
