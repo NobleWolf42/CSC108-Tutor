@@ -210,4 +210,16 @@ function TypeWriterAnimation(elem, text) {
     };
     //#endregion
 }
+
+let chatHistory = [];
+
+ const chatMessage = {
+	 
+	 role: 'user',
+	 content: 'Why is the sky blue?'
+	 
+ };
+ //add message to chatHistory
+ chatHistory.push(chatMessage);
+ 
 //#endregion
