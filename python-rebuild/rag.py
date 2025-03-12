@@ -1,8 +1,12 @@
 # Import required libraries
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_ollama import OllamaEmbeddings, OllamaLLM
+from langchain_ollama import OllamaEmbeddings, ChatOllama
 import chromadb
 import os
+
+# Declare global vars
+llmmodel = "llama3.2"
+url = "http://localhost:11434"
 
 #Borrowed this from a tutorial
 class ChromaDBEmbeddingFunction:
@@ -20,18 +24,13 @@ class ChromaDBEmbeddingFunction:
         testdata = self.langchain_embeddings.embed_documents(input)
         return testdata
 
-# Declare global vars
-llmmodel = "llama3.2"
 
 # Initialize ChromaDB
 chromaClient = chromadb.PersistentClient(path=os.path.join(os.getcwd(), "chroma_db")) # This remembers data in-between runs
 
 # Initialize the embedding function with Ollama embeddings
 embedding = ChromaDBEmbeddingFunction(
-    OllamaEmbeddings(
-        model=llmmodel,
-        base_url="http://localhost:11434"
-    )
+    OllamaEmbeddings(model=llmmodel, base_url=url)
 )
 
 # Define a collection for the RAG workflow
@@ -80,34 +79,42 @@ def queryChromadb(query_text, n_results=1):
     )
     return results["documents"], results["ids"]
 
-# Function to interact with the Ollama LLM
-def queryOllama(prompt):
-    llm = OllamaLLM(model=llmmodel)
-    return llm.invoke(prompt)
-
 # RAG pipeline: Combine ChromaDB and Ollama for Retrieval-Augmented Generation
-def ragConstruction(queryText, messageHistory="", userCode=""):
-    template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.\n\n{context}\n\n This is you message history:{history}\n\nThis is the user's code: {code}\n\nQuestion: {question}\nHelpful Answer:"""
+def ragConstruction(queryText, messageHistory=[], userCode=""):
+    messages = [
+        (
+            "system",
+            "Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.\n\nContext: {context}\n\nUser's code: {code}")]
     
-    prompt = ChatPromptTemplate.from_template(template)
+    for message in messageHistory:
+        messages.append((message["role"], message["content"]))
     
-    model = OllamaLLM(model=llmmodel)
+    messages.append(("user","{question}"))
     
-    chain = prompt | model
+    prompt = ChatPromptTemplate.from_messages(messages)
+
+    llm = ChatOllama(model=llmmodel, base_url=url)
+    
+    chain = prompt | llm
 
     # Step 1: Retrieve relevant documents from ChromaDB
     retrievedDocs, ids = queryChromadb(queryText)
     context = " ".join(retrievedDocs[0]) if retrievedDocs else "No relevant documents found."
 
     # Step 2: Send the query along with the context to Ollama
-    augmentedPrompt = f"Context: {context}\n\nHistory: {messageHistory}\n\nQuestion: {queryText}\nAnswer:"
+    #augmentedPrompt = f"Context: {context}\n\nHistory: {messageHistory}\n\nQuestion: {queryText}\nAnswer:"
     #print("######## Augmented Prompt ########")
     #print(augmentedPrompt)
 
-    response = chain.invoke({"question":queryText,"context": context, "history": messageHistory, "code":userCode})
-    
-    if (retrievedDocs):
-        response += "\n Source: "
-        response += "".join(ids[0])
+    response = chain.invoke({"question":queryText,"context": context, "code":userCode})
 
-    return response
+    # Why does that have to exist? IDK I hate python, but it throws an error without it.
+    response += ""
+    
+    output = response.messages[0].content
+    
+    output += "\n Source: "
+    output += "".join(ids[0])
+
+
+    return output
