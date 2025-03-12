@@ -1,13 +1,13 @@
 
 3.8 Common branching errors
 Common error: Missing braces
-When a branch has a single statement, the braces ar e optional, but good pr actice  always uses the braces.  always using braces e ven when a
+When a branch has a single statement, the braces are optional, but good pr actice  always uses the braces.  always using braces even when a
 branch only has one statement pr events the common error of mistakenly thinking a statement is part of a branch.
-PARTICIP ATION
+
 ACTIVITY3.8.1:  Common error when omitting braces.
-PARTICIP ATION
-ACTIVITY3.8.2:  Braces ar e impor tant.
-Omitting braces is a common sour ce of errors. What is the final v alue of numItems?
+
+ACTIVITY3.8.2:  Braces are impor tant.
+Omitting braces is a common source of errors. What is the final value of numItems?
 1)numItems  =  0;
 bonusVal  =  19;
 if  (bonusVal  >  10)  
@@ -39,15 +39,15 @@ cout  <<  "Final: "  <<  userNum  <<  endl;
 
 
 Common error: Using the incorrect operators
-Perhaps the most common error in C and C++ is to use = r ather than == in an if-else expr ession,  as in: if (numDogs = 9) { ... }. That code is not
-a syntax error. The statement assigns numDogs with 9, and then because that v alue is non-zero, the expr ession is considered true. C' s
-designers allowed assignment in expr essions to allow compact code, and use = for assignment r ather than := or similar to sa ve typing.
-Many people belie ve those language design decisions wer e mistak es, leading to many bugs. Some modern compilers pr ovide a warning
-when = appears in an if-else expr ession.
-Another common error is to use inv alid char acter sequences lik e =>, !<, or <>, which ar e not valid oper ators.
-PARTICIP ATION
-ACTIVITY3.8.3:  Watch out for assignment in an if-else expr ession.
-What is the final v alue of numItems?
+Perhaps the most common error in C and C++ is to use = rather than == in an if-else expression,  as in: if (numDogs = 9) { ... }. That code is not
+a syntax error. The statement assigns numDogs with 9, and then because that value is non-zero, the expression is considered true. C' s
+designers allowed assignment in expressions to allow compact code, and use = for assignment rather than := or similar to save typing.
+Many people belie ve those language design decisions wer e mistakes, leading to many bugs. Some modern compilers provide a warning
+when = appears in an if-else expression.
+Another common error is to use inv alid char acter sequences lik e =>, !<, or <>, which are not valid oper ators.
+
+ACTIVITY3.8.3:  Watch out for assignment in an if-else expression.
+What is the final value of numItems?
 1)numItems  =  3;  
 if  (numItems  ==  3)  {
    numItems  =  numItems  +  1;
@@ -56,9 +56,9 @@ if  (numItems  ==  3)  {
 if  (numItems  =  10)  {
    numItems  =  numItems  +  1;
 }
-CHALLENGE
+
 ACTIVITY3.8.2:  If-else statement: Fix errors.
-620890.5010016.qx3z qy7
+
 How was this section? |if  (numSales  <  20)
    salesBonus  =  0;
 else
@@ -91,7 +91,7 @@ if  (numSales  <  20)
 }15 < 20
 1. Braces aren't used, so the else branch 's only statement is totBonus = totBonus + 1. But, salesBonus = 20; should also be part of
 the else branch.
-2. always using br aces a voids the common error of not including all statements within an if or else branch.
+2. always using br aces avoids the common error of not including all statements within an if or else branch.
 
 passed#include  <iostream>
 using namespace  std;
