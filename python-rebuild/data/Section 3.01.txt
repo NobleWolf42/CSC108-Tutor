@@ -18,7 +18,7 @@ In a program, a branch  is a sequence of statements only executed under a certai
 people over age 65. An if branch is a branch taken only IF an expression is true.
 
 Branches.
-Consider the hotel rate example abo ve.
+Consider the hotel rate example above.
 1)If userAge is 20, does the true or false branch execute?
 True branch
 False branch
@@ -136,7 +136,7 @@ The last branch, meaning the Else If x equals 1 branch, will
 execute.
 No branch will execute.
 The program is not legal.
-CHALLENGE
+
 ACTIVITY 3.1.1:  If-else branches.
 Note:
 1. The provided integer variable shows the value of the variable before the program executes.
@@ -144,7 +144,7 @@ Note:
 
 
 1. A restaurant host seats patrons. The host seats a party of 1 at the counter .
-2. A party of 2 is seated at a small table. Other-sized par ties are seated at a large table.
+2. A party of 2 is seated at a small table. Other-sized parties are seated at a large table.
 3. The host mentally executes the algorithm: If party of 1, seat at counter; Else If party of 2, seat at small table; Else seat at large
 table.
 
