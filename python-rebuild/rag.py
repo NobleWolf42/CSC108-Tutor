@@ -81,32 +81,27 @@ def queryChromadb(query_text, n_results=1):
 
 # RAG pipeline: Combine ChromaDB and Ollama for Retrieval-Augmented Generation
 def ragConstruction(queryText, messageHistory=[], userCode=""):
-    messages = [
-        (
-            "system",
-            "Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.\n\nContext: {context}\n\nUser's code: {code}")]
-    
-    for message in messageHistory:
-        messages.append((message["role"], message["content"]))
-    
-    messages.append(("user","{question}"))
-    
-    prompt = ChatPromptTemplate.from_messages(messages)
-
-    llm = ChatOllama(model=llmmodel, base_url=url)
-    
-    chain = prompt | llm
 
     # Step 1: Retrieve relevant documents from ChromaDB
     retrievedDocs, ids = queryChromadb(queryText)
     context = " ".join(retrievedDocs[0]) if retrievedDocs else "No relevant documents found."
 
     # Step 2: Send the query along with the context to Ollama
-    #augmentedPrompt = f"Context: {context}\n\nHistory: {messageHistory}\n\nQuestion: {queryText}\nAnswer:"
-    #print("######## Augmented Prompt ########")
-    #print(augmentedPrompt)
+    messages = [
+        (
+            "system",
+            "Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.\n\nContext: {}\n\nUser's code: {}".format(context, userCode))]
+    
+    for message in messageHistory:
+        messages.append((message["role"], repr(message["content"])))
 
-    response = chain.invoke({"question":queryText,"context": context, "code":userCode})
+    print(messages)
+    
+    messages.append(("user","{}".format(queryText)))
+
+    llm = ChatOllama(model=llmmodel, base_url=url)
+
+    response = llm.invoke(messages)
 
     # Why does that have to exist? IDK I hate python, but it throws an error without it.
     response += ""

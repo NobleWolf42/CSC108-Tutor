@@ -1,6 +1,6 @@
 /*Name Typing*/
 html {
-    background: url(bkgd.png) center repeat-y;
+    background: url(../images/bkgd.png) center repeat-y;
     background-size: contain;
     background-color: #000000;
     height: 100%;
@@ -138,7 +138,7 @@ body {
     left: 0;
     height: 40px;
     width: 100%;
-    background: url(bkgd.png) center repeat-y;
+    background: url(../images/bkgd.png) center repeat-y;
     background-size: contain;
     background-color: #000000;
     z-index: 2;
@@ -191,7 +191,7 @@ body {
 }
 
 #menubar.done {
-    border-image: url(menuborder.png) 100 stretch !important;
+    border-image: url(../images/menuborder.png) 100 stretch !important;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     -webkit-transition: 2s;
@@ -254,7 +254,7 @@ body {
 #inner {
     margin: 3px;
     min-height: calc(100vh - 196px);
-    background-image: url(bkgdtxt.png);
+    background-image: url(../images/bkgdtxt.png);
     background-color: #FFFFFF;
     box-shadow: 0px 0px 5px 0px #000000 inset;
     border-radius: 3px;
@@ -376,6 +376,26 @@ input.submit:active {
 }
 
 /*CSCTutor*/
+input.submit:disabled {
+    width: 100px;
+    opacity: 0.8;
+    background: #519D48;
+    border-bottom: #488C40 1px solid;
+    border-left: #488C40 1px solid;
+    border-right: #488C40 1px solid;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-top: 3px;
+    float: right;
+}
+
+#clearbutton {
+    float: left;
+    width: 120px;
+}
+
 #codeMessage {
     width: calc(100% - 6px);
     font-family: monospace;
@@ -469,30 +489,30 @@ input.submit:active {
 
 .botMessage {
     text-align: left;
+    max-width: 275px !important;
     overflow-wrap: break-word;
-    max-width: 275px;
-    background-color: #d3dbde;
     border-radius: 10px;
+    background-color: #d3dbde;
     padding: 5px;
 }
 
 .humanMessage {
     text-align: left;
+    max-width: 275px !important;
     overflow-wrap: break-word;
-    max-width: 275px;
+    border-radius: 10px;
     float: right;
     background-color: #d3e7d1;
-    border-radius: 10px;
     padding: 5px;
 }
 
 .errorMessage {
     text-align: left;
+    max-width: 275px !important;
     overflow-wrap: break-word;
-    max-width: 275px;
+    border-radius: 10px;
     float: left;
     background-color: #edc4d2;
-    border-radius: 10px;
     padding: 5px;
 }
 
@@ -529,6 +549,88 @@ table.codebox {
 
 table.codebox td.title {
     width: 100px;
+}
+
+.typing {
+    position: relative;
+}
+.typing span.typeHere {
+    content: "";
+    -webkit-animation: blinkDot 1.5s infinite;
+    animation: blinkDot 1.5s infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    height: 0.625em;
+    width: 0.625em;
+    background: #55a597;
+    position: absolute;
+    left: 0.75em;
+    top: 0.3em;
+    border-radius: 50%;
+}
+.typing span:nth-child(2) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    margin-left: 1em;
+}
+.typing span:nth-child(3) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    margin-left: 2em;
+}
+
+.typingButton {
+    position: relative;
+    float: right;
+    margin-top: 3px;
+}
+.typingButton span.typeHere {
+    content: "";
+    -webkit-animation: blinkDot 1.5s infinite;
+    animation: blinkDot 1.5s infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    height: 0.625em;
+    width: 0.625em;
+    background: #127c69;
+    position: absolute;
+    left: 26px;
+    top: 1em;
+    border-radius: 50%;
+}
+.typingButton span:nth-child(2) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    margin-left: 1em;
+}
+.typingButton span:nth-child(3) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    margin-left: 2em;
+}
+  
+@-webkit-keyframes blinkDot {
+    0% {
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.1;
+    }
+}
+  
+@keyframes blinkDot {
+    0% {
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.1;
+    }
 }
 
 /*Content*/
@@ -714,7 +816,7 @@ table.history {
 }
 
 #projectslist {
-    background-image: url('sidebar.png');
+    background-image: url('/dependancies/images/sidebar.png');
     background-color: #000000;
     margin-top: -30px;
     border-radius: 0px 3px 3px 0px;
@@ -797,6 +899,28 @@ img {
     transition: 4s;
     -webkit-transition-delay: 2s;
     transition-delay: 2s;
+}
+
+#mainnav.hash {
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-family: 'Cambo', serif;
+    -webkit-transition: 4s;
+    transition: 4s;
+    -webkit-transition-delay: 2s;
+    transition-delay: 2s;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: auto;
+    -webkit-animation: none;
+    animation: none;
+    -webkit-animation-delay: 0ms;
+    animation-delay: 0ms;
 }
 
 #mainnav.leaving {

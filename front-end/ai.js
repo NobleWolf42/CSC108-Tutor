@@ -1,3 +1,4 @@
+//#region This handles the event listeners for the page
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("usrMessage").addEventListener("keypress", (x) => {
         if (x.key === "Enter" && !x.shiftKey) {
@@ -19,45 +20,70 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+//#endregion
 
+//#region Global Var for storing chat history and url of backend
+let chatHistory = [];
+const url = "http://localhost:5000/questions";
+//#endregion
+
+//#region This clears the chat history
+function clearHistory() {
+    chatHistory = [];
+    document.getElementById("messageHistory").innerHTML = "";
+}
+//#endregion
+
+//#region This sends and receives info from the AI backend
 function sendMessage() {
-    document.getElementById("subbutton").enabled = false;
-    document.getElementById("subbutton").disabled = true;
-
-    const userMsg = document.getElementById("usrMessage").value;
-    const userCode = document.getElementById("codeMessage").value;
+    const userMsg = document.getElementById("usrMessage");
+    const subButton = document.getElementById("subbutton");
+    const messageHistory = document.getElementById("messageHistory");
+    const subButtonType = document.getElementById("subButtonType");
+    const userMsgValue = userMsg.value;
+    const userCodeValue = document.getElementById("codeMessage").value;
     const http = new XMLHttpRequest();
-    const url = "http://127.0.0.1:5000/questions";
 
-    document.getElementById("usrMessage").value = "";
-    document.getElementById("messageHistory").innerHTML =
-        document.getElementById("messageHistory").innerHTML +
+    userMsg.value = "";
+    messageHistory.innerHTML =
+        messageHistory.innerHTML +
         '<div class="message"><div class="humanMessage">' +
-        userMsg +
+        userMsgValue +
         "</div></div>";
-    document.getElementById("messageHistory").innerHTML =
-        document.getElementById("messageHistory").innerHTML +
-        '<div class="message"><div id="lastBotMessage" class="botMessage">' +
-        "Animations Here" +
-        "</div></div>";
+    messageHistory.innerHTML =
+        messageHistory.innerHTML +
+        '<div class="message"><div id="lastBotMessage" class="botMessage"><div class="typing">&nbsp;<span class="typeHere"></span><span class="typeHere"></span><span class="typeHere"></span></div></div></div>';
 
-    document.getElementById("messageHistory").scrollTop =
-        document.getElementById("messageHistory").scrollHeight;
+    subButton.removeAttribute("enabled", "");
+    subButton.setAttribute("disabled", "");
+    subButton.value = "";
+    subButtonType.innerHTML =
+        '<div class="typingButton"><span class="typeHere"></span><span class="typeHere"></span><span class="typeHere"></span></div>';
+
+    messageHistory.scrollTop = messageHistory.scrollHeight;
 
     http.open("POST", url, true);
 
     //Send the proper header information along with the request
-    http.setRequestHeader("Content-type", "text/plain");
-    http.setRequestHeader("userMsg", userMsg);
+    http.setRequestHeader("Content-type", "application/json");
+    http.setRequestHeader("userMsg", userMsgValue);
 
     http.onreadystatechange = function () {
         //Call a function when the state changes.
         if (http.readyState == 4 && http.status == 200) {
-            document.getElementById("lastBotMessage").innerHTML =
-                http.responseText;
+            chatHistory.push({ role: "user", content: userMsgValue });
+            chatHistory.push({ role: "assistant", content: http.responseText });
+
+            document.getElementById("lastBotMessage").innerHTML = setMaxWidth(
+                DOMPurify.sanitize(marked.parse(http.responseText))
+            );
             document.getElementById("lastBotMessage").setAttribute("id", "");
-            document.getElementById("messageHistory").scrollTop =
-                document.getElementById("messageHistory").scrollHeight;
+            messageHistory.scrollTop = messageHistory.scrollHeight;
+
+            subButton.setAttribute("enabled", "");
+            subButton.removeAttribute("disabled", "");
+            subButton.value = "Send";
+            subButtonType.innerHTML = "";
         } else if (http.readyState == 4 && http.status != 200) {
             document.getElementById("lastBotMessage").innerHTML =
                 "An error has occurred, please try again.";
@@ -65,36 +91,49 @@ function sendMessage() {
                 .getElementById("lastBotMessage")
                 .setAttribute("class", "errorMessage");
             document.getElementById("lastBotMessage").setAttribute("id", "");
-            document.getElementById("messageHistory").scrollTop =
-                document.getElementById("messageHistory").scrollHeight;
-        }
+            messageHistory.scrollTop = messageHistory.scrollHeight;
 
-        document.getElementById("subbutton").enabled = true;
-        document.getElementById("subbutton").disabled = false;
+            subButton.setAttribute("enabled", "");
+            subButton.removeAttribute("disabled", "");
+            subButton.value = "Send";
+            subButtonType.innerHTML = "";
+        }
     };
 
-    http.send(userCode);
+    const data = { code: userCodeValue, chatHistory: chatHistory };
+
+    http.send(JSON.stringify(data));
 }
+//#endregion
 
+//#region Set Max width of bot markdown
+function setMaxWidth(text) {
+    const codeRegex = /<code/g;
+    return text.replace(codeRegex, '<code style="white-space: pre-wrap;"');
+}
+//#endregion
+
+//#region This sends to and receives from the code compiler API
 async function runCode() {
-    document.getElementById("runbutton").enabled = false;
-    document.getElementById("runbutton").disabled = true;
-
+    const runButton = document.getElementById("runbutton");
+    const outputHere = document.getElementById("outputHere");
+    const runButtonType = document.getElementById("runButtonType");
+    const userCodeValue = document.getElementById("codeMessage").value;
     const userInput = document.getElementById("usrInput").value;
-    const userCode = document.getElementById("codeMessage").value;
-    const userCodeNewLine = userCode.replace(/\r\n|\r|\n/g, "\\n");
-    const userCodeNoQuote = userCodeNewLine.replace(/"/g, '\\"');
+    /*const userCodeNewLine = userCode.replace(/\r\n|\r|\n/g, "\\n");
+    const userCodeNoQuote = userCodeNewLine.replace(/"/g, '\\"');*/
     const http = new XMLHttpRequest();
-    const url = "http://127.0.0.1:5000/code";
 
-    document.getElementById("outputHere").innerHTML = "";
-    TypeWriterAnimation(
-        document.getElementById("outputHere"),
-        "Running..."
-    ).type();
+    runButton.removeAttribute("enabled", "");
+    runButton.setAttribute("disabled", "");
+    runButton.value = "";
+    runButtonType.innerHTML =
+        '<div class="typingButton"><span class="typeHere"></span><span class="typeHere"></span><span class="typeHere"></span></div>';
+
+    outputHere.innerHTML = "";
+    TypeWriterAnimation(outputHere, "Running...").type();
     await new Promise((r) => setTimeout(r, 2000));
-    document.getElementById("outputHere").innerHTML =
-        document.getElementById("outputHere").innerHTML + "<br><br>";
+    outputHere.innerHTML = outputHere.innerHTML + "<br><br>";
 
     http.open("POST", url, true);
 
@@ -107,31 +146,29 @@ async function runCode() {
         if (http.readyState == 4 && http.status == 200) {
             const res = JSON.parse(http.response);
             if (res.error == null && res.output != null) {
-                TypeWriterAnimation(
-                    document.getElementById("outputHere"),
-                    res.output
-                ).type();
+                TypeWriterAnimation(outputHere, res.output).type();
             } else if (res.error != null) {
                 TypeWriterAnimation(
-                    document.getElementById("outputHere"),
+                    outputHere,
                     `<span class="codeError">Error:</span> ${res.error}`
                 ).type();
             } else {
                 TypeWriterAnimation(
-                    document.getElementById("outputHere"),
+                    outputHere,
                     '<span class="codeError">An error has occurred reading the response, please try again.</span>'
                 ).type();
             }
         } else if (http.readyState == 4 && http.status != 200) {
             TypeWriterAnimation(
-                document.getElementById("outputHere"),
+                outputHere,
                 '<span class="codeError">An error has occurred, please try again.</span>'
             ).type();
         }
     };
 
-    http.send(userCode);
+    http.send(userCodeValue);
 }
+//#endregion
 
 //#region TypeWriter Animation Control
 function TypeWriterAnimation(elem, text) {
@@ -199,8 +236,11 @@ function TypeWriterAnimation(elem, text) {
         if (cursorPosition < text.length) {
             setTimeout(type, tempTypeSpeed);
         } else if (text != "Running...") {
-            document.getElementById("runbutton").enabled = true;
-            document.getElementById("runbutton").disabled = false;
+            const runButton = document.getElementById("runbutton");
+            runButton.setAttribute("enabled", "");
+            runButton.removeAttribute("disabled", "");
+            runButton.value = "Run";
+            document.getElementById("runButtonType").innerHTML = "";
         }
 
         //#endregion
@@ -210,16 +250,4 @@ function TypeWriterAnimation(elem, text) {
     };
     //#endregion
 }
-
-let chatHistory = [];
-
- const chatMessage = {
-	 
-	 role: 'user',
-	 content: 'Why is the sky blue?'
-	 
- };
- //add message to chatHistory
- chatHistory.push(chatMessage);
- 
 //#endregion

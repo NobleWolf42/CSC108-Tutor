@@ -2,35 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="myViewport" name="viewport" content="width=1066, user-scalable=0, initial-scale=1">
     <meta name="keywords" content="HTML,CSS,JavaScript,IT,Web Design, Web Programming,Programming,Resume">
     <meta name="application-name" content="Ben Carpenter - IT Professional">
     <meta name="description" content="A site showcasing my skills and capabilities.">
     <meta name="author" content="Benjamin Carpenter">
-    <link href="../../style.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cambo|Lora">
     <title id="title">CSC108Tutor</title>
-    <link rel="shortcut icon" href="../../faveicon.ico" mce_href="../../faveicon.ico"/>
-    <script language="javascript" src="../../animations.js"></script>
-    <script language="javascript" src="ai.js"></script>
+    <link rel="shortcut icon" href="faveicon.ico" mce_href="faveicon.ico"/>
+    <script language="javascript" src="animations.js"></script>
+    <script language="javascript" src="mobiledetection.js"></script>
     <link rel="stylesheet" href="./highlight/styles/atom-one-light.css">
     <script src="./highlight/highlight.min.js"></script>
+    <script src="marked.min.js"></script>
+    <script src="purify.min.js"></script>
     <script src="colorize.js"></script>
+    <script language="javascript" src="ai.js"></script>
 </head>
 <body>
     <div id="topbar"><div id="topdark" class="leaving"></div></div>
     <div id="darkenhtml" class="leaving"></div>
     <div id="menubar" class="leaving done">
-        <pre id="typehere" class="leaving"><a href="../../index.html"><span id="name">Ben Carpenter</span></a></pre>
-        <div id="mainnav" class="leaving">
+        <pre id="typehere" class="leaving"><a href="../../"><span id="name">Ben Carpenter</span></a></pre>
+        <div id="mainnav" class="hash leaving">
             <div id="table" class="leaving">
                 <ul id="menu">
-                    <li></li><!-- FIX THIS
-                    <li><a id="navinfo" class="navText current" href="../about.html">About Me</a></li>
-                    <li><a id="navprojects" class="navText" href="../projects.html">Projects</a></li>
-                    <li><a id="navhistory" class="navText" href="../history.html">Job History</a></li>
-                    <li><a id="navcontact" class="navText" href="../contact.html">Contact Me</a></li>
-                -->
+                    <li><a id="navinfo" class="navText" href="../../#About">About Me</a></li>
+                    <li><a id="navprojects" class="navText" href="../../#Projects">Projects</a></li>
+                    <li><a id="navhistory" class="navText" href="../../#History">Job History</a></li>
+                    <li><a id="navcontact" class="navText" href="../../#Contact">Contact Me</a></li>
                 </ul>
             </div>
         </div>
@@ -64,6 +65,7 @@
                                                 <tr>
                                                     <td colspan="2" style="text-align: center;">
                                                         <input id="runbutton" type="button" value="Run" class="submit" onclick="runCode()" enabled>
+                                                        <div id="runButtonType"></div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -101,6 +103,8 @@
                                                 <tr style="height: 50px;">
                                                     <td colspan="2" style="text-align: center;">
                                                         <input id="subbutton" type="submit" value="Send" class="submit" enabled>
+                                                        <div id="subButtonType"></div>
+                                                        <input id="clearbutton" type="button" value="Clear History" class="submit" onclick="clearHistory()" enabled>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -113,7 +117,7 @@
             </div>
         </div>
         <div class="footer">
-            <p class="copyright">Copyright © 2016-<script>document.write(new Date().getFullYear())</script> | Benjamin Carpenter</p>
+            <p class="copyright">Copyright © 2016 - <script>document.write(new Date().getFullYear())</script> | Benjamin Carpenter</p>
         </div>
     </div>
     <div class="flexbuffer"></div>

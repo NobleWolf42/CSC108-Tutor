@@ -5,7 +5,7 @@ import requests
 import json
 app = Flask(__name__)
 
-initializeRAG()
+#initializeRAG()
 
 f = open('setting.config', "r", encoding="utf-8")
 file = f.read()
@@ -34,19 +34,19 @@ def after_request(response):
 def questions():
     # Get the 'usermsg' header value from the request.
     usrMsg = request.headers.get('usermsg', '')
-
-    # Get the 'usermsg' header value from the request.
-    messageHistory = request.headers.get('msgHistory', '')
     
     # Get the request body as a string.
-    usrCode = request.get_data(as_text=True)
+    requestBody = request.get_json()
+    usrCode = requestBody["code"]
+    msgHistory = requestBody["chatHistory"]
     
     # Log the received values.
     print("Question:", usrMsg, "\n")
     print("Code:", usrCode, "\n")
+    print("History:", msgHistory, "\n")
     
     # Process the inputs.
-    result = ragConstruction(usrMsg, messageHistory, usrCode)
+    result = ragConstruction(usrMsg, msgHistory, usrCode)
     
     # Create the response with the correct content type.
     response = make_response(result)
@@ -85,4 +85,4 @@ def hello():
 
 if __name__ == '__main__':
     #pywsgi.WSGIServer(('0.0.0.0', int(port)), app, keyfile=key, certfile=cert).serve_forever()
-    app.run(debug=True)
+    app.run()
