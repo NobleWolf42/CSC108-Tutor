@@ -97,5 +97,14 @@
         "queue": "cpp",
         "shared_mutex": "cpp"
     },
-    "cSpell.words": ["jsonify", "Ollama", "poppler", "pywsgi"]
+    "cSpell.words": [
+        "jsonify",
+        "llmmodel",
+        "Ollama",
+        "poppler",
+        "pywsgi",
+        "runbutton",
+        "userinput",
+        "usermsg"
+    ]
 }
