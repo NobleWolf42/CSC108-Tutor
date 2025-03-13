@@ -45,13 +45,13 @@ else {  // Range: ______
 0 - 50
 50
 Ranges with gaps using logical operators
-Programmers often use logical oper ators to explicitly detect ranges with an upper and lower bound, including ranges with gaps that may
+Programmers often use logical operators to explicitly detect ranges with an upper and lower bound, including ranges with gaps that may
 have intermediate bounds. Ex: If a valid office number is within the ranges of 100 to 150 or 200 to 250, the logical AND oper ator can be
-used to identify the lower and upper bounds of the two ranges. F urther, the ranges can be combined into a single branch using the logical
+used to identify the lower and upper bounds of the two ranges. Further, the ranges can be combined into a single branch using the logical
 OR operator.
 
 ACTIVITY3.6.3:  Explicit ranges with gaps detection using logical AND and OR.
-PARTICIP ATION
+
 ACTIVITY3.6.4:  Jersey numbers.
 In American football, certain player positions are assigned jersey numbers in specific ranges. Ex: A wide receiver on a team can
 can only wear jersey numbers from 10 to 19 or 80 to 89.
@@ -113,11 +113,11 @@ Enter your age: 1919
 14
 19<= 12X
 19>= 65XMovie ticket price: $14
-1. After the user enters their age, the else-if br anch 's first br anch checks if age is <= 12.
+1. After the user enters their age, the else-if branch 's first branch checks if age is <= 12.
 2. userAge is 67, which is greater than 12, so the pr ogram mo ves to the second branch that checks if userAge is >= 65.
-3. 67 is >= 65, so the second br anch 's statements ex ecute, applying the senior discount to the ticket price. The pr ogram concludes
+3. 67 is >= 65, so the second branch 's statements ex ecute, applying the senior discount to the ticket price. The pr ogram concludes
 by outputting the tick et price.
-4. If the user 's age falls between the gap of 12 and 65 (13 to 64), the else br anch ex ecutes and the ticket price is $14, the most
+4. If the user 's age falls between the gap of 12 and 65 (13 to 64), the else branch ex ecutes and the ticket price is $14, the most
 expensive price.
 
 if (officeNum  >= 100 && officeNum  <= 150) {
@@ -137,7 +137,7 @@ else {
 }
 1. The logical AND oper ator is used to identify the lower and upper bounds of the two valid ranges of office numbers (100 to 150
 and 200 to 250). Any number outside of the ranges is in the gap.
-2. Further, the two ranges can be combined into a single br anch using the logical OR oper ator.Captions
+2. Further, the two ranges can be combined into a single branch using the logical OR oper ator.Captions
 
 #include <iostream>
 using namespace  std;
@@ -150,13 +150,5 @@ int main() {
    else {
       cout << "b" << endl;
    }
-   return 0;
-}
-#include  <iostream>
-using namespace  std;
-int main() {
-   int onionsAvailable ;
-   cin >> onionsAvailable ;  
-   /* Your code goes here */
    return 0;
 }

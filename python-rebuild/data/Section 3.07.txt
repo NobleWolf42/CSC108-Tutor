@@ -4,7 +4,7 @@
 Multiple distinct if statements
 A programmer can use multiple if statements in sequence to detect multiple features with independent actions. Multiple sequential if
 statements looks similar to a multi-branch if-else statement but has a very different meaning. Each if-statement is independent, and thus
-more than one br anch can execute, in contr ast to the multi-br anch if-else arr angement.
+more than one branch can execute, in contr ast to the multi-branch if-else arr angement.
 Figure 3.7.1: Multiple distinct if statements.
 #include  <iostream>
 using  namespace  std;
@@ -81,7 +81,7 @@ A branch 's statements can include any valid statements, including another if-el
 Nested if statements are commonly used to make decisions that are based on multiple features. Ex: To calculate a discount based on both
 the number of items purchased and the total cost of those items, one if statement checks the number of items purchased and a nested if
 statement can check the total cost.
-Figur e 3.7.2: Nested if-else.
+figure 3.7.2: Nested if-else.
 if  (numItems  >  3)  {      
    if  (totalCost  >  100)  {        // numItems > 3 and totalCost > 100
       saleDiscount  =  20;
@@ -107,11 +107,11 @@ if  (salesType  ==  2)  {
 else  {
    salesBonus  =  salesBonus  +  1;
 }
-1)salesT ype = 1; salesBonus = 0;
+1)salesType = 1; salesBonus = 0;
 
-2)salesT ype = 2; salesBonus = 4;
+2)salesType = 2; salesBonus = 4;
 
-3)salesT ype = 2; salesBonus = 7;
+3)salesType = 2; salesBonus = 7;
 
 
 ACTIVITY3.7.2:  Detecting multiple features with branches.
