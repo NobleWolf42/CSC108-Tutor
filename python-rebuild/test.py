@@ -2,7 +2,7 @@ from rag import ragConstruction, initializeRAG
 
 initializeRAG()
 
-print(ragConstruction("How do I instantiate a c++ variable?", [{
+print(ragConstruction("how do I use cin?", [{
       "role": "user",
       "content": "why is the sky blue?"
     }, {
