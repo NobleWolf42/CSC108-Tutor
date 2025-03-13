@@ -5,7 +5,7 @@ import requests
 import json
 app = Flask(__name__)
 
-#initializeRAG()
+initializeRAG()
 
 f = open('setting.config', "r", encoding="utf-8")
 file = f.read()
