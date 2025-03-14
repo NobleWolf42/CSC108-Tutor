@@ -1,5 +1,5 @@
 # Import required libraries
-from langchain_core.prompts import ChatPromptTemplate
+from datetime import datetime
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 import chromadb
 import os
@@ -111,5 +111,15 @@ def ragConstruction(queryText, messageHistory=[], userCode=""):
     output += "\n Source: "
     output += "".join(ids[0])
 
+    log(queryText, messageHistory, userCode, output)
 
     return output
+
+#logging function
+def log(question, history, code, response):
+    try:
+        f = open("logs/{}.txt".format(datetime.now()), "w", encoding="utf-8")
+        f.write("Question: {}\n\nHistory: {}\n\nCode: {}\n\nResponse: {}".format(question, history, code, response))
+        f.close()
+    except Exception as e:
+        print(e)
