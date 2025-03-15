@@ -1,0 +1,173 @@
+6.27 Functions with arr ay par ameters
+6.29 Functions with arr ay par ameters: Common err ors6.28  Functions with 2D arr ay par ameters
+Ther e are several wa ys to pass a 2D arr ay to a function.
+Code E ditor 6.28.1: Specify the siz e of columns of 2D arr ay
+Click run.
+Code E ditor 6.28.2: P ass arr ay containing pointers
+Click run.
+If the arr ay is dynamically allocated, then y ou ma y use single pointer t o typecast the 2D arr ay:
+Code E ditor 6.28.3: Using Single pointer t o typecast the 2D arr ay
+Click run.
+Notes: 1-D arr ay is  *(Arr ay+i) is same as Arr ay[i]
+For 2-D arr ay, Array[row][col] is same as *(Arr ay+row_i*column_siz e)+column_j) using pointer arithmetic
+Code E ditor 6.28.4: Using Double pointers (pointer t o pointer)
+Click run.
+2 2 1 1 2 2
+Arrays of pointers:
+Pointers t o pointers ha ve a f ew uses. The most common use is t o dynamically allocate an arr ay of pointers:
+int **arr ay = new int*[10];
+This allocates an arr ay of 10 int pointers which ar e rows in the abo ve code. It works just lik e a standar d dynamically allocated arr ay, except
+the arr ay elements ar e of type “ pointer t o integer ” instead of an integer .
+Figur e 6.28.1: Arr ays of pointers
+for(int  count=0;  count<10;  count++)
+   array[count]  =  new  int[5];  //these are our columns
+We can then access our arr ay as usual,
+array[6][4] = 5;Instruct or cr eated
+Load default template...
+#include <iostream>
+using namespace  std;
+void printArray (int a[][2], int row, int col) {  // must specify the column size in the 2d array parameter.
+   cout << "[";
+   for (int i=0; i<row; i++)
+   {
+      cout << "[" << a[i][0];
+      for (int j=1; j<col; j++) {
+         cout << ", " << a[i][j];
+      }
+      
+      cout << "]";
+      if (i<row-1) {
+         cout << "," << endl;
+      }
+   }
+   
+Run
+Load default template...
+#include <iostream>
+using namespace  std;
+void printArray (int *a[], int row, int col) {  // must specify the column size in the 2d array parameter.
+   cout << "[";
+   for (int i=0; i<row; i++)
+   {
+      cout << "[" << a[i][0];
+      for (int j=1; j<col; j++) {
+         cout << ", " << a[i][j];
+      }
+      
+      cout << "]";
+      if (i<row-1) {
+         cout << "," << endl;
+      }
+   }
+   
+Run
+Load default template...
+#include  <iostream>
+using namespace  std;
+void print2D(int *arr, int m, int n)         //function prototype
+{
+    for (int i=0; i<m; i++)
+    {
+       for (int j=0; j<n; j++)
+       {
+          cout<<*((arr+i*n) + j)<<" ";    //printing each element using pointer arithmetic
+          
+       }
+       cout<<endl;
+    }
+}
+Run
+Load default template...
+#include  <iostream>
+using namespace  std;
+void func(int **arr, int row, int col)        //function prototype
+   {
+      for (int i=0; i<row; i++)
+      {
+         for(int j=0 ; j<col; j++)
+         {
+           cout<<arr[i][j]<<" ";   //printing each element of array
+         }
+         cout<<endl;
+      }
+   }
+ int main()
+  {
+     int row, colm;
+Run
+F eedback?1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+ 
+ 
+  My libr ary>CSC 108: Computer Science I home >6.28: F unctions with 2D arr ay par ameters zyBooks catalog Help/F AQ

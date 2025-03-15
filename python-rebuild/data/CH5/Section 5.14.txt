@@ -1,0 +1,60 @@
+5.13 Function name o verloading
+Students:
+Section 5.14 is a par t of 1 assignment :CSC108 CH05.8-5.16 P5B
+Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor eIncludes : PA
+Activity summar y for assignment: CSC108 CH05.8-5.16 P5B 0 / 56 points
+Please br owse t o this assignment thr ough
+Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor e
+5.15 Preprocessor and includeDue: 04/15/2025, 11:59 PM ED T
+5.14  Parameter err or checking
+Verifying parameter values
+Commonly , a function expects par ameter v alues t o be within some r ange. A good pr actice  is to check that a par ameter 's value is within an
+expected r ange.  If not in the r ange, the function might tak e one or mor e of v arious actions, lik e outputting an err or message, assigning a
+valid v alue, r eturning a v alue indicating failur e, exiting the pr ogram, etc.
+Figur e 5.14.1: F unction with par ameter err or checking.
+#include  <iostream>
+using  namespace  std;
+void  PrintDate (int  currDay,  int  currMonth ,  int  currYear )  {
+   // Parameter error checking
+   if  ((currDay  <  1)  ||  (currDay  >  31))  {
+      cout  <<  "Invalid day ("  <<  currDay  <<  "). Using 1."  <<  endl;
+      currDay  =  1;
+   }
+   if  ((currMonth  <  1)  ||  (currMonth  >  12))  {
+      cout  <<  "Invalid month ("  <<  currMonth  <<  "). Using 1."  <<  endl;
+      currMonth  =  1;
+   }
+   // Begin function's normal behavior
+   cout  <<  currMonth  <<  "/"  <<  currDay  <<  "/"  <<  currYear ;
+}
+int  main()  {
+   PrintDate (30,  7,  2012);
+   cout  <<  endl  <<  endl;
+   PrintDate (40,  7,  2012);
+   cout  <<  endl  <<  endl;
+   PrintDate (30,  13,  2012);
+   cout  <<  endl  <<  endl;
+   return  0;
+} 7/30/2012
+Invalid day (40). Using 1.
+7/1/2012
+Invalid month (13). Using 1.
+1/30/2012
+PARTICIP ATION
+ACTIVITY5.14.1:  Checking par ameter v alues.
+Consider the example abo ve.
+1)The month must be in the r ange fr om 1 t o _____ .
+2)If the month par ameter is not in the v alid r ange, the code outputs an
+error message, and assigns currMonth with _____ .
+3)In addition t o currMonth, which other par ameter is check ed for being
+in a v alid r ange?
+How was this section? |Feedback?
+Check Show answer
+Check Show answer
+Check Show answer
+Feedback?
+ Provide section f eedback
+Due: 04/15/2025, 11:59 PM ED T
+Completion details  My libr ary>CSC 108: Computer Science I home >5.14: P arameter err or checking zyBooks catalog Help/F AQ

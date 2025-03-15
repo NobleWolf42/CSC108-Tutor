@@ -1,0 +1,101 @@
+6.31 C++ example: Annual salar y tax r ate calculation with v ectors
+6.33 Ch 5 W arm up: P eople 's weights ( Vectors) (C++)6.32  C++ example: Domain name v alidation with v ectors
+zyDE 6.32.1: V alidate domain names with v ectors.
+Vectors ar e useful t o process lists.
+A top-le vel domain  (TLD) name is the last par t of an Internet domain name lik e .com in example.com. A core generic t op-le vel domain
+(core gTLD) is a TLD that is either .com, .net, .or g, or .info. A restricted t op-le vel domain  is a TLD that is either .biz, .name, or .pr o. A
+second-le vel domain  is a single name that pr ecedes a TLD as in apple in apple.com.
+The following pr ogram r epeatedly pr ompts for a domain name, and indicates whether that domain name consists of a second-le vel
+domain followed b y a cor e gTLD . Valid cor e gTLD' s are stored in a v ector. For this pr ogram, a v alid domain name must contain only one
+period, such as apple.com, but not suppor t.apple.com. The pr ogram ends when the user enters -1.
+1. Run the pr ogram and enter domain names t o validate.
+2. Extend the pr ogram t o also r ecogniz e restricted TLDs using a v ector, and statements t o validate against that v ector. The pr ogram
+should also r epor t whether the TLD is a cor e gTLD or a r estricted gTLD . Run the pr ogram again.
+apple.com
+APPLE.com
+apple.comm
+lbi
+zyDE 6.32.2: V alidate domain names with v ectors (solution).
+A solution t o the pr oblem follows.
+apple.com
+APPLE.com
+apple.comm
+lbi
+How was this section? |Load default template...
+#include  <iostream>
+#include  <vector>
+using namespace  std;
+int main() {
+   // Define the list of valid core gTLDs
+   const int NUM_ELEMENTS  = 4;
+   vector<string> validCoreGtld (NUM_ELEMENTS );
+   // FIXME: Declare a vector named validRestrictedGtld that has the names
+   //        of the restricted domains, .biz, .name, and .pro
+   string  inputName ;
+   string  searchName ;
+   string  theGtld;
+   bool isValidDomainName ;
+   bool isCoreGtld ;
+   bool isRestrictedGtld ;
+   int periodCounter ;
+   int periodPosition ;
+Run
+Feedback?
+Load default template...
+#include  <iostream>
+#include  <vector>
+using namespace  std;
+int main() {
+   // Define the list of valid core gTLDs
+   const int NUM_ELEMENTS_CORE  = 4;
+   vector<string> validCoreGtld (NUM_ELEMENTS_CORE );
+   const int NUM_ELEMENTS_RSTR  = 3;
+   vector<string> validRestrictedGtld (NUM_ELEMENTS_RSTR );
+   string  inputName ;
+   string  searchName ;
+   string  theGtld;
+   bool isValidDomainName ;
+   bool isCoreGtld ;
+   bool isRestrictedGtld ;
+   int periodCounter ;
+   int periodPosition ;
+Run
+Feedback?
+  Provide section f eedback1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+  My libr ary>CSC 108: Computer Science I home >6.32: C++ example: Domain names with v ectors zyBooks catalog Help/F AQ
