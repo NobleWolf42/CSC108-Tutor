@@ -3,6 +3,8 @@ from flask import Flask, request, make_response, send_from_directory
 from gevent import pywsgi
 import requests
 import json
+import os
+
 app = Flask(__name__)
 
 initializeRAG()
@@ -43,8 +45,7 @@ def questions():
     
     # Log the received values.
     print("Question:", usrMsg, "\n")
-    print("Code:", usrCode, "\n")
-    print("History:", msgHistory, "\n")
+    print("Chapter:", chapter, "\n")
     
     # Process the inputs.
     result = ragConstruction(usrMsg, chapter, msgHistory, usrCode)
@@ -90,5 +91,6 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
-    #pywsgi.WSGIServer(('0.0.0.0', int(port)), app, keyfile=key, certfile=cert).serve_forever()
-    app.run()
+    print("Server Started.")
+    pywsgi.WSGIServer(('0.0.0.0', int(port)), app, keyfile=key, certfile=cert).serve_forever()
+    #app.run()

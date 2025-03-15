@@ -104,15 +104,15 @@ def initializeCH(ch):
     documents = []
     docIds = []
     
-    if (ch == 1_2):
+    if (ch == "1_2"):
         folderPath = os.path.join(os.path.dirname(__file__), "data", "CH1&2")
-    elif (ch == 3):
+    elif (ch == "3"):
         folderPath = os.path.join(os.path.dirname(__file__), "data", "CH3")
-    elif (ch == 4):
+    elif (ch == "4"):
         folderPath = os.path.join(os.path.dirname(__file__), "data", "CH4")
-    elif (ch == 5):
+    elif (ch == "5"):
         folderPath = os.path.join(os.path.dirname(__file__), "data", "CH5")
-    elif (ch == 6):
+    elif (ch == "6"):
         folderPath = os.path.join(os.path.dirname(__file__), "data", "CH6")
     
     for filename in os.listdir(folderPath):
@@ -128,54 +128,57 @@ def initializeCH(ch):
                 print(e)
     
     #since its persistent this could be called only when needed to update the info
-    if (ch == 1_2):
+    if (ch == "1_2"):
         addDocumentsToCollection1_2(documents, docIds)
-    elif (ch == 3):
+    elif (ch == "3"):
         addDocumentsToCollection3(documents, docIds)
-    elif (ch == 4):
+    elif (ch == "4"):
         addDocumentsToCollection4(documents, docIds)
-    elif (ch == 5):
+    elif (ch == "5"):
         addDocumentsToCollection5(documents, docIds)
-    elif (ch == 6):
+    elif (ch == "6"):
         addDocumentsToCollection6(documents, docIds)
 
 # Initialise the RAG backend
 def initializeRAG():
-    initializeCH(1_2)
-    initializeCH(3)
-    initializeCH(4)
-    initializeCH(5)
-    initializeCH(6)
+    print("Adding Documents...")
+    initializeCH("1_2")
+    initializeCH("3")
+    initializeCH("4")
+    initializeCH("5")
+    initializeCH("6")
+    print("Done!")
     return
 
 # Function to query the ChromaDB collection
 def queryChromadb(query_text, ch, n_results=1):
-    if (ch == 1_2):
+    if (ch == "1_2"):
         results = collection1_2.query(
         query_texts=[query_text],
         n_results=n_results
         )
-    elif (ch == 3):
+    elif (ch == "3"):
         results = collection3.query(
         query_texts=[query_text],
         n_results=n_results
         )
-    elif (ch == 4):
+    elif (ch == "4"):
         results = collection4.query(
         query_texts=[query_text],
         n_results=n_results
         )
-    elif (ch == 5):
+    elif (ch == "5"):
         results = collection5.query(
         query_texts=[query_text],
         n_results=n_results
         )
-    elif (ch == 6):
+    elif (ch == "6"):
         results = collection6.query(
         query_texts=[query_text],
         n_results=n_results
         )
     else:
+        print ("ERROR NO CHAPTER!")
         return "", ""
     return results["documents"], results["ids"]
 
@@ -190,15 +193,15 @@ def ragConstruction(queryText, ch, messageHistory=[], userCode=""):
     messages = [
         (
             "system",
-            "You are a Tutor for CSC108 - Intro to C++. You are answering questions about C++ coding. Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. If it is a vague question, ask for more information."
+            "You are a Tutor for CSC108 - Intro to C++. You are answering questions about C++ coding. Use the following pieces of context to answer the question at the end. If there are No relevant documents found, ask for clarification instead of answering. If you don't know the answer, just say that you don't know, don't try to make up an answer. If it is a vague question, ask for more information."
         ),
         (
-            "context",
-            "{}".format(context)
+            "system",
+            "Context: {}".format(context)
         ),
         (
-            "code",
-            "{}".format(userCode)
+            "system",
+            "User's Code: {}".format(userCode)
         )
     ]
     
@@ -219,7 +222,7 @@ def ragConstruction(queryText, ch, messageHistory=[], userCode=""):
     output = response.messages[0].content
     
     output += "\n Source: "
-    output += "".join(ids[0])
+    output += " ".join(ids[0]) if ids else "No relevant documents found."
 
     log(queryText, messageHistory, userCode, output)
 

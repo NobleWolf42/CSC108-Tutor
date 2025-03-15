@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //#region Global Var for storing chat history and url of backend
 let chatHistory = [];
-const url = "http://localhost:5000/questions";
+const url = "http://localhost:5000";
 //#endregion
 
 //#region This clears the chat history
@@ -61,9 +61,12 @@ function sendMessage() {
     subButtonType.innerHTML =
         '<div class="typingButton"><span class="typeHere"></span><span class="typeHere"></span><span class="typeHere"></span></div>';
 
-    messageHistory.scrollTop = messageHistory.scrollHeight;
+    messageHistory.scrollTo({
+        top: document.getElementById("lastBotMessage").offsetTop,
+        behavior: "smooth",
+    });
 
-    http.open("POST", url, true);
+    http.open("POST", url + "/questions", true);
 
     //Send the proper header information along with the request
     http.setRequestHeader("Content-type", "application/json");
@@ -78,7 +81,10 @@ function sendMessage() {
             document.getElementById("lastBotMessage").innerHTML = setMaxWidth(
                 DOMPurify.sanitize(marked.parse(http.responseText))
             );
-            messageHistory.scrollTop = messageHistory.scrollHeight;
+            messageHistory.scrollTo({
+                top: document.getElementById("lastBotMessage").offsetTop,
+                behavior: "smooth",
+            });
             document.getElementById("lastBotMessage").setAttribute("id", "");
 
             subButton.setAttribute("enabled", "");
@@ -91,7 +97,10 @@ function sendMessage() {
             document
                 .getElementById("lastBotMessage")
                 .setAttribute("class", "errorMessage");
-            messageHistory.scrollTop = messageHistory.scrollHeight;
+            messageHistory.scrollTo({
+                top: document.getElementById("lastBotMessage").offsetTop,
+                behavior: "smooth",
+            });
             document.getElementById("lastBotMessage").setAttribute("id", "");
 
             subButton.setAttribute("enabled", "");
@@ -140,7 +149,7 @@ async function runCode() {
     await new Promise((r) => setTimeout(r, 2000));
     outputHere.innerHTML = outputHere.innerHTML + "<br><br>";
 
-    http.open("POST", url, true);
+    http.open("POST", url + "/code", true);
 
     //Send the proper header information along with the request
     http.setRequestHeader("Content-type", "text/plain");
