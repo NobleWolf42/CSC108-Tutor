@@ -98,6 +98,8 @@
         "shared_mutex": "cpp"
     },
     "cSpell.words": [
+        "bcitchap",
+        "bcitchat",
         "jsonify",
         "llmmodel",
         "Ollama",

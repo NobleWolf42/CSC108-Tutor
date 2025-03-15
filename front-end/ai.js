@@ -1,11 +1,47 @@
+//#region Global Var for storing chat history and url of backend
+let chatHistory = [];
+const url = "http://localhost:5000";
+//#endregion
+
 //#region This handles the event listeners for the page
 document.addEventListener("DOMContentLoaded", () => {
+    const oldChat = localStorage.getItem("bcitchatHistory");
+    const lastChapter = localStorage.getItem("bcitchap");
+
+    if (oldChat != null && oldChat != "") {
+        const messageHistory = document.getElementById("messageHistory");
+        chatHistory = JSON.parse(oldChat).chatHistory;
+        for (item of chatHistory) {
+            console.log(item);
+            if (item.role == "user") {
+                messageHistory.innerHTML =
+                    messageHistory.innerHTML +
+                    '<div class="message"><div class="humanMessage">' +
+                    item.content +
+                    "</div></div>";
+            } else if (item.role == "assistant") {
+                messageHistory.innerHTML =
+                    messageHistory.innerHTML +
+                    '<div class="message"><div id="" class="botMessage">' +
+                    setMaxWidth(
+                        DOMPurify.sanitize(marked.parse(item.content))
+                    ) +
+                    "</div></div>";
+            }
+        }
+    }
+
+    if (lastChapter != null) {
+        document.getElementById("chapterSelect").value = lastChapter;
+    }
+
     document.getElementById("usrMessage").addEventListener("keypress", (x) => {
         if (x.key === "Enter" && !x.shiftKey) {
             x.preventDefault();
             sendMessage();
         }
     });
+
     document.getElementById("codeMessage").addEventListener("keydown", (x) => {
         if (x.key === "Tab" && !x.shiftKey) {
             const elem = document.getElementById("codeMessage");
@@ -22,15 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //#endregion
 
-//#region Global Var for storing chat history and url of backend
-let chatHistory = [];
-const url = "http://localhost:5000";
-//#endregion
-
 //#region This clears the chat history
 function clearHistory() {
     chatHistory = [];
     document.getElementById("messageHistory").innerHTML = "";
+    localStorage.setItem("bcitchatHistory", "");
 }
 //#endregion
 
@@ -43,6 +75,9 @@ function sendMessage() {
     const userMsgValue = userMsg.value;
     const userCodeValue = document.getElementById("codeMessage").value;
     const chapterValue = document.getElementById("chapterSelect").value;
+
+    localStorage.setItem("bcitchap", chapterValue);
+
     const http = new XMLHttpRequest();
 
     userMsg.value = "";
@@ -77,6 +112,12 @@ function sendMessage() {
         if (http.readyState == 4 && http.status == 200) {
             chatHistory.push({ role: "user", content: userMsgValue });
             chatHistory.push({ role: "assistant", content: http.responseText });
+
+            localStorage.setItem("bcitchatHistory", "");
+            localStorage.setItem(
+                "bcitchatHistory",
+                JSON.stringify({ chatHistory: chatHistory })
+            );
 
             document.getElementById("lastBotMessage").innerHTML = setMaxWidth(
                 DOMPurify.sanitize(marked.parse(http.responseText))
