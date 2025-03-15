@@ -7,6 +7,7 @@ const url = "http://localhost:5000";
 document.addEventListener("DOMContentLoaded", () => {
     const oldChat = localStorage.getItem("bcitchatHistory");
     const lastChapter = localStorage.getItem("bcitchap");
+    const uCode = localStorage.getItem("bcitcode");
 
     if (oldChat != null && oldChat != "") {
         const messageHistory = document.getElementById("messageHistory");
@@ -31,8 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (lastChapter != null) {
+    if (lastChapter != null && lastChapter != "") {
         document.getElementById("chapterSelect").value = lastChapter;
+    }
+
+    if (uCode != null && uCode != "") {
+        document.getElementById("codeMessage").value = uCode;
     }
 
     document.getElementById("usrMessage").addEventListener("keypress", (x) => {
@@ -77,6 +82,7 @@ function sendMessage() {
     const chapterValue = document.getElementById("chapterSelect").value;
 
     localStorage.setItem("bcitchap", chapterValue);
+    localStorage.setItem("bcitcode", userCodeValue);
 
     const http = new XMLHttpRequest();
 
@@ -177,6 +183,9 @@ async function runCode() {
     const userInput = document.getElementById("usrInput").value;
     /*const userCodeNewLine = userCode.replace(/\r\n|\r|\n/g, "\\n");
     const userCodeNoQuote = userCodeNewLine.replace(/"/g, '\\"');*/
+
+    localStorage.setItem("bcitcode", userCodeValue);
+
     const http = new XMLHttpRequest();
 
     runButton.removeAttribute("enabled", "");
