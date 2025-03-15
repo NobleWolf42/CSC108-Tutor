@@ -39,6 +39,7 @@ def questions():
     requestBody = request.get_json()
     usrCode = requestBody["code"]
     msgHistory = requestBody["chatHistory"]
+    chapter = requestBody["chapter"]
     
     # Log the received values.
     print("Question:", usrMsg, "\n")
@@ -46,7 +47,7 @@ def questions():
     print("History:", msgHistory, "\n")
     
     # Process the inputs.
-    result = ragConstruction(usrMsg, msgHistory, usrCode)
+    result = ragConstruction(usrMsg, chapter, msgHistory, usrCode)
     
     # Create the response with the correct content type.
     response = make_response(result)

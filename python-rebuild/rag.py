@@ -34,26 +34,86 @@ embedding = ChromaDBEmbeddingFunction(
 )
 
 # Define a collection for the RAG workflow
-collection = chromaClient.get_or_create_collection(
+collection1_2 = chromaClient.get_or_create_collection(
     name="zybooks_cpp_chapters_1_2",
     metadata={"description": "A collection for RAG with Ollama - Chapters 1 and 2 of Zybooks C++"},
     embedding_function=embedding  # Use the custom embedding function
 )
+
+collection3 = chromaClient.get_or_create_collection(
+    name="zybooks_cpp_chapters_3",
+    metadata={"description": "A collection for RAG with Ollama - Chapter 3 of Zybooks C++"},
+    embedding_function=embedding  # Use the custom embedding function
+)
+
+collection4 = chromaClient.get_or_create_collection(
+    name="zybooks_cpp_chapters_4",
+    metadata={"description": "A collection for RAG with Ollama - Chapter 4 of Zybooks C++"},
+    embedding_function=embedding  # Use the custom embedding function
+)
+
+collection5 = chromaClient.get_or_create_collection(
+    name="zybooks_cpp_chapters_5",
+    metadata={"description": "A collection for RAG with Ollama - Chapter 5 of Zybooks C++"},
+    embedding_function=embedding  # Use the custom embedding function
+)
+
+collection6 = chromaClient.get_or_create_collection(
+    name="zybooks_cpp_chapters_6",
+    metadata={"description": "A collection for RAG with Ollama - Chapter 6 of Zybooks C++"},
+    embedding_function=embedding  # Use the custom embedding function
+)
     
 # Function to add documents to the ChromaDB collection
-def addDocumentsToCollection(documents, ids):
-    collection.add(
+def addDocumentsToCollection1_2(documents, ids):
+    collection1_2.add(
         documents=documents,
         ids=ids
     )
 
-# Initialise the RAG backend
-def initializeRAG():
-    
+# Function to add documents to the ChromaDB collection
+def addDocumentsToCollection3(documents, ids):
+    collection3.add(
+        documents=documents,
+        ids=ids
+    )
+
+# Function to add documents to the ChromaDB collection
+def addDocumentsToCollection4(documents, ids):
+    collection4.add(
+        documents=documents,
+        ids=ids
+    )
+
+# Function to add documents to the ChromaDB collection
+def addDocumentsToCollection5(documents, ids):
+    collection5.add(
+        documents=documents,
+        ids=ids
+    )
+
+# Function to add documents to the ChromaDB collection
+def addDocumentsToCollection6(documents, ids):
+    collection6.add(
+        documents=documents,
+        ids=ids
+    )
+
+def initializeCH(ch):
     #Add documents to the collection
     documents = []
     docIds = []
-    folderPath = os.path.join(os.path.dirname(__file__), "data")
+    
+    if (ch == 1_2):
+        folderPath = os.path.join(os.path.dirname(__file__), "data", "CH1&2")
+    elif (ch == 3):
+        folderPath = os.path.join(os.path.dirname(__file__), "data", "CH3")
+    elif (ch == 4):
+        folderPath = os.path.join(os.path.dirname(__file__), "data", "CH4")
+    elif (ch == 5):
+        folderPath = os.path.join(os.path.dirname(__file__), "data", "CH5")
+    elif (ch == 6):
+        folderPath = os.path.join(os.path.dirname(__file__), "data", "CH6")
     
     for filename in os.listdir(folderPath):
         filePath = os.path.join(folderPath, filename)
@@ -68,22 +128,60 @@ def initializeRAG():
                 print(e)
     
     #since its persistent this could be called only when needed to update the info
-    addDocumentsToCollection(documents, docIds)
+    if (ch == 1_2):
+        addDocumentsToCollection1_2(documents, docIds)
+    elif (ch == 3):
+        addDocumentsToCollection3(documents, docIds)
+    elif (ch == 4):
+        addDocumentsToCollection4(documents, docIds)
+    elif (ch == 5):
+        addDocumentsToCollection5(documents, docIds)
+    elif (ch == 6):
+        addDocumentsToCollection6(documents, docIds)
+
+# Initialise the RAG backend
+def initializeRAG():
+    initializeCH(1_2)
+    initializeCH(3)
+    initializeCH(4)
+    initializeCH(5)
+    initializeCH(6)
     return
 
 # Function to query the ChromaDB collection
-def queryChromadb(query_text, n_results=1):
-    results = collection.query(
+def queryChromadb(query_text, ch, n_results=1):
+    if (ch == 1_2):
+        results = collection1_2.query(
         query_texts=[query_text],
         n_results=n_results
-    )
+        )
+    elif (ch == 3):
+        results = collection3.query(
+        query_texts=[query_text],
+        n_results=n_results
+        )
+    elif (ch == 4):
+        results = collection4.query(
+        query_texts=[query_text],
+        n_results=n_results
+        )
+    elif (ch == 5):
+        results = collection5.query(
+        query_texts=[query_text],
+        n_results=n_results
+        )
+    elif (ch == 6):
+        results = collection6.query(
+        query_texts=[query_text],
+        n_results=n_results
+        )
     return results["documents"], results["ids"]
 
 # RAG pipeline: Combine ChromaDB and Ollama for Retrieval-Augmented Generation
-def ragConstruction(queryText, messageHistory=[], userCode=""):
+def ragConstruction(queryText, ch, messageHistory=[], userCode=""):
 
     # Step 1: Retrieve relevant documents from ChromaDB
-    retrievedDocs, ids = queryChromadb(queryText)
+    retrievedDocs, ids = queryChromadb(queryText, ch)
     context = " ".join(retrievedDocs[0]) if retrievedDocs else "No relevant documents found."
 
     # Step 2: Send the query along with the context to Ollama

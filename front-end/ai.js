@@ -42,6 +42,7 @@ function sendMessage() {
     const subButtonType = document.getElementById("subButtonType");
     const userMsgValue = userMsg.value;
     const userCodeValue = document.getElementById("codeMessage").value;
+    const chapterValue = document.getElementById("chapterSelect").value;
     const http = new XMLHttpRequest();
 
     userMsg.value = "";
@@ -100,7 +101,11 @@ function sendMessage() {
         }
     };
 
-    const data = { code: userCodeValue, chatHistory: chatHistory };
+    const data = {
+        code: userCodeValue,
+        chatHistory: chatHistory,
+        chapter: chapterValue,
+    };
 
     http.send(JSON.stringify(data));
 }
