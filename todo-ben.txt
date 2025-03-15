@@ -1,0 +1,1 @@
+I think the UI could be better if the response from the AI defaults to showing the top of the response instead of the bottom so that you can scroll down as you read it instead of having to scroll up to see the beginning of the response.

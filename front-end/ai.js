@@ -78,8 +78,8 @@ function sendMessage() {
             document.getElementById("lastBotMessage").innerHTML = setMaxWidth(
                 DOMPurify.sanitize(marked.parse(http.responseText))
             );
-            document.getElementById("lastBotMessage").setAttribute("id", "");
             messageHistory.scrollTop = messageHistory.scrollHeight;
+            document.getElementById("lastBotMessage").setAttribute("id", "");
 
             subButton.setAttribute("enabled", "");
             subButton.removeAttribute("disabled", "");
@@ -91,8 +91,8 @@ function sendMessage() {
             document
                 .getElementById("lastBotMessage")
                 .setAttribute("class", "errorMessage");
-            document.getElementById("lastBotMessage").setAttribute("id", "");
             messageHistory.scrollTop = messageHistory.scrollHeight;
+            document.getElementById("lastBotMessage").setAttribute("id", "");
 
             subButton.setAttribute("enabled", "");
             subButton.removeAttribute("disabled", "");

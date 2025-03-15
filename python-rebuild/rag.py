@@ -175,6 +175,8 @@ def queryChromadb(query_text, ch, n_results=1):
         query_texts=[query_text],
         n_results=n_results
         )
+    else:
+        return "", ""
     return results["documents"], results["ids"]
 
 # RAG pipeline: Combine ChromaDB and Ollama for Retrieval-Augmented Generation
