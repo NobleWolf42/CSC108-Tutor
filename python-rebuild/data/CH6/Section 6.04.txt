@@ -1,0 +1,36 @@
+6.3 Vectors
+Students:
+Section 6.4 is a par t of 1 assignment :CSC108 CH06.1-6.9 P6A
+Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor eIncludes : PA
+Activity summar y for assignment: CSC108 CH06.1-6.9 P6A 0 / 72 points
+Please br owse t o this assignment thr ough
+Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor e
+6.5 Iterating thr ough v ectorsDue: 04/29/2025, 11:59 PM ED T
+6.4 Array/vector iter ation drill
+The following activities can help one become comfor table with iter ating thr ough arr ays or v ectors, befor e learning t o code such iter ation.
+P AR TICIP A TION
+A C TIVI T Y6.4.1:  Find the maximum v alue in the arr ay.
+Click "St ore value" if a new maximum v alue is seen.
+Array Max
+P AR TICIP A TION
+A C TIVI T Y6.4.2:  Negativ e value counting in arr ay.
+Click "Incr ement" if a negativ e value is seen.
+Array Counter
+P AR TICIP A TION
+A C TIVI T Y6.4.3:  Array sor ting lar gest v alue.
+Move the lar gest v alue t o the right-most position. Click "Swap v alues" if the lar ger of the two curr ent v alues is on the left.
+Array
+How was this section? |Star t
+Next v alue Store value
+Feedback?
+Star t
+Next v alue Increment
+Feedback?
+Star t
+Next v alue Swap v alues
+Feedback?
+ Provide section f eedback
+Due: 04/29/2025, 11:59 PM ED T
+Completion details  My libr ary>CSC 108: Computer Science I home >6.4: Arr ay/vector iter ation zyBooks catalog Help/F AQ

@@ -1,0 +1,256 @@
+6.8 Vector back() and pop_back()
+Students:
+Section 6.9 is a par t of 2 assignments :
+Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor eIncludes : CA
+Activity summar y for assignment: 0 / 40 points
+Please br owse t o this assignment thr ough
+Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn mor e
+6.10 Swapping two v ariables (gener al)Due: 04/29/2025, 11:59 PM ED T
+6.9 Using a loop t o modify , cop y, or compar e vectors
+Modifying vector elements
+A program ma y need t o modify elements while iter ating thr ough a v ector. The pr ogram below uses a loop t o conv ert any negativ e vector
+element v alue t o 0.
+Figur e 6.9.1: Modifying a v ector during iter ation example: Conv erting negativ es to 0.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   const  int  NUM_ELEMENTS  =  5;       // Number of elements to add
+   vector<int>  userVals ;             // Empty vector for user values
+   unsigned  int  i;                   // Loop index
+   int  userInput ;                    // Element value
+   cout  <<  "Enter "  <<  NUM_ELEMENTS  <<  " integer values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_ELEMENTS ;  ++i)  {
+      cout  <<  "Enter value: " ;
+      cin  >>  userInput ;
+      userVals .push_back (userInput );
+   }
+   for  (i  =  0;  i  <  userVals .size();  ++i)  {
+      if  (userVals .at(i)  <  0)  {
+         userVals .at(i)  =  0;
+      }
+   }
+   cout  <<  "Updated vector values:" ;
+   for  (i  =  0;  i  <  userVals .size();  ++i)  {
+      cout  <<  " "  <<  userVals .at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}Enter 5 integer values...
+Enter value: 3
+Enter value: 5
+Enter value: -2
+Enter value: -8
+Enter value: 45
+Updated vector values: 3 5 0 0 45
+PARTICIP ATION
+ACTIVITY6.9.1:  Modifying a v ector in a loop.
+What ar e the r esulting v ector elements, assuming each question star ts with a v ector of siz e 4 and elements -55, -1, 0, 9?
+1)for  (i  =  0;  i  <  4;  ++i)  {
+   itemsList .at(i)  =  i;  
+}
+-54, 0, 1, 10
+0, 1, 2, 3
+1, 2, 3, 4
+2)for  (i  =  0;  i  <  4;  ++i)  {
+   if  (itemsList .at(i)  <  0)  {
+      itemsList .at(i)  =  itemsList .at(i)  *  -1;  
+   }
+}
+-55, -1, 0, -9
+55, 1, 0, -9
+55, 1, 0, 9
+3)for  (i  =  0;  i  <  4;  ++i)  {
+   itemsList .at(i)  =  itemsList .at(i+1);   
+}
+-1, 0, 9, 0
+0, -55, -1, 0
+Error (pr ogram abor ts)
+4)for  (i  =  0;  i  <  3;  ++i)  {
+   itemsList .at(i)  =  itemsList .at(i+1);  
+}
+-1, 0, 9, 9
+-1, 0, 9, 0
+Error (pr ogram abor ts)
+5)for  (i  =  0;  i  <  3;  ++i)  {
+   itemsList .at(i+1)  =  itemsList .at(i);  
+}
+-55, -55, -55, -55
+-55, -55, -1, 0
+Error (pr ogram abor ts)
+zyDE 6.9.1: Modifying a v ector during iter ation: Doubling element v alues.
+Complete the following pr ogram t o double each number in the v ector.
+67 -5 -99 4 22
+Element by element vector copy
+In C++, the = oper ator conv eniently per forms an element-b y-element cop y of a v ector, called a vector cop y oper ation . The oper ation v ectorB
+= vectorA r esizes vectorB t o vectorA's siz e, appending or deleting elements as needed. v ectorB commonly has a siz e of 0 befor e the
+oper ation.
+Figur e 6.9.2: Using = t o cop y a v ector: Original and sale prices.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   vector<int>  origPrices ;  // Source vector
+   vector<int>  salePrices ;  // Target vector
+   unsigned  int  i;  // Loop index
+   // Add prices to original prices vector
+   origPrices .push_back (10);
+   origPrices .push_back (20);
+   origPrices .push_back (30);
+   origPrices .push_back (40);
+   // Copy original prices to sales prices
+   salePrices  =  origPrices ;
+   // Update sale prices. This does not affect original prices.
+   salePrices .at(2)  =  27;
+   salePrices .at(3)  =  35;
+   // Output original and sale prices
+   cout  <<  "Original prices: " ;
+   for  (i  =  0;  i  <  origPrices .size();  ++i)  {
+      cout  <<  " "  <<  origPrices .at(i);
+   }
+   cout  <<  endl;
+   cout  <<  "Sale prices: " ;
+   for  (i  =  0;  i  <  salePrices .size();  ++i)  {
+      cout  <<  " "  <<  salePrices .at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}Original prices:  10 20 30 40
+Sale prices:      10 20 27 35
+PARTICIP ATION
+ACTIVITY 6.9.2:  Vector cop y oper ation.
+Assume v ectors ha ve been declar ed as follows and ha ve been initializ ed as indicated in the comments:
+vector<int>  userVals (4);  // {44, 55, 66, 77}
+vector<int>  newVals;      // No elements yet
+1)What is newV als after: newVals = userVals; 
+Type answer as: 10, 20, 30, 40
+If appr opriate type: Err or
+2)What is newV als after:
+newVals = userVals; 
+userVals.at(0) = 33; 
+Type answer as: 10, 20, 30, 40
+If appr opriate type: Err or
+3)Given: v ector<int> otherV als(9).
+What size is newV als after:
+newVals = userVals;
+... 
+newVals = otherVals; 
+If appr opriate type: Err or
+Element by element vector comparison
+In C++, the == oper ator conv eniently compar es vectors element-b y-element, called a vector equality oper ation , with v ectorA == v ectorB
+evaluating t o true if the v ectors ar e the same siz e AND each element pair is equal.
+PARTICIP ATION
+ACTIVITY6.9.3:  Vector comparing.
+Assume v ectors ha ve been declar ed as follows and ha ve been initializ ed as indicated in the comments:
+vector<int>  vectorX(2);  // {3,4}
+vector<int>  vectorY(5);  // {3,4,0,7,8}
+vector<int>  vectorZ(5);  // {3,4,0,6,8}
+1)(vectorX == v ectorY) will e valuate t o:
+True
+False
+2)Given: v ectorX = v ectorY; (v ectorX == v ectorY) will e valuate t o:
+True
+False
+3)(vectorZ == v ectorY) will e valuate t o:
+True
+False
+4)(vectorZ.siz e() == v ectorY.size()) will e valuate t o:
+True
+False
+CHALLENGE
+ACTIVITY6.9.1:  Loop-modifying or cop ying/comparing v ectors.
+620890.5010016.qx3z qy7
+Integer numElements is r ead fr om input, r epresenting the number of integers t o be r ead next. Then, the r emaining integers ar e
+read and st ored int o vector numbersList. F or each element in numbersList that is divisible b y 9:
+Output the element, followed b y ": corr ected t o a number not divisible b y 9" and a newline.
+Assign the element with the element' s curr ent v alue minus 1.
+Note: (x % 9 == 0) r eturns true if x is divisible b y 9.1
+2
+3
+How was this section? |Feedback?
+Feedback?
+Load default template...
+#include  <iostream>
+#include  <vector>
+using namespace  std;
+int main() {
+   const int NUM_ELEMENTS  = 5; // Number of element
+   vector<int> userVals ;       // Empty vector for 
+   unsigned  int i;             // Loop index
+   int userInput ;              // Element value
+   cout << "Enter " << NUM_ELEMENTS  << " integer va
+   for (i = 0; i < NUM_ELEMENTS ; ++i) {
+      cout << "Enter value: " << endl;
+      cin >> userInput ;
+      userVals .push_back (userInput );
+   }
+   /* Your code here */Run
+Feedback?
+Feedback?
+Check Show answer
+Check Show answer
+Check Show answer
+Feedback?
+Feedback?
+Star t
+Click her e for example 
+#include  <iostream>
+#include  <vector>
+using namespace  std;
+int main() {
+   int numElements ;
+   vector<int> numbersList ;
+   unsigned  int i;
+   int inputVal ;
+   cin >> numElements ;
+   for (i = 0; i < numElements ; ++i) {
+      cin >> inputVal ;
+      numbersList .push_back (inputVal );
+   }
+   cout << "Original numbers: ";1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+2 3
+Check Next le vel
+Feedback?
+  Provide section f eedback
+Due: 04/29/2025, 11:59 PM ED T
+Completion details 11
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ 
+CSC108 CH06.1-6.9 C6A
+CSC108 CH06.1-6.9 C6A  My libr ary>CSC 108: Computer Science I home >6.9: Using a loop t o modify , cop y, or compar e vectors zyBooks catalog Help/F AQ
