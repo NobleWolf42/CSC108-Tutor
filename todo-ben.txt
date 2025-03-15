@@ -1,3 +1,0 @@
-Remove 1.09 <- He's a greedy file for some reason
-Add a context swapping function to solve for/while questions being sent to chapter 3
-Make the code and context separate messages roles? <- Might fix some of our issues.

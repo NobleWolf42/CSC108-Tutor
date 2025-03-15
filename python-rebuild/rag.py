@@ -188,7 +188,17 @@ def ragConstruction(queryText, ch, messageHistory=[], userCode=""):
     messages = [
         (
             "system",
-            "Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.\n\nContext: {}\n\nUser's code: {}".format(context, userCode))]
+            "You are a Tutor for CSC108 - Intro to C++. You are answering questions about C++ coding. Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. If it is a vague question, ask for more information."
+        ),
+        (
+            "context",
+            "{}".format(context)
+        ),
+        (
+            "code",
+            "{}".format(userCode)
+        )
+    ]
     
     for message in messageHistory:
         messages.append((message["role"], repr(message["content"])))
