@@ -118,8 +118,9 @@ def ragConstruction(queryText, messageHistory=[], userCode=""):
 #logging function
 def log(question, history, code, response):
     try:
-        f = open("logs/{}.txt".format(datetime.now()), "w", encoding="utf-8")
+        f = open(os.path.join(os.path.dirname(__file__), "logs", "{}.txt".format(datetime.now().strftime("%Y%m%d%H%M%S%f"))), "w", encoding="utf-8")
         f.write("Question: {}\n\nHistory: {}\n\nCode: {}\n\nResponse: {}".format(question, history, code, response))
         f.close()
     except Exception as e:
         print(e)
+    return
