@@ -204,7 +204,7 @@ def ragConstruction(queryText, ch, messageHistory=[], userCode=""):
     for message in messageHistory:
         messages.append((message["role"], repr(message["content"])))
     
-    messages.append(("user","{}\n\nMy Code: ".format(queryText, userCode)))
+    messages.append(("user","{}\n\nMy Code: {}".format(queryText, userCode)))
 
     llm = ChatOllama(model=llmmodel, base_url=url)
 

@@ -16,8 +16,6 @@ fileSplit = file.split(' ')
 port = fileSplit[0]
 jId = fileSplit[1]
 jCs = fileSplit[2]
-key = fileSplit[3]
-cert = fileSplit[4]
 
 @app.before_request
 def before_request():
@@ -74,7 +72,7 @@ def code():
     
     return response
 
-@app.route('/hello', methods=['GET'])
+@app.route('/', methods=['GET'])
 def hello():
     # Process the inputs.
     result = "Hello World!"
@@ -92,5 +90,5 @@ def favicon():
 
 if __name__ == '__main__':
     print("Server Started.")
-    pywsgi.WSGIServer(('0.0.0.0', int(port)), app, keyfile=key, certfile=cert).serve_forever()
+    pywsgi.WSGIServer(('0.0.0.0', int(port)), app).serve_forever()
     #app.run()
