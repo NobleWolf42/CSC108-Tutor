@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const messageHistory = document.getElementById("messageHistory");
         chatHistory = JSON.parse(oldChat).chatHistory;
         for (item of chatHistory) {
-            console.log(item);
             if (item.role == "user") {
                 messageHistory.innerHTML =
                     messageHistory.innerHTML +
