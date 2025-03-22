@@ -1,9 +1,9 @@
 
 4.3 More while examples
 Example: GCD
-The following is an example of using a loop to compute a mathematical quantity . The program computes the greatest common divisor
+The following is an example of using a loop to compute a mathematical quantity. The program computes the greatest common divisor
 (GCD) among two user-entered integers numA and numB, using Euclid's algorithm: If numB > numA, assign numB with numB - numA, else
-assign numA with numA - numB. These steps are repeated until numA equals numB, at which point numA and numB each equal the GCD .
+assign numA with numA - numB. These steps are repeated until numA equals numB, at which point numA and numB each equal the GCD.
 Figure 4.3.1: While loop example: GCD (greatest common divisor) program.
 #include  <iostream>
 using namespace  std;
@@ -54,12 +54,12 @@ iteration?
 3)What is numB after the second iteration of the while loop?
 4)How many loop iterations will the algorithm execute?
 Example: Conversation
-Below is a program that has a " converation " with the user , asking the user totype something and then (randomly) printing one of four
+Below is a program that has a " converation " with the user, asking the user totype something and then (randomly) printing one of four
 possible responses until the user enters "Goodbye".
 The program uses getline() toread a string from the user intouserT ext. The loop checks whether userT ext is "Goodbye"; if not, the loop
-body executes. The loop body gener ates a "r andom " number between 0 and 3, by using .size() to get the length of the user's string, which
+body executes. The loop body generates a "r andom " number between 0 and 3, by using.size() to get the length of the user's string, which
 can vary, and mod'ing the length by 4. The loop body then prints one of four messages, using an if-else statement.
-Figur e 4.3.2: While loop example: converation program.
+Figure 4.3.2: While loop example: converation program.
 #include  <iostream>
 #include  <string>
 using namespace  std;
@@ -77,7 +77,7 @@ int main() {
    getline(cin, userText );
    
    while (userText  != "Goodbye" ) {
-      randNum0_3  = userText .size() % 4; // "Random" num. %4 ensures 0-3
+      randNum0_3  = userText.size() % 4; // "Random" num. %4 ensures 0-3
       if (randNum0_3  == 0) {
          cout << endl << "Please explain further."  
               << endl << endl << "> ";
@@ -125,9 +125,9 @@ Valid answers are branch 0, 1, 2, 3, or none.
 hungry", "You are weird", "Goodbye", and "I like you".
 Example: Getting input until a sentinel is seen
 Loops are commonly used toprocess an input list of values. A sentinel value  is a special value indicating the end of a list, such as a list of
-positive integers ending with 0, as in 10 1 6 3 0. The example below computes the a verage of an input list of positive integers, ending with
-0. The 0 is not included in the a verage.
-Figur e 4.3.3: Computing a verage of a list with a sentinel.
+positive integers ending with 0, as in 10 1 6 3 0. The example below computes the average of an input list of positive integers, ending with
+0. The 0 is not included in the average.
+Figure 4.3.3: Computing average of a list with a sentinel.
 #include  <iostream>
 using namespace  std;
 // Outputs average of list of positive integers
@@ -177,7 +177,7 @@ ACTIVITY4.3.1:  While loop with sentinel.
 
 ACTIVITY4.3.2:  Bidding example.
 
-Drag and dr op the corr ect line of code that causes the while loop tocontinue bidding until the user enters ' n'.
+Drag and dr op the correct line of code that causes the while loop tocontinue bidding until the user enters ' n'.
 Note: Only one line of code on the left will be used in the final solution.
 
 ACTIVITY4.3.3:  While loop: Insect growth.
@@ -192,16 +192,16 @@ Ex: If the input is 16, then the output is:
 CHALLENGE
 ACTIVITY4.3.4:  While loops with numbers.
 
-Use cin to read r emaining integers from input int o inputNumber while inputNumber is not -1000. F or each integer read before
--1000, if the integer is negativ e, output the integer followed by a newline and increment countOfSelected.
+Use cin to read r emaining integers from input into inputNumber while inputNumber is not -1000. For each integer read before
+-1000, if the integer is negative, output the integer followed by a newline and increment countOfSelected.
 Notes:
 The sentinel value is -1000.
-A negativ e number is less than 0.1
+A negative number is less than 0.1
 2
 CHALLENGE
 ACTIVITY4.3.5:  Advanced while loop examples.
 
-Integer inputNum is read from input. W rite a loop that iter ates while inputNum is not equal to 26. In each iteration of the loop:
+Integer inputNum is read from input. W rite a loop that iterates while inputNum is not equal to 26. In each iteration of the loop:
 Output "Not 26"  and a newline.
 
 #include <iostream>

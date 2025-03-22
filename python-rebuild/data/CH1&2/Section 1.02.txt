@@ -33,7 +33,7 @@ No
 Yes
 4) Each statement ends with what symbol?
 Semicolon ;
-Period .
+Period.
 Colon :
 5) The expression wage * 40 * 52 resulted in what value?
 20
@@ -97,7 +97,7 @@ int main() {
 Keep calm
 and
 carry on
-The notation  cout << ...  gives the appearance of the item on the right being "streamed" to cout (like items flowing along a stream
+The notation  cout <<...  gives the appearance of the item on the right being "streamed" to cout (like items flowing along a stream
 into a lake), where cout represents the computer's screen.
 PARTICIPATION
 ACTIVITY 1.2.6: How to use endl (stands for end line).
@@ -191,7 +191,7 @@ Then, try some variations, like:
 1344130000 is the population. 1344130000 is a lot.
 
 Drag and drop the cin statements in the correct order to read input values into birthMonth and then birthYear. Then, drag and
-drop the cout statements to output the month, a dash, and the year. End with a newline by outputting 'endl'.
+drop the cout statements to output the month, a dash, and the year. End with a newline byoutputting 'endl'.
 Ex: If the input is 1 2000, then the output is:
 1-2000
 Note: Our autograder automatically runs your program several times, trying different input values each time to ensure your
@@ -219,7 +219,7 @@ int main() {
 20 wage
 Salary is 41600
 1. A program begins executing statements in main(). 'int wage' declares an integer variable. 'wage = 20' assigns wage with 20.
-2. The cout statement outputs 'Salary is ' to the screen at the cursor's present location.
+2. The cout statement outputs'salary is ' to the screen at the cursor's present location.
 3. This cout statement outputs the result of wage * 40 * 52, so 20 * 40 * 52 or 41600.
 4. This cout statement with 'endl' moves the output cursor to the next line on the screen.
 5. The 'return 0' statement ends the program.

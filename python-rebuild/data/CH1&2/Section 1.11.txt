@@ -94,7 +94,7 @@ secure from unauthorized access.
 Bachelor's degree $101,000
 Information Security
 Analysts
-Information security analysts plan and carry out
+Information security analysts plan and carryout
 security measures to protect an organization's
 computer networks and systems. Their
 responsibilities are continually expanding as the

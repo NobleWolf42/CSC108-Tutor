@@ -1,6 +1,6 @@
 
 3.20  C++ example: Salary calculation with branches
-zyDE 3.20.1: Calculate salary: Calculate overtime using br anches.
+zyDE 3.20.1: Calculate salary: Calculate overtime using branches.
 The following program calculates weekly salary and assumes work-hours-per-week limitof 40.
 Overtime refers to hours worked per week in excess of some weekly limit, such as 40 hours. Some companies pay time-and-a-half for
 overtime hours, meaning overtime hours are paid at 1.5 times the hourly wage.
@@ -11,7 +11,7 @@ if weeklyHours <= weeklyLimit
 else
    overtimeHours = weeklyHours - weeklyLimit
    weeklySalary = hourlyWage * weeklyLimit + (overtimeHours * hourlyWage * 1.5)
-1. Run the program and observe the salary earned.
+1. Run the program and observe the salaryearned.
 2. Modify the program to read user input for weeklyHours. Run the program again.
 10 42
 zyDE 3.20.2: Determine tax rate.
@@ -23,7 +23,7 @@ and annual income above 100000 is taxed at 40%.
 3. Run the program again with an annual income of 120000. What is the tax rate and tax to pay now?
 4. Run the program again with an annual income of 60000. (Change the input area below the program.)
 5. Challenge: What happens if a negative annual salary is entered? Modify the program to print an error message in that case.
-Note: The calculation is inaccurate to how taxes are formally assessed and is a simpliflication for educational purposes only .
+Note: The calculation is inaccurate to how taxes are formally assessed and is a simpliflication for educational purposes only.
 120000
 
 #include  <iostream>

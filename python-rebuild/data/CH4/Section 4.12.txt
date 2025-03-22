@@ -1,7 +1,7 @@
 4.11 Enumer ations
 4.13 C++ example: Domain name validation with loops4.12  C++ example: Salary calculation with loops
 zyDE 4.12.1: Calculate adjusted salary and tax with deductions: Using loops.
-A program may execute the same computations repeatedly .
+A program may execute the same computations repeatedly.
 The program below repeatedly asks the user to enter an annual salary, stopping when the user enters 0 or less. For each annual salary,
 the program determines the tax rate and computes the tax to pay.
 1. Run the program below with annual salaries of 40000, 90000, and then 0.
@@ -9,7 +9,7 @@ the program determines the tax rate and computes the tax to pay.
 salary deduction, stopping when the user enters a 0 or less. The deductions are summed and then subtracted from the annual
 income, giving an adjusted gross income. The tax rate is then calculated from the adjusted gross income.
 3. Run the program with the following input: 40000, 7000, 2000, 0, and 0. Note that the 7000 and 2000 are deductions.
-Note: The calculation is inaccurate to how taxes are formally assessed and is a simpliflication for educational purposes only .
+Note: The calculation is inaccurate to how taxes are formally assessed and is a simpliflication for educational purposes only.
 40000
 90000
 0
@@ -19,20 +19,20 @@ zyDE 4.12.2: Calculate adjusted salary and tax with deductions: Using loops (sol
 90000 5000 0
 60000 2000 1000 1450 0
 0
-zyDE 4.12.3: Cr eate an annual income and tax table.
+zyDE 4.12.3: create an annual income and tax table.
 A tax table shows three columns: an annual salary, the tax rate, and the tax amount to pay. The program below shows most of the code
 needed to calculate a tax table.
 1. Run the program below and note the results.
 2. Alter the program to use a for loop to print a tax table of annual income, tax rate, and tax to pay. Use starting and ending annual
 salaries of 40000 and 60000, respectiv ely, and a salary increment of 5000.
 3. Run the program again and note the results. You should have five rows in the tax table.
-4. Alter the program to add user prompts and r ead the starting and ending annual incomes from user input.
+4. Alter the program to add user prompts and read the starting and ending annual incomes from user input.
 5. Run the program again using 40000 and 60000, respectiv ely, and the same salary incr ementof 5000. You should have the same
 results as before.
 6. Alter the program to ask the user for the increment to use in addition to the starting and ending annual salaries.
 7. Run the program again using an increment of 2500. Are the entries for 40000, 45000, 50000, 55000 and 60000 the same as
 before?
-Note: The calculation is inaccurate to how taxes are formally assessed and is a simpliflication for educational purposes only .
+Note: The calculation is inaccurate to how taxes are formally assessed and is a simpliflication for educational purposes only.
 40000 60000 5000
 A solution to the above problem follows.
 zyDE 4.12.4: Create an annual income and tax table (solution).

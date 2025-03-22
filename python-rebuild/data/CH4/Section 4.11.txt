@@ -1,9 +1,9 @@
 
 4.11  enumerations
 Some variables only need to store a small set of named values. For example, a variable representing a traffic light need only store values
-named GREEN, YELLOW, or RED . An enumeration type  (enum) declares a name for a new type and possible values for that type.
+named GREEN, YELLOW, or RED. An enumeration type  (enum) declares a name for a new type and possible values for that type.
 Construct 4.11.1: enumeration type.
-enum  identifier  {enumerator1 ,  enumerator2 ,   ...};
+enum  identifier  {enumerator1,  enumerator2,...};
 The items within the braces (" enumerators") are integer constants automatically assigned an integer value, with the first item being 0, the
 second 1, and so on. An enumeration declares a new data type that can be used like the built-in types int, char, etc.
 Figure 4.11.1: enumeration example.
@@ -11,7 +11,7 @@ Figure 4.11.1: enumeration example.
 using  namespace  std;
 /* Manual controller for traffic light */
 int  main()  {
-   enum  LightState  {LS_RED,  LS_GREEN ,  LS_YELLOW ,  LS_DONE};
+   enum  LightState  {LS_RED,  LS_GREEN,  LS_YELLOW,  LS_DONE};
    LightState  lightVal ;
    char  userCmd;
    lightVal  =  LS_RED;
@@ -66,15 +66,15 @@ Yellow light  n
 Red light  q
 Quit program.
 The program declares a new enumeration type named LightState. The program then declares a new variable lightVal of that type. The loop
-updates lightVal based on the user 's input.
+updates lightVal based on the user's input.
 The example illustrates the idea of a state machine  that is sometimes used in programs, especially programs that interact with physical
-objects, wherein the program mo ves among particular situations (" states") depending on input; see What is: State machine .
+objects, wherein the program mo ves among particular situations (" states") depending on input; see What is: State machine.
 Because different enumerated types might use some of the same names, e.g., enum Colors {RED, PURPLE, BLUE, GREEN};  might
 also appear in the same program, the program above follows the practice of pr epending a distinguishing prefix, in this case "LS" (for Light
 State).
 One might ask why the light variable wasn't simply declared as a string, and then compared with strings "GREEN", "RED", and "YELLOW".
-enumerations are safer. If using a string, an assignment lik e light = "ORANGE"  would not yield a compiler error, even though ORANGE
-is not a valid light color . Likewise, light == "YELOW"  would not yield a compiler error, even though YELLOW is misspelled.
+enumerations are safer. If using a string, an assignment like light = "ORANGE"  would not yield a compiler error, even though ORANGE
+is not a valid light color. Likewise, light == "YELOW"  would not yield a compiler error, even though YELLOW is misspelled.
 One could instead declare constant strings like const string LS_GREEN = "GREEN";  or even integer values like
 const int LS_GREEN = 0;  and then use those constants in the code, but an enumeration is clearer, requires less code, and is less
 prone to error.
@@ -83,7 +83,7 @@ enumerator. Ex: enum TvChannels {TC_CBS = 2, TC_NBC = 5, TC_ABC = 7};
 
 ACTIVITY4.11.1:  enumeration syntax.
 1)Which of the following declares a new enumeration type named
-CarGear , with PARK, REVERSE, and DRIVE?
+CarGear, with PARK, REVERSE, and DRIVE?
 enum CarGear (PARK, REVERSE, DRIVE);
 enum CarGear {PARK, REVERSE, DRIVE}
 enum CarGear {PARK, REVERSE, DRIVE};
@@ -91,27 +91,27 @@ CarGear {PARK, REVERSE, DRIVE};
 
 ACTIVITY4.11.2:  enumerations.
 1)Declare a new enumeration type named HvacStatus with three
-named values HV AC_OFF , AC_ON, FURNACE_ON, in that order.
+named values HV AC_OFF, AC_ON, FURNACE_ON, in that order.
 2)Declare a variable of the enumeration type HvacStatus named
 systemStatus.
 3)Assign AC_ON to the variable systemStatus.
 4)What is the integer value of systemStatus after the following?
 systemStatus = FURNACE_ON;
 5)Given enum TvChannels {TC_CBS = 2, TC_NBC = 5,  
-TC_ABC = 7}; , what does cout << TC_ABC;  output?
+TC_ABC = 7};, what does cout << TC_ABC;  output?
 
 ACTIVITY4.11.1:  enumerations: Grocery items.
 
 Organize the lines of code to output "Fruit" if the value of userItem is a type of fruit. Other wise, if the value of userItem is a type of
 drink, output "Drink". Other wise, output "Unknown ".
-Ex: If the input is 0, representing named value GR_APPLES , then the output is:
+Ex: If the input is 0, representing named value GR_APPLES, then the output is:
 Fruit
 
 ACTIVITY4.11.2:  Soda machine with enums.
 
 The following program reads a number from input to indicate the coin inserted into a soda machine. Organize the lines of code to
 add 10 to totalDeposit if the input is a dime. Other wise, if the input is a nickel, add 5 to totalDeposit.
-Ex: If the input is 1, representing named value ADD_DIME , then the output is:
+Ex: If the input is 1, representing named value ADD_DIME, then the output is:
 totalDeposit: 10
 Note: Not all lines of code on the left will be used in the final solution.
 

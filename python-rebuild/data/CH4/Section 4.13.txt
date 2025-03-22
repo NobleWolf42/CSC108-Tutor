@@ -1,16 +1,16 @@
 
 
  Validate domain names.
-A top-level domain  (TLD) name is the last part of an Internet domain name like .com in example.com. A core generic top-level domain
-(core gTLD) is a TLD that is either .com, .net, .or g, or .info. A second-level domain  is a single name that precedes a TLD as in apple in
+A top-level domain  (TLD) name is the last part of an Internet domain name like.com in example.com. A core generic top-level domain
+(core gTLD) is a TLD that is either.com,.net,.or g, or.info. A second-level domain  is a single name that precedes a TLD as in apple in
 apple.com
 The following program uses a loop to repeatedly prompt for a domain name, and indicates whether that domain name consists of a
-second-level domain followed by a core gTLD . An example of a valid domain name for this program is apple.com. An invalid domain
+second-level domain followed by a core gTLD. An example of a valid domain name for this program is apple.com. An invalid domain
 name for this program is support.apple.com because the name contains two periods. The program ends when the user presses just the
 Enter key in response to a prompt.
 1. Run the program and enter domain names to validate. Note that even valid input is flagged as invalid.
 2. Change the program to validate a domain name. A valid domain name for this program has a second-level domain followed by a
-core gTLD . Run the program again.
+core gTLD. Run the program again.
 apple.com
 APPLE.COM
 apple.comm

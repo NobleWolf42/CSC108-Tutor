@@ -48,7 +48,7 @@ Declaration Size Supported number range
 float x; 32 bits -3.4x10  to 3.4x10
 double x; 64 bits -1.7x10  to 1.7x10
 The compiler uses one bit for sign, some bits for the mantissa, and some for the exponent. Details are beyond our scope. The language
-(unfortunately) does not actually define the number of bits for float and double types, but the above sizes are very common.
+(unfortunately) does not actually define the number of bits for float and double types, but the above sizes arevery common.
 float is typically only used in memory-saving situations, as discussed above for short.
 Due to the fixed sizes of the internal representations, the mantissa (e.g, the 6.02 in 6.02e23) is limited to about 7 significant digits for float
 and about 16 significant digits for double. So for a variable declared as double pi, the assignment pi = 3.14159265 is OK, but pi =

@@ -1,7 +1,7 @@
 
 3.14  String access operations
 String character indices
-A string is a sequence of characters in memory. Each string character has a position number called an index , starting with 0 (not 1).
+A string is a sequence of characters in memory. Each string character has a position number called an index, starting with 0 (not 1).
 
 ACTIVITY3.14.1:  A string's characters each has an index, starting with 0.
 
@@ -20,10 +20,10 @@ ACTIVITY 3.14.2:  String indices.
 h
 (space)
 m
-5)For string "Y ou wish!", which character is at index 4?
+5)For string "you wish!", which character is at index 4?
 (space)
 w
-6)For string "Y ou wish!", which character is at index 9?
+6)For string "you wish!", which character is at index 9?
 h
 !
 "
@@ -39,11 +39,11 @@ int  main()  {
    cout  <<  "Enter a 5-letter word: " ;
    cin   >>  userWord ;
    cout  <<  "Scrambled: " ;
-   cout  <<  userWord .at(3);
-   cout  <<  userWord .at(1);
-   cout  <<  userWord .at(4);
-   cout  <<  userWord .at(0);
-   cout  <<  userWord .at(2);
+   cout  <<  userWord.at(3);
+   cout  <<  userWord.at(1);
+   cout  <<  userWord.at(4);
+   cout  <<  userWord.at(0);
+   cout  <<  userWord.at(2);
    cout  <<  endl;
    return  0;
 }Enter a 5-letter word: water
@@ -67,7 +67,7 @@ n
 (error)
 Changing a character in a string
 A character in a string can be assigned. If userString is " abcde ", then userString.at(3) = 'X';  changes userString to "abcX e".
-Figure 3.14.2: Example: Changing a character .
+Figure 3.14.2: Example: Changing a character.
 #include  <iostream>
 #include  <string>
 using  namespace  std;
@@ -77,7 +77,7 @@ int  main()  {
    
    cout  <<  "Enter an index (0-10): " ;
    cin   >>  replaceIndex ;
-   userWord .at(replaceIndex )  =  '*';
+   userWord.at(replaceIndex )  =  '*';
    cout  <<  "Updated string: " ;
    cout  <<  userWord  <<  endl;
    return  0;
@@ -90,7 +90,7 @@ Updated string: Cat*rpillar
 Enter an index (0-10): 10
 Updated string: Caterpilla*
 
-ACTIVITY3.14.4:  Assigning a string character .
+ACTIVITY3.14.4:  Assigning a string character.
 Given firstName is assigned with "Ron ", what is firstName after each statement?
 1)firstName.at(1) = '@';
 @on
@@ -106,12 +106,12 @@ Determining the last character in a string is often useful. If a string's length
 length 3, with y at index 2. The function s1. size() returns s1's length. Ex: If s1 is "Hey", s1.size() returns 3.
 A common task is to append (add to the end) a string to an existing string.
 push_back()  adds a character to the end of a string. Ex: If s1 is "Why ", s1.push_back('?');  changes s1 to "Why?".
-append()  adds one string to the end of another . Ex: If s1 is "Hey", s1.append("!!!");  changes s1 to "Hey!!!".
+append()  adds one string to the end of another. Ex: If s1 is "Hey", s1.append("!!!");  changes s1 to "Hey!!!".
 The + operator can return a new string with one string appended to another string. Ex: If s1 is "Hey", then s2 = s1 + "!!!";
 assigns s2 with "Hey!!!".
 The example program below might be part of a "caption contest" for a website where a user enters a string below an image. The program
 automatically adds a period if the user did not include any punctuation at the caption's end.
-Figur e 3.14.3: Example: Adding a period to a caption if no punctuation.
+Figure 3.14.3: Example: Adding a period to a caption if no punctuation.
 #include  <iostream>
 #include  <string>
 using  namespace  std;
@@ -121,11 +121,11 @@ int  main()  {
    int  lastIndex ;
    cout  <<  "Enter a caption: " ;
    getline(cin,  userCaption );
-   lastIndex  =  userCaption .size()  -  1;
-   lastChar   =  userCaption .at(lastIndex );
+   lastIndex  =  userCaption.size()  -  1;
+   lastChar   =  userCaption.at(lastIndex );
    if  (  (lastChar  !=  '.')  &&  (lastChar  !=  '!')  &&  (lastChar  !=  '?')  )  {
       // User's caption lacked ending punctuation, so add a period
-      userCaption .append(".");
+      userCaption.append(".");
    }
    cout  <<  "New: ";
    cout  <<  userCaption  <<  endl;
@@ -157,7 +157,7 @@ ACTIVITY3.14.5:  Working with the end of a string.
 3
 3)Is a string's length the same as a string's last index?
 Yes
-No, the length is 1 gr eater .
+No, the length is 1 greater.
 No, the length is 1 less.
 
 ACTIVITY3.14.6:  String length.
@@ -168,33 +168,33 @@ Given userT ext is assigned with "Mar ch 17, 2034".
 return?
 PARTICIP ATION
 ACTIVITY3.14.7:  Working with the end of a string.
-For each question userString is initially "Done ". Indicate userString's value after the statement pr ovided.
-Do not type quotes in y our answer , so type Done rather than "Done ". If appr opriate, type: error
+For each question userString is initially "Done ". Indicate userString's value after the statement provided.
+Do not type quotes in your answer, so type Done rather than "Done ". If appropriate, type: error
 1)userString.append("!");
 2)userString.append('?');
 3)userString.push_back('?');
 4)userString.append(" now");
 5)anotherString = "yet...";
 userString = userString + anotherString ;
-6)userString.at(userString.size()) = 't';
-7)userString.at(userString.size() - 1) = 't';
+6)userString.at(userString.size()) ='t';
+7)userString.at(userString.size() - 1) ='t';
 Common errors
-A common error is to access an invalid string index, especially exactly one lar ger than the lar gest index.  Given userT ext with size 8, the range
+A common error is to access an invalid string index, especially exactly one larger than the largest index.  Given userT ext with size 8, the range
 of valid indices are 0 … 7; accessing with index 8 is an error.
 PARTICIP ATION
-ACTIVITY3.14.8:  Common error: Out-of-r ange access yields an ex ception.
-The .at(index) function gener ates an ex ception if the index is out of range for the string's size. An ex ception  is a detected runtime error that
+ACTIVITY3.14.8:  Common error: Out-of-range access yields an ex ception.
+The.at(index) function generates an ex ception if the index is out of range for the string's size. An ex ception  is a detected runtime error that
 commonly prints an error message and terminates the program.
-C++ also suppor ts C-style access of a string using br ackets [] rather than .at(), as in: someString[0]. Howe ver, such C-style access does not
-provide such error checking. Good practice  is to use .at() rather than br ackets for accessing a string's characters, due to .at()'s error checking.
+C++ also supports C-style access of a string using brackets [] rather than.at(), as in: someString[0]. However, such C-style access does not
+provide such error checking. Good practice  is to use.at() rather than brackets for accessing a string's characters, due to.at()'s error checking.
 
-ACTIVITY3.14.9:  Out-of-r ange string access.
-userT ext is "Monda y".
-1)userText.at(7) = '!';  may write to another variable 's location
+ACTIVITY3.14.9:  Out-of-range string access.
+userT ext is "Monday".
+1)userText.at(7) = '!';  may write to another variable's location
 and cause bizarre program behavior.
 True
 False
-2)userText[7] = '!';  may write to another variable 's location and
+2)userText[7] = '!';  may write to another variable's location and
 cause bizarre program behavior.
 True
 False
@@ -215,16 +215,16 @@ M
 a
 r
 y"Mary"
-1. A string is a sequence of characters. So "Mar y" is a sequence of characters M, a, r , y.
-2. Each character has an index, star ting with 0 (not 1). For a four-character string lik e "Mar y", M is at index 0, a at 1, r at 2, and y at 3.
+1. A string is a sequence of characters. So "Mar y" is a sequence of characters M, a, r, y.
+2. Each character has an index, starting with 0 (not 1). For a four-character string like "Mar y", M is at index 0, a at 1, r at 2, and y at 3.
 A 4-character string's last index is 3, not 4.Captions
 
 
 userName  =  "Cat";
-w  =  userName .at(0);
-x  =  userName .at(1);
-y  =  userName .at(2);
-z  =  userName .at(3);75
+w  =  userName.at(0);
+x  =  userName.at(1);
+y  =  userName.at(2);
+z  =  userName.at(3);75
 76
 77
 78...
@@ -236,7 +236,7 @@ otherVar Out of rangeC
 
 t(size: 3)
 Exception
-1. String variable userName has size 3 (so last index is 2). Those 3 items happen to be in memor y locations 76, 77, 78. Location 79
+1. String variable userName has size 3 (so last index is 2). Those 3 items happen to be in memory locations 76, 77, 78. Location 79
 has some other variable's value.
 2. Accesses to indices 0, 1, 2 are fine. But accessing index 3 is an error.Captions
 #include  <iostream>

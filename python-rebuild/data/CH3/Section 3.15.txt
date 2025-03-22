@@ -67,32 +67,32 @@ To what value does each e valuate? userStr is "Hey #1?".
 1)isalpha('7')
 True
 False
-2)isalpha(userStr .at(0))
+2)isalpha(userStr.at(0))
 True
 False
-3)isspace(userStr .at(3))
+3)isspace(userStr.at(3))
 True
 False
-4)isdigit(userStr .at(6))
+4)isdigit(userStr.at(6))
 True
 False
-5)toupper(userStr .at(1)) returns 'E'.
+5)toupper(userStr.at(1)) returns 'E'.
 True
 False
-6)tolower(userStr .at(2)) yields an err or because 'y ' is already lower
+6)tolower(userStr.at(2)) yields an error because 'y ' is already lower
 case.
 True
 False
-7)tolower(userStr .at(6)) yields an err or because '?' is not alphabetic.
+7)tolower(userStr.at(6)) yields an error because '?' is not alphabetic.
 True
 False
-8)After tolower(userStr .at(0)), userStr becomes "hey #1?"
+8)After tolower(userStr.at(0)), userStr becomes "hey #1?"
 True
 False
 
 3.15.1:  character operations.
 
-Variable userString is assigned with a 3-character string r ead fr om input. If userString' s second character is whitespace, output
+Variable userString is assigned with a 3-character string read from input. If userString' s second character is whitespace, output
 "The second character is whitespace. " Other wise, output "The second character is not whitespace. " End each output with a
 newline.
 Ex: If the input is r -, then the output is:

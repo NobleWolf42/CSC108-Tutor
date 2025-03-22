@@ -1,7 +1,7 @@
 
 3.13  String comparisons
 String comparison: Equality
-Two strings are commonly compared for equality . Equal strings have the same number of characters, and each corresponding character is
+Two strings are commonly compared for equality. Equal strings have the same number of characters, and each corresponding character is
 identical.
 
 ACTIVITY3.13.1:  Equal strings.
@@ -19,7 +19,7 @@ Unequal
 Equal
 Unequal
 A programmer can compare two strings using the equality operators == and !=.
-Figur e 3.13.1: String equality example.
+Figure 3.13.1: String equality example.
 #include  <iostream>
 #include  <string>
 using  namespace  std;
@@ -44,7 +44,7 @@ United States of America
 Enter a word: usa
 usa
 
-ACTIVITY3.13.2:  Comparing strings for equality .
+ACTIVITY3.13.2:  Comparing strings for equality.
 To what does each expression evaluate? Assume str1 is " Apples" and str2 is " apples".
 1)str1 == " Apples"
 True
@@ -56,7 +56,7 @@ False
 True
 False
 String comparison: Relational
-Strings are sometimes compared relationally (less than, greater than), as when sor ting words alphabetically . A comparison begins at index
+Strings are sometimes compared relationally (less than, greater than), as when sor ting words alphabetically. A comparison begins at index
 0 and compares each character until the evaluation results in false, or the end of a string is reached. ' A' is 65, 'B' is 66, etc., while ' a' is 97, 'b '
 is 98, etc. So " Apples" is less than " apples" because 65 is less than 97.
 PARTICIP ATION
@@ -64,7 +64,7 @@ ACTIVITY3.13.3:  String comparison.
 PARTICIP ATION
 ACTIVITY3.13.4:  Case matters in string comparisons.
 Indicate the result of comparing the first string with the second string.
-1)"Apples", "Or anges"
+1)"Apples", "Oranges"
 less than
 equal
 greater than
@@ -77,22 +77,22 @@ less than
 equal
 greater than
 A programmer compares strings relationally using the r elational operators <, <=, >, and >=.
-A common err or is to forget that case matters in a string comparison.  A programmer can compare strings while ignoring case by first
+A commonerror is to forget that case matters in a string comparison.  A programmer can compare strings while ignoring case by first
 converting both strings to lower case before comparing (discussed elsewhere).
 
 ACTIVITY3.13.5:  Relational string comparison.
 1)Write an expression that evaluates to true if myName is greater than
 yourName.
 if  (myName   yourName )  {
-   ...
+...
 }  
 2)Write an expression that evaluates to true if authorName1 is less than
 or equal to authorName2.
 if  (   )  {
-   ...  
+...  
 }  
 
-1. A string comparison compares each character . The first five characters of studentName and teacherName are the same.
+1. A string comparison compares each character. The first five characters of studentName and teacherName are the same.
 2. 'J' is greater than ' A', so studentName is greater than teacherName.
 
 }

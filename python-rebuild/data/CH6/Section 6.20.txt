@@ -1,10 +1,10 @@
-6.19 Passing v ector to a function
-6.21 C++ Call by Ref erence: Using pointers6.20  Pointers
-The following materials wer e tak en fr om [Pr ogr amiz]
+6.19 Passing vector to a function
+6.21 C++ Call by Reference: Using pointers6.20  Pointers
+The following materials were taken from [Pr ogr amiz]
 In C++, pointers are variables that store the memory addresses of other variables.  
 Address in C++
-If we have a variable var in our program, &var  will give us its address in the memory . For example,  
-Code E ditor 6.20.1: Printing V ariable Addr esses in C++
+If we have a variable var in our program, &var  will give us its address in the memory. For example,  
+Code E ditor 6.20.1: Printing variable addresses in C++
 Click run to see the output.
 Here, 0x at the beginning represents the address is in the hexadecimal form.  
 Notice that the first address dif fers from the second by 4 bytes and the second address dif fers from the third by 4 bytes.  
@@ -19,7 +19,7 @@ Let's take another example of declaring pointers.  
 int* pointVar, p;   // Note: only the first variable is a pointer.  The second variable is just an interger.
 Here, we have declared a pointer pointVar  and a normal variable p. 
 Note:  The * operator is used after the data type to declare pointers.  
-Common Err or: the above code is equiv alent t o:
+Commonerror: the above code is equivalent t o:
 int *pointv ar;
 int p;
 Assigning Addresses to Pointers
@@ -29,18 +29,18 @@ var = 5;
 // assign address of var to pointVar pointer
 pointVar = &var;
 Here, 5 is assigned to the variable var. And, the address of var is assigned to the pointVar  pointer with the code 
-pointVar = &var .
+pointVar = &var.
 Get the value from the Address Using Pointers
-In the above code, the address of var is assigned to pointVar . We have used the *pointVar  to get the value stored in
+In the above code, the address of var is assigned to pointVar. We have used the *pointVar  to get the value stored in
 that address.
-When * is used with pointers, it's called the dereference operator . It operates on a pointer and gives the value pointed
-by the address stored in the pointer . That is, *pointVar = var .
+When * is used with pointers, it's called the dereference operator. Itoperates on a pointer and gives the value pointed
+by the address stored in the pointer. That is, *pointVar = var.
 Note: In C++,  pointVar  and *pointVar  is completely dif ferent. W e cannot do something like *pointVar = &var;  
 Code E ditor 6.20.2: W orking of C++ P ointers
 Click run to see the output.
-Figur e 6.20.1: W orking of C++ pointers
+Figure 6.20.1: W orking of C++ pointers
 Changing value Pointed by Pointers
-If pointVar  points to the address of var, we can change the value of var by using *pointVar .
+If pointVar  points to the address of var, we can change the value of var by using *pointVar.
 For example,  
 int var = 5;
 int* pointVar;
@@ -67,7 +67,7 @@ varPoint = var;
 varPoint = &var;
  // Correct!
 // both *varPoint and var are values
-*varPoint = var;Instruct or cr eated
+*varPoint = var;Instruct or created
 Load default template...
 #include  <iostream>
 using namespace  std;
@@ -114,7 +114,7 @@ int main() {
          << endl;
     cout << "Changing value of var to 7: " << endl;
 Run
-F eedback?1
+feedback?1
 2
 3
 4
@@ -170,4 +170,4 @@ F eedback?1
 18
  
  
-  My libr ary>CSC 108: Computer Science I home >6.20: P ointers zyBooks catalog Help/F AQ
+  My library>CSC 108: Computer Science I home >6.20: P ointers zyBooks catalog Help/F AQ

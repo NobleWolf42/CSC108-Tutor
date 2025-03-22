@@ -1,6 +1,6 @@
 
 4.7 Nested loops
 A nested loop  is a loop that appears in the body of another loop. The nested loops are commonly referred to as the inner loop  and outer
-loop .
+loop.
 Nested loops have various uses. One use is to generate all combinations of some items.
 

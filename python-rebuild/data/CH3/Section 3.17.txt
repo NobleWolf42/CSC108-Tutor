@@ -3,13 +3,13 @@
 If-else statements with the form shown below are so common that the language supports the shorthand notation shown.
 
   Conditional expression.
-A conditional expression  has the form condition ? exprWhenTrue : exprWhenFalse .
+A conditional expression  has the form condition ? exprWhenTrue : exprWhenFalse.
 All three operands are expressions. If the condition  evaluates to true, then exprWhenTrue  is evaluated. If the condition evaluates to
 false, then exprWhenFalse  is evaluated. The conditional expression evaluates to whichever of those two expressions was evaluated. For
 example, if x is 2, then the conditional expression (x == 2) ? 5 : 9 * x  evaluates to 5.
 A conditional expression has three operands and thus the "?" and ":" together are sometimes referred to as a ternary operator.
-Good practice  is to restrict usage of conditional expressions to an assignment statement , as in: y = (x == 2) ? 5 : 9 * x;. Common practice is to
-put parentheses around the first expression of the conditional expression, to enhance readability .
+Good practice  is to restrict usage of conditional expressions to an assignment statement, as in: y = (x == 2) ? 5 : 9 * x;. Common practice is to
+put parentheses around the first expression of the conditional expression, to enhance readability.
 
 Conditional expressions.
 Convert each if-else statement to a single assignment statement using a conditional expression, using parentheses around the
@@ -47,7 +47,7 @@ else  {
    z  =  x;
 }
 
-A C TIVI T Y3.17.1:  Conditional expression: Print negativ e or positiv e.
+A C TIVI T Y3.17.1:  Conditional expression: Print negative or positiv e.
 
 Drag and drop the code statement that assigns condStr with a conditional expression that evaluates to string " negative" if userVal
 is less than 0, and " non-negative" other wise.
@@ -58,7 +58,7 @@ Note: Only one code statement on the left will be used in the final solution.
 Conditional assignment.
 Using a conditional expression, write a statement that increments numUsers if updateDirection is 1, other wise decrements
 numUsers. Ex: if numUsers is 8 and updateDirection is 1, numUsers becomes 9; if updateDirection is 0, numUsers becomes 7.
-Hint: Star t with " numUsers = ... ".
+Hint: Star t with " numUsers =... ".
 
 
 

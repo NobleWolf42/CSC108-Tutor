@@ -1,8 +1,8 @@
 
 Detecting ranges using if-elseif-else
 A common programming task is to detect if a value lies within a certain range and then perform an action depending on where the value
-lies. Ex: If Timmy is less than 6, he can play pee-wee soccer . If Timmy is between 6 and 17, he can play junior league soccer , and if he 's
-older than 17, he can play professional soccer .
+lies. Ex: If Timmy is less than 6, he can play pee-wee soccer. If Timmy is between 6 and 17, he can play junior league soccer, and if he's
+older than 17, he can play professional soccer.
 An if-elseif-else structure can detect number ranges with each branch per forming a different action for each range. Each expression only
 needs to indicate the upper range part; if execution reaches an expression, the lower range part is implicit from the previous expressions
 being false.
@@ -10,7 +10,7 @@ being false.
  An if-elseif-else structure can elegantly detect ranges.
 
   Using if-elseif-else to detect increasing ranges.
-Indicate the range corresponding to each branch. x is a non-negative integer .
+Indicate the range corresponding to each branch. x is a non-negative integer.
 If x < 10 : Branch 1
 Else If x < 20 : Br anch 2
 Else If x < 30 : Br anch 3
@@ -34,13 +34,13 @@ ACTIVITY3.3.1:  Decision sequence to detect increasing ranges.
 
 Using multi-branch if-else to detect ranges
 The sequential nature of multi-branch if-else statements is useful to detect ranges of numbers. In the following example, the second branch
-expression is only reached if the first expression is false. So the second branch is taken if userAge < 16 is false  (so 16 or gr eater) AND
+expression is only reached if the first expression is false. So the second branch is taken if userAge < 16 is false  (so 16 or greater) AND
 userAge is < 25, meaning userAge is between 16 - 24 (inclusive).
 
 ACTIVITY3.3.4:  Using if-elseif for ranges: Insur ance prices.
 
 ACTIVITY3.3.5:  Decision sequences and ranges.
-Type the r ange for each br anch. Type ranges as 25 - 29, or as 30+ for 30 and up.
+Type the range for each br anch. Type ranges as 25 - 29, or as 30+ for 30 and up.
 1)Range for x = 2
 2)Range for x = 3
 3)Range for x = 4

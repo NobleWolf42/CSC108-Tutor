@@ -4,13 +4,13 @@ People familiar with restaurants may be familiar with steering people to differe
 
 Branch concept.
 Consider the example above.
-1)A party of 1 is sat at _____ .
+1)A party of 1 is sat at _____.
 the counter
 a small table
-2)A party of 2 is sat at _____ .
+2)A party of 2 is sat at _____.
 the counter
 a small table
-3)A party of 5 is sat _____ .
+3)A party of 5 is sat _____.
 at a large table
 nowhere
 Branch basics (If)
@@ -35,7 +35,7 @@ No
 Yes
 No
 If branch example: Absolute value
-The example below shows how an if branch can be used to compute an absolute value of a number .
+The example below shows how an if branch can be used to compute an absolute value of a number.
 
 Example if branch: Absolute value.
 Consider the example above.
@@ -53,7 +53,7 @@ executes.
 Insurance price.
 Car insurance prices
 (Car insurance prices  for drivers under 25 are higher because 1 in 6 such drivers are involved in an accident each year vs. 1 in 15 for
-older drivers. Source: Insurance Information Institute , 2025).
+older drivers. Source: Insurance Information Institute, 2025).
 
 If-else branches.
 Consider the insurance price example above.
@@ -97,7 +97,7 @@ x
 y
 If-else branches
 Commonly a programmer wishes to take one of multiple (three or more) branches. An if-else can be extended to an if-elseif-else structure.
-Each branch 's expression is checked in sequence; as soon as one branch's expression is found to be true, that branch is taken. If no
+Each branch's expression is checked in sequence; as soon as one branch's expression is found to be true, that branch is taken. If no
 expression is found true, execution will reach the else branch, which then executes.
 Note: The else part is optional. If omitted, then if none of the previous expressions are true, no branch executes.
 
@@ -124,14 +124,14 @@ Invalid entry
 equals 1, x equals 0, and x equals -1, and achieved the same results?
 No
 Yes
-4)In the code above, suppose a programmer , after the third branch (x
-equals 1), inserts a new branch: Else If x equals -1 ... When might that
+4)In the code above, suppose a programmer, after the third branch (x
+equals 1), inserts a new branch: Else If x equals -1... When might that
 new branch execute?
 When x is -1
 When x is 1
 Never
-5)In the code above, suppose a programmer r emo ved the Else par t
-entirely. If x is 2, which is corr ect?
+5)In the code above, suppose a programmer r emo ved the Else part
+entirely. If x is 2, which is correct?
 The last branch, meaning the Else If x equals 1 branch, will
 execute.
 No branch will execute.
@@ -140,10 +140,10 @@ The program is not legal.
 ACTIVITY 3.1.1:  If-else branches.
 Note:
 1. The provided integer variable shows the value of the variable before the program executes.
-2. Level 5 uses ==, known as the equality operator, to mean equals. Ex: x == 9  means x equals 9 .
+2. Level 5 uses ==, known as the equality operator, to mean equals. Ex: x == 9  means x equals 9.
 
 
-1. A restaurant host seats patrons. The host seats a party of 1 at the counter .
+1. A restaurant host seats patrons. The host seats a party of 1 at the counter.
 2. A party of 2 is seated at a small table. Other-sized parties are seated at a large table.
 3. The host mentally executes the algorithm: If party of 1, seat at counter; Else If party of 2, seat at small table; Else seat at large
 table.
@@ -155,7 +155,7 @@ output would be 155.
 
 Exactly one of  these branches will
 execute for any value of numYearsVariables
-1. This program detects the specific value of a variable. If numY ears is 1, the first branch executes and "Newlyweds" is output.
-2. Else, if numYears is 25, the second branch executes and "Silver" is output. Else, if numY ears is 50, the third branch executes and
+1. This program detects the specific value of a variable. If numyears is 1, the first branch executes and "Newlyweds" is output.
+2. Else, if numYears is 25, the second branch executes and "Silver" is output. Else, if numyears is 50, the third branch executes and
 "Golden " is output.
 3. Else, the last branch executes.

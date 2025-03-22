@@ -10,7 +10,7 @@ PARTICIPATION
 ACTIVITY 1.12.2: Program correctness includes correctly-formatted output.
 Consider the example above.
 1) The programmer on the left intentionally inserted a newline in the
-first sentence, namely "Kia Smith ... video meeting". Why?
+first sentence, namely "Kia Smith... video meeting". Why?
 Probably a mistake
 So the text appears less jagged
 To provide some randomness to the output

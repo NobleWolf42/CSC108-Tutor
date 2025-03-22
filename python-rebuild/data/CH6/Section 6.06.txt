@@ -1,21 +1,12 @@
-6.5 Iterating thr ough v ectors
-Students:
-Section 6.6 is a par t of 2 assignments :
-Please br owse to this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn moreIncludes : CA
-Activity summar y for assignment: 0 / 40 points
-Please br owse to this assignment thr ough
-Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn more
-6.7 Vector resizeDue: 04/29/2025, 11:59 PM ED T
-6.6 Multiple v ectors
-Programmers commonly use multiple same-siz ed vectors to store related lists. The program below maintains a list of countr y names, and
-another list indicating the annual GDP for each corr esponding countr y.
-The statement if (ctryNames.at(i) == userCountry)  compar es the curr ent ctr yNames element with the user-enter ed countr y
-name. If the names match, the program prints the ctr yGDPs element at the same index.
-The loop 's expression (i < ctryNames.size()) && (!foundCountry)  depends on the value of the v ariable foundCountr y. This
-expression pr events the loop fr om iter ating thr ough the entir e vector once the corr ect countr y is found.
-Figur e 6.6.1: Multiple v ector example: Annual GDP for selected countries.
+6.6 Multiple vectors
+Programmers commonly use multiple same-sized vectors to store related lists. The program below maintains a list of country names, and
+another list indicating the annual GDP for each corresponding country.
+The statement if (ctryNames.at(i) == userCountry)  compares the current ctryNames element with the user-entered country
+name. If the names match, the program prints the ctryGDPs element at the same index.
+The loop's expression (i < ctryNames.size()) && (!foundCountry)  depends on the value of the variable foundCountry. This
+expression prevents the loop from iterating through the entire vector once the correct country is found.
+
+Multiple vector example: Annual GDP for selected countries.
 #include  <iostream>
 #include  <vector>
 #include  <string>
@@ -27,31 +18,32 @@ int  main()  {
    string  userCountry ;  // User-entered country
    bool  foundCountry  =  false;  // Country-match flag
    unsigned  int  i;  // Loop index
-   ctryNames .push_back ("UK");
-   ctryGDPs .push_back (3);
-   ctryNames .push_back ("India");
-   ctryGDPs .push_back (3);
-   ctryNames .push_back ("Canada" );
-   ctryGDPs .push_back (2);
-   ctryNames .push_back ("Italy");
-   ctryGDPs .push_back (2);
-   ctryNames .push_back ("Japan");
-   ctryGDPs .push_back (4);
+   ctryNames.push_back ("UK");
+   ctryGDPs.push_back (3);
+   ctryNames.push_back ("India");
+   ctryGDPs.push_back (3);
+   ctryNames.push_back ("Canada" );
+   ctryGDPs.push_back (2);
+   ctryNames.push_back ("Italy");
+   ctryGDPs.push_back (2);
+   ctryNames.push_back ("Japan");
+   ctryGDPs.push_back (4);
    cout  <<  "Enter case-sensitive country to search for: " ;
    cin  >>  userCountry ;
    foundCountry  =  false;
-   for  (i  =  0;  i  <  ctryNames .size()  &&  !foundCountry ;  ++i)  {
-      if  (ctryNames .at(i)  ==  userCountry )  {
+   for  (i  =  0;  i  <  ctryNames.size()  &&  !foundCountry ;  ++i)  {
+      if  (ctryNames.at(i)  ==  userCountry )  {
          foundCountry  =  true;
          cout  <<  userCountry  <<  " has an annual GDP of " ;
-         cout  <<  "$"  <<  ctryGDPs .at(i)  <<  "T."  <<  endl;
+         cout  <<  "$"  <<  ctryGDPs.at(i)  <<  "T."  <<  endl;
       }
    }
    if  (!foundCountry )  {
       cout  <<  "Country not found; try again."  <<  endl;
    }
    return  0;
-}Enter case-sensitive country to search for: Canada
+}
+Enter case-sensitive country to search for: Canada
 Canada has an annual GDP of $2T.
 …
 Enter case-sensitive country to search for: Japan
@@ -59,204 +51,3 @@ Japan has an annual GDP of $4T.
 …
 Enter case-sensitive country to search for: Sweden
 Country not found; try again.
-P AR TICIP A TION
-A C TIVI T Y6.6.1:  Multiple v ectors.
-Consider the above program inv olving multiple v ectors.
-1)Multiple v ectors sa ved memor y over using one lar ger v ector.
-True
-False
-2)Each v ector should be the same data type.
-True
-False
-3)Each v ector should have the same number of elements.
-True
-False
-zyDE 6.6.1: Impr ove the program.
-Modify the program such that if a user types a countr y name that isn 't found, print a list of known countries.
-Italy
-CH ALLENGE
-A C TIVI T Y6.6.1:  Printing the sum of two v ector elements.
-Four elements are read int o origList and four elements are read int o offsetAmount. Add each element in origList with the
-corresponding value in offsetAmount. Print each sum followed by a space.
-Ex: If the input is:
-40 50 60 70 5 7 3 0
-then origList = {40, 50, 60, 70} and offsetAmount = {5, 7, 3, 0}. So, the output is:
-45 57 63 70 
-Learn how our aut ograder works
-620890.5010016.qx3z qy7
-CH ALLENGE
-A C TIVI T Y6.6.2:  Multiple v ectors: K ey and value.
-Four elements are read int o keysList and four elements are read int o itemsList. F or any element in k eysList with a value gr eater
-than 100, print the corr esponding value in itemsList, followed by a space.
-Ex: If the input is:
-42 105 101 100 10 20 30 40 
-then k eysList = {42, 105, 101, 100} and itemsList = {10, 20, 30, 40}. The elements at indices 1 and 2 of k eysList are greater than
-100. So, the elements at the same indices of itemsList are printed. Thus, the output is:
-20 30 
-Learn how our aut ograder works
-620890.5010016.qx3z qy7
-CH ALLENGE
-A C TIVI T Y6.6.3:  Multiple v ectors.
-620890.5010016.qx3z qy7
-Integer numElements is r ead fr om input. The r emaining input alternates between strings and integers. Declar e string v ector
-topicList and integer v ector pageList. Then:
-Read numElements pairs of strings and integers fr om input.
-Using push_back(), st ore each string int o topicList and each integer int o pageList.1
-2
-3
-How was this section? |Feedback?
-Feedback?
-Load default template...
-#include  <iostream>
-#include  <vector>
-#include  <string>
-using namespace  std;
-int main() {
-   // Source: The World Bank, 2022
-   vector<string> ctryNames ;   // Country names
-   vector<int> ctryGDPs ;       // Country annual GD
-   string userCountry ;         // User-entered coun
-   bool foundCountry  = false;  // Country-match fla
-   unsigned  int i;             // Loop index
-   ctryNames .push_back ("UK");
-   ctryGDPs .push_back (3);
-   ctryNames .push_back ("India");
-   ctryGDPs .push_back (3);Run
-Feedback?
-1 test
-passed
-All tests
-passed#include  <iostream>
-#include  <vector>
-using namespace  std;
-int main() {
-   const int NUM_VALS  = 4;
-   vector<int> origList ;
-   vector<int> offsetAmount ;
-   unsigned  int i;
-   int input;
-   for (i = 0; i < NUM_VALS ; ++i) {
-      cin >> input;
-      origList .push_back (input);
-   }
-   for (i = 0; i < NUM_VALS ; ++i) {
-      cin >> input;
-Run
-Feedback?
-1 test
-passed
-All tests
-passed#include  <iostream>
-#include  <vector>
-using namespace  std;
-int main() {
-   const int SIZE_LIST  = 4;
-   vector<int> keysList ;
-   vector<int> itemsList ;
-   unsigned  int i;
-   int input;
-   for (i = 0; i < SIZE_LIST ; ++i) {
-      cin >> input;
-      keysList .push_back (input);
-   }
-   for (i = 0; i < SIZE_LIST ; ++i) {
-      cin >> input;
-Run
-Feedback?
-Star t
-Click her e for example 
-#include  <iostream>
-#include  <vector>
-using namespace  std;
-int main() {
-   int numElements ;
-   unsigned  int i;
-   string stringVal ;
-   int intVal;
-   cin >> numElements ;
-   /* Your code goes here */
-   for (i = 0; i < topicList .size(); ++i) {
-      cout << "Topic: " << topicList .at(i) << ", ";
-      cout << "Page: " << pageList .at(i) << endl;
-   }1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
- 
-2 3
-Check Next le vel
-Feedback?
-  Provide section f eedback
-Due: 04/29/2025, 11:59 PM ED T
-Completion details 11
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
- 
- 
- CSC108 CH06.1-6.9 C6A
-CSC108 CH06.1-6.9 C6A  My libr ary>CSC 108: Computer Science I home >6.6: Multiple v ectors zyBooks catalog Help/F AQ

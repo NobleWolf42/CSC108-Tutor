@@ -1,11 +1,11 @@
-6.22 Pointers and Arr ay
-6.24 Functions with pointer par ameters
-6.23  C++ Memor y Management: new and delete
+6.22 Pointers and array
+6.24 Functions with pointer parameters
+6.23  C++ memory Management: new and delete
 C++ allows us to allocate the memory of a variable or an array in run time. This is known as dynamic memory allocation.
 In other programming languages such as Java and Python, the compiler automatically manages the memories allocated
 to variables. But this is not the case in C++.
 In C++, we need to deallocate the dynamically allocated memory manually after we have no use for the variable.
-We can allocate and then deallocate memory dynamically using the new and delete  operators respectively .
+We can allocate and then deallocate memory dynamically using the new and delete  operators respectively.
 C++ new Operator
 The new operator allocates memory to a variable. For example,
 // declare an int pointer
@@ -15,17 +15,17 @@ int* pointVar;
 pointVar = new int;
 // assign value to allocated memory
 *pointVar = 45;
-Here, we have dynamically allocated memory for an int variable using the new operator .
-Notice that we have used the pointer pointVar  to allocate the memory dynamically . This is because the new operator
+Here, we have dynamically allocated memory for an int variable using the new operator.
+Notice that we have used the pointer pointVar  to allocate the memory dynamically. This is because the new operator
 returns the address of the memory location.
-In the case of an array , the new operator returns the address of the first element of the array .
+In the case of an array, the new operator returns the address of the first element of the array.
 From the example above, we can see that the syntax for using the new operator is
 pointerVariable = new dataType;
 delete Operator
-Once we no longer need to use a variable that we have declared dynamically , we can deallocate the memory occupied by
+Once we no longer need to use a variable that we have declared dynamically, we can deallocate the memory occupied by
 the variable.
 For this, the delete  operator is used. It returns the memory to the operating system. This is known as memory
-deallocation .
+deallocation.
 The syntax for this operator is
 delete pointerVariable;
 Consider the code:
@@ -40,27 +40,27 @@ pointVar = new int;
 cout << *pointVar; // Output: 45
 // deallocate the memory
 delete pointVar;
-Here, we have dynamically allocated memory for an int variable using the pointer pointVar .
-After printing the contents of pointVar , we deallocated the memory using delete .
+Here, we have dynamically allocated memory for an int variable using the pointer pointVar.
+After printing the contents of pointVar, we deallocated the memory using delete.
 Note : If the program uses a large amount of unwanted memory using new, the system may crash because there
 will be no memory available for the operating system. In this case, the delete  operator can help the system from
 crash.
-Code E ditor 6.23.1: C++ Dynamic Memor y Allocation
+Code E ditor 6.23.1: C++ Dynamic memory Allocation
 Click run to see the output.
 In this program, we dynamically allocated memory to two variables of int and float  types. After assigning values to
 them and printing them, we finally deallocate the memories using the code
 delete pointInt, pointFloat;
 Note:  Dynamic memory allocation can make memory management more ef ficient.
 Especially for arrays, where a lot of the times we don't know the size of the array until the run time.
-Code E ditor 6.23.2: C++ new and delete Oper ator for Arr ays
+Code E ditor 6.23.2: C++ new and delete Oper ator for arrays
 Click run to see the output.
 4 3.6 3.1 3.9 2.9
 In this program, we have asked the user to enter the number of students and store it in the num variable.
 Then, we have allocated the memory dynamically for the float  array using new.
 We enter data into the array (and later print them) using pointer notation.
-After we no longer need the array , we deallocate the array memory using the code delete [] ptr; .
-Notice the use of [] after delete . We use the square brackets [] in order to denote that the memory deallocation is
-that of an array .Instruct or cr eated
+After we no longer need the array, we deallocate the array memory using the code delete [] ptr;.
+Notice the use of [] after delete. We use the square brackets [] in order to denote that the memory deallocation is
+that of an array.Instruct or created
 Load default template...
 #include  <iostream>
 using namespace  std;
@@ -93,7 +93,7 @@ int main() {
     ptr = new float[num];
     cout << "Enter GPA of students. " << endl;
 Run
-F eedback?1
+feedback?1
 2
 3
 4
@@ -130,4 +130,4 @@ F eedback?1
 17
 18
  
-  My libr ary>CSC 108: Computer Science I home >6.23: C++ Memor y Management: new and delete zyBooks catalog Help/F AQ
+  My library>CSC 108: Computer Science I home >6.23: C++ memory Management: new and delete zyBooks catalog Help/F AQ

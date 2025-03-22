@@ -41,12 +41,12 @@ Max: -2
 
 ACTIVITY4.5.1:  Finding the max.
 Consider the example above.
-1)Befor e entering the loop, what is the maximum value seen so far
+1)before entering the loop, what is the maximum value seen so far
 from the list of integers?
 0
 -1
 No such value
-2)The loop 's first iteration gets the list' s first integer into  variable
+2)The loop's first iteration gets the list's first integer into  variable
 currvalue. Is that the maximum value seen so far?
 Yes
 No
@@ -56,9 +56,9 @@ maxSoF ar > currvalue
 currvalue > maxSoF ar
 currvalue == maxSoF ar
 Beyond iterating N times
-The thr ee parts of a for loop may be adjusted to do more than just iterate N times. for example, a for loop can output various sequences.
-The following outputs multiples of 5 fr om 10 to 50.
-Figur e 4.5.2: Outputting multiples of 5 fr om 10 to 50.
+The three parts of a for loop may be adjusted to do more than just iterate N times. for example, a for loop can output various sequences.
+The following outputs multiples of 5 from 10 to 50.
+Figure 4.5.2: Outputting multiples of 5 from 10 to 50.
 #include  <iostream>
 using  namespace  std;
 // Outputs 10 15 20 25 30 35 40 45 50
@@ -130,63 +130,63 @@ int  main()  {
 PARTICIP ATION
 ACTIVITY4.5.3:  For loop generating a table of temperature values.
 Consider the example above.
-1)What is the loop variable 's name?
+1)What is the loop variable's name?
 2)What are the values of currC for the first four iterations?
 Type as: 1 9 2 6
 3)What is the loop expression? (The expression checked for whether to
 enter the loop body).
 Loop style issues
 starting with 0
-Programmers in C, C++, Java, and other languages have generally standar dized on looping N times by starting with i = 0 and checking for i
-< N, rather than by using i = 1 and i <= N. One reason is due to other constructs (arr ays / v ectors), often used with loops, start with 0.
+Programmers in C, C++, Java, and other languages have generally standardized on looping N times by starting with i = 0 and checking for i
+< N, rather than by using i = 1 and i <= N. One reason is due to other constructs (arrays / vectors), often used with loops, start with 0.
 Another is simply that a choice was made.
 The ++ operators
 The ++ operator can appear as ++i ( prefix form ) or as i++ ( postfix form ). ++i increments i first and then evaluates the result, while i++
-evaluates the result first and then increments i. The distinction is r elevant in a statement lik e x = ++i vs. x = i++; if i is 5, the first yields x = 6,
+evaluates the result first and then increments i. The distinction is r elevant in a statement like x = ++i vs. x = i++; if i is 5, the first yields x = 6,
 the second x = 5.
-Some consider ++i saf er for beginners in case the y type i = ++i, which typically works as expected (wher eas i = i++ does not), so this
-material uses ++i thr oughout. The -- operator also has prefix and postfix v ersions. Incidentally , the C++ programming language gets its
-name fr om the ++ operator, suggesting C++ is an increment or improvement over its C language predecessor .
+Some consider ++i safer for beginners in case the y type i = ++i, which typically works as expected (whereas i = i++ does not), so this
+material uses ++i throughout. The -- operator also has prefix and postfix v ersions. Incidentally, the C++ programming language gets its
+name from the ++ operator, suggesting C++ is an increment or improvement over its C language predecessor.
 In-loop declaration of i
-Variables can be declared thr oughout code, so many programmers use: for (int i = 0; i < N; ++i) . But, the teaching experience
+Variables can be declared throughout code, so many programmers use: for (int i = 0; i < N; ++i). But, the teaching experience
 of this material' s authors suggests such declarations may confuse learners who may declare variables within loops, repeatedly re-declaring
-variables, etc. This material a voids the in-loop declar ation approach. The authors hope to mak e the learning less error-prone, and have
-confidence that programmers can easily pick up on the common in-loop declar ation approach later .
+variables, etc. This material a voids the in-loop declaration approach. The authors hope to make the learning less error-prone, and have
+confidence that programmers can easily pick up on the common in-loop declaration approach later.
 
 ACTIVITY4.5.4:  Miscellaneous for loop and ++ topics.
 1)Do these loops iterate the same number of times?
 for  (i  =  0;  i  <  5;  ++i)  {
-   ...
+...
 }
 for  (i  =  1;  i  <=  5;  ++i)  {
-   ...
+...
 }
 Yes
 No
 2)Does this for loop iterate 5 times?
 for  (i  =  0;  i  <  5;  i++)  {
-   ...
+...
 }
 Yes
 No
 3)Is the following valid code?
 for  (int  i  =  0;  i  <  5;  ++i)  {
-   ...
+...
 }
 Yes
 No
 Common errors / good practice
-A common err or is to also have a ++i; statement in the loop body , causing the loop variable to be updated twice per iteration.
-Figure 4.5.4: Common err or: loop variable updated twice.
+A commonerror is to also have a ++i; statement in the loop body, causing the loop variable to be updated twice per iteration.
+Figure 4.5.4: Commonerror: loop variable updated twice.
 // Loop variable updated twice per iteration
 for  (i  =  0;  i  <  5;  ++i)  {
    // Loop body
    ++i;  // Oops
 }
 While the initialization and update parts of a for loop can include multiple statements separated by a comma, good practice  is to use a single
-statement for each part. Good practice  also is to use a for loop 's parts to count the necessary loop iterations, with nothing added or omitted.
+statement for each part. Good practice  also is to use a for loop's parts to count the necessary loop iterations, with nothing added or omitted.
 The following loop examples should be a voided, if possible.
-Figur e 4.5.5: A void these for loop variations.
+Figure 4.5.5: A void these for loop variations.
 // initialExpression not related to counting iterations; move r = rand() before loop
 for  (i  =  0,  r  =  rand();  i  <  5;  ++i)  {
    // Loop body 
@@ -197,7 +197,7 @@ for  (i  =  0;  i  <  5;  ++i,  r  =  r  +  2)  {
 }
 
 ACTIVITY4.5.5:  For loop: Common errors / good practice.
-1)Putting ++i at the end of a for loop body , in addition to in the
+1)Putting ++i at the end of a for loop body, in addition to in the
 updateexpression part, yields a syntax error.
 True
 False
@@ -211,9 +211,9 @@ ACTIVITY4.5.1:  For loops.
 ACTIVITY4.5.2:  Find extreme value.
 
 Write a for loop that iterates five times to find the minimum value in a list of five integer values. Within the loop:
-Read an integer value fr om input into variable inputVal.
-The first value assigned to inputVal is the smallest integer value r ead by default, since no other values have been read yet.
-Thus, if the curr ent iteration is the first iteration, assign minimumVal with inputVal.
+Read an integer value from input into variable inputVal.
+The first value assigned to inputVal is the smallest integer value read by default, since no other values have been read yet.
+Thus, if the current iteration is the first iteration, assign minimumVal with inputVal.
 Other wise, if inputVal is less than minimumVal, assign minimumVal with the value of inputVal.
 
 

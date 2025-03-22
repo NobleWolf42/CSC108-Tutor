@@ -101,14 +101,20 @@
         "bcitchap",
         "bcitchat",
         "cout",
+        "ctry",
         "endl",
         "jsonify",
         "llmmodel",
+        "myarray",
+        "myvector",
+        "Nums",
         "Ollama",
         "poppler",
         "pywsgi",
         "runbutton",
+        "testbench",
         "userinput",
-        "usermsg"
+        "usermsg",
+        "Vctr"
     ]
 }

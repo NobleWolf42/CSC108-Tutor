@@ -1,7 +1,7 @@
 2.8 Scientific notation for floating-point literals
-Scientific notation is useful for representing floating-point numbers that are much greater than or much less than 0, such as 6.02 x 10 . A
+Scientific notation is useful for representing floating-point numbers that are much greater than or much less than 0, such as 6.02 x 10. A
 floating-point literal using scientific notation is written using an e preceding the power-of-10 exponent, as in 6.02e23 to represent 6.02 x
-10 . The e stands for exponent. Likewise, 0.001 is 1 x 10  and can be written as 1.0e-3. For a floating-point literal, good practice is to make
+10. The e stands for exponent. Likewise, 0.001 is 1 x 10  and can be written as 1.0e-3. For a floating-point literal, good practice is to make
 the leading digit non-zero.
 Figure 2.8.1: Calculating atoms of gold.
 #include <iostream>
@@ -40,7 +40,7 @@ single digit before and five digits after the decimal point.
 
 Acceleration of gravity.
 Compute the acceleration of gravity for a given distance from the earth's center, distCenter, assigning the result to accelGravity.
-The expression for the acceleration of gravity is: (G * M) / (d ), where G is the gravitational constant 6.673 x 10 , M is the mass of
+The expression for the acceleration of gravity is: (G * M) / (d ), where G is the gravitational constant 6.673 x 10, M is the mass of
 the earth 5.98 x 10  (in kg) and d is the distance in meters from the earth's center (stored in variable distCenter). Note: Assume
 distance is at least the radius of the earth.
 See How to Use zyBooks for info on how our automated program grader works.

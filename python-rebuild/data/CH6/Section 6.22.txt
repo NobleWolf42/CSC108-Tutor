@@ -1,19 +1,19 @@
-6.21 C++ Call by Ref erence: Using pointers
-6.23 C++ Memor y Management: new and delete6.22  Pointers and Arr ay
+6.21 C++ Call by Reference: Using pointers
+6.23 C++ memory Management: new and delete6.22  Pointers and array
 [See Programiz]
 In C++, Pointers  are variables that hold addresses of other variables. Not only can a pointer store the address of a single
-variable, it can also store the address of cells of an array .
+variable, it can also store the address of cells of an array.
 Consider this example:
-Code E ditor 6.22.1: P ointers and Arr ay
-Click the run butt on below .
-Here, ptr is a pointer variable while arr is an int array . The code ptr = arr;  stores the address of the first element
+Code E ditor 6.22.1: P ointers and array
+Click the run butt on below.
+Here, ptr is a pointer variable while arr is an int array. The code ptr = arr;  stores the address of the first element
 of the array in variable ptr.
-Notice that we have used arr instead of &arr[0] . This is because both are the same. So, the code below is the same
+Notice that we have used arr instead of &arr[0]. This is because both are the same. So, the code below is the same
 as the code above.
 int *ptr;
 int arr[5];
 ptr = &arr[ 0];
-The addresses for the rest of the array elements are given by &arr[1] , &arr[2] , &arr[3] , and &arr[4] .
+The addresses for the rest of the array elements are given by &arr[1], &arr[2], &arr[3], and &arr[4].
 Suppose we need to point to the fourth element of the array using the same pointer ptr.
 Here, if ptr points to the first element in the above example then ptr + 3  will point to the fourth element. For example,
 int *ptr;
@@ -23,7 +23,7 @@ ptr + 1 is equivalent to &arr[ 1];
 ptr + 2 is equivalent to &arr[ 2];
 ptr + 3 is equivalent to &arr[ 3];
 ptr + 4 is equivalent to &arr[ 4];
-Similarly , we can access the elements using the single pointer . For example,  
+Similarly, we can access the elements using the single pointer. For example,  
 // use dereference operator
 *ptr == arr[ 0];
 *(ptr + 1) is equivalent to arr[ 1];
@@ -35,19 +35,19 @@ ptr - 2 is equivalent to &arr[ 0];
 ptr - 1 is equivalent to &arr[ 1]; 
 ptr + 1 is equivalent to &arr[ 3];
 ptr + 2 is equivalent to &arr[ 4];
-Figur e 6.22.1: W orking of C++ P ointers with Arr ays
+Figure 6.22.1: W orking of C++ P ointers with arrays
 Note:  The address between ptr and ptr + 1  differs by 4 bytes. It is because ptr is a pointer to an int data. And,
-the size of int is 4 bytes in a 64-bit operating system.
-Similarly , if pointer ptr is pointing to char  type data, then the address between ptr and ptr + 1  is 1 byte. It is
+the size of int is 4 bytes in a 64-bitoperating system.
+Similarly, if pointer ptr is pointing to char  type data, then the address between ptr and ptr + 1  is 1 byte. It is
 because the size of a character is 1 byte.
-Code E ditor 6.22.2: C++ P ointers and Arr ays
+Code E ditor 6.22.2: C++ P ointers and arrays
 Click run to see the output.
 In the above program, we first simply printed the addresses of the array elements without using the pointer variable ptr.
-Then, we used the pointer ptr to point to the address of a[0] , ptr + 1  to point to the address of a[1] , and so on.
+Then, we used the pointer ptr to point to the address of a[0], ptr + 1  to point to the address of a[1], and so on.
 In most contexts, array names decay to pointers. In simple words, array names are converted to pointers. That's the
 reason why we can use pointers to access elements of arrays.
-However , we should remember that pointers and arrays are not the same.
-Code E ditor 6.22.3: Arr ay name used as pointer
+However, we should remember that pointers and arrays are not the same.
+Code E ditor 6.22.3: array name used as pointer
 Click run to see the output.
 5 6 7 8 9
 1.  W e first used the pointer notation to store the numbers entered by the user into the array arr. 
@@ -56,12 +56,12 @@ This code is equivalent to the code below:  
 cin >> arr[i];
 Notice that we haven't declared a separate pointer variable, but rather we are using the array name arr for the pointer
 notation.  
-As we already know , the array name arr points to the first element of the array . So, we can think of arr as acting like a
-pointer . 
-2.  Similarly , we then used for loop to display the values of arr using pointer notation.  
+As we already know, the array name arr points to the first element of the array. So, we can think of arr as acting like a
+pointer. 
+2.  Similarly, we then used for loop to display the values of arr using pointer notation.  
 cout << *(arr + i) << endl ;
 This code is equivalent to
-cout << arr[i] << endl ;Instruct or cr eated
+cout << arr[i] << endl ;Instruct or created
 Load default template...
 #include  <iostream>
 using namespace  std;
@@ -108,7 +108,7 @@ int main() {
     }
     cout << endl;
 Run
-F eedback?1
+feedback?1
 2
 3
 4
@@ -158,4 +158,4 @@ F eedback?1
 17
 18
  
-  My libr ary>CSC 108: Computer Science I home >6.22: P ointers and Arr ay zyBooks catalog Help/F AQ
+  My library>CSC 108: Computer Science I home >6.22: P ointers and array zyBooks catalog Help/F AQ

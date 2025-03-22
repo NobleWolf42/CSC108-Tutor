@@ -1,8 +1,8 @@
 
 3.5 Detecting ranges using logical operators
 Logical AND, OR, and NOT (general)
-A logical operator treats oper ands as being true or false, and evaluates to true or false. Logical operators include AND , OR, and NO T.
-Programming languages typically use various symbols for those operators, but below the words AND , OR, and NOT are used for
+A logical operator treats oper ands as being true or false, and evaluates to true or false. Logical operators include AND, OR, and NO T.
+Programming languages typically use various symbols for those operators, but below the words AND, OR, and NOT are used for
 introductory purposes.
 
 
@@ -55,7 +55,7 @@ to 99?
 (x < -5) AND (x > 10)
 (x < -5) OR (x > 10)
 Logical operators
-Special symbols are used to represent the AND , OR, and NOT logical operators. Logical operators are commonly used in expressions of if-
+Special symbols are used to represent the AND, OR, and NOT logical operators. Logical operators are commonly used in expressions of if-
 else statements.
 
 Logical operator Description
@@ -68,49 +68,49 @@ a || b Logical OR  (||): true when at least one of its two operands are true
 ACTIVITY3.5.6:  Logical operators: Complete the expressions to detect the desired range.
 1)daysLogged is greater than 30 and less than 90
 if  (  (daysLogged  >  30)   (daysLogged  <  90)  )  {  
-   ...
+...
 }
 2)0 < maxCars < 100
 if  (  (maxCars  >  0)   (maxCars  <  100)  )  {  
-   ...
+...
 }
 3)numStores is between 10 and 20, inclusive.
 if  (  (numStores  >=  10)   (numStores  <=  20)  )  {  
-   ...
+...
 }
 4)notValid is either less than 15, or greater than 79.
 if  (  (notValid  <  15)   (notValid  >  79)  )  {  
-   ...
+...
 }
 
 ACTIVITY3.5.7:  Creating expressions with logical operators.
 1)numDogs has a minimum of 2 and a maximum of 5.
 if  (  (numDogs  >=  2)   )  {  
-   ...
+...
 }
 2)wage is greater than 10 and less than 18. Use > and < (not >= and <=).
 Use parentheses around sub-expressions.
 if  (   )  {  
-   ...
+...
 }
-3)num is a 3-digit positive integer . Ex: 100, 989, and 523, are 3-digit
+3)num is a 3-digit positive integer. Ex: 100, 989, and 523, are 3-digit
 positive integers, but 55, 1000, and -4 are not.
-For most direct readability , your expression should compare directly
-with the smallest and largest 3-digit number .
+For most direct readability, your expression should compare directly
+with the smallest and largest 3-digit number.
 if  (  (num  >=  100)  )  {  
-   ...
+...
 }
 A common error is to use & instead of && and | instead ||. & and | are not logical operators and may produce unexpected output.
 
 
-Try typing different expressions involving x, y and observe whether the expression evaluates to true for different values of x, y .
+Try typing different expressions involving x, y and observe whether the expression evaluates to true for different values of x, y.
 Ex: Test the expression (x < 10) && (x > 2) when x is assigned with 1, 2, 5, and 20.
 Example: TV channels
 A cable TV provider may have regular channels numbered 2-499, and high-definition channels numbered 1002-1499. A program may set a
-character variable to 's' for standard, 'h' for high-definition, and ' e' for error.
+character variable to's' for standard, 'h' for high-definition, and ' e' for error.
 Figure 3.5.1: Detecting ranges: Cable TV channels.
 if  ((userChannel  >=  2)  &&  (userChannel  <=  499))  {
-   channelType  =  's';
+   channelType  ='s';
 }
 else  if  ((userChannel  >=  1002)  &&  (userChannel  <=  1499))  {
    channelType  =  'h';
@@ -123,11 +123,11 @@ else  {
 
 ACTIVITY3.5.9:  TV channel example: Detecting ranges.
 Consider the above example.
-1)If userChannel is 300, to what does the if statement' s expression,
-(userChannel >= 2) && (userChannel <= 499) , evaluate?
+1)If userChannel is 300, to what does the if statement's expression,
+(userChannel >= 2) && (userChannel <= 499), evaluate?
 true
 false
-2)If userChannel is 300, does the else if 's expression (userChannel  
+2)If userChannel is 300, does the else if's expression (userChannel  
 >= 1002) && (userChannel <= 1499)  get checked?
 Yes
 No

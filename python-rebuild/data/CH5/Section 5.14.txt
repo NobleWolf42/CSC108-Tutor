@@ -1,22 +1,13 @@
-5.13 Function name o verloading
-Students:
-Section 5.14 is a par t of 1 assignment :CSC108 CH05.8-5.16 P5B
-Please br owse to this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn moreIncludes : PA
-Activity summar y for assignment: CSC108 CH05.8-5.16 P5B 0 / 56 points
-Please br owse to this assignment thr ough
-Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn more
-5.15 Preprocessor and includeDue: 04/15/2025, 11:59 PM ED T
-5.14  Parameter err or checking
+5.14  Parameter error checking
 Verifying parameter values
-Commonly , a function expects par ameter values to be within some r ange. A good pr actice  is to check that a par ameter 's value is within an
-expected r ange.  If not in the r ange, the function might tak e one or more of v arious actions, lik e outputting an err or message, assigning a
-valid value, returning a value indicating failur e, exiting the program, etc.
-Figur e 5.14.1: F unction with par ameter err or checking.
+Commonly, a function expects parameter values to be within some range. A good practice is to check that a parameter's value is within an
+expected range.  If not in the range, the function might take one or more of various actions, like outputting an error message, assigning a
+valid value, returning a value indicating failure, exiting the program, etc.
+
+Function with parameter error checking.
 #include  <iostream>
 using  namespace  std;
-void  PrintDate (int  currDay,  int  currMonth ,  int  currYear )  {
+void  PrintDate (int  currDay,  int  currMonth,  int  currYear )  {
    // Parameter error checking
    if  ((currDay  <  1)  ||  (currDay  >  31))  {
       cout  <<  "Invalid day ("  <<  currDay  <<  "). Using 1."  <<  endl;
@@ -37,24 +28,9 @@ int  main()  {
    PrintDate (30,  13,  2012);
    cout  <<  endl  <<  endl;
    return  0;
-} 7/30/2012
+}
+7/30/2012
 Invalid day (40). Using 1.
 7/1/2012
 Invalid month (13). Using 1.
 1/30/2012
-PARTICIP ATION
-ACTIVITY5.14.1:  Checking par ameter values.
-Consider the example above.
-1)The month must be in the r ange fr om 1 to _____ .
-2)If the month par ameter is not in the valid r ange, the code outputs an
-error message, and assigns currMonth with _____ .
-3)In addition to currMonth, which other par ameter is check ed for being
-in a valid r ange?
-How was this section? |Feedback?
-Check Show answer
-Check Show answer
-Check Show answer
-Feedback?
- Provide section f eedback
-Due: 04/15/2025, 11:59 PM ED T
-Completion details  My libr ary>CSC 108: Computer Science I home >5.14: P arameter err or checking zyBooks catalog Help/F AQ

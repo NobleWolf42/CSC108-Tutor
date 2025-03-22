@@ -48,7 +48,7 @@ No error
 8) cout >> numDogs >> endl;
 Error
 No error
-Unclear error messages
+Unclearerror messages
 Compiler error messages are often unclear or even misleading. The message is like the compiler's "best guess" of what is really wrong.
 Figure 1.5.2: Misleading compiler error message.
 #include <iostream>
@@ -69,7 +69,7 @@ error at the specified line, the programmer should look to previous lines.
 PARTICIPATION
 ACTIVITY 1.5.2: The compiler error message's line may be past the line with the actual error.
 PARTICIPATION
-ACTIVITY 1.5.3: Unclear error messages.
+ACTIVITY 1.5.3: Unclearerror messages.
 1) When a compiler says that an error exists on line 5, that line must
 have an error.
 True
@@ -170,11 +170,11 @@ ACTIVITY 1.5.5: Compile and run after writing just a few statements.
 PARTICIPATION
 ACTIVITY 1.5.6: Compiling and running frequently.
 1) A new programmer writes 5 lines of code, compiles and runs, writes
-5 more lines, and compiles and runs again. The programmer is _____ .
+5 more lines, and compiles and runs again. The programmer is _____.
 wasting time
 following good practice
 2) An experienced programmer writes 80 lines of code and then
-compiles and runs. The programmer is probably _____ .
+compiles and runs. The programmer is probably _____.
 programming dangerously
 following good practice
 Compiler warnings

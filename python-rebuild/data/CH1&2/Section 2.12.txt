@@ -20,7 +20,7 @@ number of births is countable), then the expression combines a floating-point an
 A type conversion is a conversion of one data type to another, such as an int to a double. The compiler automatically performs several
 common conversions between int and double types, such automatic conversions are known as implicit conversion.
 For an arithmetic operator like + or *, if either operand is a double, the other is automatically converted to double, and then a floating-
-point operation is performed.
+pointoperation is performed.
 For assignments, the right side type is converted to the left side type.
 int-to-double conversion is straightforward: 25 becomes 25.0.
 double-to-int conversion just drops the fraction: 4.9 becomes 4.
@@ -49,7 +49,7 @@ A programmer sometimes needs to explicitly convert an item's type. Ex: If a prog
 integers, then at least one of the integers needs to be converted to double so floating-point division is performed. Otherwise, integer
 division is performed, evaluating to only the quotient and ignoring the remainder. A type cast explicitly converts a value of one type to
 another type.
-The static_cast operator (static_cast<type>(expression)) converts the expression's value to the indicated type. Ex: If myIntVar is 7,
+The static_castoperator (static_cast<type>(expression)) converts the expression's value to the indicated type. Ex: If myIntVar is 7,
 then static_cast<double>(myIntVar) converts int 7 to double 7.0.
 The program below casts the numerator and denominator each to double so floating-point division is performed (actually, converting only
 one would have worked).

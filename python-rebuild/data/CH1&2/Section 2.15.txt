@@ -149,33 +149,33 @@ getline(cin, firstString);
 getline(cin, secondString);
 1) Hello there!
 Welcome.
-firstString gets _____ .
+firstString gets _____.
 Hello
 Hello there!
 Hello there! Welcome.
 2) I
 don't
 know.
-firstString gets _____ .
+firstString gets _____.
 I
 I don't
 I
 don't
 3) Hey buddy.
 What's up?
-secondString gets _____ .
+secondString gets _____.
 Hey buddy.
 What's up?
 (empty)
 4)
 abc
 def
-secondString gets _____ . (Note that the first line above is blank).
+secondString gets _____. (Note that the first line above is blank).
 abc
 def
 (blank)
 5)     Walk away
-firstString gets _____ . (Note the leading spaces before Walk).
+firstString gets _____. (Note the leading spaces before Walk).
 Walk away
     Walk away
 Example: Getting multi-word names

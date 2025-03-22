@@ -3,11 +3,11 @@ Detecting if two items are equal using an if statement
 A program commonly needs to determine if two items are equal. Ex: If a hotel gives a discount for guests on their 50th wedding
 anniversary, a program to calculate the discount can check if a variable numYears is equal to the value 50. A programmer can use an if
 statement to check if two values are equal.
-An if statement executes a group of statements if an expression is true. Braces surround the if branch 's statements. Braces  { }, sometimes
+An if statement executes a group of statements if an expression is true. Braces surround the if branch's statements. Braces  { }, sometimes
 redundantly called curly braces, represent a grouping, such as a grouping of statements. Note: { } are braces, [ ] are brackets.
 The example below uses ==. The equality operator (==) evaluates to true if the left and right sides are equal. Ex: If numYears is 50, then
 numYears == 50 evaluates to true. Note the equality operator is ==, not =.
-Good practice  is to indent a branch 's statements, using a consistent number of spaces.  This material indents 3 spaces.
+Good practice  is to indent a branch's statements, using a consistent number of spaces.  This material indents 3 spaces.
 
 
 What is the final value of numItems?
@@ -46,7 +46,7 @@ numDogs   numCats
 numDogs   numCats
 4)numDogs is either less than or greater than numCats
 numDogs   numCats
-5)userChar is the char acter 'x'.
+5)userChar is the character 'x'.
 userChar   'x'
 If-else statement
 An if-else  statement executes one group of statements when an expression is true, and another group of statements when the expression
@@ -82,7 +82,7 @@ else {
    numItems  = numItems  + 6;
 }
 numItems  = numItems  + 1;
-4)What is the final value of bonusV al?
+4)What is the final value of bonusval?
 bonusVal  = 11;
 if (bonusVal  != 12) {
    bonusVal  = bonusVal  + 1; 
@@ -101,7 +101,7 @@ else {
 }
 
 
-Translate each description to an if-else statement as directly as possible. Use { }. (Not checked, but please indent a branch 's
+Translate each description to an if-else statement as directly as possible. Use { }. (Not checked, but please indent a branch's
 statements some consistent number of spaces, such as 3 spaces).
 1)If userAge equals 62, assign itemDiscount with 15. Else, assign
 itemDiscount with 0.
@@ -114,8 +114,8 @@ numPlayers, execute teamSize = 2 * teamSize.
 
 
 Multi-branch if-else statements
-Commonly , a program may need to detect several specific values of a variable. An If-else statement can be extended to have three (or
-more) branches. Each branch 's expression is checked in sequence. As soon as one branch 's expression is found to be true, that branch 's
+Commonly, a program may need to detect several specific values of a variable. An If-else statement can be extended to have three (or
+more) branches. Each branch's expression is checked in sequence. As soon as one branch's expression is found to be true, that branch's
 statements execute (and no subsequent branch is considered). If no expression is true, the else branch executes. The example below
 detects values of 1, 10, 25, or 50 for variable numYears.
 Figure 3.2.1: Multi-branch if-else statement. Only 1 branch will execute.
@@ -184,10 +184,10 @@ else {
 2)numSales is 0
 3)numSales is 7
 Comparing characters, strings, and floating-point types
-The relational and equality operators work for integer , character , and floating-point built-in types.
+The relational and equality operators work for integer, character, and floating-point built-in types.
 Comparing characters compares their ASCII numerical encoding.
 Floating-point types should not be compared using the equality operators, due to the imprecise representation of floating-point numbers, as
 discussed in a later section.
 The operators can also be used for the string type. Strings are equal if they have the same number of characters and corresponding
-characters are identical. If string myStr = "T uesda y", then (myStr == "T uesda y") is true, while (myStr == "tuesda y") is false because T differs
+characters are identical. If string myStr = "T uesday", then (myStr == "T uesday") is true, while (myStr == "tuesday") is false because T differs
 from t.

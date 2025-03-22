@@ -2,7 +2,7 @@
 2.22 Output formatting
 Floating-point manipulators
 A programmer can adjust the way that a program's output appears, a task known as output formatting. The main formatting approach uses
-manipulators. A manipulat or  is a function that overloads the insertion operator << or extraction operator >> to adjust the way output
+manipulators. A manipulat or  is a function that overloads the insertion operator << or extraction operator >> to adjust the wayoutput
 appears. Manipulators are defined in the iomanip and ios libraries in namespace std.
 PARTICIPATION
 ACTIVITY 2.22.1: Floating-point manipulators.
@@ -46,7 +46,7 @@ rather than cout << setprecision(2);, which compiles fine but does not impact co
 elsewhere in this material.
 
 ACTIVITY 2.22.2: Output formatting for floating-point manipulators.
-Use the code below to answer each question, and assume no manipulators have previously been applied.
+Use the code below to answereach question, and assume no manipulators have previously been applied.
 double temp;
 temp = 98.63;
 // a floating-point manipulator
@@ -95,7 +95,7 @@ From <iostream>
 cout << right << setw(7) << "Amy";
 
 ACTIVITY 2.22.4: Output formatting for text manipulators.
-Use the code below to answer each question, and assume no manipulators have previously been applied.
+Use the code below to answereach question, and assume no manipulators have previously been applied.
 string str = "Amy";
 1) Which statement prints "...Amy"?
 cout << setfill('.') << str;
@@ -117,7 +117,7 @@ Printing characters from the buffer to the output device (e.g., screen) requires
 the resources are reserved, moving characters is fast, whether there is 1 character or 50 characters to print.
 To preserve resources, the system may wait until the output buffer is full, or at least has a certain number of characters, before moving the
 characters to the output device. Or, with fewer characters in the buffer, the system may wait until the resources are not busy. Sometimes a
-programmer does not want the system to wait. Ex: In a very processor-intensive program, waiting could cause delayed and/or jittery output.
+programmer does not want the system to wait. Ex: In a very processor-intensive program, waiting could cause delayed and/or jitteryoutput.
 Two manipulators exist to send all buffer contents to the output device without waiting: endl and flush.
 Table 2.22.3: Buffer manipulators.
 Manipulator Description Example
@@ -235,7 +235,7 @@ Dog age
 -----------------------
 1. The setw() manipulator sets the number of characters for displaying the following item to 10. The left manipulator outputs the
 following item "Dog age" left-aligned within 10 characters.
-2. The vertical bar | is output at the end of the 10 characters. setw() only affects the "Dog age" output.
+2. Thevertical bar | is output at the end of the 10 characters. setw() only affects the "Dog age" output.
 3. The setw() and right manipulators output "Human age" right-aligned within 12 characters.
 4. The setfill() manipulator sets the dash character to fill the empty space created when outputting an empty string in the next 23
 characters.

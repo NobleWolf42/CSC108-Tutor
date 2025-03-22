@@ -3,13 +3,13 @@
 Creating correct programs can be hard. Following a good programming process helps. What many new
 programmers do, but shouldn't, is write the entire program, compile it, and run it—hoping it works. Debugging such
 a program can be difficult because there may be many distinct bugs.
-Experienced programmers de velop programs incrementally , meaning they create a simple program version, and
-then grow the program little-by-little into successively more-complete versions.
+Experienced programmers develop programs incrementally, meaning they create a simple program version, and
+then grow the program little-by-little into successively more-completeversions.
 The following program allows the user to enter a phone number that includes letters. Such letters appear on phone
 keypads along with numbers, enabling phone numbers like 1-555-HOLIDAY. The program converts a phone number
-having numbers/letters into one having numbers only .
-The first program version simply prints each string element, to ensure the loop iterates properly .
-Figur e 4.8.1: Incremental program development.
+having numbers/letters into one having numbers only.
+The first program version simply prints each string element, to ensure the loop iterates properly.
+Figure 4.8.1: Incremental program development.
 #include  <iostream>
 #include  <string>
 using  namespace  std;
@@ -20,8 +20,8 @@ int  main()  {
    cout  <<  "Enter phone number: " ;
    cin  >>  phoneStr ;
    
-   for  (i  =  0;  i  <  phoneStr .size();  ++i)  {  // For each element
-      cout  <<  "Element "  <<  i  <<  " is: "  <<  phoneStr .at(i)  <<  endl;
+   for  (i  =  0;  i  <  phoneStr.size();  ++i)  {  // For each element
+      cout  <<  "Element "  <<  i  <<  " is: "  <<  phoneStr.at(i)  <<  endl;
    }
    
    return  0;
@@ -40,9 +40,9 @@ Element 10 is: D
 Element 11 is: A
 Element 12 is: Y
 The second program v ersion outputs any number elements, outputting '?' for non-number elements. A FIXME comment  is commonly used
-to indicate program parts to be fixed or added, as below . Some editor tools automatically highlight the FI XME comment to attract the
+to indicate program parts to be fixed or added, as below. Some editor tools automatically highlight the FI XME comment to attract the
 programmer's attention.
-Figur e 4.8.2: Second version echoes numbers, and has FIXME comment.
+Figure 4.8.2: Second version echoes numbers, and has FIXME comment.
 #include  <iostream>
 #include  <string>
 using  namespace  std;
@@ -55,8 +55,8 @@ int  main()  {
    cin  >>  phoneStr ;
    
    cout  <<  "Numbers only: " ;
-   for  (i  =  0;  i  <  phoneStr .size();  ++i)  {  // For each element
-      currChar  =  phoneStr .at(i);
+   for  (i  =  0;  i  <  phoneStr.size();  ++i)  {  // For each element
+      currChar  =  phoneStr.at(i);
       if  ((currChar  >=  '0')  &&  (currChar  <=  '9'))  {
          cout  <<  currChar ;  // Print element as is
       }
@@ -86,8 +86,8 @@ int  main()  {
    cin  >>  phoneStr ;
    
    cout  <<  "Numbers only: " ;
-   for  (i  =  0;  i  <  phoneStr .size();  ++i)  {  // For each element
-      currChar  =  phoneStr .at(i);
+   for  (i  =  0;  i  <  phoneStr.size();  ++i)  {  // For each element
+      currChar  =  phoneStr.at(i);
       if  (((currChar  >=  '0')  &&  (currChar  <=  '9'))  ||  (currChar  ==  '-'))  {
          cout  <<  currChar ;  // Print element as is
       }
@@ -106,7 +106,7 @@ int  main()  {
    return  0;
 }Enter phone number: 1-555-HOLIDAY
 Numbers only: 1-555-?????2?
-The four th version can be created by filling in the if-else branches similarly for other letters. We added more instructions too. Code is not
+The fourth version can be created by filling in the if-else branches similarly for other letters. We added more instructions too. Code is not
 shown Below, but sample input/output is provided.
 Figure 4.8.4: Fourth and final version sample input/output.
 Enter phone number (letters/- OK, no spaces): 1-555-HOLIDAY       
@@ -121,7 +121,7 @@ Numbers only: 999-9999
 Enter phone number (letters/- OK, no spaces): 9876zywx%$#@
 Numbers only: 98769999????
 zyDE 4.8.1: Incremental programming.
-Complete the program by providing the additional if-else branches for decoding other letters in a phone number . Try incrementally
+Complete the program by providing the additional if-else branches for decoding other letters in a phone number. Try incrementally
 writing the program by adding one " else if " branch at a time, testing that each added branch works as intended.
 1-800-555-HOLID AY 
 
@@ -130,14 +130,14 @@ Incremental programming.
 incrementally r emo ve bugs one at a time.
 True
 False
-2)Exper t programmers need not de velop programs incrementally .
+2)Exper t programmers need not develop programs incrementally.
 True
 False
-3)Incremental programming may help r educe the number of errors in a
+3)Incremental programming may help reduce the number of errors in a
 program.
 True
 False
-4)FIXME comments pr ovide a way for a programmer to remember
+4)FIXME comments provide a way for a programmer to remember
 what needs to be added.
 True
 False
@@ -156,8 +156,8 @@ int main() {
    cin >> phoneStr ;
    
    cout << "Numbers only: ";
-   for (i = 0; i < phoneStr .size(); ++i) { // For each element
-      currChar  = phoneStr .at(i);
+   for (i = 0; i < phoneStr.size(); ++i) { // For each element
+      currChar  = phoneStr.at(i);
       if (((currChar  >= '0') && (currChar  <= '9')) || (currChar  == '-')) {
          cout << currChar ; // Print element as is
       }

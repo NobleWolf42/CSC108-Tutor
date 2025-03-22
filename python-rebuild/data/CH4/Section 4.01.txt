@@ -1,5 +1,5 @@
 
-4.1 Loops (gener al)
+4.1 Loops (general)
 Loop concept
 People who have children may be familiar with looping around the block until a baby falls asleep.
 
@@ -24,22 +24,22 @@ street or bottom?
 Top
 Bottom
 Loop basics
-A loop  is a program construct that repeatedly executes the loop's statements (known as the loop body ) while the loop 's expression is true;
-when the expression is false, execution proceeds past the loop. Each time through a loop 's statements is called an iteration .
+A loop  is a program construct that repeatedly executes the loop's statements (known as the loop body ) while the loop's expression is true;
+when the expression is false, execution proceeds past the loop. Each time through a loop's statements is called an iteration.
 
 ACTIVITY4.1.3:  A simple loop: Summing the input values.
 Loop example: Computing an average
-A loop can be used to compute the a verage of a list of numbers.
+A loop can be used to compute the average of a list of numbers.
 
-ACTIVITY4.1.4:  Loop example: Computing an a verage.
+ACTIVITY4.1.4:  Loop example: Computing an average.
 
-ACTIVITY 4.1.5:  Loop example: A verage.
-Consider the computing an a verage example above.
+ACTIVITY 4.1.5:  Loop example: average.
+Consider the computing an average example above.
 1)In the example above, the first value received from input was 2. That
 caused the loop body to be _____.
 executed
 not executed
-2)At the end of the loop body , the _____.
+2)At the end of the loop body, the _____.
 next input is received
 loop is exited
 average is computed
@@ -49,13 +49,13 @@ average is computed
 4)Each time through the loop, the sum variable is increased by _____.
 0
 1
-the curr ent input value
-5)What was variable num 's value after the loop was done iterating?
+the current input value
+5)What was variable num's value after the loop was done iterating?
 1
 2
 3
 6)Before the loop, the first input value is received. If that input was
-negative (unlike the data in the example above), the loop 's body
+negative (unlike the data in the example above), the loop's body
 would _____.
 be executed
 not be executed
@@ -91,8 +91,8 @@ Yes
 No
 Example: Finding the max value
 Examining items one at a time and updating a variable can achieve some interesting computations. The task below is to find the maximum
-value in a list of positive values. A variable stores the max value seen so far . This variable is initializ ed with the first input value. Each
-following input value is compared with the stored max value, and if greater , the input value replaces the max value.
+value in a list of positive values. A variable stores the max value seen so far. This variable is initialized with the first input value. Each
+following input value is compared with the stored max value, and if greater, the input value replaces the max value.
 
 ACTIVITY 4.1.8:  Find the maximum value in the list of values.
 Click "store value" to initialize max with the first input value, and then click "store value" if a new maximum value is seen.
@@ -117,7 +117,7 @@ max = val
 val = max
 max = max + 1
 3)Does the final value of max depend on the order of inputs? In
-particular , would max be different for inputs 22 5 99 3 0 versus inputs
+particular, would max be different for inputs 22 5 99 3 0 versus inputs
 99 3 5 22 0?
 Yes
 No
@@ -139,15 +139,15 @@ val = Get next inputWhile  val > -1val = Get next inputsum = 0
 OutputInputsum:0267
 241-1
 
-1. A loop is like a branch, but the loop jumps back to the expression when done. Thus, the loop 's statements may execute multiple
+1. A loop is like a branch, but the loop jumps back to the expression when done. Thus, the loop's statements may execute multiple
 times Before execution proceeds past the loop.
-2. This program receives an input value. If the value > -1, the program adds the value to a sum, receives another input, and r epeats.
-val is 2, so the loop 's statements execute, making sum 2.
-3. The loop 's statements ended by receiving the next input, which is 4. The loop 's expression 4 > -1 is true, so the loop 's statements
+2. This program receives an input value. If the value > -1, the program adds the value to a sum, receives another input, and repeats.
+val is 2, so the loop's statements execute, making sum 2.
+3. The loop's statements ended by receiving the next input, which is 4. The loop's expression 4 > -1 is true, so the loop's statements
 execute again, making sum 2 + 4 or 6.
-4. The loop 's statements r eceiv e the next input of 1. The loop 's expression 1 > -1 is true, so the loop 's statements execute a thir d
+4. The loop's statements r eceiv e the next input of 1. The loop's expression 1 > -1 is true, so the loop's statements execute a thir d
 time, making sum 6 + 1 or 7.
-5. The next input is -1. This time, -1 > -1 is false, so the loop is not enter ed. Instead, execution proceeds past the loop, where a
+5. The next input is -1. This time, -1 > -1 is false, so the loop is not entered. Instead, execution proceeds past the loop, where a
 statement puts sum, which is 7, to the output.Captions
 Feedback?
 Put avg to outputavg = sum / numsum = sum + val
@@ -155,8 +155,8 @@ num = num + 1
 val = Get next inputWhile  val > -1val = Get next inputnum = 0sum = 0
 Output249-1Input3210 num:15620 sum:
 5
-1. The program computes an a verage of a list of numbers (a negative ends the list). The first input is 2, so the loop is enter ed. Sum
+1. The program computes an average of a list of numbers (a negative ends the list). The first input is 2, so the loop is entered. Sum
 becomes 2, and num is incr emented to 1.
-2. The next input is 4. The loop is enter ed, so sum becomes 2 + 4 or 6, and num is incr emented to 2.
-3. The next input is 9, so the loop is enter ed. Sum becomes 6 + 9 or 15, and num is incr emented to 3.
-4. The next input is -1, so the loop is not enter ed. 15 / 3 or 5 is output.Captions
+2. The next input is 4. The loop is entered, so sum becomes 2 + 4 or 6, and num is incr emented to 2.
+3. The next input is 9, so the loop is entered. Sum becomes 6 + 9 or 15, and num is incr emented to 3.
+4. The next input is -1, so the loop is not entered. 15 / 3 or 5 is output.Captions

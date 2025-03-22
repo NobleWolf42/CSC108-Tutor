@@ -73,14 +73,14 @@ if (a < b)
 For if-else, the else appears on
 its own line
 if (a < b) {
-   ...
+...
 }
 else { 
    // Called Stroustrup style  
    // (modified K&R)
 }
 if (a < b) {
-   ...
+...
 } else {
    // Original K&R style
 }

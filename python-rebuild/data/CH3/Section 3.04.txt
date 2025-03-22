@@ -2,7 +2,7 @@
 
 3.4 Detecting ranges with branches
 Relational operators
-A relational operator checks how one operand's value relates to another , like being greater than.
+A relational operator checks how one operand's value relates to another, like being greater than.
 Some operators, like >=, involve two characters. A programmer cannot arbitrarily combine the >, =, and < symbols; only the shown two-
 character sequences represent valid operators.
 Table 3.4.1: Relational operators.
@@ -55,16 +55,16 @@ ACTIVITY3.4.4:  Ranges and multi-branch if-else.
 Type the range for each branch. Type ranges as: 25 - 29, or type 30+ for all numbers 30 and larger.
 int numSales ;
 if (numSales  < 10) {
-   ...
+...
 }
 else if (numSales  < 20) {  // 2nd branch range: _____
-   ...
+...
 }
 else if (numSales  < 30) {  // 3rd branch range: _____
-   ...
+...
 }
 else {                     // 4th branch range: _____
-   ...
+...
 }
 1)2nd branch range:
 2)3rd branch range:
@@ -72,73 +72,73 @@ else {                     // 4th branch range: _____
 4)What is the range for the last branch below?
 int numItems ;
 if (numItems  < 0) {
-   ...
+...
 }
 else if (numItems  > 100) {
-   ...
+...
 }
 else {  // Range: ______
-   ...
+...
 }
 
 Complete the multi-branch if-else.
 1)Second branch: userNum is less than 200
 int userNum;
 if (userNum < 100 ) {
-  ...
+...
 }
 else if ( ) {
  
-  ...
+...
 }
 else { // userNum >= 200
-  ...
+...
 } 
 2)Second branch: userNum is positive (non-zero)
 int userNum;
 if (userNum < 0 ) {
-  ...
+...
 }
  {
-  ...
+...
 }
 else { // userNum is 0
-  ...
+...
 } 
 3)Second branch: userNum is greater than 105
 int userNum;
 if (userNum < 100 ) {
-  ...
+...
 }
  {
-  ...
+...
 }
 else { // userNum is between
      // 100 and 105
-  ...
+...
 } 
 4)If the final else branch executes, what must userNum have been?
 Type "unknown " if appropriate.
 int userNum;
 if (userNum <= 9) {
-   ...
+...
 }
 else if (userNum >= 11) {
-   ...
+...
 }
 else {
-   ... // userNum if this executes?
+... // userNum if this executes?
 }
 5)Which br anch will execute? Valid answers: 1, 2, 3, or none.
 int userNum = 555;
 if (userNum < 0) {
-   ... // Branch 1
+... // Branch 1
 }
 else if (userNum > 600) {
-   ... // Branch 2
+... // Branch 2
 }
 else if (userNum < 100) {
-   ... // Branch 3
+... // Branch 3
 }
 
 ACTIVITY3.4.4:  Working with ranges.

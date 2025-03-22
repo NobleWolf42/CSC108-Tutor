@@ -7,7 +7,7 @@ and older). The gap is the group of people aged 13 to 64. An if-else statement c
 
 
 ACTIVITY3.6.2:  Detecting ranges with gaps and multi-branch if-else.
-Select the correct answers below .
+Select the correct answers below.
 1)In the animation above, what is the age range for a child ticket
 discount?
 0 - 12
@@ -20,26 +20,26 @@ discount?
 13 - 64
 3)What is the range for the last branch below?
 if (numItems  <= 0) {
-   ...
+...
 }
 else if (numItems  > 100) {
-   ...
+...
 }
 else {  // Range: ______
-   ...
+...
 }
 1 - 99
 0 - 100
 1 - 100
 4)What is the range for the last branch below?
 if (numItems  < 50) {
-   ...
+...
 }
 else if (numItems  > 50) {
-   ...
+...
 }
 else {  // Range: ______
-   ...
+...
 }
 49 - 51
 0 - 50
@@ -76,7 +76,7 @@ if ((jNum >= 49 && jNum <= 80) || (jNum >= 89 &&
 jNum <= 100))
 if ((jNum > 49 && jNum < 80) || (jNum > 89 && jNum 
 < 100))
-4)Quar terback: 1 to 19
+4)quarterback: 1 to 19
 if (jNum <= 19)
 if (jNum > 0 && jNum < 20)
 if (jNum > 0 || jNum < 20)
@@ -113,11 +113,11 @@ Enter your age: 1919
 14
 19<= 12X
 19>= 65XMovie ticket price: $14
-1. After the user enters their age, the else-if branch 's first branch checks if age is <= 12.
+1. After the user enters their age, the else-if branch's first branch checks if age is <= 12.
 2. userAge is 67, which is greater than 12, so the program mo ves to the second branch that checks if userAge is >= 65.
-3. 67 is >= 65, so the second branch 's statements ex ecute, applying the senior discount to the ticket price. The program concludes
-by outputting the tick et price.
-4. If the user 's age falls between the gap of 12 and 65 (13 to 64), the else branch ex ecutes and the ticket price is $14, the most
+3. 67 is >= 65, so the second branch's statements ex ecute, applying the senior discount to the ticket price. The program concludes
+byoutputting the tick et price.
+4. If the user's age falls between the gap of 12 and 65 (13 to 64), the else branch executes and the ticket price is $14, the most
 expensive price.
 
 if (officeNum  >= 100 && officeNum  <= 150) {

@@ -11,7 +11,7 @@ A C TIVI T Y 2.16.1: Overflow error.
 Declaring the variable of type long long, (described in another section) which uses at least 64 bits, would solve the above problem. But even
 that variable could overflow if assigned a large enough value.
 Most compilers detect when a statement assigns to a variable a literal constant so large as to cause overflow. The compiler may not report
-a syntax error (the syntax is correct), but may output a compiler warning message that indicates a potential problem. A GNU compiler
+a syntax error (the syntax is correct), but mayoutput a compiler warning message that indicates a potential problem. A GNU compiler
 outputs the message "warning: overflow in implicit constant conversion", and a Microsoft compiler outputs "warning: '=': truncation of
 constant value". Generally, good practice is for a programmer to not ignore compiler warnings.
 A common source of overflow involves intermediate calculations. Given int variables num1, num2, num3 each with values near 1 billion,

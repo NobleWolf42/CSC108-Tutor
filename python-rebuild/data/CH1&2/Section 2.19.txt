@@ -23,7 +23,7 @@ int main() {
 Line 2 includes the C standard library, which defines the rand() function and RAND_MAX.
 RAND_MAX is a machine-dependent value, but is at least 32,767. Above, RAND_MAX is about 2 billion.
 Usually, a programmer wants a random integer restricted to a specific number of possible values. The modulo operator % can be used. Ex:
-integer % 10 has 10 possible remainders: 0, 1, 2, ..., 8, 9.
+integer % 10 has 10 possible remainders: 0, 1, 2,..., 8, 9.
 PARTICIPATION
 ACTIVITY 2.19.1: Restricting random integers to a specific number of possible values.
 PARTICIPATION
@@ -84,7 +84,7 @@ rand() % ___
 (rand() % 41) + ___
 PARTICIPATION
 ACTIVITY 2.19.5: Specific range.
-1) Which generates a random integer in the range 18 ... 30?
+1) Which generates a random integer in the range 18... 30?
 rand() % 30
 rand() % 31
 rand() % (30 - 18)
@@ -122,7 +122,7 @@ Move from row 8 col 5 to row 14 col 24
 ACTIVITY 2.19.6: Random integer example: Moving seats.
 Consider the above example.
 1) The row is chosen using (rand() % 20) + 1. The 20 is because 20 rows
-exist. The + 1 is _____ .
+exist. The + 1 is _____.
 necessary
 optional
 2) The column for the left is chosen using (rand() % 15) + 1. The 15 is
@@ -141,7 +141,7 @@ printed. Such reproducibility is important for testing some programs. (Players o
 seemingly-random actions of objects actually follow the same pattern every time the game is played, allowing players to master the game
 by repeating the same winning actions).
 Internally, the rand() function has an equation to compute the next "random" integer from the previous one, (invisibly) keeping track of the
-previous one. For the first call to rand(), no previous random integer exists, so the function uses a built-in integer known as the seed . By
+previous one. For the first call to rand(), no previous random integer exists, so the function uses a built-in integer known as the seed. By
 default, the seed is 1. A programmer can change the seed using the function srand(), as in srand(2) or srand(99).
 If the seed is different for each program run, the program will get a unique sequence. One way to get a different seed for each program run
 is to use the current time as the seed. The function time()  returns the number of seconds since Jan 1, 1970.
@@ -167,7 +167,7 @@ int main() {
 1450088483
 
 ACTIVITY 2.19.7: Using a unique seed for each program run.
-1) The s in srand() most likely stands for _____ .
+1) The s in srand() most likely stands for _____.
 sequence
 seed
 2) By starting a program with srand(15), calls to rand() will yield a

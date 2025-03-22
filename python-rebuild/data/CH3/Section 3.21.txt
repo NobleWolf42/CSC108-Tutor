@@ -1,12 +1,12 @@
 
 3.21  C++ example: Search for name using branches
 zyDE 3.21.1: Search for name using branches.
-A core generic top-level domain (core gTLD)  name is one of the following Internet domains: .com, .net, .or g, and .info ( ICANN: gTLDs ).
-The following program asks the user to input a name and prints whether that name is a gTLD . The program uses the equality operators
+A core generic top-level domain (core gTLD)  name is one of the following Internet domains:.com,.net,.or g, and.info ( ICANN: gTLDs ).
+The following program asks the user to input a name and prints whether that name is a gTLD. The program uses the equality operators
 ==, which evaluates to true if the two compared strings are identical.
-1. Run the program, noting that the .info input name is not curr ently recognized as a gTLD .
-2. Extend the if-else statement to detect the .info domain name as a gTLD . Run the program again.
-3. Extend the program to allow the user to enter the name with or without the leading dot, so .com or just com.
+1. Run the program, noting that the.info input name is not currently recognized as a gTLD.
+2. Extend the if-else statement to detect the.info domain name as a gTLD. Run the program again.
+3. Extend the program to allow the user to enter the name with or without the leading dot, so.com or just com.
 
 Below is a solution to the above problem.
 
@@ -21,7 +21,7 @@ int main() {
    string coreGtld1 ;
    string coreGtld2 ;
    string coreGtld3 ;
-   // FIXME: Add a fourth core gTLD: .info
+   // FIXME: Add a fourth core gTLD:.info
    bool isCoreGtld  = false;
    coreGtld1  = ".com";
    coreGtld2  = ".net";

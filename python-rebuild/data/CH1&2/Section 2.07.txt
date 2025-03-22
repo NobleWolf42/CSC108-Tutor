@@ -3,7 +3,7 @@ Floating-point (double) variables
 A floating-point number is a real number containing a decimal point that can appear anywhere (or "float") in the number. Ex: 98.6, 0.0001, or
 -55.667. A double variable stores a floating-point number. Ex: double milesTravel; declares a double variable.
 A floating-point literal is a number with a fractional part, even if the fraction is 0, as in 1.0, 0.0, or 99.573. Good practice is to always have a
-digit before the decimal point, as in 0.5, since .5 might mistakenly be viewed as 5.
+digit before the decimal point, as in 0.5, since.5 might mistakenly be viewed as 5.
 Figure 2.7.1: Variables of type double: Travel time example.
 #include <iostream>
 using namespace std;
@@ -55,7 +55,7 @@ cityRainfall =  measuredRain - 5;
 cityRainfall = measuredRain - 5.0;
 3) Which statement best assigns the variable? cityRainfall is of type
 double.
-cityRainfall =  .97;
+cityRainfall =.97;
 cityRainfall = 0.97;
 Scientific notation
 Very large and very small floating-point values may be printed using scientific notation. Ex: If a floating variable holds the value
@@ -91,7 +91,7 @@ int
 Floating-point division by zero
 Dividing a nonzero floating-point number by zero is undefined in regular arithmetic. Many programming languages produce an error when
 performing floating-point division by 0, but C++ does not. C++ handles this operation by producing infinity or -infinity, depending on the
-signs of the operands. Printing a floating-point variable that holds infinity or -infinity outputs inf or -inf.
+signs of the operands. Printing a floating-point variable that holds infinity or -infinityoutputs infor -inf.
 If the dividend and divisor in floating-point division are both 0, the division results in a "not a number". Not a number (NaN) indicates an
 unrepresentable or undefined value. Printing a floating-point variable that is not a number outputs nan.
 Figure 2.7.2: Floating-point division by zero example.

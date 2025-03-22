@@ -2,7 +2,7 @@
 4.9 Break and continue
 A break statement  in a loop causes an immediate exit of the loop. A break statement can sometimes yield a loop that is easier to
 understand.
-Figur e 4.9.1: Break statement: Meal finder program.
+Figure 4.9.1: Break statement: Meal finder program.
 #include  <iostream>
 using  namespace  std;
 int  main()  {
@@ -56,10 +56,10 @@ $20 buys 4 empanadas and 2 tacos without change.
 ...
 Enter money for meal: 31
 $31 buys 9 empanadas and 1 tacos without change.
-The nested for loops gener ate all possible meal options for the number of empanadas and tacos that can be pur chased. The inner loop
-body calculates the cost of the curr ent meal option. If equal tothe user 's money, the search is over, so the break statement immediately
+The nested for loops generate all possible meal options for the number of empanadas and tacos that can be pur chased. The inner loop
+body calculates the cost of the current meal option. If equal tothe user's money, the search is over, so the break statement immediately
 exits the inner loop. The outer loop body also checks if equal, and if so that break statement exits the outer loop.
-The program could be written without br eak statements, but the loop 's condition expressions would be more complex and the program
+The program could be written without br eak statements, but the loop's condition expressions would be more complex and the program
 would require additional code, perhaps being harder to understand.
 
 :  Break statements.
@@ -144,11 +144,11 @@ How many people are eating: 2
 $54 buys 18 empanadas and 0 tacos without change.
 $54 buys 10 empanadas and 6 tacos without change.
 $54 buys 2 empanadas and 12 tacos without change.
-The nested loops gener ate all possible combinations of tacos and empanadas. If the total number of tacos and empanadas is not exactly
-divisible by the number of diners (e.g., ((numTacos + numEmpanadas) % numDiners) != 0) , the continue statement proceeds to
-the next iter ation, thus causing incr ementing of numEmpanadas and checking of the loop condition.
+The nested loops generate all possible combinations of tacos and empanadas. If the total number of tacos and empanadas is not exactly
+divisible by the number of diners (e.g., ((numTacos + numEmpanadas) % numDiners) != 0), the continue statement proceeds to
+the next iteration, thus causing incr ementing of numEmpanadas and checking of the loop condition.
 Break and continue statements can avoid excessive indenting/nesting within a loop. But the y could be easily overlooked, and should be
-used sparingly , when their use is clear to the reader .
+used sparingly, when their use is clear to the reader.
 
   Continue.
 Given:
@@ -161,7 +161,7 @@ for  (i  =  0;  i  <  5;  ++i)  {
 1)The loop will print at least some output.
 True
 False
-2)The loop will iter ate only once.
+2)The loop will iterate only once.
 True
 False
 
@@ -172,7 +172,7 @@ False
 
 "Simon Says" is a memory game where "Simon " outputs a sequence of 10 characters (R, G, B, Y ) and the user must repeat the
 sequence. Organize the lines of code to create a for loop that compares the two strings simonPattern and userPattern, starting
-from index 0. F or each match, add one point to userScore. Upon a mismatch, exit the loop using a br eak statement. Assume
+from index 0. For each match, add one point to userScore. Upon a mismatch, exit the loop using a br eak statement. Assume
 simonPattern and userPattern are always the same length.
 Ex: If simonPattern = "RRGBR YYBGY" and userPattern = "RRGBBR YBGY", then the output is:
 userScore: 4

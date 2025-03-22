@@ -67,7 +67,7 @@ Solution approach 1: For each tag, insert that tag into the proper location in a
 Solution approach 2: For each tag, place the tag into one of 26 substacks, one for last names starting with A, one for B, etc. Then,
 for each substack's tags (like the A stack), insert that tag into the proper location of a last-name-sorted stack for that letter. Finally
 combine the stacks in order (A's stack on top, then B's stack, etc.).
-Solution approach 1 will be very hard; finding the correct insertion location in the new sorted stack will take time once that stack has
+Solution approach 1 will bevery hard; finding the correct insertion location in the new sorted stack will take time once that stack has
 about 100 or more items. Solution approach 2 is faster, because initially dividing into the 26 stacks is easy, and then each stack is
 relatively small, so insertions are easier to do.
 In fact, sorting is a common problem in programming, and solution approach 2 is similar to a well-known sorting approach called radix

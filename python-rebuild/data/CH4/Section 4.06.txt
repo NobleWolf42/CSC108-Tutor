@@ -1,9 +1,9 @@
 
 4.6 Loops and strings
 Iterating through a string with a for loop
-A programmer commonly iterates through a string, examining each character . The following example counts the number of letters in a
+A programmer commonly iterates through a string, examining each character. The following example counts the number of letters in a
 string, not counting digits, symbols, etc.
-Figur e 4.6.1: Iterating through a string: Counting letters.
+Figure 4.6.1: Iterating through a string: Counting letters.
 #include  <iostream>
 #include  <string>
 #include  <cctype>
@@ -15,8 +15,8 @@ int  main()  {
    cout  <<  "Enter a word: " ;
    cin   >>  inputWord ;
    numLetters  =  0;
-   for  (i  =  0;  i  <  inputWord .size();  ++i)  {
-      if  (isalpha(inputWord .at(i)))  {
+   for  (i  =  0;  i  <  inputWord.size();  ++i)  {
+      if  (isalpha(inputWord.at(i)))  {
          numLetters  +=  1;
       }
    }
@@ -29,7 +29,7 @@ Enter a word: 123abc...xyz
 Number of letters: 6
 
 ACTIVITY 4.6.1:  Iterating through a string.
-1)To visit every char acter in a string, a for loop should iterate over
+1)To visit every character in a string, a for loop should iterate over
 indices _____.
 0 to size
 0 to size-1
@@ -55,11 +55,11 @@ int  main()  {
    cout  <<  "Enter text: " ;
    getline(cin,  userText );
    // At least one occurrence exists
-   while  (userText .find("U.S.A." )  !=  string::npos)  {
+   while  (userText.find("U.S.A." )  !=  string::npos)  {
       // Get index of first instance
-      usaIndex  =  userText .find("U.S.A." );
+      usaIndex  =  userText.find("U.S.A." );
       // U.S.A. is 6 long
-      userText .replace(usaIndex ,  6,  "USA");
+      userText.replace(usaIndex,  6,  "USA");
    }
    cout  <<  "New text: "  <<  userText <<  endl;
    return  0;
@@ -71,17 +71,17 @@ New text: USA USA USAUSA Bye
 
 ACTIVITY4.6.2:  Replacing until done.
 Consider the example above.
-1)The loop is entered as long as an occurrence of "U.S.A. " _____ .
+1)The loop is entered as long as an occurrence of "U.S.A. " _____.
 is found
 is not found
 2)The number of iterations is known before entering the loop.
 True
 False
-3)find() is called within the loop body .
+3)find() is called within the loop body.
 True
 False
 4)replace() is called with the index of the first occurrence of "U.S.A. ",
-_____ , and "USA " as the arguments.
+_____, and "USA " as the arguments.
 
 
 }

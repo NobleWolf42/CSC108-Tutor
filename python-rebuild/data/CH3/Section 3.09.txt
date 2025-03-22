@@ -1,12 +1,12 @@
 
 3.9 Order of evaluation
 Precedence rules
-The order in which operators are evaluated in an expression are known as precedence rules . Arithmetic, logical, and relational operators are
-evaluated in the order shown below .
+The order in which operators are evaluated in an expression are known as precedence rules. Arithmetic, logical, and relational operators are
+evaluated in the order shown below.
 Table 3.9.1: Precedence rules for arithmetic, logical, and relational operators.
-operator/Conv ention Description Explanation
+operator/convention Description Explanation
 ( )Items within parentheses are
-evaluated firstIn (a * (b + c)) - d , the + is evaluated first, then *, then -.
+evaluated firstIn (a * (b + c)) - d, the + is evaluated first, then *, then -.
 ! ! (logical NO T) is next ! x || y  is evaluated as (!x) || y
 * / % + -Arithmetic operators (using
 their precedence rules; see
@@ -23,7 +23,7 @@ precedence over ||.
 || Logical OR|| has the lowest precedence of the listed arithmetic, logical, and r elational
 operators.
 
-ACTIVITY3.9.1:  Applying the precedence rules to an expression can be thought of as a 'tree'.
+ACTIVITY3.9.1:  Applying the precedence rules to an expression can be thought of as a'tree'.
 
 ACTIVITY3.9.2:  Order of evaluation.
 To teach precedence rules, these questions intentionally omit parentheses; good style would use parentheses to make order of
@@ -49,7 +49,7 @@ true
 false
 Common error: Missing parentheses
 A common error is to write an expression that is evaluated in a different order than expected.  Good practice  is to use parentheses in
-expressions to make the intended order of evaluation explicit.  Several examples are below .
+expressions to make the intended order of evaluation explicit.  Several examples are below.
 
 ACTIVITY3.9.3:  Common errors in expressions.
 1)Does ! x == 3  evaluate as !(x == 3) ?
@@ -81,17 +81,17 @@ bats < (birds || birds) < insects
 ((num1 == 9) || (num2 == 0)) && (num3 == 0)
 (num1 == 9) || (num2 == (0 && num3) == 0)
 Common error: Math expression for range
-A common error often made by new programmers is to write expressions like (16 < age < 25) , as one might see in mathematics.
+A common error often made by new programmers is to write expressions like (16 < age < 25), as one might see in mathematics.
 The meaning, however, almost certainly is not what the programmer intended. Suppose age is presently 28. The expression is evaluated
-left-to-right, so evaluation of 16 < age  yields true. Next, the expression true < 25  is evaluated; clearly not the programmer 's intent.
+left-to-right, so evaluation of 16 < age  yields true. Next, the expression true < 25  is evaluated; clearly not the programmer's intent.
 However, true is actually 1, and evaluating 1 < 25  will yield true. Thus, the above expression evaluates to true, even for ages greater than
 25.
-Thus, 16 < age < 25  is actually the same as (16 < age) < 25 , which evaluates to (true) < 25  for any age over 16, which is the
-same as (1) < 25 , which evaluates to true. The correct way to do such a comparison is: (age > 16) && (age < 25) .
+Thus, 16 < age < 25  is actually the same as (16 < age) < 25, which evaluates to (true) < 25  for any age over 16, which is the
+same as (1) < 25, which evaluates to true. The correct way to do such a comparison is: (age > 16) && (age < 25).
 
 ACTIVITY3.9.5:  Expression for detecting a range.
 1)A programmer erroneously wr ote an expression as: 0 < x < 10.
-Rewrite the expression using logical AND . Use parentheses.
+Rewrite the expression using logical AND. Use parentheses.
 (0 < x) 
 Common error: Bitwise rather than logical operators
 Logical AND is && and not just &, and logical OR is || and not just |. & and | represent bitwise operators, which perform AND or OR on

@@ -4,7 +4,7 @@
 Multiple distinct if statements
 A programmer can use multiple if statements in sequence to detect multiple features with independent actions. Multiple sequential if
 statements looks similar to a multi-branch if-else statement but has a very different meaning. Each if-statement is independent, and thus
-more than one branch can execute, in contr ast to the multi-branch if-else arr angement.
+more than one branch can execute, in contrast to the multi-branch if-else arrangement.
 Figure 3.7.1: Multiple distinct if statements.
 #include  <iostream>
 using  namespace  std;
@@ -77,7 +77,7 @@ else  if  (numApples  <  20)  {
 ACTIVITY3.7.1:  Enter the output for the multiple if-else branches.
 
 Nested if-else statements
-A branch 's statements can include any valid statements, including another if-else statement, which are known as nested if-else  statements.
+A branch's statements can include any valid statements, including another if-else statement, which are known as nested if-else  statements.
 Nested if statements are commonly used to make decisions that are based on multiple features. Ex: To calculate a discount based on both
 the number of items purchased and the total cost of those items, one if statement checks the number of items purchased and a nested if
 statement can check the total cost.
@@ -91,11 +91,11 @@ if  (numItems  >  3)  {
    }
 }
 else  if  (numItems  >  0)  {
-   ...
+...
 }
 
 ACTIVITY3.7.2:  Nested if-else statements.
-Determine the final value of salesBonus given the initial values specified below .
+Determine the final value of salesBonus given the initial values specified below.
 if  (salesType  ==  2)  {
    if  (salesBonus  <  5)  {
      salesBonus  =  10;
@@ -117,6 +117,6 @@ else  {
 ACTIVITY3.7.2:  Detecting multiple features with branches.
 
 Integer time is read from input. W rite multiple if statements:
-If time is gr eater than 22, then output "I can finish at least half of my homework. "
-If time is gr eater than 35, then output "I can complete my homework. "
+If time is greater than 22, then output "I can finish at least half of my homework. "
+If time is greater than 35, then output "I can complete my homework. "
 If time is less than or equal to 2, then output "I don't have time to do my homework. "

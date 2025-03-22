@@ -54,7 +54,7 @@ The programmer-created sequence of instructions is called a program, application
 When powered on, the processor starts by executing the instruction at location 0, then location 1, then location 2, etc. The above program
 performs the calculation over and over again. If location 97 is connected to external switches and location 99 to external lights, then the
 computer programmer (like the women operating the ENIAC computer in the earlier picture) could set the switches to represent a particular
-Celsius number, and the computer would automatically output the Fahrenheit number using the lights.
+Celsius number, and the computer would automaticallyoutput the Fahrenheit number using the lights.
 PARTICIPATION
 ACTIVITY 1.6.4: Processor executing instructions.
 PARTICIPATION
@@ -95,7 +95,7 @@ ACTIVITY 1.6.7: Programs.
 Translates a high-level language program into low-level machine
 instructions.
 Another word for program.
-A series of 0s and 1s, stored in memory, that tells a processor to carry out
+A series of 0s and 1s, stored in memory, that tells a processor to carryout
 a particular operation like a multiplication.
 Human-readable processor instructions.
 Note (mostly for instructors): Why introduce machine-level instructions in a high-level language book? Because a basic understanding of

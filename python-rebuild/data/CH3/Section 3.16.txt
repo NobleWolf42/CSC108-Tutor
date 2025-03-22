@@ -1,8 +1,8 @@
 
 Finding text in a string
 A programmer often needs to find and work with text inside another string. The find()  function is used to find a string or character inside a
-string. Ex: Giv en a string s1, s1.find(textToFind) return the index of the first occurr ence of textToFind within s1, or string:npos if not found.
-textToFind can be a string or character . string::npos  is a special value representing " no position ".
+string. Ex: given a string s1, s1.find(textToFind) return the index of the first occurr ence of textToFind within s1, or string:npos if not found.
+textToFind can be a string or character. string::npos  is a special value representing " no position ".
 
 ACTIVITY3.16.1:  Finding text in a string: Extr acting domain example.
 
@@ -27,7 +27,7 @@ The statement does not compile.
 Finding text starting from the middle of a string
 Sometimes, a programmer needs to find text starting from a specific location inside a string instead of from the beginning of the string.
 find(texttoFind, star tIndex) returns the index of the first occurrence of textToFind starting at index startIndex instead of index 0.
-The following animation shows a program that finds ".com " in an email address only after the '@' character .
+The following animation shows a program that finds ".com " in an email address only after the '@' character.
 
 ACTIVITY3.16.3:  Finding text starting in the middle of a string: Extracting domain example.
 
@@ -48,7 +48,7 @@ string::npos
 Getting a substring
 A substring  is a contiguous part of a string. Ex: " world" is a substring of "Hello world", but " wrld" is not.
 The substr()  function is used to get a substring of a string. Ex: Given a string s1, s1.substr(star tIndex, numcharacters) returns the substring
-of s1 starting from index startIndex and having numcharacters characters. When used without the length parameter , s1.substr(star tIndex)
+of s1 starting from index startIndex and having numcharacters characters. When used without the length parameter, s1.substr(star tIndex)
 returns the substring of s1 starting from index startIndex to the end of the string.
 
 Inserting and replacing text in a string
@@ -88,7 +88,7 @@ userAddress.replace(userAddress.find("Oak"),
 4, "Pine");
 5)Given userAddress is assigned with "123 Maple St", findString is
 assigned with "Maple ", and replaceString is assigned with "Oak",
-which statement corr ectly replaces findString with replaceString?
+which statement correctly replaces findString with replaceString?
 userAddress.replace(findString,  
 replaceString);
 userAddress.replace(userAddress.find(findString),  

@@ -1,12 +1,12 @@
 
 3.8 Common branching errors
 Common error: Missing braces
-When a branch has a single statement, the braces are optional, but good pr actice  always uses the braces.  always using braces even when a
-branch only has one statement pr events the common error of mistakenly thinking a statement is part of a branch.
+When a branch has a single statement, the braces are optional, but good practice  always uses the braces.  always using braces even when a
+branch only has one statement prevents the common error of mistakenly thinking a statement is part of a branch.
 
 ACTIVITY3.8.1:  Common error when omitting braces.
 
-ACTIVITY3.8.2:  Braces are impor tant.
+ACTIVITY3.8.2:  Braces are important.
 Omitting braces is a common source of errors. What is the final value of numItems?
 1)numItems  =  0;
 bonusVal  =  19;
@@ -38,13 +38,13 @@ else
 cout  <<  "Final: "  <<  userNum  <<  endl;
 
 
-Common error: Using the incorrect operators
-Perhaps the most common error in C and C++ is to use = rather than == in an if-else expression,  as in: if (numDogs = 9) { ... }. That code is not
+Common error: Using the incorrectoperators
+Perhaps the most common error in C and C++ is to use = rather than == in an if-else expression,  as in: if (numDogs = 9) {... }. That code is not
 a syntax error. The statement assigns numDogs with 9, and then because that value is non-zero, the expression is considered true. C' s
 designers allowed assignment in expressions to allow compact code, and use = for assignment rather than := or similar to save typing.
-Many people belie ve those language design decisions wer e mistakes, leading to many bugs. Some modern compilers provide a warning
+Many people belie ve those language design decisions were mistakes, leading to many bugs. Some modern compilers provide a warning
 when = appears in an if-else expression.
-Another common error is to use invalid char acter sequences lik e =>, !<, or <>, which are not valid oper ators.
+Another common error is to use invalid character sequences like =>, !<, or <>, which are not valid oper ators.
 
 ACTIVITY3.8.3:  Watch out for assignment in an if-else expression.
 What is the final value of numItems?
@@ -75,7 +75,7 @@ else
 salesBonus = 20; is not part of else, 
 so always executes.totBonus
 Always using braces avoids 
-the above common error .15
+the above common error.15
 numSales
 salesBonusMemory
 95
@@ -89,9 +89,9 @@ if  (numSales  <  20)
 }
 {
 }15 < 20
-1. Braces aren't used, so the else branch 's only statement is totBonus = totBonus + 1. But, salesBonus = 20; should also be part of
+1. Braces aren't used, so the else branch's only statement is totBonus = totBonus + 1. But, salesBonus = 20; should also be part of
 the else branch.
-2. always using br aces avoids the common error of not including all statements within an if or else branch.
+2. always using braces avoids the common error of not including all statements within an ifor else branch.
 
 passed#include  <iostream>
 using namespace  std;

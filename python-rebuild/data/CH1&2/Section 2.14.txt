@@ -3,7 +3,7 @@
 Basics
 A variable of char type, as in char myChar;, can store a single character like the letter m. A character literal is surrounded with single
 quotes, as in myChar = 'm';.
-Figure 2.14.1: Simple char example: Arrow.
+Figure 2.14.1: Simple charexample: Arrow.
 #include <iostream>
 using namespace std;
 int main() {
@@ -19,7 +19,7 @@ int main() {
 --->
 ooo>
 PARTICIPATION
-ACTIVITY 2.14.1: char data type.
+ACTIVITY 2.14.1: chardata type.
 1) Declare a character variable middleInitial.
 2) Assume char variable userKey is already declared. Write a statement
 that assigns userKey with the letter a.
@@ -64,9 +64,9 @@ Binary Dec Char
 010 1001 41 )
 010 1010 42 *
 010 1011 43 +
-010 1100 44 ,
+010 1100 44,
 010 1101 45 -
-010 1110 46 .
+010 1110 46.
 010 1111 47 /
 011 0000 48 0
 011 0001 49 1

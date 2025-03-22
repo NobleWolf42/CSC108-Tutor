@@ -3,7 +3,7 @@
 Calculating toll based on time of day
 The section presents an example program that calculates the toll amount for travel along a toll road or toll lane. The toll amount is based
 on the time of day, day of the week, and number of people in the vehicle.
-The initial version of the program calculates the toll amount for travel on a week day based upon the toll schedule below . The table lists
+The initial version of the program calculates the toll amount for travel on a week day based upon the toll schedule below. The table lists
 times in both am/pm format and 24-hour format.
 Table 3.10.1: Weekday toll schedule.
 Time (am/pm) Time (24 hour) Toll amount
@@ -86,7 +86,7 @@ before 8:00 am before 8:00 1.55
 10:00 pm and after 22:00 and after 1.55
 The r evised program below additionally gets the type of day from the user (0 for week days, and 1 for week ends or holidays). The program
 uses nested if-else statements to calculate the toll amount. The outer if-else checks if the today is a week day or week end/holiday. The
-nested if-else statements implement the r espectiv e toll schedules by determining the appr opriate toll based on the hour of travel.
+nested if-else statements implement the r espectiv e toll schedules by determining the appropriate toll based on the hour of travel.
 The program also uses if-else statements to output the time of travel using am/pm format instead of 24-hour format.
 Figure 3.10.2: Calculating toll based on time of day and day of week.
 #include  <iostream>
@@ -192,7 +192,7 @@ True
 False
 Calculating toll with carpool discount
 A toll road may have a discount for carpools, sometimes called high-occupancy vehicles (HO V). The following program uses if-else
-statement to adjust the toll amount based on the number of people in the vehicle. The carpool discount rules ar e:
+statement to adjust the toll amount based on the number of people in the vehicle. The carpool discount rules are:
 A carpool is 3 or more people per vehicle.
 The toll for carpools on week days between 6:00 am and 10:00 am is half the normal toll.
 Other wise, the toll for carpools is 0 (as in free).
@@ -304,7 +304,7 @@ Enter number of people in vehicle: 3
 Toll at 5:15 pm is 0
 
 ACTIVITY3.10.3:  Toll calculation.
-Match the final value of tollAmount to the timeHour , typeOfday, and numPeople.
+Match the final value of tollAmount to the timeHour, typeOfday, and numPeople.
 timeHour is 7, typeOfday is 0, numPeople is 1
 timeHour is 8, typeOfday is 0, numPeople is 4
 timeHour is 18, typeOfday is 1, numPeople is 3

@@ -3,8 +3,8 @@
 Boolean data type
 Boolean  refers to a quantity that has only two possible values, true or false. C++ has the built-in data type bool  for representing Boolean
 quantities.
-A Boolean variable may be set using true or false k eywor ds. Ex: isWeekend = true;  assigns isW eekend with the Boolean value true. A
-Boolean variable may also be set to the result of a logical expression. Ex: isLargeParty = (partySize > 6);  assigns isLar geParty
+A Boolean variable may be set using true or false keywor ds. Ex: isWeekend = true;  assigns isW eekend with the Boolean value true. A
+Boolean variable may also be set to the result of a logical expression. Ex: isLargeParty = (partySize > 6);  assigns islargeParty
 with the result of the expression partySize > 6.
 Figure 3.12.1: variables of bool data type: Restaurant wait time calculator.
 #include  <iostream>
@@ -19,7 +19,7 @@ int  main()  {
    // Get day of reservation
    cout  <<  "Day of reservation (T/W/R/F/S/U): " ;
    cin  >>  day;
-   if  (day  ==  'F'  ||  day  ==  'S'  ||  day  ==  'U')  {
+   if  (day  ==  'F'  ||  day  =='s'  ||  day  ==  'U')  {
       isWeekend  =  true;
    }
    else  {
@@ -58,10 +58,10 @@ Enter party size: 10
 Restaurant wait time is 45 minutes.
 PARTICIP ATION
 ACTIVITY3.12.1:  Boolean variables.
-1)Write a statement that declar es a Boolean v ariable named
-hasHighBP .
+1)Write a statement that declares a Boolean variable named
+hasHighBP.
 2)Write a statement that assigns hasHighBP with false.
-3)isSunny , isDayOff, and isBeachDay are Boolean variables. What is
+3)isSunny, isDayOff, and isBeachDay are Boolean variables. What is
 isBeachDay  after executing the following statements? Type true or
 false.
 isSunny  =  false;
@@ -71,12 +71,12 @@ if  (isSunny  &&  isDayOff )  {
    isBeachDay  =  true;
 }
 Uses of Boolean data types
-A programmer can use a Boolean v ariable to simplify a complex expression. An expression that combines logical and r elational oper ators
+A programmer can use a Boolean variable to simplify a complex expression. An expression that combines logical and r elational oper ators
 can be simplified by assigning bool variables with the result of the expression using r elational oper ators. The if-else expression can then
 consist of only logical operations using those variables.
-The following program assigns bool variables isHot, isReallyHot, and isHumid with the results of expressions comparing curr entT emp,
-desir edTemp, and curr entHumidity . The if-else statement then uses isHot and isHumid in the if-else 's expressions.
-Figur e 3.12.2: Using Boolean variables to simplify expressions.
+The following program assigns bool variables isHot, isReallyHot, and isHumid with the results of expressions comparing currentT emp,
+desir edTemp, and currentHumidity. The if-else statement then uses isHot and isHumid in the if-else's expressions.
+Figure 3.12.2: Using Boolean variables to simplify expressions.
 isHot  =  (currentTemp  >  desiredTemp );
 isReallyHot  =  (currentTemp  >  (desiredTemp  +  5.0));
 isHumid  =  (currentHumidity  >  0.50);
@@ -112,15 +112,15 @@ else  if  (  (userAge  >  13)  &&  (userAge  <  21)  &&  (studentGpa  >=  2.75) 
 else  {
   studentDiscount  =  0.0;
 }
-1)Write a statement that assigns the v ariable v eryGoodGpa with an
+1)Write a statement that assigns the variable veryGoodGpa with an
 expression that evaluates to true if studentGpa is greater than or
 equal to 3.5.
 veryGoodGpa  =  (   );
-2)Write a statement that assigns the v ariable goodGpa with an
+2)Write a statement that assigns the variable goodGpa with an
 expression that evaluates to true if studentGpa is greater than or
 equal to 2.75.
 goodGpa  =  (   );
-3)Write a statement that assigns the v ariable isInAgeRange with an
+3)Write a statement that assigns the variable isInAgeRange with an
 expression that evaluates to true if userAge is greater than 13 and
 less than 21.
 isInAgeRange  =  (   );
