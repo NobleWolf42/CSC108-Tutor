@@ -70,7 +70,7 @@ Enter text: USA U.S.A. U.S.A.U.S.A. Bye
 New text: USA USA USAUSA Bye
 
 ACTIVITY4.6.2:  Replacing until done.
-Consider the example abo ve.
+Consider the example above.
 1)The loop is entered as long as an occurrence of "U.S.A. " _____ .
 is found
 is not found

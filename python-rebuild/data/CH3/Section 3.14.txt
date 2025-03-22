@@ -55,7 +55,7 @@ Scrambled: cukQi
 Enter a 5-letter word: 98765
 
 ACTIVITY3.14.3:  Accessing string characters.
-Given userString is assigned with "Run!", what does each statement r eturn?
+Given userString is assigned with "Run!", what does each statement return?
 1)userString.at(0);
 R
 u
@@ -145,8 +145,8 @@ New: Another day.
 Enter a caption: Life is sweet
 New: Life is sweet.
 size() and length()
-The size() and length() functions both r eturn a string's length. Ex: For the string firstName = "tosi", firstName.size() and
-firstName.length() both r eturn 4.
+The size() and length() functions both return a string's length. Ex: For the string firstName = "tosi", firstName.size() and
+firstName.length() both return 4.
 PARTICIP ATION
 ACTIVITY3.14.5:  Working with the end of a string.
 1)What is the index of the last letter in "Hey"?
@@ -179,7 +179,7 @@ userString = userString + anotherString ;
 6)userString.at(userString.size()) = 't';
 7)userString.at(userString.size() - 1) = 't';
 Common errors
-A common error is to access an inv alid string index, especially exactly one lar ger than the lar gest index.  Given userT ext with size 8, the range
+A common error is to access an invalid string index, especially exactly one lar ger than the lar gest index.  Given userT ext with size 8, the range
 of valid indices are 0 … 7; accessing with index 8 is an error.
 PARTICIP ATION
 ACTIVITY3.14.8:  Common error: Out-of-r ange access yields an ex ception.

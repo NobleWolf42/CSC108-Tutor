@@ -56,9 +56,9 @@ maxSoF ar > currvalue
 currvalue > maxSoF ar
 currvalue == maxSoF ar
 Beyond iterating N times
-The thr ee parts of a for loop may be adjusted t o do mor e than just iterate N times. for example, a for loop can output various sequences.
-The following outputs multiples of 5 fr om 10 t o 50.
-Figur e 4.5.2: Outputting multiples of 5 fr om 10 t o 50.
+The thr ee parts of a for loop may be adjusted to do more than just iterate N times. for example, a for loop can output various sequences.
+The following outputs multiples of 5 fr om 10 to 50.
+Figur e 4.5.2: Outputting multiples of 5 fr om 10 to 50.
 #include  <iostream>
 using  namespace  std;
 // Outputs 10 15 20 25 30 35 40 45 50
@@ -141,7 +141,7 @@ Programmers in C, C++, Java, and other languages have generally standar dized on
 < N, rather than by using i = 1 and i <= N. One reason is due to other constructs (arr ays / v ectors), often used with loops, start with 0.
 Another is simply that a choice was made.
 The ++ operators
-The ++ operator can appear as ++i ( prefix form ) or as i++ ( postfix form ). ++i increments i first and then e valuates the result, while i++
+The ++ operator can appear as ++i ( prefix form ) or as i++ ( postfix form ). ++i increments i first and then evaluates the result, while i++
 evaluates the result first and then increments i. The distinction is r elevant in a statement lik e x = ++i vs. x = i++; if i is 5, the first yields x = 6,
 the second x = 5.
 Some consider ++i saf er for beginners in case the y type i = ++i, which typically works as expected (wher eas i = i++ does not), so this
@@ -201,7 +201,7 @@ ACTIVITY4.5.5:  For loop: Common errors / good practice.
 updateexpression part, yields a syntax error.
 True
 False
-2)The abo ve two for loop v ariations each yield a syntax error.
+2)The above two for loop v ariations each yield a syntax error.
 True
 False
 

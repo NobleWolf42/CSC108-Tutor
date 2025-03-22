@@ -1,35 +1,35 @@
 5.7 Unit testing (functions)
 Students:
 Section 5.8 is a par t of 1 assignment :CSC108 CH05.8-5.16 P5B
-Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn mor eIncludes : PA
+Please br owse to this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn moreIncludes : PA
 Activity summar y for assignment: CSC108 CH05.8-5.16 P5B 0 / 56 points
-Please br owse t o this assignment thr ough
+Please br owse to this assignment thr ough
 Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn mor e
+send y our activity . Learn more
 5.9 Functions: Common err orsDue: 04/15/2025, 11:59 PM ED T
 5.8 How functions work
 Each function call cr eates a new set of local v ariables, forming par t of what is known as a stack fr ame . A return causes those local
-variables t o be discar ded.
+variables to be discar ded.
 P AR TICIP A TION
-A C TIVI T Y5.8.1:  Function calls and r eturns.
-Some knowledge of how a function call and r eturn works at the assembly le vel can not only satisfy curiosity , but can also lead t o fewer
-mistak es when par ameter and r eturn items become mor e complex. The following animation illustr ates b y showing, for a function named
+A C TIVI T Y5.8.1:  Function calls and returns.
+Some knowledge of how a function call and return works at the assembly le vel can not only satisfy curiosity , but can also lead to fewer
+mistak es when par ameter and return items become more complex. The following animation illustr ates by showing, for a function named
 CalcSum(), some sample high-le vel code, compiler-gener ated assembly instructions in memor y, and data in memor y during runtime. This
-animation pr esents adv anced material intended t o provide insight and appr eciation for how a function call and r eturn works.
-The compiler gener ates instructions t o cop y arguments t o par ameter local v ariables, and t o store a r eturn addr ess. A jump instruction
-jumps fr om main t o the function 's instructions. The function ex ecutes and st ores results in a designated r eturn v alue location. When the
-function completes, an instruction jumps back t o the caller 's location using the pr eviously-st ored return addr ess. Then, an instruction
-copies the function 's return v alue t o the appr opriate v ariable.
+animation pr esents adv anced material intended to provide insight and appr eciation for how a function call and return works.
+The compiler gener ates instructions to cop y arguments to par ameter local v ariables, and to store a return addr ess. A jump instruction
+jumps fr om main to the function's instructions. The function ex ecutes and st ores results in a designated return value location. When the
+function completes, an instruction jumps back to the caller 's location using the pr eviously-st ored return addr ess. Then, an instruction
+copies the function's return value to the appr opriate v ariable.
 P AR TICIP A TION
-A C TIVI T Y5.8.2:  How function call/r eturn works.
+A C TIVI T Y5.8.2:  How function call/return works.
 P AR TICIP A TION
 A C TIVI T Y5.8.3:  How functions work.
-1)After a function r eturns, its local v ariables k eep their v alues, which
-serve as their initial v alues the next time the function is called.
+1)After a function returns, its local v ariables k eep their values, which
+serve as their initial values the next time the function is called.
 True
 False
-2)A return addr ess indicates the v alue r eturned b y the function.
+2)A return addr ess indicates the value returned by the function.
 True
 False
 How was this section? |int  FtInToIn (int  inFeet,  int  inInches )  {

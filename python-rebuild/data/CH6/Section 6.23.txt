@@ -46,14 +46,14 @@ Note : If the program uses a large amount of unwanted memory using new, the syst
 will be no memory available for the operating system. In this case, the delete  operator can help the system from
 crash.
 Code E ditor 6.23.1: C++ Dynamic Memor y Allocation
-Click run t o see the output.
+Click run to see the output.
 In this program, we dynamically allocated memory to two variables of int and float  types. After assigning values to
 them and printing them, we finally deallocate the memories using the code
 delete pointInt, pointFloat;
 Note:  Dynamic memory allocation can make memory management more ef ficient.
 Especially for arrays, where a lot of the times we don't know the size of the array until the run time.
 Code E ditor 6.23.2: C++ new and delete Oper ator for Arr ays
-Click run t o see the output.
+Click run to see the output.
 4 3.6 3.1 3.9 2.9
 In this program, we have asked the user to enter the number of students and store it in the num variable.
 Then, we have allocated the memory dynamically for the float  array using new.

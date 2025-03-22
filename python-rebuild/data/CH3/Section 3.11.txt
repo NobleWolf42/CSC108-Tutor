@@ -199,7 +199,7 @@ If the input is 1, then the output is: Paper
 If the input is 2, then the output is: Scissors
 For any other input, the output is: Unknown
 
-ACTIVITY3.11.2:  Switch statement to convert letters t o Greek letters.
+ACTIVITY3.11.2:  Switch statement to convert letters to Greek letters.
 
 Organiz e the lines of code tocreate a switch statement that checks origLetter .
 Ex: If the input is a or A, then the output is: Alpha

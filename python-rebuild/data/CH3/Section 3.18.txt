@@ -5,9 +5,9 @@ exactly represented in the limited a vailable memory bits like 64 bits. Floating
 exactly equal.
 
   Floating-point comparisons.
-Floating-point numbers should be compared for " close enough " rather than exact equality . Ex: If (x - y) < 0.0001, x and y ar e deemed equal.
+Floating-point numbers should be compared for " close enough " rather than exact equality . Ex: If (x - y) < 0.0001, x and y are deemed equal.
 Because the difference may be negative, the absolute value is used: fabs(x - y) < 0.0001. fabs() is a function in the math library. The
-difference thr eshold indicating that floating-point numbers ar e equal is often called the epsilon . Epsilon 's value depends on the pr ogram's
+difference thr eshold indicating that floating-point numbers are equal is often called the epsilon . Epsilon 's value depends on the program's
 expected values, but 0.0001 is common.
 The std::abs() function is o verloaded to support floating-point and integer types. However, good practice  is to use the fabs() function to mak e
 the operation clear .
@@ -49,7 +49,7 @@ A C TIVI T Y3.18.4:  Floating point statements.
 Complete the comparison for floating-point numbers.
 1)Determine if double v ariable x is 98.6.
 (x  -  98.6)  <  0.0001  
-2)Determine if double v ariables x and y ar e equal. Threshold is 0.0001.
+2)Determine if double v ariables x and y are equal. Threshold is 0.0001.
 fabs(x  -  y)   
 3)Determine if double v ariable x is 1.0
 fabs( )  <  0.0001  
@@ -84,15 +84,15 @@ A C TIVI T Y3.18.5:  Body temper ature in F ahrenheit.
 Refer to the body temper ature code pr ovided in the pr evious figure.
 1)What is output if the user enters 98.6?
 Temper ature is exactly normal.
-Temper ature is abo ve normal.
+Temper ature is above normal.
 Temper ature is below normal.
 2)What is output if the user enters 97.0?
 Temper ature is exactly normal.
-Temper ature is abo ve normal.
+Temper ature is above normal.
 Temper ature is below normal.
 3)What is output if the user enters 98.6000001?
 Temper ature is exactly normal.
-Temper ature is abo ve normal.
+Temper ature is above normal.
 Temper ature is below normal.
 To see the inexact value stored in a floating-point v ariable, a manipulator can be used in an output statement. Such output formatting is
 discussed in another section.

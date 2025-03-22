@@ -1,20 +1,20 @@
 6.5 Iterating thr ough v ectors
 Students:
 Section 6.6 is a par t of 2 assignments :
-Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn mor eIncludes : CA
+Please br owse to this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn moreIncludes : CA
 Activity summar y for assignment: 0 / 40 points
-Please br owse t o this assignment thr ough
+Please br owse to this assignment thr ough
 Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn mor e
+send y our activity . Learn more
 6.7 Vector resizeDue: 04/29/2025, 11:59 PM ED T
 6.6 Multiple v ectors
-Programmers commonly use multiple same-siz ed vectors t o store related lists. The pr ogram below maintains a list of countr y names, and
+Programmers commonly use multiple same-siz ed vectors to store related lists. The program below maintains a list of countr y names, and
 another list indicating the annual GDP for each corr esponding countr y.
 The statement if (ctryNames.at(i) == userCountry)  compar es the curr ent ctr yNames element with the user-enter ed countr y
-name. If the names match, the pr ogram prints the ctr yGDPs element at the same index.
-The loop 's expr ession (i < ctryNames.size()) && (!foundCountry)  depends on the v alue of the v ariable foundCountr y. This
-expr ession pr events the loop fr om iter ating thr ough the entir e vector once the corr ect countr y is found.
+name. If the names match, the program prints the ctr yGDPs element at the same index.
+The loop 's expression (i < ctryNames.size()) && (!foundCountry)  depends on the value of the v ariable foundCountr y. This
+expression pr events the loop fr om iter ating thr ough the entir e vector once the corr ect countr y is found.
 Figur e 6.6.1: Multiple v ector example: Annual GDP for selected countries.
 #include  <iostream>
 #include  <vector>
@@ -61,23 +61,23 @@ Enter case-sensitive country to search for: Sweden
 Country not found; try again.
 P AR TICIP A TION
 A C TIVI T Y6.6.1:  Multiple v ectors.
-Consider the abo ve program inv olving multiple v ectors.
+Consider the above program inv olving multiple v ectors.
 1)Multiple v ectors sa ved memor y over using one lar ger v ector.
 True
 False
 2)Each v ector should be the same data type.
 True
 False
-3)Each v ector should ha ve the same number of elements.
+3)Each v ector should have the same number of elements.
 True
 False
-zyDE 6.6.1: Impr ove the pr ogram.
-Modify the pr ogram such that if a user types a countr y name that isn 't found, print a list of known countries.
+zyDE 6.6.1: Impr ove the program.
+Modify the program such that if a user types a countr y name that isn 't found, print a list of known countries.
 Italy
 CH ALLENGE
 A C TIVI T Y6.6.1:  Printing the sum of two v ector elements.
-Four elements ar e read int o origList and four elements ar e read int o offsetAmount. Add each element in origList with the
-corresponding v alue in offsetAmount. Print each sum followed b y a space.
+Four elements are read int o origList and four elements are read int o offsetAmount. Add each element in origList with the
+corresponding value in offsetAmount. Print each sum followed by a space.
 Ex: If the input is:
 40 50 60 70 5 7 3 0
 then origList = {40, 50, 60, 70} and offsetAmount = {5, 7, 3, 0}. So, the output is:
@@ -85,13 +85,13 @@ then origList = {40, 50, 60, 70} and offsetAmount = {5, 7, 3, 0}. So, the output
 Learn how our aut ograder works
 620890.5010016.qx3z qy7
 CH ALLENGE
-A C TIVI T Y6.6.2:  Multiple v ectors: K ey and v alue.
-Four elements ar e read int o keysList and four elements ar e read int o itemsList. F or any element in k eysList with a v alue gr eater
-than 100, print the corr esponding v alue in itemsList, followed b y a space.
+A C TIVI T Y6.6.2:  Multiple v ectors: K ey and value.
+Four elements are read int o keysList and four elements are read int o itemsList. F or any element in k eysList with a value gr eater
+than 100, print the corr esponding value in itemsList, followed by a space.
 Ex: If the input is:
 42 105 101 100 10 20 30 40 
-then k eysList = {42, 105, 101, 100} and itemsList = {10, 20, 30, 40}. The elements at indices 1 and 2 of k eysList ar e greater than
-100. So, the elements at the same indices of itemsList ar e printed. Thus, the output is:
+then k eysList = {42, 105, 101, 100} and itemsList = {10, 20, 30, 40}. The elements at indices 1 and 2 of k eysList are greater than
+100. So, the elements at the same indices of itemsList are printed. Thus, the output is:
 20 30 
 Learn how our aut ograder works
 620890.5010016.qx3z qy7

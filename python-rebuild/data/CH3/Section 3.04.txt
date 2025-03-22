@@ -11,7 +11,7 @@ Relational operators Description Example (assume x is 3)
 x < 3 is false
 > a > b means a is greater than bx > 2 is true
 x > 3 is false
-<= a <= b means a is less than or equal t o bx <= 4 is true
+<= a <= b means a is less than or equal to bx <= 4 is true
 x <= 3 is true
 x <= 2 is false
 >= a >= b means a is greater than or equal to bx >= 2 is true

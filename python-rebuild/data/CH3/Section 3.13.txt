@@ -1,7 +1,7 @@
 
 3.13  String comparisons
 String comparison: Equality
-Two strings are commonly compared for equality . Equal strings ha ve the same number of characters, and each corresponding character is
+Two strings are commonly compared for equality . Equal strings have the same number of characters, and each corresponding character is
 identical.
 
 ACTIVITY3.13.1:  Equal strings.
@@ -45,7 +45,7 @@ Enter a word: usa
 usa
 
 ACTIVITY3.13.2:  Comparing strings for equality .
-To what does each expr ession evaluate? Assume str1 is " Apples" and str2 is " apples".
+To what does each expression evaluate? Assume str1 is " Apples" and str2 is " apples".
 1)str1 == " Apples"
 True
 False
@@ -81,13 +81,13 @@ A common err or is to forget that case matters in a string comparison.  A progra
 converting both strings to lower case before comparing (discussed elsewhere).
 
 ACTIVITY3.13.5:  Relational string comparison.
-1)Write an expression that evaluates t o true if myName is greater than
+1)Write an expression that evaluates to true if myName is greater than
 yourName.
 if  (myName   yourName )  {
    ...
 }  
-2)Write an expr ession that evaluates t o true if authorName1 is less than
-or equal t o authorName2.
+2)Write an expression that evaluates to true if authorName1 is less than
+or equal to authorName2.
 if  (   )  {
    ...  
 }  

@@ -71,10 +71,10 @@ if  (isSunny  &&  isDayOff )  {
    isBeachDay  =  true;
 }
 Uses of Boolean data types
-A programmer can use a Boolean v ariable t o simplify a complex expression. An expression that combines logical and r elational oper ators
+A programmer can use a Boolean v ariable to simplify a complex expression. An expression that combines logical and r elational oper ators
 can be simplified by assigning bool variables with the result of the expression using r elational oper ators. The if-else expression can then
-consist of only logical oper ations using those variables.
-The following pr ogram assigns bool variables isHot, isReallyHot, and isHumid with the results of expressions comparing curr entT emp,
+consist of only logical operations using those variables.
+The following program assigns bool variables isHot, isReallyHot, and isHumid with the results of expressions comparing curr entT emp,
 desir edTemp, and curr entHumidity . The if-else statement then uses isHot and isHumid in the if-else 's expressions.
 Figur e 3.12.2: Using Boolean variables to simplify expressions.
 isHot  =  (currentTemp  >  desiredTemp );
@@ -113,18 +113,18 @@ else  {
   studentDiscount  =  0.0;
 }
 1)Write a statement that assigns the v ariable v eryGoodGpa with an
-expression that e valuates t o true if studentGpa is greater than or
-equal t o 3.5.
+expression that evaluates to true if studentGpa is greater than or
+equal to 3.5.
 veryGoodGpa  =  (   );
 2)Write a statement that assigns the v ariable goodGpa with an
-expression that e valuates t o true if studentGpa is greater than or
-equal t o 2.75.
+expression that evaluates to true if studentGpa is greater than or
+equal to 2.75.
 goodGpa  =  (   );
 3)Write a statement that assigns the v ariable isInAgeRange with an
-expression that e valuates t o true if userAge is greater than 13 and
+expression that evaluates to true if userAge is greater than 13 and
 less than 21.
 isInAgeRange  =  (   );
-4)Revise the if expression abo ve to use the variables isInAgeRange and
+4)Revise the if expression above to use the variables isInAgeRange and
 veryGoodGpa.
 if  (   )  {
    studentDiscount  =  7.5;
@@ -142,7 +142,7 @@ Not a balloon
 Note: Not all lines of code on the left will be used in the final solution.
 
 ACTIVITY3.12.2:  Using bool.
-Assign isTeenager with true if kidAge is 13 t o 19 inclusive. Other wise, assign isTeenager with false.
+Assign isTeenager with true if kidAge is 13 to 19 inclusive. Other wise, assign isTeenager with false.
 
 
 Unused

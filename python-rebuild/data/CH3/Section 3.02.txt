@@ -28,9 +28,9 @@ An expression involving the equality or inequality operators evaluates to a Bool
 or false.
 Table 3.2.1: Equality and inequality operators.
 Operator Description Example (assume x is 3)
-== a == b means a is equal t o bx == 3 is true
+== a == b means a is equal to bx == 3 is true
 x == 4 is false
-!= a != b means a is not equal t o bx != 3 is false
+!= a != b means a is not equal to bx != 3 is false
 x != 4 is true
 
 
@@ -50,7 +50,7 @@ numDogs   numCats
 userChar   'x'
 If-else statement
 An if-else  statement executes one group of statements when an expression is true, and another group of statements when the expression
-is false. In the example below , the if-else statement outputs if a number entered by the user is even or odd. The if statement executes if
+is false. In the example Below, the if-else statement outputs if a number entered by the user is even or odd. The if statement executes if
 divRemainder is equal to 0, and the else statement executes if divRemainder is not equal to 0.
 
 ACTIVITY3.2.5:  If-else statement: Determining if a number is even or odd.
@@ -167,7 +167,7 @@ Enter number years married: 1
 Your first year -- great!
 
 
-What is the final v alue of emplo yeeBonus for each given value of numSales?
+What is the final value of emplo yeeBonus for each given value of numSales?
 if (numSales  == 0) {
    employeeBonus  = 0;
 }

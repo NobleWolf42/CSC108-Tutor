@@ -97,7 +97,7 @@ userAddress.replace(userAddress.find(findString),
 replaceString.length(), replaceString);
 
 Given string stringValue on one line, string str2 on a second line, and integer selectionLen on a third line, replace the first
-selectionLen characters in stringV alue with the contents of str2.
+selectionLen characters in stringvalue with the contents of str2.
 Ex: If the input is:
 Shiny koala
 Happ

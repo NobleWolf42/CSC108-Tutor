@@ -114,8 +114,8 @@ Enter your age: 1919
 19<= 12X
 19>= 65XMovie ticket price: $14
 1. After the user enters their age, the else-if branch 's first branch checks if age is <= 12.
-2. userAge is 67, which is greater than 12, so the pr ogram mo ves to the second branch that checks if userAge is >= 65.
-3. 67 is >= 65, so the second branch 's statements ex ecute, applying the senior discount to the ticket price. The pr ogram concludes
+2. userAge is 67, which is greater than 12, so the program mo ves to the second branch that checks if userAge is >= 65.
+3. 67 is >= 65, so the second branch 's statements ex ecute, applying the senior discount to the ticket price. The program concludes
 by outputting the tick et price.
 4. If the user 's age falls between the gap of 12 and 65 (13 to 64), the else branch ex ecutes and the ticket price is $14, the most
 expensive price.

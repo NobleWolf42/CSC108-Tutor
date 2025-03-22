@@ -56,7 +56,7 @@ Car insurance prices
 older drivers. Source: Insurance Information Institute , 2025).
 
 If-else branches.
-Consider the insurance price example abo ve.
+Consider the insurance price example above.
 1)If userAge is 18, what price is output?
 4800
 2200
@@ -130,7 +130,7 @@ new branch execute?
 When x is -1
 When x is 1
 Never
-5)In the code abo ve, suppose a programmer r emo ved the Else par t
+5)In the code above, suppose a programmer r emo ved the Else par t
 entirely. If x is 2, which is corr ect?
 The last branch, meaning the Else If x equals 1 branch, will
 execute.

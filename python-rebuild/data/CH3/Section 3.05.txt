@@ -47,7 +47,7 @@ to 99?
 0 < x < 100
 (0 < x) AND (x < 100)
 (0 < x) AND (x > 100)
-2)Which detects if x is in the range -4 t o +4?
+2)Which detects if x is in the range -4 to +4?
 (x < -5) AND (x < 5)
 (x > -5) OR (x < 5)
 (x > -5) AND (x < 5)

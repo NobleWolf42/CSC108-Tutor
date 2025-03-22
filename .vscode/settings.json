@@ -100,6 +100,8 @@
     "cSpell.words": [
         "bcitchap",
         "bcitchat",
+        "cout",
+        "endl",
         "jsonify",
         "llmmodel",
         "Ollama",

@@ -49,7 +49,7 @@ else  {
 
 A C TIVI T Y3.17.1:  Conditional expression: Print negativ e or positiv e.
 
-Drag and drop the code statement that assigns condStr with a conditional expression that e valuates to string " negative" if userVal
+Drag and drop the code statement that assigns condStr with a conditional expression that evaluates to string " negative" if userVal
 is less than 0, and " non-negative" other wise.
 Ex: If the input is -9, then the output is:
 -9 is negative.

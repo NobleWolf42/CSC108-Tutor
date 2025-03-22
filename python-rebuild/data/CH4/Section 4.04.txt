@@ -3,7 +3,7 @@
 Basics
 A loop commonly must iterate a specific number of times, such as 10 times. Though achie vable with a while loop, that situation is so
 common that a special kind of loop exists. A for loop  is a loop with three parts at the top: a loop variable initialization, a loop expression,
-and a loop variable update. A for loop describes iterating a specific number of times mor e natur ally than a while loop.
+and a loop variable update. A for loop describes iterating a specific number of times more natur ally than a while loop.
 Construct 4.4.1: For loop.
 for  (initialExpression ;  conditionExpression ;  updateExpression )  {
   // Loop body

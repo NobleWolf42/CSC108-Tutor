@@ -1,5 +1,5 @@
 4.11 Enumer ations
-4.13 C++ example: Domain name v alidation with loops4.12  C++ example: Salary calculation with loops
+4.13 C++ example: Domain name validation with loops4.12  C++ example: Salary calculation with loops
 zyDE 4.12.1: Calculate adjusted salary and tax with deductions: Using loops.
 A program may execute the same computations repeatedly .
 The program below repeatedly asks the user to enter an annual salary, stopping when the user enters 0 or less. For each annual salary,

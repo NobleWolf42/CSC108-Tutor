@@ -59,7 +59,7 @@ $31 buys 9 empanadas and 1 tacos without change.
 The nested for loops gener ate all possible meal options for the number of empanadas and tacos that can be pur chased. The inner loop
 body calculates the cost of the curr ent meal option. If equal tothe user 's money, the search is over, so the break statement immediately
 exits the inner loop. The outer loop body also checks if equal, and if so that break statement exits the outer loop.
-The program could be written without br eak statements, but the loop 's condition expr essions would be more complex and the program
+The program could be written without br eak statements, but the loop 's condition expressions would be more complex and the program
 would require additional code, perhaps being harder to understand.
 
 :  Break statements.
@@ -145,7 +145,7 @@ $54 buys 18 empanadas and 0 tacos without change.
 $54 buys 10 empanadas and 6 tacos without change.
 $54 buys 2 empanadas and 12 tacos without change.
 The nested loops gener ate all possible combinations of tacos and empanadas. If the total number of tacos and empanadas is not exactly
-divisible b y the number of diners (e.g., ((numTacos + numEmpanadas) % numDiners) != 0) , the continue statement proceeds to
+divisible by the number of diners (e.g., ((numTacos + numEmpanadas) % numDiners) != 0) , the continue statement proceeds to
 the next iter ation, thus causing incr ementing of numEmpanadas and checking of the loop condition.
 Break and continue statements can avoid excessive indenting/nesting within a loop. But the y could be easily overlooked, and should be
 used sparingly , when their use is clear to the reader .

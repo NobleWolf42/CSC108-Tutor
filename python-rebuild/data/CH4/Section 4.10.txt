@@ -33,7 +33,7 @@ False
 For loop index
 Programmers commonly declare a for loop 's index variable in the for loop 's initialization statement. That index variable 's scope covers the
 other parts of the for loop, up to the for loop 's closing brace. The reason is clear from the for loop 's equivalent while loop code shown
-below , noting the braces ar und the equivalent code.
+Below, noting the braces ar und the equivalent code.
 Table 4.10.1: Index variable declared in a for loop 's initialization statement.
 for loop Equivalent while loop
 for  (int  i  =  0;  i  <  5;  ++i)  {
@@ -83,7 +83,7 @@ error due to two declarations of i?
 Yes
 No
 Common error
-A common error is to declare a variable inside a loop whose value should persist across iterations. Below , the programmer expects the output
+A common error is to declare a variable inside a loop whose value should persist across iterations. Below, the programmer expects the output
 to be 0, 1 (0+1), 3 (0+1+2), 6 (0+1+2+3), and 10 (0+1+2+3+4), but instead the output is just 0, 1, 2, 3, 4.
 Figure 4.10.1: Common error: A variable declared within a loop block is (unexpectedly) re-initialized every
 iteration.

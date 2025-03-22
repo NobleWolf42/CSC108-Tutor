@@ -44,7 +44,7 @@ a syntax error. The statement assigns numDogs with 9, and then because that valu
 designers allowed assignment in expressions to allow compact code, and use = for assignment rather than := or similar to save typing.
 Many people belie ve those language design decisions wer e mistakes, leading to many bugs. Some modern compilers provide a warning
 when = appears in an if-else expression.
-Another common error is to use inv alid char acter sequences lik e =>, !<, or <>, which are not valid oper ators.
+Another common error is to use invalid char acter sequences lik e =>, !<, or <>, which are not valid oper ators.
 
 ACTIVITY3.8.3:  Watch out for assignment in an if-else expression.
 What is the final value of numItems?

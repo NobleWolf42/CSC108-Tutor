@@ -192,7 +192,7 @@ Ex: If the input is 16, then the output is:
 CHALLENGE
 ACTIVITY4.3.4:  While loops with numbers.
 
-Use cin t o read r emaining integers from input int o inputNumber while inputNumber is not -1000. F or each integer read before
+Use cin to read r emaining integers from input int o inputNumber while inputNumber is not -1000. F or each integer read before
 -1000, if the integer is negativ e, output the integer followed by a newline and increment countOfSelected.
 Notes:
 The sentinel value is -1000.

@@ -1,17 +1,17 @@
 6.8 Vector back() and pop_back()
 Students:
 Section 6.9 is a par t of 2 assignments :
-Please br owse t o this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn mor eIncludes : CA
+Please br owse to this assignment thr ough Blackboar dLearn  so zyBooks knows wher e to
+send y our activity . Learn moreIncludes : CA
 Activity summar y for assignment: 0 / 40 points
-Please br owse t o this assignment thr ough
+Please br owse to this assignment thr ough
 Blackboar dLearn  so zyBooks knows wher e to
-send y our activity . Learn mor e
+send y our activity . Learn more
 6.10 Swapping two v ariables (gener al)Due: 04/29/2025, 11:59 PM ED T
-6.9 Using a loop t o modify , cop y, or compar e vectors
+6.9 Using a loop to modify , cop y, or compar e vectors
 Modifying vector elements
-A program ma y need t o modify elements while iter ating thr ough a v ector. The pr ogram below uses a loop t o conv ert any negativ e vector
-element v alue t o 0.
+A program may need to modify elements while iter ating thr ough a v ector. The program below uses a loop to conv ert any negativ e vector
+element value to 0.
 Figur e 6.9.1: Modifying a v ector during iter ation example: Conv erting negativ es to 0.
 #include  <iostream>
 #include  <vector>
@@ -47,7 +47,7 @@ Enter value: 45
 Updated vector values: 3 5 0 0 45
 PARTICIP ATION
 ACTIVITY6.9.1:  Modifying a v ector in a loop.
-What ar e the r esulting v ector elements, assuming each question star ts with a v ector of siz e 4 and elements -55, -1, 0, 9?
+What are the r esulting v ector elements, assuming each question star ts with a v ector of siz e 4 and elements -55, -1, 0, 9?
 1)for  (i  =  0;  i  <  4;  ++i)  {
    itemsList .at(i)  =  i;  
 }
@@ -67,27 +67,27 @@ What ar e the r esulting v ector elements, assuming each question star ts with a
 }
 -1, 0, 9, 0
 0, -55, -1, 0
-Error (pr ogram abor ts)
+Error (program abor ts)
 4)for  (i  =  0;  i  <  3;  ++i)  {
    itemsList .at(i)  =  itemsList .at(i+1);  
 }
 -1, 0, 9, 9
 -1, 0, 9, 0
-Error (pr ogram abor ts)
+Error (program abor ts)
 5)for  (i  =  0;  i  <  3;  ++i)  {
    itemsList .at(i+1)  =  itemsList .at(i);  
 }
 -55, -55, -55, -55
 -55, -55, -1, 0
-Error (pr ogram abor ts)
-zyDE 6.9.1: Modifying a v ector during iter ation: Doubling element v alues.
-Complete the following pr ogram t o double each number in the v ector.
+Error (program abor ts)
+zyDE 6.9.1: Modifying a v ector during iter ation: Doubling element values.
+Complete the following program to double each number in the v ector.
 67 -5 -99 4 22
 Element by element vector copy
-In C++, the = oper ator conv eniently per forms an element-b y-element cop y of a v ector, called a vector cop y oper ation . The oper ation v ectorB
-= vectorA r esizes vectorB t o vectorA's siz e, appending or deleting elements as needed. v ectorB commonly has a siz e of 0 befor e the
-oper ation.
-Figur e 6.9.2: Using = t o cop y a v ector: Original and sale prices.
+In C++, the = oper ator conv eniently per forms an element-b y-element cop y of a v ector, called a vector cop y operation . The operation v ectorB
+= vectorA r esizes vectorB to vectorA's siz e, appending or deleting elements as needed. v ectorB commonly has a siz e of 0 befor e the
+operation.
+Figur e 6.9.2: Using = to cop y a v ector: Original and sale prices.
 #include  <iostream>
 #include  <vector>
 using  namespace  std;
@@ -120,8 +120,8 @@ int  main()  {
 }Original prices:  10 20 30 40
 Sale prices:      10 20 27 35
 PARTICIP ATION
-ACTIVITY 6.9.2:  Vector cop y oper ation.
-Assume v ectors ha ve been declar ed as follows and ha ve been initializ ed as indicated in the comments:
+ACTIVITY 6.9.2:  Vector cop y operation.
+Assume v ectors have been declar ed as follows and have been initializ ed as indicated in the comments:
 vector<int>  userVals (4);  // {44, 55, 66, 77}
 vector<int>  newVals;      // No elements yet
 1)What is newV als after: newVals = userVals; 
@@ -139,11 +139,11 @@ newVals = userVals;
 newVals = otherVals; 
 If appr opriate type: Err or
 Element by element vector comparison
-In C++, the == oper ator conv eniently compar es vectors element-b y-element, called a vector equality oper ation , with v ectorA == v ectorB
-evaluating t o true if the v ectors ar e the same siz e AND each element pair is equal.
+In C++, the == oper ator conv eniently compar es vectors element-b y-element, called a vector equality operation , with v ectorA == v ectorB
+evaluating to true if the v ectors are the same siz e AND each element pair is equal.
 PARTICIP ATION
 ACTIVITY6.9.3:  Vector comparing.
-Assume v ectors ha ve been declar ed as follows and ha ve been initializ ed as indicated in the comments:
+Assume v ectors have been declar ed as follows and have been initializ ed as indicated in the comments:
 vector<int>  vectorX(2);  // {3,4}
 vector<int>  vectorY(5);  // {3,4,0,7,8}
 vector<int>  vectorZ(5);  // {3,4,0,6,8}
@@ -162,11 +162,11 @@ False
 CHALLENGE
 ACTIVITY6.9.1:  Loop-modifying or cop ying/comparing v ectors.
 620890.5010016.qx3z qy7
-Integer numElements is r ead fr om input, r epresenting the number of integers t o be r ead next. Then, the r emaining integers ar e
-read and st ored int o vector numbersList. F or each element in numbersList that is divisible b y 9:
-Output the element, followed b y ": corr ected t o a number not divisible b y 9" and a newline.
-Assign the element with the element' s curr ent v alue minus 1.
-Note: (x % 9 == 0) r eturns true if x is divisible b y 9.1
+Integer numElements is r ead fr om input, r epresenting the number of integers to be r ead next. Then, the r emaining integers ar e
+read and st ored int o vector numbersList. F or each element in numbersList that is divisible by 9:
+Output the element, followed by ": corr ected to a number not divisible by 9" and a newline.
+Assign the element with the element' s curr ent value minus 1.
+Note: (x % 9 == 0) returns true if x is divisible by 9.1
 2
 3
 How was this section? |Feedback?
@@ -253,4 +253,4 @@ Completion details 11
 18
  
 CSC108 CH06.1-6.9 C6A
-CSC108 CH06.1-6.9 C6A  My libr ary>CSC 108: Computer Science I home >6.9: Using a loop t o modify , cop y, or compar e vectors zyBooks catalog Help/F AQ
+CSC108 CH06.1-6.9 C6A  My libr ary>CSC 108: Computer Science I home >6.9: Using a loop to modify , cop y, or compar e vectors zyBooks catalog Help/F AQ

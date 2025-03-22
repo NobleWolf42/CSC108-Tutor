@@ -1,5 +1,5 @@
 6.20 Pointers
-6.22 Pointers and Arr ay6.21  C++ Call b y Ref erence: Using pointers
+6.22 Pointers and Arr ay6.21  C++ Call by Ref erence: Using pointers
 In the C++ Functions  tutorial, we learned about passing arguments to a function. This method used is called passing by
 value because the actual value is passed.  
 However , there is another way of passing arguments to a function where the actual values of arguments are not passed.
@@ -25,9 +25,9 @@ int main() {
 Notice the & in void func2(int &numRef) . This denotes that we are using the address of the variable as our parameter . 
 So, when we call the func2()  function in main()  by passing the variable num as an argument, we are actually passing
 the address of num variable instead of the value 5. 
-Figur e 6.21.1: C++ P ass b y Value vs. P ass b y Ref erence
-Code E ditor 6.21.1: P assing b y reference without pointers
-Click run t o see the output.
+Figur e 6.21.1: C++ P ass by Value vs. P ass by Ref erence
+Code E ditor 6.21.1: P assing by reference without pointers
+Click run to see the output.
 In this program, we passed the variables a and b to the swap()  function. Notice the function definition,
 void swap(int &n1, int &n2)
 Here, we are using & to denote that the function will accept addresses as its parameters.
@@ -36,8 +36,8 @@ parameters.
 In the swap()  function, the function parameters n1 and n2 are pointing to the same value as the variables a and b
 respectively . Hence the swapping takes place on actual value.
 The same task can be done using the pointers. To learn about pointers, visit C++ Pointers .
-Code E ditor 6.21.2: P assing b y reference using pointers
-Click run t o see the output.
+Code E ditor 6.21.2: P assing by reference using pointers
+Click run to see the output.
 Here, we can see the output is the same as the previous example. Notice the line,  
 // &a is address of a
 // &b is address of b
@@ -120,4 +120,4 @@ F eedback?1
 17
 18
  
-  My libr ary>CSC 108: Computer Science I home >6.21: C++ Call b y Ref erence: Using pointers zyBooks catalog Help/F AQ
+  My libr ary>CSC 108: Computer Science I home >6.21: C++ Call by Ref erence: Using pointers zyBooks catalog Help/F AQ

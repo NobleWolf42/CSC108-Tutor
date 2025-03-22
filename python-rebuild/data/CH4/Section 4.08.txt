@@ -107,7 +107,7 @@ int  main()  {
 }Enter phone number: 1-555-HOLIDAY
 Numbers only: 1-555-?????2?
 The four th version can be created by filling in the if-else branches similarly for other letters. We added more instructions too. Code is not
-shown below , but sample input/output is provided.
+shown Below, but sample input/output is provided.
 Figure 4.8.4: Fourth and final version sample input/output.
 Enter phone number (letters/- OK, no spaces): 1-555-HOLIDAY       
 Numbers only: 1-555-4654329

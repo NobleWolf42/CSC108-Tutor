@@ -10,7 +10,7 @@ Table 3.19.1: Short circuit evaluation.
 operator Example Short circuit evaluation
 operand1 && operand2true && operand2 If the first operand evaluates to true, operand2 is evaluated.
 false && operand2If the first operand evaluates  to false, the result of the AND
-oper ation is always false, so operand2 is not evaluated.
+operation is always false, so operand2 is not evaluated.
 operand1 || operand2true || operand2If the first operand evaluates to true, the result of the OR
 operation is always true, so operand2 is not evaluated.
 false || operand2 If the first operand evaluates to false, operand2 is evaluated.
@@ -30,19 +30,19 @@ evaluating the second operand?
 3
 3)(y < 3) || (x == 1)
 What value of y does not result in short circuit evaluation, such that
-both operands ar e evaluated?
+both operands are evaluated?
 3
 1
 2
 4)(x < 3) && (y < 2) && (z == 5)
 What values of x and y do not result in short circuit evaluation, such
-that all operands ar e evaluated?
+that all operands are evaluated?
 x = 2, y = 2
 x = 1, y = 0
 x = 4, y = 1
 x = 3, y = 2
 5)((x > 2) || (y < 4)) && (z == 10)
-Given x = 4, y = 1, and z = 10, which comparisons ar e evaluated?
+Given x = 4, y = 1, and z = 10, which comparisons are evaluated?
 (x > 2), (y < 4), and (z == 10)
 (x > 2) and (z == 10)
 (x > 2) and (y < 4)
@@ -62,6 +62,6 @@ seconds: 5(0 < 1)
 truetrue(5 < 10)
 true
 Few seconds remaining!
-1. The first operand e valuates to false, so the logical AND result is false regardless of the second operand. Short circuit evaluation
+1. The first operand evaluates to false, so the logical AND result is false regardless of the second operand. Short circuit evaluation
 skips evaluating the second operand.
 2. If the first operand evaluates to true, the second operand is evaluated to determine the result.
