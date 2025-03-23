@@ -1,0 +1,295 @@
+
+2.14 Characters
+Basics
+A variable of char type, as in char myChar;, can store a single character like the letter m. A character literal is surrounded with single
+quotes, as in myChar = 'm';.
+Figure 2.14.1: Simple charexample: Arrow.
+#include <iostream>
+using namespace std;
+int main() {
+   char arrowBody;
+   char arrowHead;
+   arrowBody = '-';
+   arrowHead = '>';
+   cout << arrowBody << arrowBody << arrowBody << arrowHead << endl;
+   arrowBody = 'o';
+   cout << arrowBody << arrowBody << arrowBody << arrowHead << endl;
+   return 0;
+}
+--->
+ooo>
+PARTICIPATION
+ACTIVITY 2.14.1: chardata type.
+1) Declare a character variable middleInitial.
+2) Assume char variable userKey is already declared. Write a statement
+that assigns userKey with the letter a.
+Getting a character from input
+cin can be used to get one character from input. Ex:  cin >> myChar;.
+Figure 2.14.2: Getting a character from input.
+#include <iostream>
+using namespace std;
+int main() {
+   char bodyChar;
+   char headChar;
+   cout << "Type two characters: ";
+   cin  >> bodyChar;
+   cin  >> headChar;
+   // Output arrow body then head
+   cout << bodyChar << bodyChar << bodyChar;
+   cout << headChar << endl;
+   return 0;
+}
+Type two characters: ->
+--->
+...
+Type two characters:    *     /
+***/
+
+Type a character: ASCII number: 65
+ASCII is an early standard for encoding characters as numbers. The following table shows the ASCII encoding as a decimal number (Dec)
+for common printable characters (for readers who have studied binary numbers, the table shows the binary encoding also). Other
+characters such as control characters (e.g., a "line feed" character) or extended characters (e.g., the letter "n" with a tilde above it as used in
+Spanish) are not shown. Source: http://www.asciitable.com/.
+Table 2.14.1: Character encodings as numbers in the ASCII standard.
+Binary Dec Char
+010 0000 32 space
+010 0001 33 !
+010 0010 34 "
+010 0011 35 #
+010 0100 36 $
+010 0101 37 %
+010 0110 38 &
+010 0111 39 '
+010 1000 40 (
+010 1001 41 )
+010 1010 42 *
+010 1011 43 +
+010 1100 44,
+010 1101 45 -
+010 1110 46.
+010 1111 47 /
+011 0000 48 0
+011 0001 49 1
+011 0010 50 2
+011 0011 51 3
+011 0100 52 4
+011 0101 53 5
+011 0110 54 6
+011 0111 55 7
+011 1000 56 8
+011 1001 57 9
+011 1010 58 :
+011 1011 59 ;
+011 1100 60 <
+011 1101 61 =
+011 1110 62 >
+011 1111 63 ?
+Binary Dec Char
+100 0000 64 @
+100 0001 65 A
+100 0010 66 B
+100 0011 67 C
+100 0100 68 D
+100 0101 69 E
+100 0110 70 F
+100 0111 71 G
+100 1000 72 H
+100 1001 73 I
+100 1010 74 J
+100 1011 75 K
+100 1100 76 L
+100 1101 77 M
+100 1110 78 N
+100 1111 79 O
+101 0000 80 P
+101 0001 81 Q
+101 0010 82 R
+101 0011 83 S
+101 0100 84 T
+101 0101 85 U
+101 0110 86 V
+101 0111 87 W
+101 1000 88 X
+101 1001 89 Y
+101 1010 90 Z
+101 1011 91 [
+101 1100 92 \
+101 1101 93 ]
+101 1110 94 ^
+101 1111 95 _
+Binary Dec Char
+110 0000 96 `
+110 0001 97 a
+110 0010 98 b
+110 0011 99 c
+110 0100 100 d
+110 0101 101 e
+110 0110 102 f
+110 0111 103 g
+110 1000 104 h
+110 1001 105 i
+110 1010 106 j
+110 1011 107 k
+110 1100 108 l
+110 1101 109 m
+110 1110 110 n
+110 1111 111 o
+111 0000 112 p
+111 0001 113 q
+111 0010 114 r
+111 0011 115 s
+111 0100 116 t
+111 0101 117 u
+111 0110 118 v
+111 0111 119 w
+111 1000 120 x
+111 1001 121 y
+111 1010 122 z
+111 1011 123 {
+111 1100 124 |
+111 1101 125 }
+111 1110 126 ~
+PARTICIPATION
+ACTIVITY 2.14.4: Character encodings.
+1) 'A' is stored as _____.
+65
+97
+2) '&' is stored as _____.
+38
+(no such encoding)
+3) 7 is stored as _____.
+7
+55
+4) A variable's memory location stores 88. Outputting that value as a
+character yields _____.
+X
+x
+Escape sequences
+In addition to regular characters like Z, $, or 5, character encoding includes numbers for several special characters. Ex: A newline character
+is encoded as 10. Because no visible character exists for a newline, the language uses an escape sequence: A two-character sequence
+starting with \ that represents a special character. Ex: '\n' represents a newline character. Escape sequences also enable representing
+characters like ', ", or \. Ex: myChar = '\'' assigns myChar with a single-quote character. myChar = '\\' assigns myChar with \ (just '\' would
+yield a compiler error, since \' is the escape sequence for ', and then a closing ' is missing).
+Table 2.14.2: Common escape sequences.
+Escape sequence Char
+\n newline
+\t tab
+\'single quote
+\" double quote
+\\ backslash
+PARTICIPATION
+ACTIVITY 2.14.5: Escape sequences.
+1) Goal output: Say "Hello"
+cout << _____ ;
+"Say "Hello""
+"Say \"Hello\""
+"Say \\"Hello\\""
+2) Goal output: OK    bye
+(Assume a tab exists between OK and bye).
+cout << _____ ;
+"OK\tbye"
+"OK    \tbye"
+"OK\t    bye"
+3) Given string "a\"b", the first character is stored in memory as 97 (the
+numeric value for 'a'). What is stored for the second character?
+34
+92
+Common errors
+A common error is to use double quotes rather than single quotes around a character literal, as in myChar = "x", yielding a compiler error.
+Similarly, a common error is to forget the quotes around a character literal, as in myChar = x, usually yielding a compiler error (unless x is
+also a declared variable, then perhaps yielding a logic error).
+
+
+Print a message telling a user to press the letterToQuit key numPresses times to quit. End with newline. Ex: If letterToQuit = 'q' and
+numPresses = 2, print:
+
+#include <iostream>
+using namespace std;
+int main() {
+   char   userChar;
+   cin  >> userChar;
+   cout << userChar << " " << userChar << endl;
+   cout << " " << userChar << endl;
+   cout << userChar << userChar << userChar << endl;
+   return 0;
+}
+
+userLet75
+76
+97
+(output userLet)
+userLet = 'a';
+char userLet;
+Encodings
+'a' 97
+'b' 98
+'c' 99...
+a
+1. A char is encoded and stored as a number.
+2. When outputting a char variable, the compiler converts the number to the appropriate letter.
+
+
+Unused
+cout << let1 << let2 << let3;
+cout << " " << let2 << let1 << let3;
+cout << " " << let2 << let3 << let1;
+cout << " " << let3 << let2 << let1;
+cout << " " << let1 << let3 << let2;
+cout << " " << let3 << let1 << let2;
+cout << endl;
+main.cpp Load default template...
+   #include <iostream>
+using namespace std;
+int main() {
+   char let1;
+   char let2;
+   char let3;
+   cin >> let1;
+   cin >> let2;
+   cin >> let3;
+   
+   
+   return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main() {
+   char letterToQuit;
+   int  numPresses;
+   cin >> letterToQuit;
+   cin >> numPresses;
+   /* Your solution goes here  */
+   return 0;
+}
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14

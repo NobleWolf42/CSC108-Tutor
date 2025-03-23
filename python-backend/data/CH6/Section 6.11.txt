@@ -1,0 +1,197 @@
+6.11  Debugging example: Reversing a vector
+A common vector modification is to reverse a vector's elements. One way to accomplish this goal is to per form a series of swaps. For
+example, starting with a vector of numbers 10 20 30 40 50 60 70 80, we could first swap the first item with the last item, yielding 80 20 30
+40 50 60 70 10. We could next swap the second item with the second-to-last item, yielding 80 70 30 40 50 60 20 10. The next swap would
+yield 80 70 60 40 50 30 20 10, and the last would yield 80 70 60 50 40 30 20 10.
+With this basic idea of how to reverse a vector, we can attempt to write a Program to carry out such reversal. Below we develop such a
+program but we make common mistakes along the way, to aid learning from examples of what not to do.
+A first attempt to write a Program that reverses a vector appears below.
+
+First Program attempt to reverse vector: aborts due to invalid access of vector element.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   const  int  NUM_ELEMENTS  =  8;
+   vector<int>  revVector ;
+   unsigned  int  i;
+   int  userInput ;
+   cout  <<  "Enter integer values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_ELEMENTS ;  ++i)  {
+      cout  <<  "Enter value: " ;
+      cin  >>  userInput ;
+      revVector.push_back (userInput );
+   }
+   // Reverse
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      revVector.at(i)  =  revVector.at(revVector.size()  -  i);
+   }
+   cout  <<  "Updated vector:" ;
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      cout  <<  " "  <<  revVector.at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}
+Enter integer values...
+Enter value: 10
+Enter value: 20
+Enter value: 30
+Enter value: 40
+Enter value: 50
+Enter value: 60
+Enter value: 70
+Enter value: 80
+… terminating due to uncaught exception of type std::out_of_range: vector
+Something went wrong: The Program aborted (exited abnormally). The reported message indicates an "out of range" problem related to a
+vector, meaning the Program tried to access a vector element that doesn't exist. Let's try to find the code that caused the problem.
+The first and third for loops are fairly standard, so let's initially focus attention on the middle for loop that does the reversing. The swap
+statement inside that loop is revVector.at(i) = revVector.at(revVector.size() - i). When i is 0, the statement will
+execute revVector.at(0) = revVector.at(8). However, revVector has size 8 and thus valid indices are 0..7. r evVector.at(8) does
+not exist. The Program should actually swap elements 0 and 7, then 1 and 6, etc. Thus, let's change the right-side index to
+revVector.size() - 1 - i. The revised Program is shown below.
+
+Revised vector reversing Program: Doesn't abort, but still a problem.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   const  int  NUM_ELEMENTS  =  8;
+   vector<int>  revVector ;
+   unsigned  int  i;
+   int  userInput ;
+   cout  <<  "Enter integer values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_ELEMENTS ;  ++i)  {
+      cout  <<  "Enter value: " ;
+      cin  >>  userInput ;
+      revVector.push_back (userInput );
+   }
+   // Reverse
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      revVector.at(i)  =  revVector.at(revVector.size()  -  1  -  i);
+   }
+   cout  <<  "Updated vector:" ;
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      cout  <<  " "  <<  revVector.at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}
+Enter integer values...
+Enter value: 10
+Enter value: 20
+Enter value: 30
+Enter value: 40
+Enter value: 50
+Enter value: 60
+Enter value: 70
+Enter value: 80
+Updated vector: 80 70 60 50 50 60 70 80
+
+The Program didn't abort this time, but the last four elements are wrong. To determine what went wrong, we can manually (i.e., on paper)
+trace the loop's execution.
+i is 0: r evVector.at(0) = r evVector.at(7). vector now: 80 20 30 40 50 60 70 80.
+i is 1: r evVector.at(1) = r evVector.at(6). vector now: 80 70 30 40 50 60 70 80.
+i is 2: r evVector.at(2) = r evVector.at(5). vector now: 80 70 60 40 50 60 70 80.
+i is 3: r evVector.at(3) = r evVector.at(4). vector now: 80 70 60 50 50 60 70 80.
+i is 4: r evVector.at(4) = r evVector.at(3). vector now: 80 70 60 50 50 60 70 80. Uh-oh, where did 40 go?
+We failed to actually swap the vector elements, instead the code just copies values in one direction. We need to add code to properly swap.
+We add a variable tempValue to temporarily hold revVector.at(i), so we don't lose that element's value.
+
+Revised vector reversing Program with proper swap: Output isn't reversed.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   const  int  NUM_ELEMENTS  =  8;
+   vector<int>  revVector ;
+   unsigned  int  i;
+   int  userInput ;
+   int  tempValue ;
+   cout  <<  "Enter integer values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_ELEMENTS ;  ++i)  {
+      cout  <<  "Enter value: " ;
+      cin  >>  userInput ;
+      revVector.push_back (userInput );
+   }
+   // Reverse
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      tempValue  =  revVector.at(i);  // These 3 statements swap
+      revVector.at(i)  =  revVector.at(revVector.size()  -  1  -  i);
+      revVector.at(revVector.size()  -  1  -  i)  =  tempValue ;
+   }
+   cout  <<  "Updated vector:" ;
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      cout  <<  " "  <<  revVector.at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}
+Enter integer values...
+Enter value: 10
+Enter value: 20
+Enter value: 30
+Enter value: 40
+Enter value: 50
+Enter value: 60
+Enter value: 70
+Enter value: 80
+Updated vector: 10 20 30 40 50 60 70 80
+The new values are not reversed. Again, let's manually tr ace the loop iterations.
+i is 0: r evVector.at(0) = r evVector.at(7). vector now: 80 20 30 40 50 60 70 10.
+i is 1: r evVector.at(1) = r evVector.at(6). vector now: 80 70 30 40 50 60 20 10.
+i is 2: r evVector.at(2) = r evVector.at(5). vector now: 80 70 60 40 50 30 20 10.
+i is 3: r evVector.at(3) = r evVector.at(4). vector now: 80 70 60 50 40 30 20 10. Looks reversed.
+i is 4: r evVector.at(4) = r evVector.at(3). vector now: 80 70 60 40 50 30 20 10. Why are we still swapping?
+Tracing makes clear that the for loop should not iterate over the entire vector. The reversal is completed halfway through the iterations. The
+solution is to set the loop expression to i < (revVector.size() / 2).
+
+Vector reversal program with correct output.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   const  int  NUM_ELEMENTS  =  8;
+   vector<int>  revVector ;
+   unsigned  int  i;
+   int  userInput ;
+   int  tempValue ;
+   cout  <<  "Enter integer values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_ELEMENTS ;  ++i)  {
+      cout  <<  "Enter value: " ;
+      cin  >>  userInput ;
+      revVector.push_back (userInput );
+   }
+   // Reverse
+   for  (i  =  0;  i  <  revVector.size()  /  2;  ++i)  {
+      tempValue  =  revVector.at(i);  // These 3 statements swap
+      revVector.at(i)  =  revVector.at(revVector.size()  -  1  -  i);
+      revVector.at(revVector.size()  -  1  -  i)  =  tempValue ;
+   }
+   cout  <<  "Updated vector:" ;
+   for  (i  =  0;  i  <  revVector.size();  ++i)  {
+      cout  <<  " "  <<  revVector.at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}
+Enter integer values...
+Enter value: 10
+Enter value: 20
+Enter value: 30
+Enter value: 40
+Enter value: 50
+Enter value: 60
+Enter value: 70
+Enter value: 80
+Updated vector: 80 70 60 50 40 30 20 10
+
+We should ensure the Program works if the number of elements is odd rather than e ven. Suppose the vector has 5 elements (0-4) with
+values 10 20 30 40 50. r evVector.size() / 2 would be 5 / 2 = 2, meaning the loop expression would be i < 2. The iteration when i is 0 would
+swap elements 0 and 4 (5-1-0), yielding 50 20 30 40 10. The iteration for i=1 would swap elements 1 and 3, yielding 50 40 30 20 10. The
+loop would then not execute again because i is 2. So the results are correct for an odd number of elements, because the middle element
+will just not move.
+The mistakes made above are each very common when dealing with loops and vectors, especially for beginning Programmers. An incorrect
+(in this case out-of-range) index, an incorrect swap, and an incorrect loop expression. The lesson is that loops and vectors require attention
+to detail, greatly aided by manually executing the loop to determine what is happening on each iteration. Ideally, a Programmer will take
+more care when writing the original Program, but the above mistakes are quite common.

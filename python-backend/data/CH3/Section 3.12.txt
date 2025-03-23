@@ -1,0 +1,185 @@
+
+3.12  Boolean data type
+Boolean data type
+Boolean  refers to a quantity that has only two possible values, true or false. C++ has the built-in data type bool  for representing Boolean
+quantities.
+A Boolean variable may be set using true or false keywords. Ex: isWeekend = true;  assigns isW eekend with the Boolean value true. A
+Boolean variable may also be set to the result of a logical expression. Ex: isLargeParty = (partySize > 6);  assigns islargeParty
+with the result of the expression partySize > 6.
+Figure 3.12.1: variables of bool data type: Restaurant wait time calculator.
+#include  <iostream>
+using  namespace  std;
+int  main()  {
+   int  waitTime ;
+   int  partySize ;
+   char  day;
+   bool  isLargeParty ;
+   bool  isWeekend ;
+   
+   // Get day of reservation
+   cout  <<  "Day of reservation (T/W/R/F/S/U): " ;
+   cin  >>  day;
+   if  (day  ==  'F'  ||  day  =='s'  ||  day  ==  'U')  {
+      isWeekend  =  true;
+   }
+   else  {
+      isWeekend  =  false;
+   }
+   
+   // Get party size
+   cout  <<  "Enter party size: " ;
+   cin   >>  partySize ;
+   isLargeParty  =  (partySize  >  6);
+   
+   // Determine wait time based on day of week and party size
+   if  (isWeekend  &&  !isLargeParty )  {
+      waitTime  =  30;
+   }
+   else  if  (!isWeekend  &&  !isLargeParty )  {
+      waitTime  =  10;
+   }
+   else  if  (isWeekend  &&  isLargeParty )  {
+      waitTime  =  45;
+   }
+   else  {
+      waitTime  =  15;
+   }
+   
+   cout  <<  "Restaurant wait time is "  <<  waitTime
+        <<  " minutes."  <<  endl;
+   
+   return  0;
+} Day of reservation (T/W/R/F/S/U): W
+Enter party size: 5
+Restaurant wait time is 10 minutes.
+...
+Day of reservation (T/W/R/F/S/U): U
+Enter party size: 10
+Restaurant wait time is 45 minutes.
+PARTICIP ATION
+ACTIVITY3.12.1:  Boolean variables.
+1)Write a statement that declares a Boolean variable named
+hasHighBP.
+2)Write a statement that assigns hasHighBP with false.
+3)isSunny, isDayOff, and isBeachDay are Boolean variables. What is
+isBeachDay  after executing the following statements? Type true or
+false.
+isSunny  =  false;
+isDayOff  =  true;
+isBeachDay  =  false;
+if  (isSunny  &&  isDayOff )  {
+   isBeachDay  =  true;
+}
+Uses of Boolean data types
+A programmer can use a Boolean variable to simplify a complex expression. An expression that combines logical and r elational operators
+can be simplified by assigning bool variables with the result of the expression using r elational oper ators. The if-else expression can then
+consist of only logical operations using those variables.
+The following program assigns bool variables isHot, isReallyHot, and isHumid with the results of expressions comparing currentT emp,
+desir edTemp, and currentHumidity. The if-else statement then uses isHot and isHumid in the if-else's expressions.
+Figure 3.12.2: Using Boolean variables to simplify expressions.
+isHot  =  (currentTemp  >  desiredTemp );
+isReallyHot  =  (currentTemp  >  (desiredTemp  +  5.0));
+isHumid  =  (currentHumidity  >  0.50);
+   
+if  (isReallyHot )  {
+   // Use A/C and evaporative cooler
+   acOn  =  true;
+   evapCoolerOn  =  true;
+}
+else  if  (isHot  &&  isHumid)  {
+   // Use A/C
+   acOn  =  true;
+   evapCoolerOn  =  false;
+}
+else  if  (isHot  &&  !isHumid)  {
+   // Use evaporative cooler
+   acOn  =  false;
+   evapCoolerOn  =  true;
+}
+else  {
+   acOn  =  false;
+   evapCoolerOn  =  false;
+}
+PARTICIP ATION
+ACTIVITY3.12.2:  Simplifying expressions.
+Given the following if-else statement:
+if  (  (userAge  >  13)  &&  (userAge  <  21)  &&  (studentGpa  >=  3.5)  )  {
+   studentDiscount  =  7.5;
+}
+else  if  (  (userAge  >  13)  &&  (userAge  <  21)  &&  (studentGpa  >=  2.75)  )  {
+  studentDiscount  =  5.0;
+}
+else  {
+  studentDiscount  =  0.0;
+}
+1)Write a statement that assigns the variable veryGoodGpa with an
+expression that evaluates to true if studentGpa is greater than or
+equal to 3.5.
+veryGoodGpa  =  (   );
+2)Write a statement that assigns the variable goodGpa with an
+expression that evaluates to true if studentGpa is greater than or
+equal to 2.75.
+goodGpa  =  (   );
+3)Write a statement that assigns the variable isInAgeRange with an
+expression that evaluates to true if userAge is greater than 13 and
+less than 21.
+isInAgeRange  =  (   );
+4)Revise the if expression above to use the variables isInAgeRange and
+veryGoodGpa.
+if  (   )  {
+   studentDiscount  =  7.5;
+}
+CHALLENGE
+ACTIVITY3.12.1:  Bool in branching statements.
+
+Organize the lines of code to create an if-else statement that describes an object.
+If the input is 1 0, then isBalloon is true and isRed is false, and the output is:
+Balloon
+If the input is 1 1, then isBalloon is true and isRed is true, and the output is:
+Red balloon
+Other wise, the output is:
+Not a balloon
+Note: Not all lines of code on the left will be used in the final solution.
+
+ACTIVITY3.12.2:  Using bool.
+Assign isTeenager with true if kidAge is 13 to 19 inclusive. Other wise, assign isTeenager with false.
+
+
+Unused
+}
+else {
+}
+if (isBalloon && !isRed) {
+if (!isBalloon && isRed) {
+else if (isBalloon && isRed) {
+else if (isBalloon || isRed) {
+cout << "Not a balloon"  << endl;
+cout << "Red balloon"  << endl;
+}
+cout << "Balloon"  << endl;main.cpp Load default template...
+      #include <iostream>
+using namespace  std;
+int main() {
+   bool isBalloon;
+   bool isRed;
+   cin >> isBalloon;
+   cin >> isRed;
+   
+   return 0;
+}
+
+
+
+passed#include  <iostream>
+using namespace  std;
+int main() {
+   bool isTeenager ;
+   int kidAge;
+   cin >> kidAge;
+   /* Your solution goes here  */
+   if (isTeenager ) {
+      cout << "Teen" << endl;
+   }
+   else {
+      cout << "Not teen " << endl;
+   }

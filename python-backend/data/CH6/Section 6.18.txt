@@ -1,0 +1,110 @@
+6.18  Using pass by reference to modify string/vector parameters
+Functions commonly modify a string or vector. The following function modifies a string by replacing spaces with hyphens.
+
+Modifying a string parameter, which should be pass by reference.
+#include  <iostream>
+#include  <string>
+using  namespace  std;
+// Function replaces spaces with hyphens
+void  StrSpaceToHyphen (string&  modStr)  {
+   unsigned  int  i;    // Loop index
+   
+   for  (i  =  0;  i  <  modStr.size();  ++i)  {
+      if  (modStr.at(i)  ==  ' ')  {
+         modStr.at(i)  =  '-';
+      }
+   }
+}
+int  main()  {
+   string  userStr;   // Input string from user
+   
+   // Prompt user for input
+   cout  <<  "Enter string with spaces: "  <<  endl;
+   getline(cin,  userStr);
+   
+   // Call function to modify user defined string
+   StrSpaceToHyphen (userStr);
+   
+   // Output modified string
+   cout  <<  "String with hyphens: " ;
+   cout  <<  userStr  <<  endl;
+   
+   return  0;
+}
+Enter string with spaces: 
+Hello there everyone.
+String with hyphens: Hello-there-everyone.
+...
+Enter string with spaces: 
+Good bye  now   !!!
+String with hyphens: Good-bye--now---!!!
+
+The string serves as function input and output. The string parameter must be pass by reference, achieved using &, so that the function
+modifies the original string argument (userStr) and not a copy.
+
+Sometimes a Programmer defines a vector or string parameter as pass by reference e ven though the function does not modify the
+parameter, to prevent the performance and memory overhead of copying the argument that would other wise occur.
+The keyword const  can be prepended to a function's vector or string parameter to prevent the function from modifying the parameter.
+Programmers commonly make a large vector or string input parameter pass by reference, to gain efficiency, while also making the
+parameter const, to prevent assignment.
+The following illustrates. The first function modifies the vector so it defines a normal pass by reference. The second function does not
+modify the vector but for efficiency uses constant pass by reference.
+
+Normal and constant pass by reference vector parameters in a vector reversal Program.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+void  ReverseVals (vector<int>&  vctrVals )  {
+   unsigned  int  i;   // Loop index
+   int  tmpVal;       // Temp variable for swapping
+   for  (i  =  0;  i  <  (vctrVals.size()  /  2);  ++i)  {
+      tmpVal  =  vctrVals.at(i);  // These statements swap
+      vctrVals.at(i)  =  vctrVals.at(vctrVals.size()  -  1  -  i);
+      vctrVals.at(vctrVals.size()  -  1  -  i)  =  tmpVal;
+   }
+}
+void  PrintVals (const  vector<int>&  vctrVals )  {
+   unsigned  int  i;   // Loop index
+   // Print updated vector
+   cout  <<  endl  <<  "New values: " ;
+   for  (i  =  0;  i  <  vctrVals.size();  ++i)  {
+      cout  <<  " "  <<  vctrVals.at(i);
+   }
+   cout  <<  endl;
+}
+int  main()  {
+   const  int  NUM_VALUES  =  8;             // Vector size
+   vector<int>  userValues (NUM_VALUES );   // User values
+   int  i;                                // Loop index
+   // Prompt user to populate vector
+   cout  <<  "Enter "  <<  NUM_VALUES  <<  " values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_VALUES ;  ++i)  {
+      cout  <<  "Value: " ;
+      cin  >>  userValues.at(i);
+   }
+   // Call function to reverse vector values
+   ReverseVals (userValues );
+   // Print reversed values
+   PrintVals (userValues );
+   return  0;
+}
+Enter 8 values...
+Value: 10
+Value: 20
+Value: 30
+Value: 40
+Value: 50
+Value: 60
+Value: 70
+Value: 80
+New values:  80 70 60 50 40 30 20 10
+
+A reader might wonder why all input parameters are not defined as constant pass by reference parameters: Why make local copies at all?
+The reason is efficiency. For parameters involving just a few memory locations, making a local copy enables the compiler to generate more
+efficient code, in part because the compiler can place those copies inside a tiny-but-fast memory inside the processor called a register file—
+further details are beyond our scope.
+In summary:
+Define a function's output or input/output parameters as pass by reference.
+But create output parameters sparingly, striving to use return values instead.
+Define input parameters as pass by value.
+Except for large items (perhaps 10 or more elements); use constant pass by reference for those.

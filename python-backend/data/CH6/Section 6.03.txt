@@ -1,0 +1,111 @@
+6.3 Vectors
+Vector declaration and element access
+A programmer commonly needs to maintain a list of items, just as people often maintain lists of items like a grocery list or a course roster.
+A vector is an ordered list of items of a given data type. Each item in a vector is called an element. A Programmer must include the
+statement #include <vector>  at the top of the file to use vectors.
+
+Declaring an empty vector.
+vector<dataType > vectorName ;
+The statement above declares an empty vector capable of storing an unspecified number of elements. The type of each vector element is
+specified within the angle brackets (<>).
+push_back() appends a new element to the end of an existing vector. at() accesses a vector element at the index specified within the
+parentheses.
+
+Vector initialization
+A vector can be declared with an initial number of elements by specifying the number of elements within parentheses following the vector
+name. Ex: vector<int> gameScores(4);  declares a vector gameScores with 4 integer elements.
+A vector can also be initialized by specifying the initial values in braces {} separated by commas. Ex:
+vector<int> carSales = {5, 7, 11};  creates a vector of three integer elements initialized with values 5, 7, and 11. Such vector
+declaration and initialization does not require specifying the vector size, because the vector's size is automatically set to the number of
+elements within the braces.
+
+Common error: Forgetting to include <vector>
+A common error is to for get the #include <vector> at the top of the file when using vectors. Trying to then declare a vector variable
+may yield a strange compiler error message, such as:
+testfile.cpp:12: error: ISO C++ forbids declaration of vector with no type
+testfile.cpp:12: error: expected ; before < token
+The same error message may be seen if the vector library is included but the namespace std is not used.
+Using an expression for a vector index
+A powerful aspect of vectors is that the index is an expression. Ex: userNums.at(i) uses the value held in the int variable i as the index. As
+such, a vector is useful to easily lookup the Nth item in a list.
+A vector's index must be an unsigned integer type. The vector index cannot be a floating-point type, e ven if the value is 0.0, 1.0, etc.
+The Program below allows a user to print the age of the Nth oldest known person to have ever liv ed. The Program quickly accesses the Nth
+oldest person's age using oldestPeople.at(nthPerson - 1). Note that the index is nthPerson - 1  rather than just nthPerson
+because a vector's indices start at 0, so the 1st age is at index 0, the 2nd at index 1, etc.
+
+Vector's ith element can be directly accessed using.at(i - 1): Oldest people Program.
+#include  <iostream>
+#include  <vector>
+using namespace  std;
+int main() {
+   vector<int> oldestPeople (5);  
+   int nthPerson ;               // User input, Nth oldest person
+   oldestPeople.at(0) = 122; // Died 1997 in France
+   oldestPeople.at(1) = 119; // Died 1999 in U.S.
+   oldestPeople.at(2) = 117; // Died 1993 in U.S. 
+   oldestPeople.at(3) = 117; // Died 1998 in Canada
+   oldestPeople.at(4) = 116; // Died 2006 in Ecuador
+   cout << "Enter N (1..5): " ;
+   cin  >> nthPerson ;
+   if ((nthPerson  >= 1) && (nthPerson  <= 5)) {
+      cout << "The #" << nthPerson  << " oldest person lived " ;
+      cout << oldestPeople.at(nthPerson  - 1) << " years."  << endl;
+   }
+   return 0;
+}
+Enter N (1..5): 1
+The #1 oldest person lived 122 years.
+...
+Enter N (1..5): 4
+The #4 oldest person lived 117 years.
+...
+Enter N (1..5): 9
+...
+Enter N (1..5): 0
+...
+Enter N (1..5): 5
+The #5 oldest person lived 116 years.
+
+To avoid overflow because nthPerson's data type can only store
+values from 1 to 5.
+To ensure only valid vector elements are accessed because the
+vector oldestPeople only has 5 elements.
+
+A key advantage of vectors becomes evident when used in conjunction with loops. The Program below uses a loop to allow a user to enter
+8 integer values, storing those values in a vector, and then printing those 8 values.
+A vector's size() function returns the number of vector elements. Ex: In the Program below, userVals.size() is 8 because the vector was
+declared with 8 elements.
+
+Vectors combined with loops are powerful together: User-entered numbers.
+#include  <iostream>
+#include  <vector>
+using namespace  std;
+int main() {
+   const int NUM_VALS  = 8;         // Number of elements in vector
+   vector<int> userVals (NUM_VALS ); // User values
+   unsigned  int i;                 // Loop index
+   
+   cout << "Enter "  << NUM_VALS  << " integer values..."  << endl;
+   for (i = 0; i < userVals.size(); ++i) {
+      cout << "Value: " ;
+      cin >> userVals.at(i);
+   }
+   
+   cout << "You entered: " ;
+   for (i = 0; i < userVals.size(); ++i) {
+      cout << userVals.at(i) << " ";
+   }
+   cout << endl;
+   
+   return 0;
+}
+Enter 8 integer values...
+Value: 5
+Value: 99
+Value: -1
+Value: -44
+Value: 8
+Value: 555555
+Value: 0
+Value: 2
+You entered: 5 99 -1 -44 8 555555 0 2

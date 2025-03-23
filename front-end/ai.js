@@ -110,7 +110,6 @@ function sendMessage() {
 
     //Send the proper header information along with the request
     http.setRequestHeader("Content-type", "application/json");
-    http.setRequestHeader("userMsg", userMsgValue);
 
     http.onreadystatechange = function () {
         //Call a function when the state changes.
@@ -157,6 +156,7 @@ function sendMessage() {
     };
 
     const data = {
+        question: userMsgValue,
         code: userCodeValue,
         chatHistory: chatHistory,
         chapter: chapterValue,
@@ -201,8 +201,7 @@ async function runCode() {
     http.open("POST", url + "/code", true);
 
     //Send the proper header information along with the request
-    http.setRequestHeader("Content-type", "text/plain");
-    http.setRequestHeader("userInput", userInput);
+    http.setRequestHeader("Content-type", "application/json");
 
     http.onreadystatechange = function () {
         //Call a function when the state changes.
@@ -229,7 +228,12 @@ async function runCode() {
         }
     };
 
-    http.send(userCodeValue);
+    const data = {
+        userInput: userInput,
+        code: userCodeValue,
+    };
+
+    http.send(JSON.stringify(data));
 }
 //#endregion
 

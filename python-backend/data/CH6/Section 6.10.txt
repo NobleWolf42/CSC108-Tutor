@@ -1,0 +1,10 @@
+6.10  Swapping two variables (general)
+Sometimes a Program must swap values among two variables. Swapping  two variables x and y means to assign y's value to x, and x's
+value to y. If x is 33 and y is 55, then after swapping x is 55 and y is 33.
+A common method for swapping uses a temporary variable. A temporary variable  is a variable used briefly to store a value. To understand
+the intuition of such temporary storage, consider a person holding a book in one hand and a phone in the other, wishing to swap the items.
+The person can temporarily place the phone on a table, move the book to the other hand, then pick up the phone.
+
+If you have studied arrays or vectors (or other kinds of lists), y ou know that most swaps are actually per formed between two list elements.
+For example, reversing a list with N elements can be achieved by swapping element 1 and N, element 2 and N-1, element 3 and N-2, etc.
+(stopping at the middle of the list).

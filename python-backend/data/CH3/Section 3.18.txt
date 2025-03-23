@@ -1,0 +1,203 @@
+
+3.18  Floating-point comparison
+Floating-point numbers should not be compared using ==. Ex: A void float1 == float2. Reason: Some floating-point numbers cannot be
+exactly represented in the limited available memory bits like 64 bits. Floating-point numbers expected to be equal may be close but not
+exactly equal.
+
+  Floating-point comparisons.
+Floating-point numbers should be compared for " close enough " rather than exact equality. Ex: If (x - y) < 0.0001, x and y are deemed equal.
+Because the difference may be negative, the absolute value is used: fabs(x - y) < 0.0001. fabs() is a function in the math library. The
+difference thr eshold indicating that floating-point numbers are equal is often called the epsilon. Epsilon's value depends on the program's
+expected values, but 0.0001 is common.
+The std::abs() function is overloaded to support floating-point and integer types. However, good practice  is to use the fabs() function to make
+the operation clear.
+
+A C TIVI T Y3.18.2:  Using == with floating-point numbers.
+1)Given: float x, y
+x == y is OK.
+True
+False
+2)Given: double x, y
+x == y is OK.
+True
+False
+3)Given: double x
+x == 32.0 is OK.
+True
+False
+4)Given: int x, y
+x == y is OK.
+True
+False
+5)Given: double x
+x == 32 is OK.
+True
+False
+
+  Floating-point comparisons.
+Each comparison has a problem. Click on the problem.
+1)
+(x - y)
+ 
+ 
+2)
+(x - y) 
+ 
+ 
+P AR TICIP A TION
+A C TIVI T Y3.18.4:  Floating point statements.
+Complete the comparison for floating-point numbers.
+1)Determine if double variable x is 98.6.
+(x  -  98.6)  <  0.0001  
+2)Determine if double variables x and y are equal. Threshold is 0.0001.
+fabs(x  -  y)   
+3)Determine if double variable x is 1.0
+fabs( )  <  0.0001  
+Figure 3.18.1: Example of comparing floating-point numbers for equality: Body temperature.
+#include  <iostream>
+#include  <cmath>
+using  namespace  std;
+int  main()  {
+   double  bodyTemp ;
+   cout  <<  "Enter body temperature in Fahrenheit: " ;
+   cin  >>  bodyTemp ;
+   if  (fabs(bodyTemp  -  98.6)  <  0.0001)  {
+      cout  <<  "Temperature is exactly normal."  <<  endl;
+   }
+   else  if  (bodyTemp  >  98.6)  {
+      cout  <<  "Temperature is above normal."  <<  endl;
+   }
+   else  {
+      cout  <<  "Temperature is below normal."  <<  endl;
+   }
+   return  0;
+}Enter body temperature in Fahrenheit: 98.6
+Temperature is exactly normal.
+...
+Enter body temperature in Fahrenheit: 90
+Temperature is below normal.
+...
+Enter body temperature in Fahrenheit: 99
+Temperature is above normal.
+P AR TICIP A TION
+A C TIVI T Y3.18.5:  Body temperature in F ahrenheit.
+Refer to the body temperature code provided in the previous figure.
+1)What is output if the user enters 98.6?
+temperature is exactly normal.
+temperature is above normal.
+temperature is below normal.
+2)What is output if the user enters 97.0?
+temperature is exactly normal.
+temperature is above normal.
+temperature is below normal.
+3)What is output if the user enters 98.6000001?
+temperature is exactly normal.
+temperature is above normal.
+temperature is below normal.
+To see the inexact value stored in a floating-point variable, a manipulator can be used in an output statement. Such output formatting is
+discussed in another section.
+Figure 3.18.2: Obser ving the inexact values stored in floating-point variables.
+#include  <iostream>
+#include  <ios>
+#include  <iomanip>
+using  namespace  std;
+int  main()  {
+   double  sampleValue1  =  0.2;
+   double  sampleValue2  =  0.3;
+   double  sampleValue3  =  0.7;
+   double  sampleValue4  =  0.0;
+   double  sampleValue5  =  0.25;
+   
+   
+   cout  <<  "sampleValue1 using just cout: "  
+        <<  sampleValue1  <<  endl;
+   cout  <<  setprecision (25)
+        <<  "sampleValue1 is "  <<  sampleValue1  <<  endl
+        <<  "sampleValue2 is "  <<  sampleValue2  <<  endl
+        <<  "sampleValue3 is "  <<  sampleValue3  <<  endl
+        <<  "sampleValue4 is "  <<  sampleValue4  <<  endl
+        <<  "sampleValue5 is "  <<  sampleValue5  <<  endl;
+   
+   return  0;
+}sampleValue1 using just cout: 0.2
+sampleValue1 is 0.2000000000000000111022302
+sampleValue2 is 0.2999999999999999888977698
+sampleValue3 is 0.699999999999999955591079
+sampleValue4 is 0
+sampleValue5 is 0.25
+
+A C TIVI T Y3.18.6:  Inexact representation of floating-point values.
+Enter a decimal value:
+Sign
+0Exponent
+00000000Mantissa
+1.00000000000000000000000
+
+ Representing floating-point numbers.
+1)Floating-point values are always stored with some inaccuracy.
+True
+False
+2)If a floating-point variable is assigned with 0.2, and prints as 0.2, the
+value must have been represented exactly.
+True
+False
+
+A C TIVI T Y3.18.1:  Floating-point comparison: Print E qual or Not equal.
+
+Drag and dr op the if statement that will cause the following code to print "E qual" if the value of sensorReading is " close enough "
+to tar getvalue. Other wise, print "Not equal".
+Ex: If the input is:
+0.3333
+1.0 3.0
+then the output is:
+Equal
+Note: Only one code statement on the left will be used in the final solution.
+How was this section? |numMeters = 0.7;  
+numMeters = numMeters - 0.4;
+numMeters = numMeters - 0.3;
+       
+// numMeters expected to be 0, 
+// but is actually -0.0000000000000000555112 
+if (numMeters == 0.0) {
+   // Equals 0.
+}
+else {
+   // Does not equal 0.
+}
+Bugif (fabs(numMeters - 0.0) < 0.001) {
+   // Equals 0.
+}
+else {
+   // Does not equal 0.
+}
+      numMetersExpected
+ Actual
+0 -0.00000000000000005551 115120.7
+0.4
+0.30.6999999999999999555910790
+0.4000000000000000222044605
+0.2999999999999999888977697
+1. Floating-point numbers can't always be exactly represented in limited memory bits.
+2. Thus, floats should not be compared with ==.
+3. Compare floats for ' close enough '.
+
+
+U
+if (sensorReading == targetValue) {
+if (fabs(targetValue - sensorReading) < 0.0001) {
+if (fabs(targetValue - sensorReading) == 0.0001) {main.cpp Load default template...
+   #include <iostream>
+#include <cmath>
+using namespace  std;
+int main() {
+   double targetValue;
+   double sensorReadingNumerator;
+   double sensorReadingDenominator;
+   double sensorReading;
+   cin >> targetValue;
+   cin >> sensorReadingNumerator;
+   cin >> sensorReadingDenominator;
+   sensorReading = sensorReadingNumerator / sensorReadingDeno
+   
+      cout << "Equal" << endl;
+   }

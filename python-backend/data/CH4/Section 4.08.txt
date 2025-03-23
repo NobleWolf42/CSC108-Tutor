@@ -1,0 +1,164 @@
+
+4.8 Developing programs incrementally
+Creating correct programs can be hard. Following a good programming process helps. What many new
+programmers do, but shouldn't, is write the entire program, compile it, and run it—hoping it works. Debugging such
+a program can be difficult because there may be many distinct bugs.
+Experienced programmers develop programs incrementally, meaning they create a simple program version, and
+then grow the program little-by-little into successively more-completeversions.
+The following program allows the user to enter a phone number that includes letters. Such letters appear on phone
+keypads along with numbers, enabling phone numbers like 1-555-HOLIDAY. The program converts a phone number
+having numbers/letters into one having numbers only.
+The first program version simply prints each string element, to ensure the loop iterates properly.
+Figure 4.8.1: Incremental program development.
+#include  <iostream>
+#include  <string>
+using  namespace  std;
+int  main()  {
+   string  phoneStr ;    // User input: Phone number string
+   unsigned  int  i;     // Current element in phone number string
+   
+   cout  <<  "Enter phone number: " ;
+   cin  >>  phoneStr ;
+   
+   for  (i  =  0;  i  <  phoneStr.size();  ++i)  {  // For each element
+      cout  <<  "Element "  <<  i  <<  " is: "  <<  phoneStr.at(i)  <<  endl;
+   }
+   
+   return  0;
+}Enter phone number: 1-555-HOLIDAY
+Element 0 is: 1
+Element 1 is: -
+Element 2 is: 5
+Element 3 is: 5
+Element 4 is: 5
+Element 5 is: -
+Element 6 is: H
+Element 7 is: O
+Element 8 is: L
+Element 9 is: I
+Element 10 is: D
+Element 11 is: A
+Element 12 is: Y
+The second program version outputs any number elements, outputting '?' for non-number elements. A FIXME comment  is commonly used
+to indicate program parts to be fixed or added, as below. Some editor tools automatically highlight the FI XME comment to attract the
+programmer's attention.
+Figure 4.8.2: Second version echoes numbers, and has FIXME comment.
+#include  <iostream>
+#include  <string>
+using  namespace  std;
+int  main()  {
+   string  phoneStr ;    // User input: Phone number string
+   unsigned  int  i;     // Current element in phone number string
+   char  currChar ;      // Current char in phone number string
+   
+   cout  <<  "Enter phone number: " ;
+   cin  >>  phoneStr ;
+   
+   cout  <<  "Numbers only: " ;
+   for  (i  =  0;  i  <  phoneStr.size();  ++i)  {  // For each element
+      currChar  =  phoneStr.at(i);
+      if  ((currChar  >=  '0')  &&  (currChar  <=  '9'))  {
+         cout  <<  currChar ;  // Print element as is
+      }
+      // FIXME: Add else-if branches for letters and hyphen
+      else  {
+         cout  <<  '?';
+      }
+   }
+   
+   cout  <<  endl;
+   
+   return  0;
+}Enter phone number: 1-555-HOLIDAY
+Numbers only: 1?555????????
+The third version completes the else-if branch for the letters A-C (lower case and upper case), per a standard phone keypad. The program
+also modifies the if branch to echo a hyphen in addition to numbers.
+Figure 4.8.3: Third version echoes hyphens too, and handles first three letters.
+#include  <iostream>
+#include  <string>
+using  namespace  std;
+int  main()  {
+   string  phoneStr ;    // User input: Phone number string
+   unsigned  int  i;     // Current element in phone number string
+   char  currChar ;      // Current char in phone number string
+   
+   cout  <<  "Enter phone number: " ;
+   cin  >>  phoneStr ;
+   
+   cout  <<  "Numbers only: " ;
+   for  (i  =  0;  i  <  phoneStr.size();  ++i)  {  // For each element
+      currChar  =  phoneStr.at(i);
+      if  (((currChar  >=  '0')  &&  (currChar  <=  '9'))  ||  (currChar  ==  '-'))  {
+         cout  <<  currChar ;  // Print element as is
+      }
+      else  if  (  ((currChar  >=  'a')  &&  (currChar  <=  'c'))  ||
+               ((currChar  >=  'A')  &&  (currChar  <=  'C'))  )  {
+         cout  <<  "2";
+      }
+      // FIXME: Add remaining else-if branches
+      else  {
+         cout  <<  '?';
+      }
+   }
+   
+   cout  <<  endl;
+   
+   return  0;
+}Enter phone number: 1-555-HOLIDAY
+Numbers only: 1-555-?????2?
+The fourth version can be created by filling in the if-else branches similarly for other letters. We added more instructions too. Code is not
+shown Below, but sample input/output is provided.
+Figure 4.8.4: Fourth and final version sample input/output.
+Enter phone number (letters/- OK, no spaces): 1-555-HOLIDAY       
+Numbers only: 1-555-4654329
+...
+Enter phone number (letters/- OK, no spaces): 1-555-holiday
+Numbers only: 1-555-4654329
+...
+Enter phone number (letters/- OK, no spaces): 999-9999
+Numbers only: 999-9999
+...
+Enter phone number (letters/- OK, no spaces): 9876zywx%$#@
+Numbers only: 98769999????
+zyDE 4.8.1: Incremental programming.
+Complete the program by providing the additional if-else branches for decoding other letters in a phone number. Try incrementally
+writing the program by adding one " else if " branch at a time, testing that each added branch works as intended.
+1-800-555-HOLID AY 
+
+Incremental programming.
+1)A good programming process is to write the entire program, then
+incrementally r emove bugs one at a time.
+True
+False
+2)Exper t programmers need not develop programs incrementally.
+True
+False
+3)Incremental programming may help reduce the number of errors in a
+program.
+True
+False
+4)FIXME comments provide a way for a programmer to remember
+what needs to be added.
+True
+False
+5)Once a program is complete, one would expect to see several FIXME
+comments.
+
+#include  <iostream>
+#include  <string>
+using namespace  std;
+int main() {
+   string phoneStr ;   // User input: Phone number string
+   unsigned  int i;    // Loop index, current element in phone number string
+   char currChar ;     // Current char in phone number string
+   
+   cout << "Enter phone number: " << endl;
+   cin >> phoneStr ;
+   
+   cout << "Numbers only: ";
+   for (i = 0; i < phoneStr.size(); ++i) { // For each element
+      currChar  = phoneStr.at(i);
+      if (((currChar  >= '0') && (currChar  <= '9')) || (currChar  == '-')) {
+         cout << currChar ; // Print element as is
+      }
+||

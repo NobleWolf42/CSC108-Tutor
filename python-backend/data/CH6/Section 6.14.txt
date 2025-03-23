@@ -1,0 +1,126 @@
+6.14  Char arrays / C strings
+A programmer can use an array to store a sequence of characters, known as a string. Char arrays were the only kinds of strings in C++'s
+predecessor language C, and thus are sometimes called C strings  to distinguish them from C++'s string type. An example is:
+char movieTitle[20] = "Star Wars";. Because a string can be shorter than the character array, a string in a char array must end
+with a special character known as a null character, written as '\0'. given a string literal like "Star W ars", the compiler automatically appends
+a null character.
+
+A char array declaration and initialization with null-terminated string.
+A char array of size 20 can store strings of lengths 0 to 19. The longest string is 19, not 20, since the null character must be stored.
+If a char array is initialized when declared, then the char array's size may be omitted, as in char userName[] = "Hellen";. The
+compiler determines the size from the string literal, in this case 6 + 1 (for the null character), or 7.
+An array of characters ending with a null character is known as a null-terminated string.
+Output streams automatically handles null-terminated strings, printing each character until reaching the null character that ends the string.
+
+Printing stops when reaching the null character at each string's end.
+#include  <iostream>
+using  namespace  std;
+int  main()  {
+   char  cityName [20]  =  "Forest Lake" ;  // Compiler appends null char
+   // In each cout, printing stops when reaching null char
+   cout  <<  "City:"  <<  endl;            // Compiler appends null char to "City:"
+   cout  <<  cityName  <<  endl;  
+   return  0;
+}
+City: 
+Forest Lake
+
+After a string is declared, a Programmer may not later assign the string as in movieTitle = "Indiana Jones";. That statement tries
+to assign a value to the char array variable itself, rather than copying each character from the string on the right into the array on the left.
+Functions exist to copy strings, such as strcpy(), discussed elsewhere.
+A programmer can tr averse a string using a loop that stops when reaching the null character.
+A common error is to loop for the string's array size rather than stopping at the null character. Such looping visits unused array elements
+beyond the null character. An e ven worse common error is to loop beyond the last valid element, which visits memory locations that are not
+part of the array. These errors are illustrated below. Notice the strange characters that are output as the contents of other memory locations
+are printed out; the Program may also cr ash.
+
+Traversing a C string.
+#include  <iostream>
+using  namespace  std;
+int  main()  {
+   char  userStr[20]  =  "1234567890123456789" ;  // Input string
+   int  i;  
+   
+   // Prompt user for string input
+   cout  <<  "Enter string (<20 chars): " ;
+   cin  >>  userStr;
+   
+   // Print string
+   cout  <<  endl  <<  userStr  <<  endl;
+   
+   // Look for '@'
+   for  (i  =  0;  userStr[i]  !=  '\0';  ++i)  {
+      if  (userStr[i]  ==  '@')  {
+         cout  <<  "Found '@'."  <<  endl;
+      }
+   }
+   cout  <<  endl;
+   
+   
+   // The following is an ERROR.
+   // May print chars it shouldn't.
+   // Problem: doesn't stop at null char.
+   cout  <<  "\"";  // Print opening "
+   for  (i  =  0;  i  <  20;  ++i)  {  // Print each char
+      cout  <<  userStr[i];
+   }
+   cout  <<  "\""  <<  endl;       // Print closing "
+   
+   
+   // The following is an even WORSE ERROR.
+   // Accesses beyond valid index range.
+   // Program may crash.
+   cout  <<  "\"";  // Print opening "
+   for  (i  =  0;  i  <  30;  ++i)  {
+      cout  <<  userStr[i];
+   }
+   cout  <<  "\""  <<  endl;  // Print closing "
+   
+   return  0;
+}
+Enter string (<20 chars): test@gmail.com
+test@gmail.com
+Found '@'.
+"test@gmail.com6789"
+"test@gmail.com6789P!"
+The above output is machine and compiler dependent. Also, some values aren't printable so don't appear in the output.
+
+Yet another common error with C strings is for the Program user to enter a string larger than the character array. That may cause the input
+statement to write to memory locations outside the array's locations, which may corrupt other parts of Program or data, and typically
+causes the Program to crash.
+
+Reading in a string too large for a C string.
+Run the Program, which simply r eads an input string and prints it one character at a time. Then, lengthen the input string beyond 10
+characters, and run again. The Program might work, if the extra memory locations being assigned don't matter. Try larger and larger
+strings, and see if the Program fails (be sure to scroll to the bottom of the output to look for erroneous output or an error message).
+
+C string usage is fraught with common errors. C++ introduced its own string type, as in string myString;  and accessible after
+#include <string>, to reduce those errors and incr ease Programmer convenience. C strings are still used in some legacy code and are
+thus good to learn. C++ provides common functions for handling C strings, which can be used by including the following:
+#include <cstring>.
+The following Program is for illustration, showing how a string is made up of individual character elements followed by a null character.
+Normally a Programmer would not create a string that way.
+
+A C string is an array of characters, ending with the null character.
+#include  <iostream>
+using  namespace  std;
+int  main()  {
+   char  nameArr[5];
+   nameArr[0]  =  'A';
+   nameArr[1]  =  'l';
+   nameArr[2]  =  'a';
+   nameArr[3]  =  'n';
+   nameArr[4]  =  '\0';  // Null character
+   cout  <<  nameArr  <<  endl;
+   nameArr[4]  =  '!';          // Oops, overwrote null char
+   cout  <<  nameArr  <<  endl;  // *Might* still work
+   return  0;
+}
+Alan
+Alan!
+When printing a string stored within a character array, each character within the array will be printed until the null character is reached. If the
+null character is omitted, the Program would print whatever values are found in memory after the array, until a null character happens to be
+encountered. Omitting the null character is a serious logical error.
+It just so happens that the null character '\0' has an ASCII encoding of 0. Many compilers initialize memory to 0s. As such, omitting the '\0'
+in the above program would not always cause erroneous execution. like a nail in the r oad, that bug in y our code is just waiting to wr eak
+havoc.

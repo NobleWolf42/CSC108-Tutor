@@ -1,0 +1,90 @@
+6.9 Using a loop to modify, copy, or compare vectors
+Modifying vector elements
+A program may need to modify elements while iterating through a vector. The program below uses a loop to convert any negative vector
+element value to 0.
+
+Modifying a vector during iteration example: converting negatives to 0.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   const  int  NUM_ELEMENTS  =  5;       // Number of elements to add
+   vector<int>  userVals ;             // Empty vector for user values
+   unsigned  int  i;                   // Loop index
+   int  userInput ;                    // Element value
+   cout  <<  "Enter "  <<  NUM_ELEMENTS  <<  " integer values..."  <<  endl;
+   for  (i  =  0;  i  <  NUM_ELEMENTS ;  ++i)  {
+      cout  <<  "Enter value: " ;
+      cin  >>  userInput ;
+      userVals.push_back (userInput );
+   }
+   for  (i  =  0;  i  <  userVals.size();  ++i)  {
+      if  (userVals.at(i)  <  0)  {
+         userVals.at(i)  =  0;
+      }
+   }
+   cout  <<  "Updated vector values:" ;
+   for  (i  =  0;  i  <  userVals.size();  ++i)  {
+      cout  <<  " "  <<  userVals.at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}
+Enter 5 integer values...
+Enter value: 3
+Enter value: 5
+Enter value: -2
+Enter value: -8
+Enter value: 45
+Updated vector values: 3 5 0 0 45
+
+Modifying a vector during iteration: Doubling element values.
+Complete the following program to double each number in the vector.
+67 -5 -99 4 22
+Element by element vector copy
+In C++, the = operator conveniently per forms an element-by-element copy of a vector, called a vector copy operation. The operation vectorB
+= vectorA resizes vectorB to vectorA's size, appending or deleting elements as needed. vectorB commonly has a size of 0 before the
+operation.
+
+Using = to copy a vector: Original and sale prices.
+#include  <iostream>
+#include  <vector>
+using  namespace  std;
+int  main()  {
+   vector<int>  origPrices ;  // Source vector
+   vector<int>  salePrices ;  // Target vector
+   unsigned  int  i;  // Loop index
+   // Add prices to original prices vector
+   origPrices.push_back (10);
+   origPrices.push_back (20);
+   origPrices.push_back (30);
+   origPrices.push_back (40);
+   // Copy original prices to sales prices
+   salePrices  =  origPrices ;
+   // Update sale prices. This does not affect original prices.
+   salePrices.at(2)  =  27;
+   salePrices.at(3)  =  35;
+   // Output original and sale prices
+   cout  <<  "Original prices: " ;
+   for  (i  =  0;  i  <  origPrices.size();  ++i)  {
+      cout  <<  " "  <<  origPrices.at(i);
+   }
+   cout  <<  endl;
+   cout  <<  "Sale prices: " ;
+   for  (i  =  0;  i  <  salePrices.size();  ++i)  {
+      cout  <<  " "  <<  salePrices.at(i);
+   }
+   cout  <<  endl;
+   return  0;
+}
+Original prices:  10 20 30 40
+Sale prices:      10 20 27 35
+
+In C++, the == operator conveniently compares vectors element-by-element, called a vector equality operation, with vectorA == vectorB
+evaluating to true if the vectors are the same size AND each element pair is equal.
+
+Integer numElements is read from input, representing the number of integers to be read next. Then, the remaining integers are
+read and stored into vector numbersList. For each element in numbersList that is divisible by 9:
+Output the element, followed by ": corrected to a number not divisible by 9" and a newline.
+Assign the element with the element's current value minus 1.
+Note: (x % 9 == 0) returns true if x is divisible by 9.

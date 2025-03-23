@@ -1,0 +1,107 @@
+6.15  C-String library functions
+C++ provides functions for working with C strings, presented in the cstring library. To use those functions, the Programmer starts with:
+#include <cstring>.
+Some C string functions for modifying  strings are summarized below.
+
+Some C string modification functions.
+
+Given:
+char  orgName[100]  =  "United Nations" ;  
+char  userText [20]  =  "UNICEF" ;  
+char  targetText [10];
+
+strcpy():
+strcpy(destStr, sourceStr)
+Copies sourceStr (up to and including the null character) to destStr. destStr must have enough space for sourceStr, including the null character.
+strcpy(targetText,  userText ); // Copies "UNICEF" + null char to targetText 
+strcpy(targetText,  orgName); // Error: "United Nations" has > 10 chars
+targetText  =  orgName; // Error: Strings can't be copied this way
+
+strncpy():
+strncpy(destStr, sourceStr, numChars)
+Copies up to numChars characters from sourceStr. destStr must have enough space for the copied characters, including the null character. If sourceStr has less than numChars characters, strncpy will fill the remaining space with the null character.
+strncpy(orgName,  userText,  6); // orgName is "UNICEF Nations"
+
+strcat():
+strcat(destStr, sourceStr)
+Copies sourceStr to end of destStr (starting at destStr's null character) and then appends a null character. destStr must have enough space for the addition of sourceStr plus the null character.
+strcat(orgName,  userText ); // orgName is "United NationsUNICEF"
+
+strncat():
+strncat(destStr, sourceStr, numChars)
+Copies up to numChars characters from sourceStr to end of destStr (starting at destStr's null character) and then appends a null character. destStr must have enough space for the addition of sourceStr plus the null character. copying of sourceStr characters continues until either the end of sourceStr or numChars is reached.
+strcpy(targetText,  "abc"); // targetText is "abc"
+strncat(targetText,  "123456789",  3); // targetText is "abc123"
+
+For strcpy(), a common error is to copy a source string that is too large, causing an out-of-range access in the destination string.  Another
+common error is to call strcpy with the source string first rather than the destination string, which copies in the wrong direction.
+Note that string assignment, as in targetText = or gName, does not copy the string and should not be used. The exception is during
+initialization, as in char userText[20] = "UNICEF";, for which the compiler copies the string literal's characters into the array.
+
+Several C string functions that get information about strings are summarized below.
+
+Some C string information functions.
+Given:
+char  orgName[100]  =  "United Nations" ;  
+char  userText [20]  =  "UNICEF" ;  
+char  targetText [10];
+
+strchr():
+strchr(sourceStr, searchChar)
+Returns NULL if searchChar does not exist in sourceStr. (Else, returns address of first occurrence, discussed elsewhere). NULL is defined in the cstring library.
+if  (strchr(orgName,  'U')  !=  NULL)  {  // 'U' exists in orgName?
+  ...   // 'U' exists in "United Nations", branch taken
+}   
+if  (strchr(orgName,  'u')  !=  NULL)  {  // 'u' exists in orgName?
+  ...   // 'u' doesn't exist (case matters), branch not taken
+}
+
+strlen():
+size_t strlen(sourceStr)
+Returns number of characters in sourceStr up to, but not including, first null character. size_t is integer type.
+x  =  strlen(orgName);     // Assigns 14 to x 
+x  =  strlen(userText );    // Assigns 6 to x
+x  =  strlen(targetText );  // Error: targetText may lack null char
+
+str cmp():
+int strcmp(str1, str2)
+Returns 0 if str1 and str2 are equal, non-zero if they differ.
+if  (strcmp(orgName,  "United Nations" )  ==  0)  {
+  ...  // Equal, branch taken
+}
+if  (strcmp(orgName,  userText )  !=  0)  {
+  ...  // Not equal, branch taken
+}
+
+strcmp() is usually used to compare for equality, returning 0 if the strings are the same length and have identical characters. A common
+error is to use == when comparing C strings, which does not work.  str1 == str2 compares the strings' addresses, not their contents. Because
+those addresses will usually be different, str1 == str2 will e valuate to 0. This is not a syntax error, but clearly a logic error. Another common
+error is to for get to compare the result of str cmp with 0, as in if (strcmp(str1, str2)) {...}. The code is not a syntax error, but is a
+logic error because the if condition will be false (0) when the strings are equal. The correct condition would instead be
+if (strcmp(str1, str2) == 0) {...}. Although str cmp returns 0, a good practice  is to avoid
+using if (!strcmp(str1,str2)) {...}  because that 0 does not represent "false " but rather is encoding a particular situation.
+
+strcmp(str1, str2) returns a negative number if str1 is less than str2, and a positive number if str1 is greater than str2. Evaluation first
+compares the character pair at element 0, then at element 1, etc., returning as soon as a pair differs.
+
+Iterating through a C string using strlen.
+#include  <iostream>
+#include  <cstring>
+using  namespace  std;
+int  main()  {
+   char  userName [15]  =  "Alan Turing" ;
+   int  i;
+   
+   cout  <<  "Before: "  <<  userName  <<  endl;
+   
+   for  (i  =  0;  i  <  strlen(userName );  ++i)  {
+      if  (userName [i]  ==  ' ')  {
+         userName [i]  =  '_';
+      }
+   }
+   cout  <<  "After:  "  <<  userName  <<  endl;
+   
+   return  0;
+}
+Before: Alan Turing
+After:  Alan_Turing
