@@ -42,7 +42,7 @@ String with hyphens: Good-bye--now---!!!
 The string serves as function input and output. The string parameter must be pass by reference, achieved using &, so that the function
 modifies the original string argument (userStr) and not a copy.
 
-Sometimes a Programmer defines a vector or string parameter as pass by reference e ven though the function does not modify the
+Sometimes a Programmer defines a vector or string parameter as pass by reference even though the function does not modify the
 parameter, to prevent the performance and memory overhead of copying the argument that would other wise occur.
 The keyword const  can be prepended to a function's vector or string parameter to prevent the function from modifying the parameter.
 Programmers commonly make a large vector or string input parameter pass by reference, to gain efficiency, while also making the

@@ -1,5 +1,0 @@
-https://ollama.com/download
-ollama pull llama3.2
-
-build
-pip install chromadb langchain_ollama flask gevent

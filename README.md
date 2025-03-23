@@ -1,11 +1,11 @@
-# 🐺 C++ AI Tutor
+# 👨‍💻 C++ AI Tutor
 
 >This project was bulit with two main modules, the back-end API, and the frontend display.
 > Functional Example lives [here](https://bencarpenterit.com/projects/CSCTutor/).
 
 ## 📖 Table of Contents
 
-- [🐺 C++ AI Tutor](#-c-ai-tutor)
+- [👨‍💻 C++ AI Tutor](#-c-ai-tutor)
   - [📖 Table of Contents](#-table-of-contents)
   - [📝 Features](#-features)
   - [✅ Requirements](#-requirements)

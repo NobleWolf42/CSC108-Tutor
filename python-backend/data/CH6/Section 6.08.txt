@@ -19,7 +19,7 @@ The Program below declares a vector groceryList, which is initially empty. As th
 push_back() to append the items to the list. When done, the user can go shopping, and is presented one list item at a time (which the user
 presumably finds and places in a shopping car t). The Program uses back() to get each item from the list and pop_back() to remove the item
 from the list. When the list is empty, shopping is finished.
-Note that because the Program r emoves items from the end of the list, the items are presented in reverse order.
+Note that because the Program removes items from the end of the list, the items are presented in reverse order.
 
 Using push_back(), back(), and pop_back(): A grocery list example.
 #include  <iostream>

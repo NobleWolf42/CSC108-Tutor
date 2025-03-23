@@ -30,7 +30,7 @@ to assign a value to the char array variable itself, rather than copying each ch
 Functions exist to copy strings, such as strcpy(), discussed elsewhere.
 A programmer can tr averse a string using a loop that stops when reaching the null character.
 A common error is to loop for the string's array size rather than stopping at the null character. Such looping visits unused array elements
-beyond the null character. An e ven worse common error is to loop beyond the last valid element, which visits memory locations that are not
+beyond the null character. An even worse common error is to loop beyond the last valid element, which visits memory locations that are not
 part of the array. These errors are illustrated below. Notice the strange characters that are output as the contents of other memory locations
 are printed out; the Program may also cr ash.
 
@@ -122,5 +122,5 @@ When printing a string stored within a character array, each character within th
 null character is omitted, the Program would print whatever values are found in memory after the array, until a null character happens to be
 encountered. Omitting the null character is a serious logical error.
 It just so happens that the null character '\0' has an ASCII encoding of 0. Many compilers initialize memory to 0s. As such, omitting the '\0'
-in the above program would not always cause erroneous execution. like a nail in the r oad, that bug in y our code is just waiting to wr eak
+in the above program would not always cause erroneous execution. like a nail in the r oad, that bug in your code is just waiting to wr eak
 havoc.

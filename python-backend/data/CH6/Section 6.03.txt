@@ -28,7 +28,7 @@ The same error message may be seen if the vector library is included but the nam
 Using an expression for a vector index
 A powerful aspect of vectors is that the index is an expression. Ex: userNums.at(i) uses the value held in the int variable i as the index. As
 such, a vector is useful to easily lookup the Nth item in a list.
-A vector's index must be an unsigned integer type. The vector index cannot be a floating-point type, e ven if the value is 0.0, 1.0, etc.
+A vector's index must be an unsigned integer type. The vector index cannot be a floating-point type, even if the value is 0.0, 1.0, etc.
 The Program below allows a user to print the age of the Nth oldest known person to have ever liv ed. The Program quickly accesses the Nth
 oldest person's age using oldestPeople.at(nthPerson - 1). Note that the index is nthPerson - 1  rather than just nthPerson
 because a vector's indices start at 0, so the 1st age is at index 0, the 2nd at index 1, etc.

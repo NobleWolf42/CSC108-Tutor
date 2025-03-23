@@ -186,7 +186,7 @@ Enter value: 70
 Enter value: 80
 Updated vector: 80 70 60 50 40 30 20 10
 
-We should ensure the Program works if the number of elements is odd rather than e ven. Suppose the vector has 5 elements (0-4) with
+We should ensure the Program works if the number of elements is odd rather than even. Suppose the vector has 5 elements (0-4) with
 values 10 20 30 40 50. r evVector.size() / 2 would be 5 / 2 = 2, meaning the loop expression would be i < 2. The iteration when i is 0 would
 swap elements 0 and 4 (5-1-0), yielding 50 20 30 40 10. The iteration for i=1 would swap elements 1 and 3, yielding 50 40 30 20 10. The
 loop would then not execute again because i is 2. So the results are correct for an odd number of elements, because the middle element

@@ -8,20 +8,7 @@ Process: A program performs computations on that data, such as adding two values
 Output: A program puts that data somewhere, such as to a file, screen, network, etc.
 Programs use variables to refer to data, like x, y, and z below. The name is due to a variable's value varying as a program assigns a variable
 like x with new values.
-PARTICIPATION
-ACTIVITY 1.1.1: A basic computer program.
-PARTICIPATION
-ACTIVITY 1.1.2: A basic computer program.
-Consider the example above.
-1) The program has a total number of _____ instructions.
-2) Suppose a new instruction was inserted as follows:
-...
-z = x + y
-Add 1 to z (new instruction)
-Put z to output
-What would the last instruction output to the screen?
-3) Consider the instruction: z = x + y. If x is 10 and y is 20, then z is
-assigned with _____.
+
 A program is like a recipe
 Some people think of a program as being like a cooking recipe. A recipe consists of instructions that a chef executes, like adding
 eggs or stirring ingredients. Likewise, a computer program consists of instructions that a computer executes, like multiplying
@@ -35,33 +22,7 @@ A first programming activity
 Below is a simple tool that allows a user to rearrange some prewritten instructions (in no particular programming language). The tool
 illustrates how a computer executes each instruction one at a time, assigning variable m with new values throughout and outputting
 ("printing") values to the screen.
-PARTICIPATION
-ACTIVITY 1.1.3: A first programming activity.
-Execute the program by clicking the "Run program" button and observe the output. Click and drag the instructions to change the
-order of the instructions, and execute the program again. Not required, but can you make the program output a value greater than
-500? How about greater than 1,000?
-PARTICIPATION
-ACTIVITY 1.1.4:
-1) Which instruction completes the program to compute a triangle's
-area? The equation for a triangle's area is 1/2 * base * height.
-base = Get next input
-height = Get next input
-Assign x with base * height
-_____
-Put x to output
-Multiply x by 2
-Add 2 to x
-Multiply x by 1/2
-2) Which instruction completes the program to compute the average of
-three numbers?
-x = Get next input
-y = Get next input
-z = Get next input
-_____
-Put a to output
-a = (x + y + z) / 3
-a = (x + y + z) / 2
-a = x + y + z
+
 Computational thinking
 Mathematical thinking became increasingly important throughout the industrial age to enable people to successfully live and work. In the
 information age, many people believe computational thinking, or creating a sequence of instructions to solve a problem, will become
