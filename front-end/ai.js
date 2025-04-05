@@ -1,6 +1,6 @@
 //#region Global Var for storing chat history and url of backend
 let chatHistory = [];
-const url = "http://localhost:5000";
+const url = "https://localhost:5000";
 //#endregion
 
 //#region This handles the event listeners for the page
@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const oldChat = localStorage.getItem("bcitchatHistory");
     const lastChapter = localStorage.getItem("bcitchap");
     const uCode = localStorage.getItem("bcitcode");
+    const uInput = localStorage.getItem("bcitinput");
 
     if (oldChat != null && oldChat != "") {
         const messageHistory = document.getElementById("messageHistory");
@@ -37,6 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (uCode != null && uCode != "") {
         document.getElementById("codeMessage").value = uCode;
+    }
+
+    if (uInput != null && uInput != "") {
+        document.getElementById("usrInput").value = uInput;
     }
 
     document.getElementById("usrMessage").addEventListener("keypress", (x) => {
@@ -126,6 +131,7 @@ function sendMessage() {
             document.getElementById("lastBotMessage").innerHTML = setMaxWidth(
                 DOMPurify.sanitize(marked.parse(http.responseText))
             );
+
             messageHistory.scrollTo({
                 top: document.getElementById("lastBotMessage").offsetTop,
                 behavior: "smooth",
@@ -184,6 +190,7 @@ async function runCode() {
     const userCodeNoQuote = userCodeNewLine.replace(/"/g, '\\"');*/
 
     localStorage.setItem("bcitcode", userCodeValue);
+    localStorage.setItem("bcitinput", userInput);
 
     const http = new XMLHttpRequest();
 
@@ -194,7 +201,10 @@ async function runCode() {
         '<div class="typingButton"><span class="typeHere"></span><span class="typeHere"></span><span class="typeHere"></span></div>';
 
     outputHere.innerHTML = "";
-    TypeWriterAnimation(outputHere, "Running...").type();
+    TypeWriterAnimation(
+        outputHere,
+        '<span id="running">Running...</span>'
+    ).type();
     await new Promise((r) => setTimeout(r, 2000));
     outputHere.innerHTML = outputHere.innerHTML + "<br><br>";
 
@@ -249,7 +259,8 @@ function TypeWriterAnimation(elem, text) {
         //Type Speed in Milliseconds
         typeSpeed = 75,
         //Resting Type Speed LEAVE THIS AT 0
-        tempTypeSpeed = 0;
+        tempTypeSpeed = 0,
+        totalTimeout = 0;
 
     //#endregion
 
@@ -302,12 +313,28 @@ function TypeWriterAnimation(elem, text) {
         cursorPosition += 1;
         if (cursorPosition < text.length) {
             setTimeout(type, tempTypeSpeed);
-        } else if (text != "Running...") {
+            totalTimeout += tempTypeSpeed;
+        } else if (
+            text != '<span id="running">Running...</span>' &&
+            text != "Done"
+        ) {
             const runButton = document.getElementById("runbutton");
             runButton.setAttribute("enabled", "");
             runButton.removeAttribute("disabled", "");
             runButton.value = "Run";
-            document.getElementById("runButtonType").innerHTML = "";
+            setTimeout(() => {
+                document.getElementById("runButtonType").innerHTML = "";
+                document.getElementById("running").style.background = "#008000";
+                setTimeout(() => {
+                    document.getElementById("running").innerHTML = "";
+                    document.getElementById("running").style.background =
+                        "#000000";
+                    TypeWriterAnimation(
+                        document.getElementById("running"),
+                        "Done"
+                    ).type();
+                }, 1000);
+            }, totalTimeout);
         }
 
         //#endregion
