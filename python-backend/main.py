@@ -45,6 +45,7 @@ def questions():
     
     # Process the inputs.
     result = ragConstruction(usrMsg, chapter, msgHistory, usrCode)
+    print("Response:", result, "\n")
     
     # Create the response with the correct content type.
     response = make_response(result)
@@ -87,5 +88,5 @@ def favicon():
 
 if __name__ == '__main__':
     print("Server Started.")
-    pywsgi.WSGIServer(('0.0.0.0', int(port)), app).serve_forever()
-    #app.run()
+    #pywsgi.WSGIServer(('0.0.0.0', int(port)), app).serve_forever()
+    app.run()
