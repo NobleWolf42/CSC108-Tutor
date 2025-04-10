@@ -13,9 +13,12 @@
   - [⚙️ Configuration](#️-configuration)
   - [🏎️ Running the Bot](#️-running-the-bot)
   - [📝 API](#-api)
-  - [🤝 Sources](#-sources)
+  - [ℹ️ Sources](#ℹ️-sources)
       - [Front-End](#front-end)
       - [Back-End](#back-end)
+  - [🤝 Collaborators](#-collaborators)
+      - [Front-End](#front-end-1)
+      - [Back-End](#back-end-1)
 
 ## 📝 Features
 
@@ -119,7 +122,7 @@ After installation and configuration you can use `python main.js` to start the b
         Hello World!
         ```
 
-## 🤝 Sources
+## ℹ️ Sources
 
 #### Front-End
 1. [Marked](https://github.com/markedjs/marked)
@@ -131,3 +134,11 @@ After installation and configuration you can use `python main.js` to start the b
 #### Back-End
 1. [ZyBooks - CSC 108: Computer Science I](https://learn.zybooks.com/zybook/QCCCSC108LoiSpring2025) for the RAG infromation
 2. [Arun Patidar's Guide](https://medium.com/@arunpatidar26/rag-chromadb-ollama-python-guide-for-beginners-30857499d0a0) for the starting point of [rag.py](https://github.com/NobleWolf42/CSC108-Tutor/blob/main/python-backend/rag.py)
+
+## 🤝 Collaborators
+
+#### Front-End
+The front-end was mostly developed by me, but the data scheme for storing the message history was developed by [James Stevens](https://github.com/ouzo26). 
+
+#### Back-End
+Originally the C++ version was a joint effort, with [James Stevens](https://github.com/ouzo26) developing the connection to the LLM (RAG), and me developing the api connection. Later when we switched to python we mostly reversed the roles, copying the structure from the C++, with [James Stevens](https://github.com/ouzo26) developing the API endpoint framework, and myself developing the LLM connection (RAG).
