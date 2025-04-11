@@ -98,15 +98,18 @@
         "shared_mutex": "cpp"
     },
     "cSpell.words": [
+        "Arun",
         "bcitchap",
         "bcitchat",
         "cctype",
+        "chromadb",
         "cout",
         "cstring",
         "ctry",
         "ctype",
         "endl",
         "getline",
+        "gevent",
         "inputnum",
         "isalnum",
         "isalpha",
@@ -120,6 +123,7 @@
         "isupper",
         "isxdigit",
         "jsonify",
+        "langchain",
         "llmmodel",
         "myarray",
         "myvector",
@@ -127,6 +131,8 @@
         "numsum",
         "Ollama",
         "outputavg",
+        "oversaturated",
+        "Patidar's",
         "poppler",
         "pywsgi",
         "runbutton",
@@ -141,6 +147,7 @@
         "toupper",
         "userinput",
         "usermsg",
-        "Vctr"
+        "Vctr",
+        "XAMPP"
     ]
 }
