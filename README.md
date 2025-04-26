@@ -72,7 +72,7 @@ PORT(i.e. 3000) JDoodle-API-ID JDoodle-API-Secret
 
 After installation and configuration you can use `python main.py` to start the bot.
 > Note: You need to have the front-end hosted locally for it to work, I recommend something like [XAMPP](https://www.apachefriends.org/download.html).
-> If you want to host the front-end remotely, you need to change the const at the top on `ai.js` - `const url = "https://localhost:5000";` and the line at the top of `main.py` - `front_url = 'http://localhost'`
+> If you want to host the front-end remotely, you need to change the const at the top on `ai.js` - `const url = "https://localhost:5000";` and the variable at the top of `main.py` - `front_url = 'http://localhost'`
 
 ## 📝 API
 
