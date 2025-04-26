@@ -5,6 +5,8 @@ import requests
 import json
 import os
 
+front_url = 'http://localhost'
+
 app = Flask(__name__)
 
 initializeRAG()
@@ -25,7 +27,7 @@ def before_request():
     
 @app.after_request
 def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost')
+    response.headers.add('Access-Control-Allow-Origin', front_url)
     response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
     response.headers.add('Access-Control-Allow-Headers', '*')
     return response

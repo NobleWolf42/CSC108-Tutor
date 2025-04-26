@@ -1,7 +1,7 @@
 # 👨‍💻 C++ AI Tutor
 
->This project was built with two main modules, the back-end API, and the frontend display.
-> Functional Example lives [here](https://bencarpenterit.com/projects/CSCTutor/).
+> This project was built with two main modules, the back-end API, and the frontend display.
+> Functional example lives [here](https://bencarpenterit.com/projects/CSCTutor/).
 
 ## 📖 Table of Contents
 
@@ -47,12 +47,16 @@ Overall, the project aims to create a scalable and efficient tutoring tool. Not 
 
 ## 🚀 Getting Started
 
+1. Install [Ollama](https://ollama.com/)
+2. Install [Python](https://www.python.org/)
+3. Run Following Commands:
 ```
 git clone https://github.com/NobleWolf42/CSC108-Tutor.git
 cd CSC108-Tutor
 pip install chromadb langchain_ollama flask gevent
 ollama pull llama3.2
 ```
+4. The front-end folder must be hosted on a web-server, a good local one is [XAMPP](https://www.apachefriends.org/download.html)
 
 ## ⚙️ Configuration
 
@@ -66,8 +70,9 @@ PORT(i.e. 3000) JDoodle-API-ID JDoodle-API-Secret
 
 ## 🏎️ Running the Bot
 
-After installation and configuration you can use `python main.js` to start the bot
+After installation and configuration you can use `python main.py` to start the bot.
 > Note: You need to have the front-end hosted locally for it to work, I recommend something like [XAMPP](https://www.apachefriends.org/download.html).
+> If you want to host the front-end remotely, you need to change the const at the top on `ai.js` - `const url = "https://localhost:5000";` and the line at the top of `main.py` - `front_url = 'http://localhost'`
 
 ## 📝 API
 
