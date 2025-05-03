@@ -172,7 +172,7 @@ After installation and configuration you can use `python main.py` to start the b
 ## 🤝 Collaborators
 
 #### Front-End
-The front-end was mostly developed by me, but the data scheme for storing the message history was developed by [James Stevens](https://github.com/ouzo26). 
+The front-end was developed by me. 
 
 #### Back-End
-Originally the C++ version was a joint effort, with [James Stevens](https://github.com/ouzo26) developing the connection to the LLM (RAG), and me developing the api connection. Later when we switched to python we mostly reversed the roles, copying the structure from the C++, with [James Stevens](https://github.com/ouzo26) developing the API endpoint framework, and myself developing the LLM connection (RAG).
+Originally the C++ version was a joint effort, with [James Stevens](https://github.com/ouzo26) developing the connection to the LLM (RAG), and me developing the api connection (The RAG ended up not working on this prototype). Later when we switched to python we mostly reversed the roles, copying the structure from the C++, with [James Stevens](https://github.com/ouzo26) developing the original `/questions` endpoint, and myself developing the LLM connection (RAG) and non `/questions` API endpoints, as well as revising the `/questions` endpoint.
